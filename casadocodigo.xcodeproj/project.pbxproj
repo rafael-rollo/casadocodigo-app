@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69012621070300A8CEBD /* AppDelegate.swift */; };
+		58BF69042621070300A8CEBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69032621070300A8CEBD /* SceneDelegate.swift */; };
+		58BF69062621070300A8CEBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69052621070300A8CEBD /* ViewController.swift */; };
+		58BF69092621070300A8CEBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58BF69072621070300A8CEBD /* Main.storyboard */; };
+		58BF690B2621070500A8CEBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58BF690A2621070500A8CEBD /* Assets.xcassets */; };
+		58BF690E2621070500A8CEBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58BF690C2621070500A8CEBD /* LaunchScreen.storyboard */; };
+		58BF69192621070500A8CEBD /* casadocodigoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69182621070500A8CEBD /* casadocodigoTests.swift */; };
+		58BF69242621070500A8CEBD /* casadocodigoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69232621070500A8CEBD /* casadocodigoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		58BF69152621070500A8CEBD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58BF68F62621070300A8CEBD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58BF68FD2621070300A8CEBD;
+			remoteInfo = casadocodigo;
+		};
+		58BF69202621070500A8CEBD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58BF68F62621070300A8CEBD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58BF68FD2621070300A8CEBD;
+			remoteInfo = casadocodigo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		58BF68FE2621070300A8CEBD /* casadocodigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = casadocodigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58BF69012621070300A8CEBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		58BF69032621070300A8CEBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		58BF69052621070300A8CEBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		58BF69082621070300A8CEBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		58BF690A2621070500A8CEBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		58BF690D2621070500A8CEBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		58BF690F2621070500A8CEBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58BF69142621070500A8CEBD /* casadocodigoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = casadocodigoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		58BF69182621070500A8CEBD /* casadocodigoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casadocodigoTests.swift; sourceTree = "<group>"; };
+		58BF691A2621070500A8CEBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58BF691F2621070500A8CEBD /* casadocodigoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = casadocodigoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		58BF69232621070500A8CEBD /* casadocodigoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casadocodigoUITests.swift; sourceTree = "<group>"; };
+		58BF69252621070500A8CEBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58BF68FB2621070300A8CEBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58BF69112621070500A8CEBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58BF691C2621070500A8CEBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		58BF68F52621070300A8CEBD = {
+			isa = PBXGroup;
+			children = (
+				58BF69002621070300A8CEBD /* casadocodigo */,
+				58BF69172621070500A8CEBD /* casadocodigoTests */,
+				58BF69222621070500A8CEBD /* casadocodigoUITests */,
+				58BF68FF2621070300A8CEBD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		58BF68FF2621070300A8CEBD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58BF68FE2621070300A8CEBD /* casadocodigo.app */,
+				58BF69142621070500A8CEBD /* casadocodigoTests.xctest */,
+				58BF691F2621070500A8CEBD /* casadocodigoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58BF69002621070300A8CEBD /* casadocodigo */ = {
+			isa = PBXGroup;
+			children = (
+				58BF69012621070300A8CEBD /* AppDelegate.swift */,
+				58BF69032621070300A8CEBD /* SceneDelegate.swift */,
+				58BF69052621070300A8CEBD /* ViewController.swift */,
+				58BF69072621070300A8CEBD /* Main.storyboard */,
+				58BF690A2621070500A8CEBD /* Assets.xcassets */,
+				58BF690C2621070500A8CEBD /* LaunchScreen.storyboard */,
+				58BF690F2621070500A8CEBD /* Info.plist */,
+			);
+			path = casadocodigo;
+			sourceTree = "<group>";
+		};
+		58BF69172621070500A8CEBD /* casadocodigoTests */ = {
+			isa = PBXGroup;
+			children = (
+				58BF69182621070500A8CEBD /* casadocodigoTests.swift */,
+				58BF691A2621070500A8CEBD /* Info.plist */,
+			);
+			path = casadocodigoTests;
+			sourceTree = "<group>";
+		};
+		58BF69222621070500A8CEBD /* casadocodigoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				58BF69232621070500A8CEBD /* casadocodigoUITests.swift */,
+				58BF69252621070500A8CEBD /* Info.plist */,
+			);
+			path = casadocodigoUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58BF68FD2621070300A8CEBD /* casadocodigo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58BF69282621070500A8CEBD /* Build configuration list for PBXNativeTarget "casadocodigo" */;
+			buildPhases = (
+				58BF68FA2621070300A8CEBD /* Sources */,
+				58BF68FB2621070300A8CEBD /* Frameworks */,
+				58BF68FC2621070300A8CEBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = casadocodigo;
+			productName = casadocodigo;
+			productReference = 58BF68FE2621070300A8CEBD /* casadocodigo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		58BF69132621070500A8CEBD /* casadocodigoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58BF692B2621070500A8CEBD /* Build configuration list for PBXNativeTarget "casadocodigoTests" */;
+			buildPhases = (
+				58BF69102621070500A8CEBD /* Sources */,
+				58BF69112621070500A8CEBD /* Frameworks */,
+				58BF69122621070500A8CEBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58BF69162621070500A8CEBD /* PBXTargetDependency */,
+			);
+			name = casadocodigoTests;
+			productName = casadocodigoTests;
+			productReference = 58BF69142621070500A8CEBD /* casadocodigoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		58BF691E2621070500A8CEBD /* casadocodigoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58BF692E2621070500A8CEBD /* Build configuration list for PBXNativeTarget "casadocodigoUITests" */;
+			buildPhases = (
+				58BF691B2621070500A8CEBD /* Sources */,
+				58BF691C2621070500A8CEBD /* Frameworks */,
+				58BF691D2621070500A8CEBD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58BF69212621070500A8CEBD /* PBXTargetDependency */,
+			);
+			name = casadocodigoUITests;
+			productName = casadocodigoUITests;
+			productReference = 58BF691F2621070500A8CEBD /* casadocodigoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58BF68F62621070300A8CEBD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					58BF68FD2621070300A8CEBD = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					58BF69132621070500A8CEBD = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 58BF68FD2621070300A8CEBD;
+					};
+					58BF691E2621070500A8CEBD = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 58BF68FD2621070300A8CEBD;
+					};
+				};
+			};
+			buildConfigurationList = 58BF68F92621070300A8CEBD /* Build configuration list for PBXProject "casadocodigo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 58BF68F52621070300A8CEBD;
+			productRefGroup = 58BF68FF2621070300A8CEBD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58BF68FD2621070300A8CEBD /* casadocodigo */,
+				58BF69132621070500A8CEBD /* casadocodigoTests */,
+				58BF691E2621070500A8CEBD /* casadocodigoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		58BF68FC2621070300A8CEBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58BF690E2621070500A8CEBD /* LaunchScreen.storyboard in Resources */,
+				58BF690B2621070500A8CEBD /* Assets.xcassets in Resources */,
+				58BF69092621070300A8CEBD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58BF69122621070500A8CEBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58BF691D2621070500A8CEBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58BF68FA2621070300A8CEBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58BF69062621070300A8CEBD /* ViewController.swift in Sources */,
+				58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */,
+				58BF69042621070300A8CEBD /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58BF69102621070500A8CEBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58BF69192621070500A8CEBD /* casadocodigoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58BF691B2621070500A8CEBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58BF69242621070500A8CEBD /* casadocodigoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		58BF69162621070500A8CEBD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58BF68FD2621070300A8CEBD /* casadocodigo */;
+			targetProxy = 58BF69152621070500A8CEBD /* PBXContainerItemProxy */;
+		};
+		58BF69212621070500A8CEBD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58BF68FD2621070300A8CEBD /* casadocodigo */;
+			targetProxy = 58BF69202621070500A8CEBD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		58BF69072621070300A8CEBD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58BF69082621070300A8CEBD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		58BF690C2621070500A8CEBD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58BF690D2621070500A8CEBD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		58BF69262621070500A8CEBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		58BF69272621070500A8CEBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		58BF69292621070500A8CEBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = casadocodigo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.rollo.rafael.casadocodigo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		58BF692A2621070500A8CEBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = casadocodigo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.rollo.rafael.casadocodigo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		58BF692C2621070500A8CEBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = casadocodigoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.rollo.rafael.casadocodigoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/casadocodigo.app/casadocodigo";
+			};
+			name = Debug;
+		};
+		58BF692D2621070500A8CEBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = casadocodigoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.rollo.rafael.casadocodigoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/casadocodigo.app/casadocodigo";
+			};
+			name = Release;
+		};
+		58BF692F2621070500A8CEBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = casadocodigoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.rollo.rafael.casadocodigoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = casadocodigo;
+			};
+			name = Debug;
+		};
+		58BF69302621070500A8CEBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = casadocodigoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.rollo.rafael.casadocodigoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = casadocodigo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58BF68F92621070300A8CEBD /* Build configuration list for PBXProject "casadocodigo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58BF69262621070500A8CEBD /* Debug */,
+				58BF69272621070500A8CEBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58BF69282621070500A8CEBD /* Build configuration list for PBXNativeTarget "casadocodigo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58BF69292621070500A8CEBD /* Debug */,
+				58BF692A2621070500A8CEBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58BF692B2621070500A8CEBD /* Build configuration list for PBXNativeTarget "casadocodigoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58BF692C2621070500A8CEBD /* Debug */,
+				58BF692D2621070500A8CEBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58BF692E2621070500A8CEBD /* Build configuration list for PBXNativeTarget "casadocodigoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58BF692F2621070500A8CEBD /* Debug */,
+				58BF69302621070500A8CEBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58BF68F62621070300A8CEBD /* Project object */;
+}
