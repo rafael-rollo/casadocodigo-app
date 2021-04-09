@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69012621070300A8CEBD /* AppDelegate.swift */; };
 		58BF69042621070300A8CEBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69032621070300A8CEBD /* SceneDelegate.swift */; };
-		58BF69062621070300A8CEBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69052621070300A8CEBD /* ViewController.swift */; };
+		58BF69062621070300A8CEBD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69052621070300A8CEBD /* HomeViewController.swift */; };
 		58BF69092621070300A8CEBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58BF69072621070300A8CEBD /* Main.storyboard */; };
 		58BF690B2621070500A8CEBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58BF690A2621070500A8CEBD /* Assets.xcassets */; };
 		58BF690E2621070500A8CEBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58BF690C2621070500A8CEBD /* LaunchScreen.storyboard */; };
@@ -38,7 +38,7 @@
 		58BF68FE2621070300A8CEBD /* casadocodigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = casadocodigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58BF69012621070300A8CEBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58BF69032621070300A8CEBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		58BF69052621070300A8CEBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		58BF69052621070300A8CEBD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		58BF69082621070300A8CEBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58BF690A2621070500A8CEBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58BF690D2621070500A8CEBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,10 +101,9 @@
 			children = (
 				58BF69012621070300A8CEBD /* AppDelegate.swift */,
 				58BF69032621070300A8CEBD /* SceneDelegate.swift */,
-				58BF69052621070300A8CEBD /* ViewController.swift */,
-				58BF69072621070300A8CEBD /* Main.storyboard */,
+				58BF6934262109E300A8CEBD /* Interface */,
+				58BF693526210A0E00A8CEBD /* Application */,
 				58BF690A2621070500A8CEBD /* Assets.xcassets */,
-				58BF690C2621070500A8CEBD /* LaunchScreen.storyboard */,
 				58BF690F2621070500A8CEBD /* Info.plist */,
 			);
 			path = casadocodigo;
@@ -126,6 +125,31 @@
 				58BF69252621070500A8CEBD /* Info.plist */,
 			);
 			path = casadocodigoUITests;
+			sourceTree = "<group>";
+		};
+		58BF6934262109E300A8CEBD /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				58BF69072621070300A8CEBD /* Main.storyboard */,
+				58BF690C2621070500A8CEBD /* LaunchScreen.storyboard */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		58BF693526210A0E00A8CEBD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				58BF693926210A5B00A8CEBD /* HomeScene */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		58BF693926210A5B00A8CEBD /* HomeScene */ = {
+			isa = PBXGroup;
+			children = (
+				58BF69052621070300A8CEBD /* HomeViewController.swift */,
+			);
+			path = HomeScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58BF69062621070300A8CEBD /* ViewController.swift in Sources */,
+				58BF69062621070300A8CEBD /* HomeViewController.swift in Sources */,
 				58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */,
 				58BF69042621070300A8CEBD /* SceneDelegate.swift in Sources */,
 			);
