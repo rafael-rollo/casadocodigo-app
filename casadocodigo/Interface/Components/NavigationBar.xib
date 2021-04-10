@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NavigationBar" customModule="casadocodigo" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="uII-kh-tZq"/>
+                <outlet property="logoImageView" destination="9DH-nh-sfh" id="BQf-jn-QVe"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9DH-nh-sfh">
+                    <rect key="frame" x="60" y="0.0" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="TYJ-gF-GUB"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Casa do Código" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1g-M3-hv1">
+                    <rect key="frame" x="136" y="0.0" width="160.5" height="60"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.66666666666666663" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="9DH-nh-sfh" secondAttribute="bottom" id="U7W-Nj-baV"/>
+                <constraint firstItem="X1g-M3-hv1" firstAttribute="leading" secondItem="9DH-nh-sfh" secondAttribute="trailing" constant="16" id="VCx-mb-O9V"/>
+                <constraint firstItem="9DH-nh-sfh" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="60" id="VGc-9G-6kK"/>
+                <constraint firstItem="9DH-nh-sfh" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="XaI-vY-Oxq"/>
+                <constraint firstItem="X1g-M3-hv1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="l3b-d6-Wv2"/>
+                <constraint firstAttribute="bottom" secondItem="X1g-M3-hv1" secondAttribute="bottom" id="vDT-Ch-KOf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-749" y="-132"/>
+        </view>
+    </objects>
+</document>

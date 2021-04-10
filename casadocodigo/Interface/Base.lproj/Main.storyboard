@@ -11,16 +11,16 @@
         <!--Navigation Controller-->
         <scene sceneID="xaS-Cm-Tjc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="biz-yC-PfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationController id="2zo-8l-zRe" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="2zo-8l-zRe" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qjY-jH-kgk">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <segue destination="pTB-BC-bOT" kind="relationship" relationship="rootViewController" id="yL3-Hx-Da9"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="biz-yC-PfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1088" y="-561"/>
         </scene>
@@ -58,15 +58,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFj-lf-Nb6" customClass="NavigationBar" customModule="casadocodigo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="xSS-Lb-ZCH"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bFj-lf-Nb6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="U2X-sj-Z8T"/>
+                            <constraint firstItem="bFj-lf-Nb6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="btK-Qo-WJH"/>
+                            <constraint firstItem="bFj-lf-Nb6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fAR-FK-6W6"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Livros" id="wfx-8J-1Xd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-693" y="169"/>
+            <point key="canvasLocation" x="-694.20289855072474" y="168.75"/>
         </scene>
         <!--Autores-->
         <scene sceneID="Ng1-rm-cNt">

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		589C5BB42621302000CE3B93 /* StatusBarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB32621302000CE3B93 /* StatusBarBackground.swift */; };
 		58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69012621070300A8CEBD /* AppDelegate.swift */; };
 		58BF69042621070300A8CEBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69032621070300A8CEBD /* SceneDelegate.swift */; };
 		58BF69062621070300A8CEBD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69052621070300A8CEBD /* HomeViewController.swift */; };
@@ -15,6 +16,8 @@
 		58BF690E2621070500A8CEBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58BF690C2621070500A8CEBD /* LaunchScreen.storyboard */; };
 		58BF69192621070500A8CEBD /* casadocodigoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69182621070500A8CEBD /* casadocodigoTests.swift */; };
 		58BF69242621070500A8CEBD /* casadocodigoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69232621070500A8CEBD /* casadocodigoUITests.swift */; };
+		58BF694C2621155300A8CEBD /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF694B2621155300A8CEBD /* NavigationBar.swift */; };
+		58BF695726211FE100A8CEBD /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58BF695626211FE100A8CEBD /* NavigationBar.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		589C5BB32621302000CE3B93 /* StatusBarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarBackground.swift; sourceTree = "<group>"; };
 		58BF68FE2621070300A8CEBD /* casadocodigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = casadocodigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58BF69012621070300A8CEBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58BF69032621070300A8CEBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 		58BF691F2621070500A8CEBD /* casadocodigoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = casadocodigoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58BF69232621070500A8CEBD /* casadocodigoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casadocodigoUITests.swift; sourceTree = "<group>"; };
 		58BF69252621070500A8CEBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58BF694B2621155300A8CEBD /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		58BF695626211FE100A8CEBD /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,7 @@
 		58BF6934262109E300A8CEBD /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				58BF693D262114B700A8CEBD /* Components */,
 				58BF69072621070300A8CEBD /* Main.storyboard */,
 				58BF690C2621070500A8CEBD /* LaunchScreen.storyboard */,
 			);
@@ -150,6 +157,16 @@
 				58BF69052621070300A8CEBD /* HomeViewController.swift */,
 			);
 			path = HomeScene;
+			sourceTree = "<group>";
+		};
+		58BF693D262114B700A8CEBD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				58BF694B2621155300A8CEBD /* NavigationBar.swift */,
+				58BF695626211FE100A8CEBD /* NavigationBar.xib */,
+				589C5BB32621302000CE3B93 /* StatusBarBackground.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +275,7 @@
 				58BF690E2621070500A8CEBD /* LaunchScreen.storyboard in Resources */,
 				58BF690B2621070500A8CEBD /* Assets.xcassets in Resources */,
 				58BF69092621070300A8CEBD /* Main.storyboard in Resources */,
+				58BF695726211FE100A8CEBD /* NavigationBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,8 +301,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				58BF69062621070300A8CEBD /* HomeViewController.swift in Sources */,
+				589C5BB42621302000CE3B93 /* StatusBarBackground.swift in Sources */,
 				58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */,
 				58BF69042621070300A8CEBD /* SceneDelegate.swift in Sources */,
+				58BF694C2621155300A8CEBD /* NavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
