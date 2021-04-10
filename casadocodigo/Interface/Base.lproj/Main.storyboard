@@ -33,6 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="1" green="0.49803921569999998" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="pWx-HF-wKc"/>
@@ -74,7 +75,7 @@
                             <constraint firstItem="bFj-lf-Nb6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fAR-FK-6W6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Livros" id="wfx-8J-1Xd"/>
+                    <tabBarItem key="tabBarItem" title="Livros" image="book.closed.fill" catalog="system" id="wfx-8J-1Xd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,7 +112,7 @@
                             <constraint firstItem="nZ0-25-dPJ" firstAttribute="top" secondItem="GCR-ca-Cvg" secondAttribute="top" id="h48-Y9-jRx"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Autores" id="udc-fs-ARd"/>
+                    <tabBarItem key="tabBarItem" title="Autores" image="person.2.fill" catalog="system" id="udc-fs-ARd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zrs-un-2RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,6 +120,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book.closed.fill" catalog="system" width="115" height="128"/>
+        <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
