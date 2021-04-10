@@ -83,7 +83,7 @@
         <!--Autores-->
         <scene sceneID="Ng1-rm-cNt">
             <objects>
-                <viewController id="UbJ-Mk-Nru" userLabel="Autores" sceneMemberID="viewController">
+                <viewController id="UbJ-Mk-Nru" userLabel="Autores" customClass="AuthorsViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A9V-9B-Bd9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,9 +95,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZ0-25-dPJ" customClass="NavigationBar" customModule="casadocodigo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="GBn-lv-ZMx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GCR-ca-Cvg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nZ0-25-dPJ" firstAttribute="leading" secondItem="GCR-ca-Cvg" secondAttribute="leading" id="IvI-wc-Q28"/>
+                            <constraint firstItem="nZ0-25-dPJ" firstAttribute="trailing" secondItem="GCR-ca-Cvg" secondAttribute="trailing" id="Vqp-L5-Fd6"/>
+                            <constraint firstItem="nZ0-25-dPJ" firstAttribute="top" secondItem="GCR-ca-Cvg" secondAttribute="top" id="h48-Y9-jRx"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Autores" id="udc-fs-ARd"/>
                 </viewController>
