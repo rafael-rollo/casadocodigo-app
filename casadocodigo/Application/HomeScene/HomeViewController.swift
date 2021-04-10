@@ -11,6 +11,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
     }
 }
 
