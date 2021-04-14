@@ -52,13 +52,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Livros!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPF-dm-5aj">
-                                <rect key="frame" x="186" y="438" width="51" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFj-lf-Nb6" customClass="NavigationBar" customModule="casadocodigo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -66,12 +59,31 @@
                                     <constraint firstAttribute="height" constant="60" id="xSS-Lb-ZCH"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos os Livros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDy-CZ-ad2" userLabel="Title Label">
+                                <rect key="frame" x="16" y="128" width="382" height="33"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" red="0.97254901960784312" green="0.58823529411764708" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIw-ia-eJT" userLabel="Divider">
+                                <rect key="frame" x="16" y="165" width="382" height="1"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.58823529409999997" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="KZg-g8-gDq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="iDy-CZ-ad2" firstAttribute="top" secondItem="bFj-lf-Nb6" secondAttribute="bottom" constant="24" id="52q-6u-6QM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iDy-CZ-ad2" secondAttribute="trailing" constant="16" id="Ble-pr-Zio"/>
+                            <constraint firstItem="iDy-CZ-ad2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="T7Q-f4-xO6"/>
                             <constraint firstItem="bFj-lf-Nb6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="U2X-sj-Z8T"/>
+                            <constraint firstItem="tIw-ia-eJT" firstAttribute="top" secondItem="iDy-CZ-ad2" secondAttribute="bottom" constant="4" id="aFv-vU-IQC"/>
+                            <constraint firstItem="tIw-ia-eJT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="adI-W1-P4u"/>
                             <constraint firstItem="bFj-lf-Nb6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="btK-Qo-WJH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tIw-ia-eJT" secondAttribute="trailing" constant="16" id="dUh-9d-zdI"/>
                             <constraint firstItem="bFj-lf-Nb6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fAR-FK-6W6"/>
                         </constraints>
                     </view>
