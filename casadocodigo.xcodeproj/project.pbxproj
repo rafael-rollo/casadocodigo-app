@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		056B2D73A68C2B95DA59722E /* Pods_casadocodigo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E310B58BA3708400EF6DB12 /* Pods_casadocodigo.framework */; };
+		39FD4A27F49B824CD4513439 /* Pods_casadocodigoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8553C8EDFFACD1469DF9CC /* Pods_casadocodigoTests.framework */; };
+		50F633408CDD2AA96F8B21DD /* Pods_casadocodigo_casadocodigoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7F1C48024E2D2363F9F9C2 /* Pods_casadocodigo_casadocodigoUITests.framework */; };
 		589C5BB42621302000CE3B93 /* StatusBarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB32621302000CE3B93 /* StatusBarBackground.swift */; };
 		589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB92621363300CE3B93 /* AuthorsViewController.swift */; };
 		58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69012621070300A8CEBD /* AppDelegate.swift */; };
@@ -39,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		526025A48484750F3D26EDDD /* Pods-casadocodigo-casadocodigoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casadocodigo-casadocodigoUITests.debug.xcconfig"; path = "Target Support Files/Pods-casadocodigo-casadocodigoUITests/Pods-casadocodigo-casadocodigoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		589C5BB32621302000CE3B93 /* StatusBarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarBackground.swift; sourceTree = "<group>"; };
 		589C5BB92621363300CE3B93 /* AuthorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsViewController.swift; sourceTree = "<group>"; };
 		58BF68FE2621070300A8CEBD /* casadocodigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = casadocodigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +61,14 @@
 		58BF69252621070500A8CEBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58BF694B2621155300A8CEBD /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		58BF695626211FE100A8CEBD /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
+		7A66D89A8354D0697252F58D /* Pods-casadocodigo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casadocodigo.debug.xcconfig"; path = "Target Support Files/Pods-casadocodigo/Pods-casadocodigo.debug.xcconfig"; sourceTree = "<group>"; };
+		7A7F1C48024E2D2363F9F9C2 /* Pods_casadocodigo_casadocodigoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casadocodigo_casadocodigoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A8553C8EDFFACD1469DF9CC /* Pods_casadocodigoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casadocodigoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E310B58BA3708400EF6DB12 /* Pods_casadocodigo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casadocodigo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE5E43B8B2974DC1DB4080E8 /* Pods-casadocodigo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casadocodigo.release.xcconfig"; path = "Target Support Files/Pods-casadocodigo/Pods-casadocodigo.release.xcconfig"; sourceTree = "<group>"; };
+		C4ADF5201D84106B71178689 /* Pods-casadocodigo-casadocodigoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casadocodigo-casadocodigoUITests.release.xcconfig"; path = "Target Support Files/Pods-casadocodigo-casadocodigoUITests/Pods-casadocodigo-casadocodigoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DCD4475460E446CBF3533373 /* Pods-casadocodigoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casadocodigoTests.debug.xcconfig"; path = "Target Support Files/Pods-casadocodigoTests/Pods-casadocodigoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F9129EBD87EB0CC74E09E68C /* Pods-casadocodigoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casadocodigoTests.release.xcconfig"; path = "Target Support Files/Pods-casadocodigoTests/Pods-casadocodigoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				056B2D73A68C2B95DA59722E /* Pods_casadocodigo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39FD4A27F49B824CD4513439 /* Pods_casadocodigoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50F633408CDD2AA96F8B21DD /* Pods_casadocodigo_casadocodigoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +114,8 @@
 				58BF69172621070500A8CEBD /* casadocodigoTests */,
 				58BF69222621070500A8CEBD /* casadocodigoUITests */,
 				58BF68FF2621070300A8CEBD /* Products */,
+				CF9A67A50484B6080FA3C8DF /* Pods */,
+				7E19E050CD273A9B6A71E7F3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -180,6 +197,30 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		7E19E050CD273A9B6A71E7F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E310B58BA3708400EF6DB12 /* Pods_casadocodigo.framework */,
+				7A7F1C48024E2D2363F9F9C2 /* Pods_casadocodigo_casadocodigoUITests.framework */,
+				7A8553C8EDFFACD1469DF9CC /* Pods_casadocodigoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF9A67A50484B6080FA3C8DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A66D89A8354D0697252F58D /* Pods-casadocodigo.debug.xcconfig */,
+				BE5E43B8B2974DC1DB4080E8 /* Pods-casadocodigo.release.xcconfig */,
+				526025A48484750F3D26EDDD /* Pods-casadocodigo-casadocodigoUITests.debug.xcconfig */,
+				C4ADF5201D84106B71178689 /* Pods-casadocodigo-casadocodigoUITests.release.xcconfig */,
+				DCD4475460E446CBF3533373 /* Pods-casadocodigoTests.debug.xcconfig */,
+				F9129EBD87EB0CC74E09E68C /* Pods-casadocodigoTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58BF69282621070500A8CEBD /* Build configuration list for PBXNativeTarget "casadocodigo" */;
 			buildPhases = (
+				85D5384150CD2974AB3BEE8D /* [CP] Check Pods Manifest.lock */,
 				58BF68FA2621070300A8CEBD /* Sources */,
 				58BF68FB2621070300A8CEBD /* Frameworks */,
 				58BF68FC2621070300A8CEBD /* Resources */,
+				37FCFAF27119444CB569D004 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,6 +247,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58BF692B2621070500A8CEBD /* Build configuration list for PBXNativeTarget "casadocodigoTests" */;
 			buildPhases = (
+				58664D85A87D207D36835335 /* [CP] Check Pods Manifest.lock */,
 				58BF69102621070500A8CEBD /* Sources */,
 				58BF69112621070500A8CEBD /* Frameworks */,
 				58BF69122621070500A8CEBD /* Resources */,
@@ -222,9 +266,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58BF692E2621070500A8CEBD /* Build configuration list for PBXNativeTarget "casadocodigoUITests" */;
 			buildPhases = (
+				EC29FC3F350185FE64BBC2B1 /* [CP] Check Pods Manifest.lock */,
 				58BF691B2621070500A8CEBD /* Sources */,
 				58BF691C2621070500A8CEBD /* Frameworks */,
 				58BF691D2621070500A8CEBD /* Resources */,
+				B7D08B54E3CC5A6911BBF6A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,6 +351,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37FCFAF27119444CB569D004 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-casadocodigo/Pods-casadocodigo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-casadocodigo/Pods-casadocodigo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-casadocodigo/Pods-casadocodigo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58664D85A87D207D36835335 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-casadocodigoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85D5384150CD2974AB3BEE8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-casadocodigo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7D08B54E3CC5A6911BBF6A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-casadocodigo-casadocodigoUITests/Pods-casadocodigo-casadocodigoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-casadocodigo-casadocodigoUITests/Pods-casadocodigo-casadocodigoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-casadocodigo-casadocodigoUITests/Pods-casadocodigo-casadocodigoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC29FC3F350185FE64BBC2B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-casadocodigo-casadocodigoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58BF68FA2621070300A8CEBD /* Sources */ = {
@@ -489,6 +638,7 @@
 		};
 		58BF69292621070500A8CEBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A66D89A8354D0697252F58D /* Pods-casadocodigo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -507,6 +657,7 @@
 		};
 		58BF692A2621070500A8CEBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE5E43B8B2974DC1DB4080E8 /* Pods-casadocodigo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -525,6 +676,7 @@
 		};
 		58BF692C2621070500A8CEBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCD4475460E446CBF3533373 /* Pods-casadocodigoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -546,6 +698,7 @@
 		};
 		58BF692D2621070500A8CEBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9129EBD87EB0CC74E09E68C /* Pods-casadocodigoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -567,6 +720,7 @@
 		};
 		58BF692F2621070500A8CEBD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 526025A48484750F3D26EDDD /* Pods-casadocodigo-casadocodigoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -586,6 +740,7 @@
 		};
 		58BF69302621070500A8CEBD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4ADF5201D84106B71178689 /* Pods-casadocodigo-casadocodigoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,6 @@
+framework module Pods_casadocodigo_casadocodigoUITests {
+  umbrella header "Pods-casadocodigo-casadocodigoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
