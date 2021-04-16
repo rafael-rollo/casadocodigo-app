@@ -127,9 +127,6 @@
                                         <constraint firstAttribute="trailing" secondItem="tIw-ia-eJT" secondAttribute="trailing" id="rdU-vp-AcO"/>
                                     </constraints>
                                     <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="8" bottom="8" trailing="8"/>
-                                    <connections>
-                                        <outlet property="titleLabel" destination="iDy-CZ-ad2" id="1Bk-xd-aC4"/>
-                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>

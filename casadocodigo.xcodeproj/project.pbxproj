@@ -14,6 +14,7 @@
 		582F98142628A40300354D65 /* BookShowcaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F98132628A40300354D65 /* BookShowcaseItem.swift */; };
 		582F981A2628AA2100354D65 /* ShowcaseBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F98192628AA2100354D65 /* ShowcaseBookCell.swift */; };
 		582F982A2628FFAF00354D65 /* ShowcaseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F98292628FFAE00354D65 /* ShowcaseHeaderView.swift */; };
+		582F98472629DBA900354D65 /* ShowcaseFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F98462629DBA900354D65 /* ShowcaseFlowLayout.swift */; };
 		589C5BB42621302000CE3B93 /* StatusBarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB32621302000CE3B93 /* StatusBarBackground.swift */; };
 		589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB92621363300CE3B93 /* AuthorsViewController.swift */; };
 		58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69012621070300A8CEBD /* AppDelegate.swift */; };
@@ -51,6 +52,7 @@
 		582F98132628A40300354D65 /* BookShowcaseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookShowcaseItem.swift; sourceTree = "<group>"; };
 		582F98192628AA2100354D65 /* ShowcaseBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseBookCell.swift; sourceTree = "<group>"; };
 		582F98292628FFAE00354D65 /* ShowcaseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseHeaderView.swift; sourceTree = "<group>"; };
+		582F98462629DBA900354D65 /* ShowcaseFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseFlowLayout.swift; sourceTree = "<group>"; };
 		589C5BB32621302000CE3B93 /* StatusBarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarBackground.swift; sourceTree = "<group>"; };
 		589C5BB92621363300CE3B93 /* AuthorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsViewController.swift; sourceTree = "<group>"; };
 		58BF68FE2621070300A8CEBD /* casadocodigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = casadocodigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 			children = (
 				582F98192628AA2100354D65 /* ShowcaseBookCell.swift */,
 				582F98292628FFAE00354D65 /* ShowcaseHeaderView.swift */,
+				582F98462629DBA900354D65 /* ShowcaseFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				582F982A2628FFAF00354D65 /* ShowcaseHeaderView.swift in Sources */,
+				582F98472629DBA900354D65 /* ShowcaseFlowLayout.swift in Sources */,
 				58BF69062621070300A8CEBD /* HomeViewController.swift in Sources */,
 				589C5BB42621302000CE3B93 /* StatusBarBackground.swift in Sources */,
 				582F980D2627D20200354D65 /* BookRepository.swift in Sources */,

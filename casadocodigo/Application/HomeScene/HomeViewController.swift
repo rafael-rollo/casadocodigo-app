@@ -7,11 +7,12 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class HomeViewController: UIViewController, UICollectionViewDataSource {
    
     // MARK: Attributes
     
     var showcase: [BookShowcaseItem] = []
+    let showcaseFlowLayoutImpl: UICollectionViewDelegateFlowLayout = ShowcaseFlowLayout()
     
     // MARK: IBOutlets
     
@@ -21,7 +22,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showcaseCollectionView.delegate = self
+        self.showcaseCollectionView.delegate = self.showcaseFlowLayoutImpl
         self.showcaseCollectionView.dataSource = self
         
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
@@ -57,29 +58,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         default:
             assert(false, "Invalid element type")
         }
-    }
-    
-    // MARK: UICVDFlowLayout impl
-    
-    private func calculateHeightProportional(to width: CGFloat) -> CGFloat {
-        let coverBaseWidth: CGFloat = 336
-        let coverBaseHeight: CGFloat = 480
-        
-        let proportionalHeight = coverBaseHeight * width / coverBaseWidth
-        return proportionalHeight
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellsPerLine = 2
-        let horizontalMargin = 16
-        let collectionWidth = Int(collectionView.bounds.width)
-        
-        let adjustedWidth = CGFloat((collectionWidth) / cellsPerLine - horizontalMargin)
-        
-        let labelHeight: CGFloat = 70
-        let adjustedHeight = self.calculateHeightProportional(to: adjustedWidth) + labelHeight
-    
-        return CGSize(width: adjustedWidth, height: adjustedHeight)
     }
     
     // MARK: View methods
