@@ -27,7 +27,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
         
-        BookRepository().showcase(completionHandler: self.updateShowcase)
+        self.loadShowcase();
     }
     
     // MARK: UICVDataSource impl
@@ -61,6 +61,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     }
     
     // MARK: View methods
+    
+    func loadShowcase() {
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.showcaseCollectionView)
+        indicator.startAnimating()
+    
+        BookRepository().showcase { books in
+            self.updateShowcase(with: books)
+            indicator.stopAnimating()
+        }
+    }
     
     func updateShowcase(with books: [BookShowcaseItem]) {
         self.showcase = books
