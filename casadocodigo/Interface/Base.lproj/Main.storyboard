@@ -166,20 +166,31 @@
                                     <constraint firstAttribute="height" constant="60" id="GBn-lv-ZMx"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="54d-CE-A0U">
+                                <rect key="frame" x="0.0" y="104" width="428" height="739"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GCR-ca-Cvg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nZ0-25-dPJ" firstAttribute="leading" secondItem="GCR-ca-Cvg" secondAttribute="leading" id="IvI-wc-Q28"/>
+                            <constraint firstItem="54d-CE-A0U" firstAttribute="trailing" secondItem="GCR-ca-Cvg" secondAttribute="trailing" id="JTH-6u-JSu"/>
                             <constraint firstItem="nZ0-25-dPJ" firstAttribute="trailing" secondItem="GCR-ca-Cvg" secondAttribute="trailing" id="Vqp-L5-Fd6"/>
                             <constraint firstItem="nZ0-25-dPJ" firstAttribute="top" secondItem="GCR-ca-Cvg" secondAttribute="top" id="h48-Y9-jRx"/>
+                            <constraint firstItem="54d-CE-A0U" firstAttribute="leading" secondItem="GCR-ca-Cvg" secondAttribute="leading" id="jw8-Vj-xIZ"/>
+                            <constraint firstItem="54d-CE-A0U" firstAttribute="bottom" secondItem="GCR-ca-Cvg" secondAttribute="bottom" id="k24-DM-dSd"/>
+                            <constraint firstItem="54d-CE-A0U" firstAttribute="top" secondItem="nZ0-25-dPJ" secondAttribute="bottom" id="phc-eT-PBb"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Autores" image="person.2.fill" catalog="system" id="udc-fs-ARd"/>
+                    <connections>
+                        <outlet property="authorsTableView" destination="54d-CE-A0U" id="u8F-G8-Xed"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zrs-un-2RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86.956521739130437" y="168.75"/>
+            <point key="canvasLocation" x="86.915887850467286" y="168.46652267818575"/>
         </scene>
     </scenes>
     <resources>
