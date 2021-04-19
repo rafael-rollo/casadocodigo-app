@@ -17,6 +17,8 @@
 		582F98472629DBA900354D65 /* ShowcaseFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F98462629DBA900354D65 /* ShowcaseFlowLayout.swift */; };
 		582F984D262A0A7600354D65 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F984C262A0A7500354D65 /* ActivityIndicatorView.swift */; };
 		582F9852262A144B00354D65 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F9851262A144B00354D65 /* Alert.swift */; };
+		582F9861262DD83000354D65 /* AuthorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F9860262DD83000354D65 /* AuthorRepository.swift */; };
+		582F9869262DDD5600354D65 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F9868262DDD5600354D65 /* Author.swift */; };
 		589C5BB42621302000CE3B93 /* StatusBarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB32621302000CE3B93 /* StatusBarBackground.swift */; };
 		589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB92621363300CE3B93 /* AuthorsViewController.swift */; };
 		58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69012621070300A8CEBD /* AppDelegate.swift */; };
@@ -57,6 +59,8 @@
 		582F98462629DBA900354D65 /* ShowcaseFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseFlowLayout.swift; sourceTree = "<group>"; };
 		582F984C262A0A7500354D65 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		582F9851262A144B00354D65 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		582F9860262DD83000354D65 /* AuthorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorRepository.swift; sourceTree = "<group>"; };
+		582F9868262DDD5600354D65 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		589C5BB32621302000CE3B93 /* StatusBarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarBackground.swift; sourceTree = "<group>"; };
 		589C5BB92621363300CE3B93 /* AuthorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsViewController.swift; sourceTree = "<group>"; };
 		58BF68FE2621070300A8CEBD /* casadocodigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = casadocodigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +120,7 @@
 		582F98022627D1A700354D65 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				582F985F262DD80E00354D65 /* Authors */,
 				582F98032627D1BD00354D65 /* Books */,
 			);
 			path = Domain;
@@ -141,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				582F98132628A40300354D65 /* BookShowcaseItem.swift */,
+				582F9868262DDD5600354D65 /* Author.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -161,6 +167,14 @@
 				582F984C262A0A7500354D65 /* ActivityIndicatorView.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		582F985F262DD80E00354D65 /* Authors */ = {
+			isa = PBXGroup;
+			children = (
+				582F9860262DD83000354D65 /* AuthorRepository.swift */,
+			);
+			path = Authors;
 			sourceTree = "<group>";
 		};
 		589C5BB82621361100CE3B93 /* AuthorsScreen */ = {
@@ -536,6 +550,8 @@
 				582F9852262A144B00354D65 /* Alert.swift in Sources */,
 				582F980D2627D20200354D65 /* BookRepository.swift in Sources */,
 				582F98142628A40300354D65 /* BookShowcaseItem.swift in Sources */,
+				582F9861262DD83000354D65 /* AuthorRepository.swift in Sources */,
+				582F9869262DDD5600354D65 /* Author.swift in Sources */,
 				58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */,
 				589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */,
 				582F981A2628AA2100354D65 /* ShowcaseBookCell.swift in Sources */,
