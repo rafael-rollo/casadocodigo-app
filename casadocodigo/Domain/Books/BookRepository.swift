@@ -10,7 +10,7 @@ import Alamofire
 
 class BookRepository: NSObject {
 
-    static let bookBasePath = "https://casadocodigo-api.herokuapp.com/api/boor"
+    static let bookBasePath = "https://casadocodigo-api.herokuapp.com/api/book"
     
     func showcase(completionHandler: @escaping ([BookShowcaseItem]) -> Void, failureHandler: @escaping () -> Void) {
         let headers: HTTPHeaders = [
