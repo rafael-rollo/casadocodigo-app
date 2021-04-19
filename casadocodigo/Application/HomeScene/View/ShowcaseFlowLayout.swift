@@ -8,8 +8,8 @@
 import UIKit
 
 fileprivate struct LayoutProperties {
-    static let horizontalMargin: Int = 16
-    static let cellsPerLine: Int = 2
+    static let cellsPerLine: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 2 : 4
+    static let horizontalSpacing: CGFloat = 16
     static let labelHeight: CGFloat = 70
 }
 
@@ -23,11 +23,14 @@ class ShowcaseFlowLayout: NSObject, UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let collectionWidth = Int(collectionView.bounds.width)
-        
-        let adjustedCellWidth = CGFloat(collectionWidth / LayoutProperties.cellsPerLine - LayoutProperties.horizontalMargin)
-        let adjustedCellHeight = self.calculateCellHeightProportional(to: adjustedCellWidth) + LayoutProperties.labelHeight
+        let collectionWidth = collectionView.bounds.width
     
+        let paddingsPerLine = LayoutProperties.cellsPerLine - 1
+        let spacingOffset = LayoutProperties.horizontalSpacing * paddingsPerLine / LayoutProperties.cellsPerLine
+        
+        let adjustedCellWidth = collectionWidth / LayoutProperties.cellsPerLine - spacingOffset
+        let adjustedCellHeight = self.calculateCellHeightProportional(to: adjustedCellWidth) + LayoutProperties.labelHeight
+        
         return CGSize(width: adjustedCellWidth, height: adjustedCellHeight)
     }
 }
