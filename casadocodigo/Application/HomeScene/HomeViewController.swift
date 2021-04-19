@@ -65,11 +65,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     func loadShowcase() {
         let indicator = UIActivityIndicatorView.customIndicator(to: self.showcaseCollectionView)
         indicator.startAnimating()
-    
-        BookRepository().showcase { books in
+        
+        BookRepository().showcase { (books) in
             self.updateShowcase(with: books)
             indicator.stopAnimating()
+        } failureHandler: {
+            indicator.stopAnimating()
+            Alert.show(title: "Ops", message: "Could not load the book showcase from the API", in: self)
         }
+
     }
     
     func updateShowcase(with books: [BookShowcaseItem]) {
