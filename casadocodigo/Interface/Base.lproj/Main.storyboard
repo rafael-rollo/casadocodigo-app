@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2zo-8l-zRe">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -49,67 +50,117 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFj-lf-Nb6" customClass="NavigationBar" customModule="casadocodigo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="xSS-Lb-ZCH"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos os Livros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDy-CZ-ad2" userLabel="Title Label">
-                                <rect key="frame" x="16" y="128" width="382" height="33"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" red="0.97254901960784312" green="0.58823529411764708" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIw-ia-eJT" userLabel="Divider">
-                                <rect key="frame" x="16" y="165" width="382" height="1"/>
-                                <color key="backgroundColor" red="0.97254901959999995" green="0.58823529409999997" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="KZg-g8-gDq"/>
-                                </constraints>
-                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cr6-2w-0gO">
+                                <rect key="frame" x="16" y="104" width="396" height="739"/>
+                                <color key="backgroundColor" red="0.98431372549019602" green="0.98039215686274506" blue="0.97647058823529409" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="16" id="Rhe-fT-ejB">
+                                    <size key="itemSize" width="160" height="289"/>
+                                    <size key="headerReferenceSize" width="50" height="53"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="16" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ShowcaseBookCell" id="IXu-ah-sND" customClass="ShowcaseBookCell" customModule="casadocodigo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="69" width="160" height="299"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="L7t-U2-mih">
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="299"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcB-Zl-QPh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="229"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7a-kw-a2X">
+                                                    <rect key="frame" x="8" y="229" width="144" height="70"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                    <color key="textColor" red="0.42352941176470588" green="0.41568627450980389" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="160" height="299"/>
+                                        <connections>
+                                            <outlet property="coverImageView" destination="zcB-Zl-QPh" id="I4G-vF-q2k"/>
+                                            <outlet property="titleLabel" destination="X7a-kw-a2X" id="F7k-BO-zJZ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ShowcaseHeaderView" id="8NV-Nb-NgJ" customClass="ShowcaseHeaderView" customModule="casadocodigo" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="396" height="53"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos os Livros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDy-CZ-ad2" userLabel="Title Label">
+                                            <rect key="frame" x="8" y="16" width="380" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="zDf-KK-HFd"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                            <color key="textColor" red="0.97254901960784312" green="0.58823529411764708" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIw-ia-eJT" userLabel="Divider">
+                                            <rect key="frame" x="0.0" y="52" width="396" height="1"/>
+                                            <color key="backgroundColor" red="0.97254901959999995" green="0.58823529409999997" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="ZmC-Cl-fQQ"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="iDy-CZ-ad2" firstAttribute="top" secondItem="8NV-Nb-NgJ" secondAttribute="topMargin" id="ITj-3u-1pe"/>
+                                        <constraint firstItem="iDy-CZ-ad2" firstAttribute="leading" secondItem="8NV-Nb-NgJ" secondAttribute="leadingMargin" id="LT5-7U-w4a"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="iDy-CZ-ad2" secondAttribute="trailing" id="QId-WZ-aAN"/>
+                                        <constraint firstItem="tIw-ia-eJT" firstAttribute="leading" secondItem="8NV-Nb-NgJ" secondAttribute="leading" id="Uz7-yO-lBV"/>
+                                        <constraint firstItem="tIw-ia-eJT" firstAttribute="top" secondItem="iDy-CZ-ad2" secondAttribute="bottom" constant="4" id="djj-4j-ssp"/>
+                                        <constraint firstAttribute="trailing" secondItem="tIw-ia-eJT" secondAttribute="trailing" id="rdU-vp-AcO"/>
+                                    </constraints>
+                                    <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="8" bottom="8" trailing="8"/>
+                                </collectionReusableView>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iDy-CZ-ad2" firstAttribute="top" secondItem="bFj-lf-Nb6" secondAttribute="bottom" constant="24" id="52q-6u-6QM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iDy-CZ-ad2" secondAttribute="trailing" constant="16" id="Ble-pr-Zio"/>
-                            <constraint firstItem="iDy-CZ-ad2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="T7Q-f4-xO6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cr6-2w-0gO" secondAttribute="bottom" id="5xk-EP-l2W"/>
+                            <constraint firstItem="cr6-2w-0gO" firstAttribute="top" secondItem="bFj-lf-Nb6" secondAttribute="bottom" id="ALO-Ij-RkQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cr6-2w-0gO" secondAttribute="trailing" constant="16" id="Ehs-py-6tf"/>
                             <constraint firstItem="bFj-lf-Nb6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="U2X-sj-Z8T"/>
-                            <constraint firstItem="tIw-ia-eJT" firstAttribute="top" secondItem="iDy-CZ-ad2" secondAttribute="bottom" constant="4" id="aFv-vU-IQC"/>
-                            <constraint firstItem="tIw-ia-eJT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="adI-W1-P4u"/>
                             <constraint firstItem="bFj-lf-Nb6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="btK-Qo-WJH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tIw-ia-eJT" secondAttribute="trailing" constant="16" id="dUh-9d-zdI"/>
                             <constraint firstItem="bFj-lf-Nb6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fAR-FK-6W6"/>
+                            <constraint firstItem="cr6-2w-0gO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xQv-Ud-jRf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Livros" image="book.closed.fill" catalog="system" id="wfx-8J-1Xd"/>
+                    <connections>
+                        <outlet property="showcaseCollectionView" destination="cr6-2w-0gO" id="gNv-dH-F5s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-694.20289855072474" y="168.75"/>
+            <point key="canvasLocation" x="-695.32710280373828" y="168.46652267818575"/>
         </scene>
         <!--Autores-->
         <scene sceneID="Ng1-rm-cNt">
             <objects>
                 <viewController id="UbJ-Mk-Nru" userLabel="Autores" customClass="AuthorsViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A9V-9B-Bd9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Autores!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIb-zU-cwL">
-                                <rect key="frame" x="182" y="438" width="64" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZ0-25-dPJ" customClass="NavigationBar" customModule="casadocodigo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="GBn-lv-ZMx"/>
@@ -128,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zrs-un-2RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="87" y="169"/>
+            <point key="canvasLocation" x="86.956521739130437" y="168.75"/>
         </scene>
     </scenes>
     <resources>
