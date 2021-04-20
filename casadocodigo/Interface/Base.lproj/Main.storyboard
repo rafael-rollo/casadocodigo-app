@@ -62,16 +62,16 @@
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cr6-2w-0gO">
                                 <rect key="frame" x="16" y="104" width="396" height="739"/>
-                                <color key="backgroundColor" red="0.98431372549019602" green="0.98039215686274506" blue="0.97647058823529409" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="16" id="Rhe-fT-ejB">
                                     <size key="itemSize" width="160" height="289"/>
-                                    <size key="headerReferenceSize" width="50" height="53"/>
+                                    <size key="headerReferenceSize" width="50" height="54"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="16" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ShowcaseBookCell" id="IXu-ah-sND" customClass="ShowcaseBookCell" customModule="casadocodigo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="69" width="160" height="299"/>
+                                        <rect key="frame" x="0.0" y="70" width="160" height="299"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="L7t-U2-mih">
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="299"/>
@@ -98,7 +98,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ShowcaseHeaderView" id="8NV-Nb-NgJ" customClass="ShowcaseHeaderView" customModule="casadocodigo" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="396" height="53"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="396" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos os Livros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDy-CZ-ad2" userLabel="Title Label">
@@ -106,7 +106,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="32" id="zDf-KK-HFd"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
                                             <color key="textColor" red="0.97254901960784312" green="0.58823529411764708" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -159,33 +159,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZ0-25-dPJ" customClass="NavigationBar" customModule="casadocodigo" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="453-mx-4fs" customClass="NavigationBar" customModule="casadocodigo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="428" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="GBn-lv-ZMx"/>
+                                    <constraint firstAttribute="height" constant="60" id="VM4-dB-9Iu"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="54d-CE-A0U">
-                                <rect key="frame" x="0.0" y="104" width="428" height="739"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UC3-Ud-cFa">
+                                <rect key="frame" x="16" y="104" width="396" height="739"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="0.0" id="D4F-ry-cvl">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="50" height="54"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="16" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AuthorCell" id="Ocr-ia-O4P" customClass="AuthorCell" customModule="casadocodigo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="70" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Apb-mI-1L5">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AuthorsHeaderView" id="bEv-Jx-M4f" customClass="AuthorsHeaderView" customModule="casadocodigo" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="396" height="54"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nossos Autores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boC-p6-hBq" userLabel="Title Label">
+                                            <rect key="frame" x="8" y="17" width="380" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="LMm-Ce-kQp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
+                                            <color key="textColor" red="0.97254901959999995" green="0.58823529409999997" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOe-YE-jzk" userLabel="Divider">
+                                            <rect key="frame" x="0.0" y="53" width="396" height="1"/>
+                                            <color key="backgroundColor" red="0.97254901959999995" green="0.58823529409999997" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="ThE-sa-v2s"/>
+                                                <constraint firstAttribute="height" constant="1" id="tnJ-CF-IH4"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ZOe-YE-jzk" firstAttribute="top" secondItem="boC-p6-hBq" secondAttribute="bottom" constant="4" id="4M9-WP-zu8"/>
+                                        <constraint firstAttribute="bottom" secondItem="ZOe-YE-jzk" secondAttribute="bottom" id="89A-TX-XC9"/>
+                                        <constraint firstItem="boC-p6-hBq" firstAttribute="leading" secondItem="bEv-Jx-M4f" secondAttribute="leading" constant="8" id="GYH-iQ-avv"/>
+                                        <constraint firstItem="ZOe-YE-jzk" firstAttribute="leading" secondItem="bEv-Jx-M4f" secondAttribute="leading" id="W82-wh-G3t"/>
+                                        <constraint firstItem="ZOe-YE-jzk" firstAttribute="top" secondItem="boC-p6-hBq" secondAttribute="bottom" constant="4" id="igK-gr-atX"/>
+                                        <constraint firstAttribute="trailing" secondItem="ZOe-YE-jzk" secondAttribute="trailing" id="vY9-Sq-mZ9"/>
+                                        <constraint firstAttribute="trailing" secondItem="boC-p6-hBq" secondAttribute="trailing" constant="8" id="zD3-v1-Atk"/>
+                                    </constraints>
+                                </collectionReusableView>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GCR-ca-Cvg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nZ0-25-dPJ" firstAttribute="leading" secondItem="GCR-ca-Cvg" secondAttribute="leading" id="IvI-wc-Q28"/>
-                            <constraint firstItem="54d-CE-A0U" firstAttribute="trailing" secondItem="GCR-ca-Cvg" secondAttribute="trailing" id="JTH-6u-JSu"/>
-                            <constraint firstItem="nZ0-25-dPJ" firstAttribute="trailing" secondItem="GCR-ca-Cvg" secondAttribute="trailing" id="Vqp-L5-Fd6"/>
-                            <constraint firstItem="nZ0-25-dPJ" firstAttribute="top" secondItem="GCR-ca-Cvg" secondAttribute="top" id="h48-Y9-jRx"/>
-                            <constraint firstItem="54d-CE-A0U" firstAttribute="leading" secondItem="GCR-ca-Cvg" secondAttribute="leading" id="jw8-Vj-xIZ"/>
-                            <constraint firstItem="54d-CE-A0U" firstAttribute="bottom" secondItem="GCR-ca-Cvg" secondAttribute="bottom" id="k24-DM-dSd"/>
-                            <constraint firstItem="54d-CE-A0U" firstAttribute="top" secondItem="nZ0-25-dPJ" secondAttribute="bottom" id="phc-eT-PBb"/>
+                            <constraint firstItem="453-mx-4fs" firstAttribute="leading" secondItem="GCR-ca-Cvg" secondAttribute="leading" id="1ZV-xl-14C"/>
+                            <constraint firstItem="UC3-Ud-cFa" firstAttribute="leading" secondItem="GCR-ca-Cvg" secondAttribute="leading" constant="16" id="4gr-FL-ZIL"/>
+                            <constraint firstItem="GCR-ca-Cvg" firstAttribute="trailing" secondItem="453-mx-4fs" secondAttribute="trailing" id="Bhu-Sf-0rs"/>
+                            <constraint firstItem="GCR-ca-Cvg" firstAttribute="bottom" secondItem="UC3-Ud-cFa" secondAttribute="bottom" id="H05-tW-SRz"/>
+                            <constraint firstItem="453-mx-4fs" firstAttribute="top" secondItem="GCR-ca-Cvg" secondAttribute="top" id="UCP-9P-3mh"/>
+                            <constraint firstItem="GCR-ca-Cvg" firstAttribute="trailing" secondItem="UC3-Ud-cFa" secondAttribute="trailing" constant="16" id="Whk-gN-BWn"/>
+                            <constraint firstItem="UC3-Ud-cFa" firstAttribute="top" secondItem="453-mx-4fs" secondAttribute="bottom" id="csA-bR-tk8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Autores" image="person.2.fill" catalog="system" id="udc-fs-ARd"/>
                     <connections>
-                        <outlet property="authorsTableView" destination="54d-CE-A0U" id="u8F-G8-Xed"/>
+                        <outlet property="authorsCollectionView" destination="UC3-Ud-cFa" id="ZzP-2q-ZbD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zrs-un-2RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

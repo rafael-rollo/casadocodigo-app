@@ -7,44 +7,59 @@
 
 import UIKit
 
-class AuthorsViewController: UIViewController, UITableViewDataSource {
-    
+class AuthorsViewController: UIViewController, UICollectionViewDataSource {
+   
     // MARK: Attributes
     
     var authors: [Author] = []
     
     // MARK: IBOutlets
     
-    @IBOutlet weak var authorsTableView: UITableView!
+    @IBOutlet weak var authorsCollectionView: UICollectionView!
     
     // MARK: View lifecycle methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.authorsTableView.dataSource = self
+        self.authorsCollectionView.dataSource = self
         
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
         
         AuthorRepository().allAuthors { authors in
             self.authors = authors
-            self.authorsTableView.reloadData()
+            self.authorsCollectionView.reloadData()
         } failureHandler: {
             Alert.show(title: "Ops", message: "Could not possible to load our authors", in: self)
         }
     }
     
-    // MARK: UITVDataSource impl
+    // MARK: UICVDataSource Impl
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.authors.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let author = self.authors[indexPath.row]
-        
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = author.firstName
-        
-        return cell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let authorCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AuthorCell", for: indexPath) as! AuthorCell
+        return authorCell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "AuthorsHeaderView", for: indexPath)
+                    as? AuthorsHeaderView else {
+                fatalError("Invalid view type")
+            }
+            return headerView
+            
+        default:
+            assert(false, "Invalid element type")
+        }
+    }
+}
+
+class AuthorsHeaderView: UICollectionReusableView {
+    
 }
