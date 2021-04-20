@@ -25,12 +25,7 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource {
         
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
         
-        AuthorRepository().allAuthors { authors in
-            self.authors = authors
-            self.authorsCollectionView.reloadData()
-        } failureHandler: {
-            Alert.show(title: "Ops", message: "Could not possible to load our authors", in: self)
-        }
+        loadAuthorsList()
     }
     
     // MARK: UICVDataSource Impl
@@ -57,6 +52,27 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource {
         default:
             assert(false, "Invalid element type")
         }
+    }
+    
+    // MARK: View methods
+    
+    func loadAuthorsList() {
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.authorsCollectionView)
+        indicator.startAnimating()
+        
+        AuthorRepository().allAuthors { authors in
+            self.updateAuthorsList(with: authors)
+            indicator.stopAnimating()
+            
+        } failureHandler: {
+            indicator.stopAnimating()
+            Alert.show(title: "Ops", message: "Could not possible to load our authors", in: self)
+        }
+    }
+    
+    func updateAuthorsList(with authors: [Author]) {
+        self.authors = authors
+        self.authorsCollectionView.reloadData()
     }
 }
 
