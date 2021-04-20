@@ -101,32 +101,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="396" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos os Livros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDy-CZ-ad2" userLabel="Title Label">
-                                            <rect key="frame" x="8" y="16" width="380" height="32"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="32" id="zDf-KK-HFd"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
-                                            <color key="textColor" red="0.97254901960784312" green="0.58823529411764708" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIw-ia-eJT" userLabel="Divider">
-                                            <rect key="frame" x="0.0" y="52" width="396" height="1"/>
-                                            <color key="backgroundColor" red="0.97254901959999995" green="0.58823529409999997" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="ZmC-Cl-fQQ"/>
-                                            </constraints>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3dp-Mc-jJm" customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="396" height="54"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="iDy-CZ-ad2" firstAttribute="top" secondItem="8NV-Nb-NgJ" secondAttribute="topMargin" id="ITj-3u-1pe"/>
-                                        <constraint firstItem="iDy-CZ-ad2" firstAttribute="leading" secondItem="8NV-Nb-NgJ" secondAttribute="leadingMargin" id="LT5-7U-w4a"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="iDy-CZ-ad2" secondAttribute="trailing" id="QId-WZ-aAN"/>
-                                        <constraint firstItem="tIw-ia-eJT" firstAttribute="leading" secondItem="8NV-Nb-NgJ" secondAttribute="leading" id="Uz7-yO-lBV"/>
-                                        <constraint firstItem="tIw-ia-eJT" firstAttribute="top" secondItem="iDy-CZ-ad2" secondAttribute="bottom" constant="4" id="djj-4j-ssp"/>
-                                        <constraint firstAttribute="trailing" secondItem="tIw-ia-eJT" secondAttribute="trailing" id="rdU-vp-AcO"/>
-                                    </constraints>
                                     <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="8" bottom="8" trailing="8"/>
+                                    <connections>
+                                        <outlet property="sectionTitle" destination="3dp-Mc-jJm" id="evk-YN-MbJ"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>

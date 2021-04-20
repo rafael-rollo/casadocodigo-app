@@ -53,7 +53,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                     as? ShowcaseHeaderView else {
                 fatalError("Invalid view type")
             }
-            return headerView
+            return headerView.build()
             
         default:
             assert(false, "Invalid element type")

@@ -9,4 +9,10 @@ import UIKit
 
 class ShowcaseHeaderView: UICollectionReusableView {
         
+    @IBOutlet weak var sectionTitle: SectionTitle!
+    
+    func build() -> ShowcaseHeaderView {
+        self.sectionTitle.label.text = "Todos os Livros"
+        return self
+    }
 }
