@@ -189,33 +189,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="396" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nossos Autores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boC-p6-hBq" userLabel="Title Label">
-                                            <rect key="frame" x="8" y="17" width="380" height="32"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="32" id="LMm-Ce-kQp"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
-                                            <color key="textColor" red="0.97254901959999995" green="0.58823529409999997" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZOe-YE-jzk" userLabel="Divider">
-                                            <rect key="frame" x="0.0" y="53" width="396" height="1"/>
-                                            <color key="backgroundColor" red="0.97254901959999995" green="0.58823529409999997" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="ThE-sa-v2s"/>
-                                                <constraint firstAttribute="height" constant="1" id="tnJ-CF-IH4"/>
-                                            </constraints>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZe-gK-ihO" customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="396" height="54"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="ZOe-YE-jzk" firstAttribute="top" secondItem="boC-p6-hBq" secondAttribute="bottom" constant="4" id="4M9-WP-zu8"/>
-                                        <constraint firstAttribute="bottom" secondItem="ZOe-YE-jzk" secondAttribute="bottom" id="89A-TX-XC9"/>
-                                        <constraint firstItem="boC-p6-hBq" firstAttribute="leading" secondItem="bEv-Jx-M4f" secondAttribute="leading" constant="8" id="GYH-iQ-avv"/>
-                                        <constraint firstItem="ZOe-YE-jzk" firstAttribute="leading" secondItem="bEv-Jx-M4f" secondAttribute="leading" id="W82-wh-G3t"/>
-                                        <constraint firstItem="ZOe-YE-jzk" firstAttribute="top" secondItem="boC-p6-hBq" secondAttribute="bottom" constant="4" id="igK-gr-atX"/>
-                                        <constraint firstAttribute="trailing" secondItem="ZOe-YE-jzk" secondAttribute="trailing" id="vY9-Sq-mZ9"/>
-                                        <constraint firstAttribute="trailing" secondItem="boC-p6-hBq" secondAttribute="trailing" constant="8" id="zD3-v1-Atk"/>
-                                    </constraints>
+                                    <connections>
+                                        <outlet property="sectionTitle" destination="sZe-gK-ihO" id="02m-FV-Rde"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>

@@ -47,7 +47,7 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource {
                     as? AuthorsHeaderView else {
                 fatalError("Invalid view type")
             }
-            return headerView
+            return headerView.build()
             
         default:
             assert(false, "Invalid element type")
@@ -74,8 +74,4 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource {
         self.authors = authors
         self.authorsCollectionView.reloadData()
     }
-}
-
-class AuthorsHeaderView: UICollectionReusableView {
-    
 }
