@@ -177,12 +177,12 @@
 			path = Authors;
 			sourceTree = "<group>";
 		};
-		589C5BB82621361100CE3B93 /* AuthorsScreen */ = {
+		589C5BB82621361100CE3B93 /* AuthorsScene */ = {
 			isa = PBXGroup;
 			children = (
 				589C5BB92621363300CE3B93 /* AuthorsViewController.swift */,
 			);
-			path = AuthorsScreen;
+			path = AuthorsScene;
 			sourceTree = "<group>";
 		};
 		58BF68F52621070300A8CEBD = {
@@ -255,7 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				58BF693926210A5B00A8CEBD /* HomeScene */,
-				589C5BB82621361100CE3B93 /* AuthorsScreen */,
+				589C5BB82621361100CE3B93 /* AuthorsScene */,
 			);
 			path = Application;
 			sourceTree = "<group>";
