@@ -6,7 +6,37 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class AuthorCell: UICollectionViewCell {
     
+    @IBOutlet weak var authorPictureView: UIImageView!
+    @IBOutlet weak var authorNameLabel: UILabel!
+    
+    @IBOutlet weak var publicationCountLabel: UILabel!
+    @IBOutlet weak var authorBioLabel: UILabel!
+
+    func setFrom(_ author: Author) {
+        configureBorders()
+        
+        self.authorPictureView.af.setImage(withURL: author.profilePicturePath)
+        roundShape(for: self.authorPictureView)
+        
+        self.authorNameLabel.text = author.fullName
+        self.publicationCountLabel.text = "Livros publicados \(author.publishedBooks)"
+        
+        self.authorBioLabel.text = "\"\(author.bio)\""
+    }
+    
+    private func roundShape(for view: UIView) {
+        view.layer.cornerRadius = view.bounds.width / 2
+    }
+    
+    private func configureBorders() {
+        self.layer.cornerRadius = 8
+        self.layer.borderWidth = 0.2
+        self.layer.borderColor = UIColor.lightGray.cgColor
+    
+        self.dropShadow()
+    }
 }

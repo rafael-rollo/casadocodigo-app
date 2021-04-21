@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AuthorsViewController: UIViewController, UICollectionViewDataSource {
+class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
     // MARK: Attributes
     
@@ -22,6 +22,7 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.authorsCollectionView.dataSource = self
+        self.authorsCollectionView.delegate = self
         
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
         
@@ -35,7 +36,11 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let author = self.authors[indexPath.row]
+        
         let authorCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AuthorCell", for: indexPath) as! AuthorCell
+        authorCell.setFrom(author)
+        
         return authorCell
     }
     
@@ -52,6 +57,17 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource {
         default:
             assert(false, "Invalid element type")
         }
+    }
+    
+    // MARK: UICVDFlowLayout Impl
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let horizontalMargin: CGFloat = 16
+        
+        let superviewWidth: CGFloat = collectionView.bounds.width
+        let adjustedWidth = superviewWidth - horizontalMargin * 2
+        
+        return CGSize(width: adjustedWidth, height: 206)
     }
     
     // MARK: View methods

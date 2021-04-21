@@ -16,6 +16,10 @@ struct Author: Decodable {
     let technologies: [String]
     let publishedBooks: Int
     
+    var fullName: String {
+        return "\(self.firstName) \(self.lastName)"
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case firstName
