@@ -14,6 +14,8 @@ class AuthorCell: UICollectionViewCell {
     @IBOutlet weak var authorNameLabel: UILabel!
     
     @IBOutlet weak var publicationCountLabel: UILabel!
+    @IBOutlet weak var technologiesList: TagsHorizontalList!
+    
     @IBOutlet weak var authorBioLabel: UILabel!
 
     func setFrom(_ author: Author) {
@@ -25,6 +27,7 @@ class AuthorCell: UICollectionViewCell {
         self.authorNameLabel.text = author.fullName
         self.publicationCountLabel.text = "Livros publicados \(author.publishedBooks)"
         
+        self.technologiesList.setFrom(author.technologies)
         self.authorBioLabel.text = "\"\(author.bio)\""
     }
     

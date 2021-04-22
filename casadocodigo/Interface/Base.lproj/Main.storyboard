@@ -188,36 +188,12 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tecnologias:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rf2-iQ-R4J">
-                                                                    <rect key="frame" x="8" y="68" width="224" height="18"/>
+                                                                    <rect key="frame" x="8" y="65" width="224" height="18"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                                     <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzF-zx-Yy7">
-                                                                    <rect key="frame" x="8" y="90" width="89" height="30"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <color key="backgroundColor" red="0.97254901959999995" green="0.58823529409999997" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <state key="normal" title="JavaScript">
-                                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </state>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzd-zS-Uex">
-                                                                    <rect key="frame" x="105" y="90" width="55" height="30"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <color key="backgroundColor" red="0.97254901959999995" green="0.58823529409999997" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <state key="normal" title="Java">
-                                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </state>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rg6-Qe-gr2">
-                                                                    <rect key="frame" x="168" y="90" width="55" height="30"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <color key="backgroundColor" red="0.97254901959999995" green="0.58823529409999997" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    <state key="normal" title="React">
-                                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </state>
-                                                                </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Livros Publicados: 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwi-fh-owN">
                                                                     <rect key="frame" x="8" y="25" width="224" height="18"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -225,6 +201,11 @@
                                                                     <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AWs-To-FdB" customClass="TagsHorizontalList" customModule="casadocodigo" customModuleProvider="target">
+                                                                    <rect key="frame" x="8" y="87" width="224" height="33"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                </view>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
@@ -262,6 +243,7 @@
                                             <outlet property="authorNameLabel" destination="805-OL-5NH" id="S1T-0t-ZTb"/>
                                             <outlet property="authorPictureView" destination="SGD-i0-7mq" id="AHm-d1-IkW"/>
                                             <outlet property="publicationCountLabel" destination="Hwi-fh-owN" id="IWn-rd-t9x"/>
+                                            <outlet property="technologiesList" destination="AWs-To-FdB" id="ogj-8b-i1d"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
