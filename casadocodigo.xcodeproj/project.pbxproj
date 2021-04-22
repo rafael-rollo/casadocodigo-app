@@ -216,6 +216,24 @@
 			path = Authors;
 			sourceTree = "<group>";
 		};
+		583C555B2631F644002846CF /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				58BF694B2621155300A8CEBD /* NavigationBar.swift */,
+				58BF695626211FE100A8CEBD /* NavigationBar.xib */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		583C555C2631F654002846CF /* SectionTitle */ = {
+			isa = PBXGroup;
+			children = (
+				582AD3AB262F6F0800705D6D /* SectionTitle.swift */,
+				582AD3AC262F6F0800705D6D /* SectionTitle.xib */,
+			);
+			path = SectionTitle;
+			sourceTree = "<group>";
+		};
 		589C5BB82621361100CE3B93 /* AuthorsScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,10 +331,8 @@
 			isa = PBXGroup;
 			children = (
 				582F9851262A144B00354D65 /* Alert.swift */,
-				58BF694B2621155300A8CEBD /* NavigationBar.swift */,
-				58BF695626211FE100A8CEBD /* NavigationBar.xib */,
-				582AD3AB262F6F0800705D6D /* SectionTitle.swift */,
-				582AD3AC262F6F0800705D6D /* SectionTitle.xib */,
+				583C555B2631F644002846CF /* NavigationBar */,
+				583C555C2631F654002846CF /* SectionTitle */,
 				589C5BB32621302000CE3B93 /* StatusBarBackground.swift */,
 				5827D827262FE63100D20B19 /* TagsHorizontalList */,
 			);
