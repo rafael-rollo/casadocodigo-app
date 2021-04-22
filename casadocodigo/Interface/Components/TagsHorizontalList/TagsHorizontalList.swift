@@ -60,9 +60,7 @@ class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDe
         guard let size = tagCell.getMinSizeForCell(with: item, in: collectionView) else {
             return CGSize(width: 100, height: collectionView.bounds.height)
         }
-        
-        debugPrint("OIA")
-        debugPrint(size)
+
         return size
     }
     
