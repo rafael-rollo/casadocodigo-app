@@ -41,6 +41,7 @@
 		58BF694C2621155300A8CEBD /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF694B2621155300A8CEBD /* NavigationBar.swift */; };
 		58BF695726211FE100A8CEBD /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58BF695626211FE100A8CEBD /* NavigationBar.xib */; };
 		58CB457D263B612E005D19F2 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB457C263B612D005D19F2 /* Views.swift */; };
+		58FA532C26334E44000390BF /* NewAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA532B26334E44000390BF /* NewAuthorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		58BF694B2621155300A8CEBD /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		58BF695626211FE100A8CEBD /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		58CB457C263B612D005D19F2 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		58FA532B26334E44000390BF /* NewAuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAuthorViewController.swift; sourceTree = "<group>"; };
 		7A66D89A8354D0697252F58D /* Pods-casadocodigo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casadocodigo.debug.xcconfig"; path = "Target Support Files/Pods-casadocodigo/Pods-casadocodigo.debug.xcconfig"; sourceTree = "<group>"; };
 		7A7F1C48024E2D2363F9F9C2 /* Pods_casadocodigo_casadocodigoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casadocodigo_casadocodigoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8553C8EDFFACD1469DF9CC /* Pods_casadocodigoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casadocodigoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -317,6 +319,7 @@
 			children = (
 				58BF693926210A5B00A8CEBD /* HomeScene */,
 				589C5BB82621361100CE3B93 /* AuthorsScene */,
+				58FA532A26334E00000390BF /* NewAuthorScene */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -348,6 +351,14 @@
 				58CB457C263B612D005D19F2 /* Views.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		58FA532A26334E00000390BF /* NewAuthorScene */ = {
+			isa = PBXGroup;
+			children = (
+				58FA532B26334E44000390BF /* NewAuthorViewController.swift */,
+			);
+			path = NewAuthorScene;
 			sourceTree = "<group>";
 		};
 		7E19E050CD273A9B6A71E7F3 /* Frameworks */ = {
@@ -630,6 +641,7 @@
 				5827D80B262FBFC700D20B19 /* CollectionViewCell.swift in Sources */,
 				582F9869262DDD5600354D65 /* Author.swift in Sources */,
 				58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */,
+				58FA532C26334E44000390BF /* NewAuthorViewController.swift in Sources */,
 				5827D829262FE6A300D20B19 /* TagCell.swift in Sources */,
 				5827D806262F8D1900D20B19 /* AuthorsHeaderView.swift in Sources */,
 				589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */,

@@ -88,7 +88,8 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
     // MARK: SectionTitleDelegate Impl
     
     func didAddButtonPressed(_ sender: UIButton) {
-        Alert.show(message: "eu naveguei, NA-VE-GUEI!", in: self)
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "NewAuthorViewController")
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: View methods
