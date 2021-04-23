@@ -7,12 +7,21 @@
 
 import UIKit
 
+protocol SectionTitleDelegate {
+    func didAddButtonPressed(_ sender: UIButton)
+}
+
 class SectionTitle: UIView, IdentifiableView {
 
+    // MARK: Attributes
+    
+    var delegate: SectionTitleDelegate?
+    
     // MARK: IBOutlets
     
     @IBOutlet var contentView: UIView!
     @IBOutlet var label: UILabel!
+    @IBOutlet weak var itemAddingButton: UIButton!
     
     // for using the custom view in code
     override init(frame: CGRect) {
@@ -32,5 +41,18 @@ class SectionTitle: UIView, IdentifiableView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(contentView)
+    }
+    
+    func enableItemAddingButton() {
+        guard self.delegate != nil else {
+            fatalError("Required delegate attribute not fulfilled")
+        }
+        
+        self.itemAddingButton.isHidden = false
+        self.itemAddingButton.addTarget(self, action: #selector(addItemButtonPressed(_:)), for: .touchUpInside)
+    }
+    
+    @objc func addItemButtonPressed(_ sender: UIButton!) {
+        self.delegate?.didAddButtonPressed(sender)
     }
 }

@@ -7,8 +7,8 @@
 
 import UIKit
 
-class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-   
+class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SectionTitleDelegate {
+    
     // MARK: Attributes
     
     var authors: [Author] = []
@@ -67,7 +67,7 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
                     as? AuthorsHeaderView else {
                 fatalError("Invalid view type for the authors header")
             }
-            return headerView.build()
+            return headerView.build(delegate: self)
             
         default:
             assert(false, "Invalid element type")
@@ -83,6 +83,12 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
         let adjustedWidth = superviewWidth - horizontalMargin * 2
         
         return CGSize(width: adjustedWidth, height: 206)
+    }
+    
+    // MARK: SectionTitleDelegate Impl
+    
+    func didAddButtonPressed(_ sender: UIButton) {
+        Alert.show(message: "eu naveguei, NA-VE-GUEI!", in: self)
     }
     
     // MARK: View methods

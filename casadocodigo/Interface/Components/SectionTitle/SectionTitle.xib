@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="ojN-B5-Nsu" id="Nmy-AQ-AFa"/>
+                <outlet property="itemAddingButton" destination="nRA-BF-nhP" id="xuG-GK-bWd"/>
                 <outlet property="label" destination="G1l-UG-xhM" id="TmG-cC-j0c"/>
             </connections>
         </placeholder>
@@ -21,7 +22,6 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1l-UG-xhM" userLabel="Title Label">
                     <rect key="frame" x="0.0" y="3" width="414" height="32"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="79J-h7-S3x"/>
                         <constraint firstAttribute="height" constant="32" id="ANY-bd-rir"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
@@ -35,6 +35,14 @@
                         <constraint firstAttribute="height" constant="1" id="YT0-pm-9X8"/>
                     </constraints>
                 </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nRA-BF-nhP">
+                    <rect key="frame" x="384" y="5" width="30" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="tintColor" red="1" green="0.66666666669999997" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="plus" catalog="system">
+                        <color key="titleColor" red="1" green="0.66666666669999997" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
@@ -50,6 +58,7 @@
         </view>
     </objects>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
