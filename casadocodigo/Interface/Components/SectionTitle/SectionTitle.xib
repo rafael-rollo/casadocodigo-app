@@ -36,10 +36,10 @@
                     </constraints>
                 </view>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nRA-BF-nhP">
-                    <rect key="frame" x="384" y="5" width="30" height="30"/>
+                    <rect key="frame" x="386" y="6" width="28" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="tintColor" red="1" green="0.66666666669999997" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" image="plus" catalog="system">
+                    <state key="normal">
                         <color key="titleColor" red="1" green="0.66666666669999997" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                 </button>
@@ -58,7 +58,6 @@
         </view>
     </objects>
     <resources>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

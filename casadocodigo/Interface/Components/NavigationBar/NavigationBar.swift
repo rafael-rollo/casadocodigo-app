@@ -16,10 +16,15 @@ class NavigationBar: UIView, IdentifiableView {
         alpha: 0.8
     )
     
+    // MARK: Attributes
+    
+    private var navigator: UINavigationController?
+    
     // MARK: IBOutlets
     
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var backButton: UIButton!
     
     // for using the custom view in code
     override init(frame: CGRect) {
@@ -41,5 +46,25 @@ class NavigationBar: UIView, IdentifiableView {
         addSubview(contentView)
         
         logoImageView.image = UIImage(named: "logo-cdc")
+    }
+    
+    func configure(_ navigationController: UINavigationController?, current: UIViewController) {
+        guard let navigationController = navigationController else { return }
+        
+        self.navigator = navigationController
+        
+        guard self.navigator!.topViewController == current,
+              self.navigator!.viewControllers.count > 1 else { return }
+        
+        let buttonImage = UIImage(named: "back-arrow")?.withRenderingMode(.alwaysTemplate)
+        self.backButton.setImage(buttonImage, for: .normal)
+        
+        self.backButton.isHidden = false
+        self.backButton.addTarget(self, action: #selector(backToPreviousScene), for: .touchUpInside)
+    }
+    
+    @objc func backToPreviousScene() {
+        guard let navigator = self.navigator else { return }
+        navigator.popViewController(animated: true)
     }
 }

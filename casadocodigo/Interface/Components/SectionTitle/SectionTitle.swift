@@ -48,6 +48,9 @@ class SectionTitle: UIView, IdentifiableView {
             fatalError("Required delegate attribute not fulfilled")
         }
         
+        let buttonImage = UIImage(named: "plus")?.withRenderingMode(.alwaysTemplate)
+        self.itemAddingButton.setImage(buttonImage, for: .normal)
+    
         self.itemAddingButton.isHidden = false
         self.itemAddingButton.addTarget(self, action: #selector(addItemButtonPressed(_:)), for: .touchUpInside)
     }

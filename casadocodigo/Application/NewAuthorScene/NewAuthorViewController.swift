@@ -9,10 +9,13 @@ import UIKit
 
 class NewAuthorViewController: UIViewController {
 
+    @IBOutlet weak var navigationBar: NavigationBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+       
+        self.navigationBar.configure(navigationController, current: self)
+        StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
     }
 
 }

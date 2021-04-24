@@ -304,17 +304,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cadastro novo autor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtg-DP-RqR">
-                                <rect key="frame" x="137" y="453" width="155" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n8k-nl-SR4" customClass="NavigationBar" customModule="casadocodigo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="428" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="De3-1d-10N"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jg4-Pe-FZP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n8k-nl-SR4" firstAttribute="top" secondItem="jg4-Pe-FZP" secondAttribute="top" id="Khp-bM-kyy"/>
+                            <constraint firstItem="n8k-nl-SR4" firstAttribute="leading" secondItem="jg4-Pe-FZP" secondAttribute="leading" id="Q2h-NN-1vt"/>
+                            <constraint firstItem="jg4-Pe-FZP" firstAttribute="trailing" secondItem="n8k-nl-SR4" secondAttribute="trailing" id="nia-gg-8Kh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="n8k-nl-SR4" id="jaD-EM-ReL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nan-c9-Btk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
