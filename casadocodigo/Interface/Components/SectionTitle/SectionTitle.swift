@@ -39,7 +39,7 @@ class SectionTitle: UIView, IdentifiableView {
         Bundle.main.loadNibNamed(SectionTitle.nibName, owner: self, options: nil)
         
         contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        contentView.autoresizingMask = [.flexibleWidth]
         addSubview(contentView)
     }
     
