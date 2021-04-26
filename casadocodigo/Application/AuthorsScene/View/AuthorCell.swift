@@ -22,17 +22,13 @@ class AuthorCell: UICollectionViewCell, ReusableView {
         configureBorders()
         
         authorPictureView.af.setImage(withURL: author.profilePicturePath)
-        roundShape(for: authorPictureView)
+        authorPictureView.roundTheShape()
         
         authorNameLabel.text = author.fullName
         publicationCountLabel.text = "Livros publicados \(author.publishedBooks)"
         
         technologiesList.setFrom(author.technologies)
         authorBioLabel.text = "\"\(author.bio)\""
-    }
-    
-    private func roundShape(for view: UIView) {
-        view.layer.cornerRadius = view.bounds.width / 2
     }
     
     private func configureBorders() {

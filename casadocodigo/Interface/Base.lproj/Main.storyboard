@@ -358,6 +358,9 @@
                                                                 <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="pictureFieldEditingDidEnd:" destination="poZ-C8-iEn" eventType="editingDidEnd" id="S5W-2J-48o"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -464,6 +467,8 @@
                         <outlet property="addAuthorButton" destination="whA-wH-2YW" id="D7E-Qd-3eR"/>
                         <outlet property="bioTextView" destination="uWv-DG-o1Z" id="JRk-Qp-Dyn"/>
                         <outlet property="navigationBar" destination="n8k-nl-SR4" id="jaD-EM-ReL"/>
+                        <outlet property="pictureUrlTextField" destination="Aas-y3-4Lw" id="UDt-Fg-ZOp"/>
+                        <outlet property="profilePictureView" destination="Nvb-RA-Tsq" id="Tax-ug-bEA"/>
                         <outlet property="sectionTitle" destination="20T-bB-goA" id="zQN-t6-N1w"/>
                     </connections>
                 </viewController>
