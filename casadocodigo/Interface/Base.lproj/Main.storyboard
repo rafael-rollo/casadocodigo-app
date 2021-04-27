@@ -157,7 +157,7 @@
                                     <size key="itemSize" width="396" height="200"/>
                                     <size key="headerReferenceSize" width="50" height="54"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AuthorCell" id="Ocr-ia-O4P" customClass="AuthorCell" customModule="casadocodigo" customModuleProvider="target">
