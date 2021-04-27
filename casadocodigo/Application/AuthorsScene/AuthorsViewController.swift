@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SectionTitleDelegate {
+class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // MARK: Attributes
     
@@ -85,13 +85,6 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
         return CGSize(width: adjustedWidth, height: 206)
     }
     
-    // MARK: SectionTitleDelegate Impl
-    
-    func didAddButtonPressed(_ sender: UIButton) {
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "NewAuthorViewController")
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
     // MARK: View methods
     
     func loadAuthorsList() {
@@ -113,5 +106,21 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
     func updateAuthorsList(with authors: [AuthorResponse]) {
         self.authors = authors
         authorsCollectionView.reloadData()
+    }
+}
+
+extension AuthorsViewController: SectionTitleDelegate {
+    func didAddButtonPressed(_ sender: UIButton) {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "NewAuthorViewController") as! NewAuthorViewController
+        controller.delegate = self
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+extension AuthorsViewController: NewAuthorViewControllerDelegate {
+    func didAuthorCreated(_ author: AuthorResponse) {
+        let allAuthors = self.authors + [author]
+        self.updateAuthorsList(with: allAuthors)
     }
 }

@@ -15,8 +15,10 @@ struct AuthorRequest: Encodable {
     var technologies: [String] = []
     
     init(fullName: String, bio: String, profilePicturePath: String, technologies: String? = nil) {
-        self.firstName = fullName
-        self.lastName = fullName
+        let names = fullName.components(separatedBy: " ")
+        
+        self.firstName = names[0]
+        self.lastName = names[names.count - 1]
         self.bio = bio
         self.profilePicturePath = profilePicturePath
         
@@ -30,7 +32,7 @@ struct AuthorRequest: Encodable {
         case lastName
         case bio
         case profilePicturePath
-        case technologies = "technologiesSHeWritesAbout"
+        case technologies
     }
 }
 

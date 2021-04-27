@@ -30,4 +30,22 @@ class AuthorRepository: NSObject {
             }
             
     }
+    
+    func saveNew(author: AuthorRequest, completionHandler: @escaping (AuthorResponse) -> Void, failureHandler: @escaping () -> Void) {
+        let headers: HTTPHeaders = ["Content-type": "application/json", "Accept": "application/json"]
+                
+        AF.request(AuthorRepository.authorsBasePath, method: .post, parameters: author, encoder: JSONParameterEncoder.default, headers: headers)
+            .validate()
+            .responseDecodable(of: AuthorResponse.self) { response in
+                switch response.result {
+                case .success:
+                    guard let createdAuthor = response.value else { return }
+                    completionHandler(createdAuthor)
+                    
+                case let .failure(error):
+                    debugPrint(error)
+                    failureHandler()
+                }
+            }
+    }
 }

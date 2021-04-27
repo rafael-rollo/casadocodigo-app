@@ -466,6 +466,7 @@
                     <connections>
                         <outlet property="addAuthorButton" destination="whA-wH-2YW" id="D7E-Qd-3eR"/>
                         <outlet property="bioTextView" destination="uWv-DG-o1Z" id="JRk-Qp-Dyn"/>
+                        <outlet property="contentContainerView" destination="Mgn-Ly-bf1" id="ZtU-Ww-c0U"/>
                         <outlet property="nameTextField" destination="s6M-46-Mvb" id="Yjd-tQ-ZOu"/>
                         <outlet property="navigationBar" destination="n8k-nl-SR4" id="jaD-EM-ReL"/>
                         <outlet property="pictureUrlTextField" destination="Aas-y3-4Lw" id="UDt-Fg-ZOp"/>

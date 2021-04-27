@@ -8,9 +8,16 @@
 import UIKit
 import AlamofireImage
 
+protocol NewAuthorViewControllerDelegate {
+    func didAuthorCreated(_ author: AuthorResponse)
+}
+
 class NewAuthorViewController: UIViewController, UITextFieldDelegate {
+    
+    var delegate: NewAuthorViewControllerDelegate?
 
     @IBOutlet weak var navigationBar: NavigationBar!
+    @IBOutlet weak var contentContainerView: UIView!
     @IBOutlet weak var sectionTitle: SectionTitle!
     @IBOutlet weak var profilePictureView: UIImageView!
     @IBOutlet weak var pictureUrlTextField: UITextField!
@@ -61,6 +68,11 @@ class NewAuthorViewController: UIViewController, UITextFieldDelegate {
             return nil
         }
         
+        guard fullName.components(separatedBy: " ").count >= 2 else {
+            Alert.show(title: "Ops", message: "É necessário informar um sobrenome para o autor", in: self)
+            return nil
+        }
+        
         guard let bio = self.bioTextView.text, !bio.isEmpty else {
             Alert.show(title: "Ops", message: "O campo bio é obrigatório", in: self)
             return nil
@@ -71,6 +83,20 @@ class NewAuthorViewController: UIViewController, UITextFieldDelegate {
     
     @objc func authorAddingButtonPressed(_ sender: UIButton!) {
         guard let author = getAuthorFromForm() else { return }
-        print(author)
+        
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.contentContainerView)
+        indicator.startAnimating()
+        
+        AuthorRepository().saveNew(author: author) { savedAuthor in
+            indicator.stopAnimating()
+            self.navigationController?.popViewController(animated: true)
+            
+            self.delegate?.didAuthorCreated(savedAuthor)
+            
+        } failureHandler: {
+            indicator.stopAnimating()
+            Alert.show(title: "Ops", message: "Could not possible to save new author. Try again!", in: self)
+        }
+
     }
 }
