@@ -11,7 +11,7 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
     
     // MARK: Attributes
     
-    var authors: [Author] = []
+    var authors: [AuthorResponse] = []
     var authorRepository: AuthorRepository
     
     // MARK: IBOutlets
@@ -110,7 +110,7 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
         }
     }
     
-    func updateAuthorsList(with authors: [Author]) {
+    func updateAuthorsList(with authors: [AuthorResponse]) {
         self.authors = authors
         authorsCollectionView.reloadData()
     }

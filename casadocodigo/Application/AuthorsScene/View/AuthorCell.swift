@@ -18,7 +18,7 @@ class AuthorCell: UICollectionViewCell, ReusableView {
     
     @IBOutlet weak var authorBioLabel: UILabel!
 
-    func setFrom(_ author: Author) {
+    func setFrom(_ author: AuthorResponse) {
         configureBorders()
         
         authorPictureView.af.setImage(withURL: author.profilePicturePath)

@@ -14,7 +14,9 @@ class NewAuthorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var sectionTitle: SectionTitle!
     @IBOutlet weak var profilePictureView: UIImageView!
     @IBOutlet weak var pictureUrlTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var bioTextView: UITextView!
+    @IBOutlet weak var technologiesTextField: UITextField!
     @IBOutlet weak var addAuthorButton: UIButton!
     
     override func viewDidLoad() {
@@ -36,6 +38,7 @@ class NewAuthorViewController: UIViewController, UITextFieldDelegate {
         
         self.addAuthorButton.layer.cornerRadius = 10
         self.addAuthorButton.showsTouchWhenHighlighted = true
+        self.addAuthorButton.addTarget(self, action: #selector(authorAddingButtonPressed(_:)), for: .touchUpInside)
     }
     
     @IBAction func pictureFieldEditingDidEnd(_ sender: UITextField) {
@@ -45,6 +48,29 @@ class NewAuthorViewController: UIViewController, UITextFieldDelegate {
         guard let pictureURL = URL(string: pictureURLAsString) else { return }
         
         self.profilePictureView.af.setImage(withURL: pictureURL)
-        self.profilePictureView.roundTheShape()
+    }
+    
+    private func getAuthorFromForm() -> AuthorRequest? {
+        guard let pictureURL = self.pictureUrlTextField.text, !pictureURL.isEmpty else {
+            Alert.show(title: "Ops", message: "Adicione uma URL válida para a foto de perfil do autor", in: self)
+            return nil
+        }
+        
+        guard let fullName = self.nameTextField.text, !fullName.isEmpty else {
+            Alert.show(title: "Ops", message: "O campo nome é obrigatório", in: self)
+            return nil
+        }
+        
+        guard let bio = self.bioTextView.text, !bio.isEmpty else {
+            Alert.show(title: "Ops", message: "O campo bio é obrigatório", in: self)
+            return nil
+        }
+        
+        return AuthorRequest(fullName: fullName, bio: bio, profilePicturePath: pictureURL, technologies: self.technologiesTextField.text)
+    }
+    
+    @objc func authorAddingButtonPressed(_ sender: UIButton!) {
+        guard let author = getAuthorFromForm() else { return }
+        print(author)
     }
 }

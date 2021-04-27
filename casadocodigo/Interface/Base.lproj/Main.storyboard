@@ -466,10 +466,12 @@
                     <connections>
                         <outlet property="addAuthorButton" destination="whA-wH-2YW" id="D7E-Qd-3eR"/>
                         <outlet property="bioTextView" destination="uWv-DG-o1Z" id="JRk-Qp-Dyn"/>
+                        <outlet property="nameTextField" destination="s6M-46-Mvb" id="Yjd-tQ-ZOu"/>
                         <outlet property="navigationBar" destination="n8k-nl-SR4" id="jaD-EM-ReL"/>
                         <outlet property="pictureUrlTextField" destination="Aas-y3-4Lw" id="UDt-Fg-ZOp"/>
                         <outlet property="profilePictureView" destination="Nvb-RA-Tsq" id="Tax-ug-bEA"/>
                         <outlet property="sectionTitle" destination="20T-bB-goA" id="zQN-t6-N1w"/>
+                        <outlet property="technologiesTextField" destination="r6R-GI-3sG" id="8Ix-VX-mxN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nan-c9-Btk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
