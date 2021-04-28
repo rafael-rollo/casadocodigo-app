@@ -206,6 +206,11 @@
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 </view>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohx-vu-cq0">
+                                                                    <rect key="frame" x="220" y="0.0" width="20" height="20"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <color key="tintColor" red="1" green="0.66666666669999997" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         </view>
@@ -242,6 +247,7 @@
                                             <outlet property="authorBioLabel" destination="6MK-jG-dpL" id="28H-0m-Twk"/>
                                             <outlet property="authorNameLabel" destination="805-OL-5NH" id="S1T-0t-ZTb"/>
                                             <outlet property="authorPictureView" destination="SGD-i0-7mq" id="AHm-d1-IkW"/>
+                                            <outlet property="authorRemovingButton" destination="Ohx-vu-cq0" id="eIq-mE-qwK"/>
                                             <outlet property="publicationCountLabel" destination="Hwi-fh-owN" id="IWn-rd-t9x"/>
                                             <outlet property="technologiesList" destination="AWs-To-FdB" id="ogj-8b-i1d"/>
                                         </connections>

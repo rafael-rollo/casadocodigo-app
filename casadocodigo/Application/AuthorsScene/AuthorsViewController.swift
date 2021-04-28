@@ -55,7 +55,9 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
             fatalError("Invalid view cell type for author item. Please, check the configuration in the Cell and CollectionView's code or ib definition")
         }
         
+        authorCell.delegate = self
         authorCell.setFrom(author)
+        
         return authorCell
     }
     
@@ -122,5 +124,11 @@ extension AuthorsViewController: NewAuthorViewControllerDelegate {
     func didAuthorCreated(_ author: AuthorResponse) {
         let allAuthors = self.authors + [author]
         updateAuthorsList(with: allAuthors)
+    }
+}
+
+extension AuthorsViewController: AuthorCellDelegate {
+    func didRemovingButtonPressed(_ sender: UIButton!, forAuthorIdentifiedBy id: Int) {
+        Alert.show(message: "Pede pra sair 0\(id)! 👋🏻", in: self)
     }
 }
