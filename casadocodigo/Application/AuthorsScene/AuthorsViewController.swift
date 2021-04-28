@@ -7,6 +7,10 @@
 
 import UIKit
 
+extension Notification.Name {
+    static let authorDeleted = Notification.Name("An author has been removed")
+}
+
 class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // MARK: Attributes
@@ -135,6 +139,8 @@ extension AuthorsViewController: AuthorCellDelegate {
         AuthorRepository().deleteAuthor(identifiedBy: id) {
             indicator.stopAnimating()
             self.updateAuthorsList(with: self.authors.filter { $0.id != id })
+            
+            NotificationCenter.default.post(Notification(name: .authorDeleted))
             
         } failureHandler: {
             indicator.stopAnimating()

@@ -12,6 +12,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     // MARK: Attributes
     
     var showcase: [BookShowcaseItem] = []
+    var isShowcaseUpToDate = false
+    
     var bookRepository: BookRepository
     let showcaseFlowLayoutImpl: UICollectionViewDelegateFlowLayout = ShowcaseFlowLayout()
     
@@ -28,10 +30,25 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
         
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(markShowcaseAsOutdated),
+            name: .authorDeleted,
+            object: nil
+        )
+        
+        loadShowcase();
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        if self.isShowcaseUpToDate {
+            return
+        }
+            
         loadShowcase()
     }
     
-    // MARK: constructors
+    // MARK: Constructors and Destructors
     
     init(bookRepository: BookRepository = BookRepository(), nibName: String?, bundle: Bundle?) {
         self.bookRepository = bookRepository
@@ -41,6 +58,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     required init?(coder: NSCoder) {
         self.bookRepository = BookRepository()
         super.init(coder: coder)
+
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: UICVDataSource impl
@@ -97,8 +119,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     }
     
     func updateShowcase(with books: [BookShowcaseItem]) {
-        self.showcase = books
+        showcase = books
+        isShowcaseUpToDate = true
+        
         showcaseCollectionView.reloadData()
+    }
+    
+    @objc func markShowcaseAsOutdated() {
+        isShowcaseUpToDate = false
     }
 }
 
