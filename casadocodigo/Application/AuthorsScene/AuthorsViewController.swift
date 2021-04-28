@@ -129,6 +129,16 @@ extension AuthorsViewController: NewAuthorViewControllerDelegate {
 
 extension AuthorsViewController: AuthorCellDelegate {
     func didRemovingButtonPressed(_ sender: UIButton!, forAuthorIdentifiedBy id: Int) {
-        Alert.show(message: "Pede pra sair 0\(id)! 👋🏻", in: self)
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
+        indicator.startAnimating()
+        
+        AuthorRepository().deleteAuthor(identifiedBy: id) {
+            indicator.stopAnimating()
+            self.updateAuthorsList(with: self.authors.filter { $0.id != id })
+            
+        } failureHandler: {
+            indicator.stopAnimating()
+            Alert.show(title: "Ops!", message: "Could not possible to remove this author right now. Try again later!", in: self)
+        }
     }
 }
