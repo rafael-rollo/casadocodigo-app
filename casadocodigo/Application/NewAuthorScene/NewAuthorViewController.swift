@@ -17,7 +17,6 @@ class NewAuthorViewController: UIViewController, UITextFieldDelegate {
     var delegate: NewAuthorViewControllerDelegate?
 
     @IBOutlet weak var navigationBar: NavigationBar!
-    @IBOutlet weak var contentContainerView: UIView!
     @IBOutlet weak var sectionTitle: SectionTitle!
     @IBOutlet weak var profilePictureView: UIImageView!
     @IBOutlet weak var pictureUrlTextField: UITextField!
@@ -84,7 +83,7 @@ class NewAuthorViewController: UIViewController, UITextFieldDelegate {
     @objc func authorAddingButtonPressed(_ sender: UIButton!) {
         guard let author = getAuthorFromForm() else { return }
         
-        let indicator = UIActivityIndicatorView.customIndicator(to: self.contentContainerView)
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
         
         AuthorRepository().saveNew(author: author) { savedAuthor in

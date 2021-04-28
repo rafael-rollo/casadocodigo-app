@@ -88,7 +88,7 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
     // MARK: View methods
     
     func loadAuthorsList() {
-        let indicator = UIActivityIndicatorView.customIndicator(to: authorsCollectionView)
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
         
         authorRepository.allAuthors { [weak self] authors in
