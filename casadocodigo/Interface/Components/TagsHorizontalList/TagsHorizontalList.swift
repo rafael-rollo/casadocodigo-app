@@ -47,18 +47,25 @@ class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = items[indexPath.row]
         
-        let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: TagsHorizontalList.cellReuseIdentifier, for: indexPath) as! TagCell
-        tagCell.setFrom(item)
+        guard let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: TagsHorizontalList.cellReuseIdentifier, for: indexPath) as? TagCell else {
+            fatalError("Invalid view cell type for tag items. Please check the implementation and fix it")
+        }
         
+        tagCell.setFrom(item)
         return tagCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: TagsHorizontalList.cellReuseIdentifier, for: indexPath) as! TagCell
+        let defaultSize = CGSize(width: 100, height: collectionView.bounds.height)
+        
+        guard let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: TagsHorizontalList.cellReuseIdentifier, for: indexPath) as? TagCell else {
+            return defaultSize
+        }
+        
         let item = items[indexPath.row]
         
         guard let size = tagCell.getMinSizeForCell(with: item, in: collectionView) else {
-            return CGSize(width: 100, height: collectionView.bounds.height)
+            return defaultSize
         }
 
         return size

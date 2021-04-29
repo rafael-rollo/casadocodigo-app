@@ -38,9 +38,11 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let author = authors[indexPath.row]
         
-        let authorCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AuthorCell", for: indexPath) as! AuthorCell
-        authorCell.setFrom(author)
+        guard let authorCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AuthorCell", for: indexPath) as? AuthorCell else {
+            fatalError("Invalid view cell type for author item. Please, check the configuration in the Cell and CollectionView's code or ib definition")
+        }
         
+        authorCell.setFrom(author)
         return authorCell
     }
     
@@ -50,7 +52,7 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
             
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "AuthorsHeaderView", for: indexPath)
                     as? AuthorsHeaderView else {
-                fatalError("Invalid view type")
+                fatalError("Invalid view type for the authors header")
             }
             return headerView.build()
             

@@ -39,9 +39,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let showcaseBook = showcase[indexPath.row]
         
-        let showcaseBookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowcaseBookCell", for: indexPath) as! ShowcaseBookCell
-        showcaseBookCell.setFrom(showcaseBook)
+        guard let showcaseBookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowcaseBookCell", for: indexPath) as? ShowcaseBookCell else {
+            fatalError("Invalid view cell type for showcase book. Please, check the configuration in the Cell and CollectionView's code or ib definition")
+        }
         
+        showcaseBookCell.setFrom(showcaseBook)
         return showcaseBookCell;
     }
     
@@ -51,7 +53,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
             
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ShowcaseHeaderView", for: indexPath)
                     as? ShowcaseHeaderView else {
-                fatalError("Invalid view type")
+                fatalError("Invalid view type for book showcase header")
             }
             return headerView.build()
             
