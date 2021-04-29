@@ -12,9 +12,10 @@ class StatusBarBackground: NSObject {
     let targetView: UIView
     
     var statusBarHeight: CGFloat {
-        return targetView.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 20
+        return UIApplication.shared.keyWindow?.windowScene?.statusBarManager?
+            .statusBarFrame.height ?? 00
     }
-
+    
     init(target: UIView) {
         self.targetView = target
     }
@@ -26,7 +27,7 @@ class StatusBarBackground: NSObject {
             statusbarView.backgroundColor = color
             
             targetView.addSubview(statusbarView)
-          
+            
             statusbarView.heightAnchor
                 .constraint(equalToConstant: statusBarHeight).isActive = true
             statusbarView.widthAnchor
