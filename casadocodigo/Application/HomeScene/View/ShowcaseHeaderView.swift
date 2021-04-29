@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ShowcaseHeaderView: UICollectionReusableView {
+class ShowcaseHeaderView: UICollectionReusableView, ReusableView {
         
     @IBOutlet weak var sectionTitle: SectionTitle!
     

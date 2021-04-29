@@ -9,8 +9,6 @@ import UIKit
 
 class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    private static let cellReuseIdentifier = "tagCell"
-    
     var items: [String] = []
     
     @IBOutlet var contentView: UIView!
@@ -35,7 +33,7 @@ class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDe
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(contentView)
     
-        collectionView.register(TagCell.self, forCellWithReuseIdentifier: TagsHorizontalList.cellReuseIdentifier)
+        collectionView.register(TagCell.self, forCellWithReuseIdentifier: TagCell.reuseId)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -47,7 +45,7 @@ class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = items[indexPath.row]
         
-        guard let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: TagsHorizontalList.cellReuseIdentifier, for: indexPath) as? TagCell else {
+        guard let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCell.reuseId, for: indexPath) as? TagCell else {
             fatalError("Invalid view cell type for tag items. Please check the implementation and fix it")
         }
         
@@ -58,7 +56,7 @@ class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let defaultSize = CGSize(width: 100, height: collectionView.bounds.height)
         
-        guard let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: TagsHorizontalList.cellReuseIdentifier, for: indexPath) as? TagCell else {
+        guard let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCell.reuseId, for: indexPath) as? TagCell else {
             return defaultSize
         }
         

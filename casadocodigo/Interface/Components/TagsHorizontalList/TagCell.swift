@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TagCell: UICollectionViewCell {
+class TagCell: UICollectionViewCell, ReusableView {
     
     @IBOutlet var cellContentView: UIView!
     @IBOutlet weak var tagLabel: UILabel!

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AuthorsHeaderView: UICollectionReusableView {
+class AuthorsHeaderView: UICollectionReusableView, ReusableView {
         
     // MARK: IBOutlets
     @IBOutlet weak var sectionTitle: SectionTitle!

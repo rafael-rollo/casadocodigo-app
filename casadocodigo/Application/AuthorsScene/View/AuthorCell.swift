@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-class AuthorCell: UICollectionViewCell {
+class AuthorCell: UICollectionViewCell, ReusableView {
     
     @IBOutlet weak var authorPictureView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!

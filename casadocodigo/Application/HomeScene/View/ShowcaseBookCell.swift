@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-class ShowcaseBookCell: UICollectionViewCell {
+class ShowcaseBookCell: UICollectionViewCell, ReusableView {
     
     // MARK: IBOutlets
     @IBOutlet weak var coverImageView: UIImageView!

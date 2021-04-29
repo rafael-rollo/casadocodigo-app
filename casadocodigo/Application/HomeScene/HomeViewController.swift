@@ -39,7 +39,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let showcaseBook = showcase[indexPath.row]
         
-        guard let showcaseBookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowcaseBookCell", for: indexPath) as? ShowcaseBookCell else {
+        guard let showcaseBookCell = collectionView.dequeueReusableCell(withReuseIdentifier: ShowcaseBookCell.reuseId, for: indexPath) as? ShowcaseBookCell else {
             fatalError("Invalid view cell type for showcase book. Please, check the configuration in the Cell and CollectionView's code or ib definition")
         }
         
@@ -51,7 +51,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ShowcaseHeaderView", for: indexPath)
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ShowcaseHeaderView.reuseId, for: indexPath)
                     as? ShowcaseHeaderView else {
                 fatalError("Invalid view type for book showcase header")
             }
