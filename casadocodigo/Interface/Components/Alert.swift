@@ -26,11 +26,7 @@ class Alert: NSObject {
 }
 
 extension Alert {
-    static func show(title: String, message: String, in controller: UIViewController) {
+    static func show(title: String? = nil, message: String, in controller: UIViewController) {
         Alert(controller: controller).show(title: title, message: message)
-    }
-    
-    static func show(message: String, in controller: UIViewController) {
-        Alert(controller: controller).show(message: message)
     }
 }
