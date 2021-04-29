@@ -12,10 +12,23 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
     // MARK: Attributes
     
     var authors: [Author] = []
+    var authorRepository: AuthorRepository
     
     // MARK: IBOutlets
     
     @IBOutlet weak var authorsCollectionView: UICollectionView!
+    
+    // MARK: constructors
+    
+    init(authorRepository: AuthorRepository = AuthorRepository(), nibName: String?, bundle: Bundle?) {
+        self.authorRepository = authorRepository
+        super.init(nibName: nibName, bundle: bundle)
+    }
+    
+    required init?(coder: NSCoder) {
+        self.authorRepository = AuthorRepository()
+        super.init(coder: coder)
+    }
     
     // MARK: View lifecycle methods
 
@@ -78,7 +91,7 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
         let indicator = UIActivityIndicatorView.customIndicator(to: authorsCollectionView)
         indicator.startAnimating()
         
-        AuthorRepository().allAuthors { authors in
+        authorRepository.allAuthors { authors in
             self.updateAuthorsList(with: authors)
             indicator.stopAnimating()
             

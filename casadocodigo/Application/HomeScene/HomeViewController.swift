@@ -12,6 +12,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     // MARK: Attributes
     
     var showcase: [BookShowcaseItem] = []
+    var bookRepository: BookRepository
     let showcaseFlowLayoutImpl: UICollectionViewDelegateFlowLayout = ShowcaseFlowLayout()
     
     // MARK: IBOutlets
@@ -28,6 +29,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
         
         loadShowcase();
+    }
+    
+    // MARK: constructors
+    
+    init(bookRepository: BookRepository = BookRepository(), nibName: String?, bundle: Bundle?) {
+        self.bookRepository = bookRepository
+        super.init(nibName: nibName, bundle: bundle)
+    }
+        
+    required init?(coder: NSCoder) {
+        self.bookRepository = BookRepository()
+        super.init(coder: coder)
     }
     
     // MARK: UICVDataSource impl
@@ -68,7 +81,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         let indicator = UIActivityIndicatorView.customIndicator(to: showcaseCollectionView)
         indicator.startAnimating()
         
-        BookRepository().showcase { (books) in
+        debugPrint(bookRepository)
+        
+        bookRepository.showcase { (books) in
             self.updateShowcase(with: books)
             indicator.stopAnimating()
             
