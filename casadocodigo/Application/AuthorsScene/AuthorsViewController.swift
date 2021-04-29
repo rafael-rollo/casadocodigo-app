@@ -21,8 +21,8 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.authorsCollectionView.dataSource = self
-        self.authorsCollectionView.delegate = self
+        authorsCollectionView.dataSource = self
+        authorsCollectionView.delegate = self
         
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
         
@@ -32,11 +32,11 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
     // MARK: UICVDataSource Impl
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.authors.count
+        return authors.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let author = self.authors[indexPath.row]
+        let author = authors[indexPath.row]
         
         let authorCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AuthorCell", for: indexPath) as! AuthorCell
         authorCell.setFrom(author)
@@ -73,7 +73,7 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
     // MARK: View methods
     
     func loadAuthorsList() {
-        let indicator = UIActivityIndicatorView.customIndicator(to: self.authorsCollectionView)
+        let indicator = UIActivityIndicatorView.customIndicator(to: authorsCollectionView)
         indicator.startAnimating()
         
         AuthorRepository().allAuthors { authors in
@@ -88,6 +88,6 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func updateAuthorsList(with authors: [Author]) {
         self.authors = authors
-        self.authorsCollectionView.reloadData()
+        authorsCollectionView.reloadData()
     }
 }

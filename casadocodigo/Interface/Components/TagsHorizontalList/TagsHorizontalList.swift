@@ -35,17 +35,17 @@ class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDe
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(contentView)
     
-        self.collectionView.register(TagCell.self, forCellWithReuseIdentifier: TagsHorizontalList.cellReuseIdentifier)
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
+        collectionView.register(TagCell.self, forCellWithReuseIdentifier: TagsHorizontalList.cellReuseIdentifier)
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.items.count
+        return items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = self.items[indexPath.row]
+        let item = items[indexPath.row]
         
         let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: TagsHorizontalList.cellReuseIdentifier, for: indexPath) as! TagCell
         tagCell.setFrom(item)
@@ -55,7 +55,7 @@ class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: TagsHorizontalList.cellReuseIdentifier, for: indexPath) as! TagCell
-        let item = self.items[indexPath.row]
+        let item = items[indexPath.row]
         
         guard let size = tagCell.getMinSizeForCell(with: item, in: collectionView) else {
             return CGSize(width: 100, height: collectionView.bounds.height)
@@ -66,6 +66,6 @@ class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDe
     
     func setFrom(_ items: [String]) {
         self.items = items
-        self.collectionView.reloadData()
+        collectionView.reloadData()
     }
 }

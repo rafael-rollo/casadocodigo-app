@@ -17,7 +17,7 @@ struct Author: Decodable {
     let publishedBooks: Int
     
     var fullName: String {
-        return "\(self.firstName) \(self.lastName)"
+        return "\(firstName) \(lastName)"
     }
     
     enum CodingKeys: String, CodingKey {

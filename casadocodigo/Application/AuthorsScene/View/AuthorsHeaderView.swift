@@ -13,7 +13,7 @@ class AuthorsHeaderView: UICollectionReusableView {
     @IBOutlet weak var sectionTitle: SectionTitle!
     
     func build() -> AuthorsHeaderView {
-        self.sectionTitle.label.text = "Nossos Autores"
+        sectionTitle.label.text = "Nossos Autores"
         return self
     }
 }

@@ -21,14 +21,14 @@ class AuthorCell: UICollectionViewCell {
     func setFrom(_ author: Author) {
         configureBorders()
         
-        self.authorPictureView.af.setImage(withURL: author.profilePicturePath)
-        roundShape(for: self.authorPictureView)
+        authorPictureView.af.setImage(withURL: author.profilePicturePath)
+        roundShape(for: authorPictureView)
         
-        self.authorNameLabel.text = author.fullName
-        self.publicationCountLabel.text = "Livros publicados \(author.publishedBooks)"
+        authorNameLabel.text = author.fullName
+        publicationCountLabel.text = "Livros publicados \(author.publishedBooks)"
         
-        self.technologiesList.setFrom(author.technologies)
-        self.authorBioLabel.text = "\"\(author.bio)\""
+        technologiesList.setFrom(author.technologies)
+        authorBioLabel.text = "\"\(author.bio)\""
     }
     
     private func roundShape(for view: UIView) {
@@ -36,9 +36,9 @@ class AuthorCell: UICollectionViewCell {
     }
     
     private func configureBorders() {
-        self.layer.cornerRadius = 8
-        self.layer.borderWidth = 0.2
-        self.layer.borderColor = UIColor.lightGray.cgColor
+        layer.cornerRadius = 8
+        layer.borderWidth = 0.2
+        layer.borderColor = UIColor.lightGray.cgColor
     
         self.dropShadow()
     }

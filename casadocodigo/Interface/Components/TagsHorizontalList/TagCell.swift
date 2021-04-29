@@ -33,14 +33,14 @@ class TagCell: UICollectionViewCell {
     }
     
     func setFrom(_ label: String) {
-        self.tagLabel.text = label
+        tagLabel.text = label
         
         configureBorders()
     }
     
     private func configureBorders() {
-        self.cellContentView.layer.masksToBounds = false
-        self.cellContentView.layer.cornerRadius = 10
+        cellContentView.layer.masksToBounds = false
+        cellContentView.layer.cornerRadius = 10
     }
 }
 

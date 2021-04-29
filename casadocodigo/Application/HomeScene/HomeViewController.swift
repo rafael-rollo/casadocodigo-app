@@ -22,18 +22,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showcaseCollectionView.delegate = self.showcaseFlowLayoutImpl
-        self.showcaseCollectionView.dataSource = self
+        showcaseCollectionView.delegate = self.showcaseFlowLayoutImpl
+        showcaseCollectionView.dataSource = self
         
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
         
-        self.loadShowcase();
+        loadShowcase();
     }
     
     // MARK: UICVDataSource impl
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.showcase.count
+        return showcase.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -63,12 +63,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     // MARK: View methods
     
     func loadShowcase() {
-        let indicator = UIActivityIndicatorView.customIndicator(to: self.showcaseCollectionView)
+        let indicator = UIActivityIndicatorView.customIndicator(to: showcaseCollectionView)
         indicator.startAnimating()
         
         BookRepository().showcase { (books) in
             self.updateShowcase(with: books)
             indicator.stopAnimating()
+            
         } failureHandler: {
             indicator.stopAnimating()
             Alert.show(title: "Ops", message: "Could not load the book showcase from the API", in: self)
@@ -78,7 +79,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     
     func updateShowcase(with books: [BookShowcaseItem]) {
         self.showcase = books
-        self.showcaseCollectionView.reloadData()
+        showcaseCollectionView.reloadData()
     }
 }
 
