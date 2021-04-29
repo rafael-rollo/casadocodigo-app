@@ -72,7 +72,12 @@ class AuthorCell: UICollectionViewCell, ReusableView {
             return
         }
         
-        self.delegate?.didRemovingButtonPressed(sender, forAuthorIdentifiedBy: currentAuthor.id)
+        let parentController = self.delegate as! UIViewController
+        
+        ConfirmationDialog.execute(in: parentController, title: "Está certo disso?",
+            message: "Você está removendo \(currentAuthor.fullName) da base de autores. Todos os livros do autor também serão removidos.") { (action) in
+            self.delegate?.didRemovingButtonPressed(sender, forAuthorIdentifiedBy: currentAuthor.id)
+        }
     }
 
 }
