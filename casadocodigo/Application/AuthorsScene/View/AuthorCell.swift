@@ -25,6 +25,7 @@ class AuthorCell: UICollectionViewCell, ReusableView {
     @IBOutlet weak var authorNameLabel: UILabel!
     
     @IBOutlet weak var authorRemovingButton: UIButton!
+    @IBOutlet weak var authorEditingButton: UIButton!
     
     @IBOutlet weak var publicationCountLabel: UILabel!
     @IBOutlet weak var technologiesList: TagsHorizontalList!
@@ -47,6 +48,9 @@ class AuthorCell: UICollectionViewCell, ReusableView {
         
         let removingButtonImage = UIImage(named: "trash")?.withRenderingMode(.alwaysTemplate)
         authorRemovingButton.setImage(removingButtonImage, for: .normal)
+        
+        let editingButtonImage = UIImage(named: "pencil")?.withRenderingMode(.alwaysTemplate)
+        authorEditingButton.setImage(editingButtonImage, for: .normal)
     }
 
     func setFrom(_ author: AuthorResponse) {
