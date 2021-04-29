@@ -10,6 +10,10 @@ import UIKit
 class StatusBarBackground: NSObject {
 
     let targetView: UIView
+    
+    var statusBarHeight: CGFloat {
+        return targetView.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 20
+    }
 
     init(target: UIView) {
         self.targetView = target
@@ -17,14 +21,12 @@ class StatusBarBackground: NSObject {
     
     func set(color: UIColor) {
         if #available(iOS 13.0, *) {
-            let app = UIApplication.shared
-            let statusBarHeight: CGFloat = app.statusBarFrame.size.height
-            
             let statusbarView = UIView()
+            statusbarView.translatesAutoresizingMaskIntoConstraints = false
             statusbarView.backgroundColor = color
+            
             targetView.addSubview(statusbarView)
           
-            statusbarView.translatesAutoresizingMaskIntoConstraints = false
             statusbarView.heightAnchor
                 .constraint(equalToConstant: statusBarHeight).isActive = true
             statusbarView.widthAnchor
