@@ -132,6 +132,7 @@ extension AuthorsViewController: NewAuthorViewControllerDelegate {
 }
 
 extension AuthorsViewController: AuthorCellDelegate {
+    
     func didRemovingButtonPressed(_ sender: UIButton!, forAuthorIdentifiedBy id: Int) {
         let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
@@ -149,4 +150,13 @@ extension AuthorsViewController: AuthorCellDelegate {
             Alert.show(title: "Ops!", message: "Could not possible to remove this author right now. Try again later!", in: self)
         }
     }
+    
+    func didEditingButtonPressed(_ sender: UIButton!, for author: AuthorResponse) {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "NewAuthorViewController") as! NewAuthorViewController
+        controller.delegate = self
+        controller.selectedAuthor = author
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
 }

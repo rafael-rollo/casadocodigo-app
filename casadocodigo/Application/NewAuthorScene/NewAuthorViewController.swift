@@ -15,9 +15,10 @@ protocol NewAuthorViewControllerDelegate: class {
 class NewAuthorViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Attributes
-    
     weak var delegate: NewAuthorViewControllerDelegate?
+    
     private var authorRepository: AuthorRepository
+    var selectedAuthor: AuthorResponse?
     
     // MARK: IBOutlets
 

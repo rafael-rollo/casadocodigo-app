@@ -10,6 +10,7 @@ import AlamofireImage
 
 protocol AuthorCellDelegate: class {
     func didRemovingButtonPressed(_ sender: UIButton!, forAuthorIdentifiedBy id: Int)
+    func didEditingButtonPressed(_ sender: UIButton!, for author: AuthorResponse)
 }
 
 class AuthorCell: UICollectionViewCell, ReusableView {
@@ -60,6 +61,7 @@ class AuthorCell: UICollectionViewCell, ReusableView {
         authorNameLabel.text = author.fullName
         
         authorRemovingButton.addTarget(self, action: #selector(removingButtonPressed(_:)), for: .touchUpInside)
+        authorEditingButton.addTarget(self, action: #selector(editingButtonPressed(_:)), for: .touchUpInside)
         
         publicationCountLabel.text = "Livros publicados \(author.publishedBooks)"
         technologiesList.setFrom(author.technologies)
@@ -84,6 +86,15 @@ class AuthorCell: UICollectionViewCell, ReusableView {
             message: "Você está removendo \(currentAuthor.fullName) da base de autores. Todos os livros do autor também serão removidos.") { action in
             self.delegate?.didRemovingButtonPressed(sender, forAuthorIdentifiedBy: currentAuthor.id)
         }
+    }
+    
+    @objc func editingButtonPressed(_ sender: UIButton!) {
+        guard let currentAuthor = actionsTarget else {
+            debugPrint("Could not determine the target author for that action. Check the method 'cellForItemAt' it sets up the author cells")
+            return
+        }
+        
+        self.delegate?.didEditingButtonPressed(sender, for: currentAuthor)
     }
 
 }
