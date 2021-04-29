@@ -15,7 +15,7 @@ class Alert: NSObject {
         self.controller = controller
     }
     
-    func show(title: String?, message: String) {
+    func show(title: String? = nil, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Dismiss", style: .default)
@@ -23,14 +23,10 @@ class Alert: NSObject {
         
         controller.present(alert, animated: true, completion: nil)
     }
-    
-    func show(message: String) {
-        self.show(title: nil, message: message)
-    }
 }
 
 extension Alert {
-    static func show(title: String?, message: String, in controller: UIViewController) {
+    static func show(title: String, message: String, in controller: UIViewController) {
         Alert(controller: controller).show(title: title, message: message)
     }
     
