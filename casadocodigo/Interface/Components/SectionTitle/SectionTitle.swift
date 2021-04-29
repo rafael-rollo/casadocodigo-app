@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SectionTitle: UIView {
+class SectionTitle: UIView, IdentifiableView {
 
     // MARK: IBOutlets
     
@@ -27,7 +27,7 @@ class SectionTitle: UIView {
     }
 
     private func setup() {
-        Bundle.main.loadNibNamed("SectionTitle", owner: self, options: nil)
+        Bundle.main.loadNibNamed(SectionTitle.nibName, owner: self, options: nil)
         
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]

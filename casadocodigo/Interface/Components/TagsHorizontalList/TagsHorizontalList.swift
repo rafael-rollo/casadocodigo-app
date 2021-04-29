@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, IdentifiableView {
     
     var items: [String] = []
     
@@ -27,7 +27,7 @@ class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDe
     }
 
     private func setup() {
-        Bundle.main.loadNibNamed("TagsHorizontalList", owner: self, options: nil)
+        Bundle.main.loadNibNamed(TagsHorizontalList.nibName, owner: self, options: nil)
         
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]

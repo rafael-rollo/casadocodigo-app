@@ -20,3 +20,16 @@ extension ReusableView {
         return String(describing: self)
     }
 }
+
+/**
+    Identifying Views that have a nib file that describes them
+ */
+protocol IdentifiableView: UIView {
+    static var nibName: String { get }
+}
+
+extension IdentifiableView {
+    static var nibName: String {
+        return String(describing: self)
+    }
+}

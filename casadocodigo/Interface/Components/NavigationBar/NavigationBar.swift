@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NavigationBar: UIView {
+class NavigationBar: UIView, IdentifiableView {
     
     static let COLOR = UIColor(
         red: 255/255,
@@ -34,7 +34,7 @@ class NavigationBar: UIView {
     }
     
     private func setup() {
-        Bundle.main.loadNibNamed("NavigationBar", owner: self, options: nil)
+        Bundle.main.loadNibNamed(NavigationBar.nibName, owner: self, options: nil)
         
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]

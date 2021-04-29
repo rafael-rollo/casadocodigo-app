@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TagCell: UICollectionViewCell, ReusableView {
+class TagCell: UICollectionViewCell, ReusableView, IdentifiableView {
     
     @IBOutlet var cellContentView: UIView!
     @IBOutlet weak var tagLabel: UILabel!
@@ -25,7 +25,7 @@ class TagCell: UICollectionViewCell, ReusableView {
     }
 
     private func setup() {
-        Bundle.main.loadNibNamed("TagCell", owner: self, options: nil)
+        Bundle.main.loadNibNamed(TagCell.nibName, owner: self, options: nil)
     
         cellContentView.frame = self.bounds
         cellContentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
