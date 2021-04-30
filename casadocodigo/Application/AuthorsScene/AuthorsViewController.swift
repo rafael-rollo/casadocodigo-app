@@ -91,8 +91,8 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
         let indicator = UIActivityIndicatorView.customIndicator(to: authorsCollectionView)
         indicator.startAnimating()
         
-        authorRepository.allAuthors { authors in
-            self.updateAuthorsList(with: authors)
+        authorRepository.allAuthors { [weak self] authors in
+            self?.updateAuthorsList(with: authors)
             indicator.stopAnimating()
             
         } failureHandler: {

@@ -28,7 +28,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
         
-        loadShowcase();
+        loadShowcase()
     }
     
     // MARK: constructors
@@ -83,8 +83,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         
         debugPrint(bookRepository)
         
-        bookRepository.showcase { (books) in
-            self.updateShowcase(with: books)
+        bookRepository.showcase { [weak self] books in
+            self?.updateShowcase(with: books)
             indicator.stopAnimating()
             
         } failureHandler: {
