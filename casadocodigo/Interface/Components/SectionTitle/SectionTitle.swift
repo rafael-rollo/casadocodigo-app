@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol SectionTitleDelegate {
+protocol SectionTitleDelegate: class {
     func didAddButtonPressed(_ sender: UIButton)
 }
 
@@ -15,7 +15,7 @@ class SectionTitle: UIView, IdentifiableView {
 
     // MARK: Attributes
     
-    var delegate: SectionTitleDelegate?
+    weak var delegate: SectionTitleDelegate?
     
     // MARK: IBOutlets
     
