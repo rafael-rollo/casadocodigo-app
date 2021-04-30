@@ -14,7 +14,12 @@ protocol NewAuthorViewControllerDelegate: class {
 
 class NewAuthorViewController: UIViewController, UITextFieldDelegate {
     
+    // MARK: Attributes
+    
     weak var delegate: NewAuthorViewControllerDelegate?
+    private var authorRepository: AuthorRepository
+    
+    // MARK: IBOutlets
 
     @IBOutlet weak var navigationBar: NavigationBar!
     @IBOutlet weak var sectionTitle: SectionTitle!
@@ -24,6 +29,20 @@ class NewAuthorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var bioTextView: UITextView!
     @IBOutlet weak var technologiesTextField: UITextField!
     @IBOutlet weak var addAuthorButton: UIButton!
+    
+    // MARK: Constructors
+    
+    init(authorRepository: AuthorRepository = AuthorRepository()) {
+        self.authorRepository = authorRepository
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        self.authorRepository = AuthorRepository()
+        super.init(coder: coder)
+    }
+    
+    // MARK: View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +65,8 @@ class NewAuthorViewController: UIViewController, UITextFieldDelegate {
         addAuthorButton.showsTouchWhenHighlighted = true
         addAuthorButton.addTarget(self, action: #selector(authorAddingButtonPressed(_:)), for: .touchUpInside)
     }
+    
+    // MARK: IBActions
     
     @IBAction func pictureFieldEditingDidEnd(_ sender: UITextField) {
         guard let pictureURLAsString = pictureUrlTextField.text,
@@ -86,11 +107,11 @@ class NewAuthorViewController: UIViewController, UITextFieldDelegate {
         let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
         
-        AuthorRepository().saveNew(author: author) { savedAuthor in
+        authorRepository.saveNew(author: author) { [weak self] savedAuthor in
             indicator.stopAnimating()
-            self.navigationController?.popViewController(animated: true)
+            self?.navigationController?.popViewController(animated: true)
             
-            self.delegate?.didAuthorCreated(savedAuthor)
+            self?.delegate?.didAuthorCreated(savedAuthor)
             
         } failureHandler: {
             indicator.stopAnimating()
