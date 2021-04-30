@@ -121,6 +121,6 @@ extension AuthorsViewController: SectionTitleDelegate {
 extension AuthorsViewController: NewAuthorViewControllerDelegate {
     func didAuthorCreated(_ author: AuthorResponse) {
         let allAuthors = self.authors + [author]
-        self.updateAuthorsList(with: allAuthors)
+        updateAuthorsList(with: allAuthors)
     }
 }

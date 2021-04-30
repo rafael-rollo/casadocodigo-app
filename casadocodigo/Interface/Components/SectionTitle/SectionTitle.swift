@@ -19,8 +19,8 @@ class SectionTitle: UIView, IdentifiableView {
     
     // MARK: IBOutlets
     
-    @IBOutlet var contentView: UIView!
-    @IBOutlet var label: UILabel!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var itemAddingButton: UIButton!
     
     // for using the custom view in code
@@ -44,18 +44,17 @@ class SectionTitle: UIView, IdentifiableView {
     }
     
     func enableItemAddingButton() {
-        guard self.delegate != nil else {
+        guard delegate != nil else {
             fatalError("Required delegate attribute not fulfilled")
         }
         
         let buttonImage = UIImage(named: "plus")?.withRenderingMode(.alwaysTemplate)
-        self.itemAddingButton.setImage(buttonImage, for: .normal)
-    
-        self.itemAddingButton.isHidden = false
-        self.itemAddingButton.addTarget(self, action: #selector(addItemButtonPressed(_:)), for: .touchUpInside)
+        itemAddingButton.setImage(buttonImage, for: .normal)
+        itemAddingButton.isHidden = false
+        itemAddingButton.addTarget(self, action: #selector(addItemButtonPressed(_:)), for: .touchUpInside)
     }
     
     @objc func addItemButtonPressed(_ sender: UIButton!) {
-        self.delegate?.didAddButtonPressed(sender)
+        delegate?.didAddButtonPressed(sender)
     }
 }

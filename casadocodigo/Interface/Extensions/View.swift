@@ -10,11 +10,11 @@ import UIKit
 
 extension UIView {
     func roundTheShape() {
-        guard self.bounds.width == self.bounds.height else {
+        guard bounds.width == bounds.height else {
             debugPrint("The dimensions of the image must comprise a square to use the rounded shape")
             return
         }
         
-        self.layer.cornerRadius = self.bounds.width / 2
+        layer.cornerRadius = self.bounds.width / 2
     }
 }
