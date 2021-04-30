@@ -92,7 +92,9 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
         indicator.startAnimating()
         
         authorRepository.allAuthors { [weak self] authors in
-            self?.updateAuthorsList(with: authors)
+            guard let self = self else { return }
+            
+            self.updateAuthorsList(with: authors)
             indicator.stopAnimating()
             
         } failureHandler: {

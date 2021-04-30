@@ -84,7 +84,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         debugPrint(bookRepository)
         
         bookRepository.showcase { [weak self] books in
-            self?.updateShowcase(with: books)
+            guard let self = self else { return }
+    
+            self.updateShowcase(with: books)
             indicator.stopAnimating()
             
         } failureHandler: {
