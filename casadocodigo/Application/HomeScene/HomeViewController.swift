@@ -78,7 +78,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     // MARK: View methods
     
     func loadShowcase() {
-        let indicator = UIActivityIndicatorView.customIndicator(to: showcaseCollectionView)
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
         
         debugPrint(bookRepository)

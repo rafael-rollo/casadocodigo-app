@@ -8,10 +8,10 @@
 import UIKit
 
 class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-   
+    
     // MARK: Attributes
     
-    var authors: [Author] = []
+    var authors: [AuthorResponse] = []
     var authorRepository: AuthorRepository
     
     // MARK: IBOutlets
@@ -67,7 +67,7 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
                     as? AuthorsHeaderView else {
                 fatalError("Invalid view type for the authors header")
             }
-            return headerView.build()
+            return headerView.build(delegate: self)
             
         default:
             assert(false, "Invalid element type")
@@ -88,7 +88,7 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
     // MARK: View methods
     
     func loadAuthorsList() {
-        let indicator = UIActivityIndicatorView.customIndicator(to: authorsCollectionView)
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
         
         authorRepository.allAuthors { [weak self] authors in
@@ -103,8 +103,24 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
         }
     }
     
-    func updateAuthorsList(with authors: [Author]) {
+    func updateAuthorsList(with authors: [AuthorResponse]) {
         self.authors = authors
         authorsCollectionView.reloadData()
+    }
+}
+
+extension AuthorsViewController: SectionTitleDelegate {
+    func didAddButtonPressed(_ sender: UIButton) {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "NewAuthorViewController") as! NewAuthorViewController
+        controller.delegate = self
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+extension AuthorsViewController: NewAuthorViewControllerDelegate {
+    func didAuthorCreated(_ author: AuthorResponse) {
+        let allAuthors = self.authors + [author]
+        updateAuthorsList(with: allAuthors)
     }
 }
