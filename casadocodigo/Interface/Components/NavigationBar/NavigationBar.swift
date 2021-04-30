@@ -51,20 +51,18 @@ class NavigationBar: UIView, IdentifiableView {
     func configure(_ navigationController: UINavigationController?, current: UIViewController) {
         guard let navigationController = navigationController else { return }
         
-        self.navigator = navigationController
+        guard navigationController.topViewController == current,
+              navigationController.viewControllers.count > 1 else { return }
         
-        guard self.navigator!.topViewController == current,
-              self.navigator!.viewControllers.count > 1 else { return }
+        self.navigator = navigationController
         
         let buttonImage = UIImage(named: "back-arrow")?.withRenderingMode(.alwaysTemplate)
         self.backButton.setImage(buttonImage, for: .normal)
-        
         self.backButton.isHidden = false
         self.backButton.addTarget(self, action: #selector(backToPreviousScene), for: .touchUpInside)
     }
     
     @objc func backToPreviousScene() {
-        guard let navigator = self.navigator else { return }
-        navigator.popViewController(animated: true)
+        navigator?.popViewController(animated: true)
     }
 }
