@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 fileprivate class CustomIndicator: UIActivityIndicatorView {
-    var parent: UIView?
+    weak var parent: UIView?
 
     override func stopAnimating() {
         if let parent = self.parent {
