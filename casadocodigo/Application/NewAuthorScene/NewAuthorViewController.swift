@@ -8,13 +8,13 @@
 import UIKit
 import AlamofireImage
 
-protocol NewAuthorViewControllerDelegate {
+protocol NewAuthorViewControllerDelegate: class {
     func didAuthorCreated(_ author: AuthorResponse)
 }
 
 class NewAuthorViewController: UIViewController, UITextFieldDelegate {
     
-    var delegate: NewAuthorViewControllerDelegate?
+    weak var delegate: NewAuthorViewControllerDelegate?
 
     @IBOutlet weak var navigationBar: NavigationBar!
     @IBOutlet weak var sectionTitle: SectionTitle!
