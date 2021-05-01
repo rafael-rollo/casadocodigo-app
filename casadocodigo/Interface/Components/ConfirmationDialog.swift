@@ -15,7 +15,7 @@ class ConfirmationDialog: NSObject {
         self.controller = controller
     }
     
-    func execute(title: String, message: String, confirmationHandler: @escaping (UIAlertAction) -> Void) {
+    func execute(title: String? = nil, message: String, confirmationHandler: @escaping (UIAlertAction) -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let confirmationAction = UIAlertAction(title: "Ok", style: .default, handler: confirmationHandler)
@@ -29,7 +29,7 @@ class ConfirmationDialog: NSObject {
 }
 
 extension ConfirmationDialog {
-    static func execute(in controller: UIViewController, title: String,
+    static func execute(in controller: UIViewController, title: String? = nil,
                         message: String, confirmationHandler: @escaping (UIAlertAction) -> Void) {
         ConfirmationDialog(controller: controller).execute(title: title, message: message, confirmationHandler: confirmationHandler)
     }
