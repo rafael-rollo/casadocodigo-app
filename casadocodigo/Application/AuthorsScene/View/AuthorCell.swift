@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-protocol AuthorCellDelegate {
+protocol AuthorCellDelegate: class {
     func didRemovingButtonPressed(_ sender: UIButton!, forAuthorIdentifiedBy id: Int)
 }
 
@@ -16,8 +16,8 @@ class AuthorCell: UICollectionViewCell, ReusableView {
     
     // MARK: Attributes
     
-    var delegate: AuthorCellDelegate?
     var actionsTarget: AuthorResponse?
+    weak var delegate: AuthorCellDelegate?
     
     // MARK: IBOutlets
     
@@ -67,15 +67,17 @@ class AuthorCell: UICollectionViewCell, ReusableView {
     // MARK: View callbacks
     
     @objc func removingButtonPressed(_ sender: UIButton!) {
-        guard let currentAuthor = self.actionsTarget else {
+        guard let currentAuthor = actionsTarget else {
             debugPrint("Could not determine the target author for that action. Check the method 'cellForItemAt' it sets up the author cells")
             return
         }
         
-        let parentController = self.delegate as! UIViewController
+        guard let parentController = delegate as? UIViewController else {
+            fatalError("Could not possible to perform action. Please provide a UIViewController as a delegate implementation")
+        }
         
         ConfirmationDialog.execute(in: parentController, title: "Está certo disso?",
-            message: "Você está removendo \(currentAuthor.fullName) da base de autores. Todos os livros do autor também serão removidos.") { (action) in
+            message: "Você está removendo \(currentAuthor.fullName) da base de autores. Todos os livros do autor também serão removidos.") { action in
             self.delegate?.didRemovingButtonPressed(sender, forAuthorIdentifiedBy: currentAuthor.id)
         }
     }
