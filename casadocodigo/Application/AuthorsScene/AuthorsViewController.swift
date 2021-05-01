@@ -136,7 +136,9 @@ extension AuthorsViewController: AuthorCellDelegate {
         let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
         
-        AuthorRepository().deleteAuthor(identifiedBy: id) {
+        authorRepository.deleteAuthor(identifiedBy: id) { [weak self] in
+            guard let self = self else { return }
+            
             indicator.stopAnimating()
             self.updateAuthorsList(with: self.authors.filter { $0.id != id })
             
