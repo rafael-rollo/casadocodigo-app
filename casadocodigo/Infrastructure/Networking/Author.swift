@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AuthorRequest: Encodable {
+class AuthorRequest: Encodable {
     let firstName: String
     let lastName: String
     let bio: String
@@ -33,6 +33,19 @@ struct AuthorRequest: Encodable {
         case bio
         case profilePicturePath
         case technologies
+    }
+    
+    class Editing: AuthorRequest {
+        let id: Int
+        
+        init(id: Int, fullName: String, bio: String, profilePicturePath: String, technologies: String? = nil) {
+            self.id = id
+            super.init(fullName: fullName, bio: bio, profilePicturePath: profilePicturePath, technologies: technologies)
+        }
+        
+        enum CodingKeys: String, CodingKey {
+            case id
+        }
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  NewAuthorViewController.swift
+//  AuthorFormViewController.swift
 //  casadocodigo
 //
 //  Created by rafael.rollo on 23/04/21.
@@ -8,20 +8,21 @@
 import UIKit
 import AlamofireImage
 
-protocol NewAuthorViewControllerDelegate: class {
+protocol AuthorFormViewControllerDelegate: class {
     func didAuthorCreated(_ author: AuthorResponse)
+    func didAuthorUpdated(_ author: AuthorResponse)
 }
 
-class NewAuthorViewController: UIViewController, UITextFieldDelegate {
+class AuthorFormViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Attributes
-    weak var delegate: NewAuthorViewControllerDelegate?
+    weak var delegate: AuthorFormViewControllerDelegate?
     
     private var authorRepository: AuthorRepository
     var selectedAuthor: AuthorResponse?
     
     // MARK: IBOutlets
-
+    
     @IBOutlet weak var navigationBar: NavigationBar!
     @IBOutlet weak var sectionTitle: SectionTitle!
     @IBOutlet weak var profilePictureView: UIImageView!
@@ -29,7 +30,7 @@ class NewAuthorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var bioTextView: UITextView!
     @IBOutlet weak var technologiesTextField: UITextField!
-    @IBOutlet weak var addAuthorButton: UIButton!
+    @IBOutlet weak var saveAuthorButton: UIButton!
     
     // MARK: Constructors
     
@@ -50,21 +51,41 @@ class NewAuthorViewController: UIViewController, UITextFieldDelegate {
         navigationBar.configure(navigationController, current: self)
     
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
+        buildUp()
+    }
+    
+    private func buildUp() {
+        if let selectedAuthor = self.selectedAuthor {
+            self.sectionTitle.label.text = "Dados do autor"
+            self.saveAuthorButton.addTarget(self, action: #selector(authorEditingButtonPressed(_:)), for: .touchUpInside)
+            
+            self.initData(with: selectedAuthor)
+        } else {
+            self.sectionTitle.label.text = "Novo autor"
+            self.saveAuthorButton.addTarget(self, action: #selector(authorAddingButtonPressed(_:)), for: .touchUpInside)
+        }
+        
         adjustLayout()
     }
     
-    private func adjustLayout() {
-        sectionTitle.label.text = "Novo autor"
+    private func initData(with selectedAuthor: AuthorResponse) {
+        pictureUrlTextField.text = selectedAuthor.profilePicturePath.absoluteString
+        pictureFieldEditingDidEnd(pictureUrlTextField)
         
+        nameTextField.text = selectedAuthor.fullName
+        bioTextView.text = selectedAuthor.bio
+        technologiesTextField.text = selectedAuthor.technologies.joined(separator: "; ")
+    }
+
+    private func adjustLayout() {
         profilePictureView.roundTheShape()
         
         bioTextView.layer.cornerRadius = 6
         bioTextView.layer.borderWidth = 0.2
         bioTextView.layer.borderColor = UIColor.lightGray.cgColor
         
-        addAuthorButton.layer.cornerRadius = 10
-        addAuthorButton.showsTouchWhenHighlighted = true
-        addAuthorButton.addTarget(self, action: #selector(authorAddingButtonPressed(_:)), for: .touchUpInside)
+        saveAuthorButton.layer.cornerRadius = 10
+        saveAuthorButton.showsTouchWhenHighlighted = true
     }
     
     // MARK: IBActions
@@ -99,6 +120,10 @@ class NewAuthorViewController: UIViewController, UITextFieldDelegate {
             return nil
         }
         
+        if let selectedAuthor = self.selectedAuthor {
+            return AuthorRequest.Editing(id: selectedAuthor.id, fullName: fullName, bio: bio, profilePicturePath: pictureURL, technologies: technologiesTextField.text)
+        }
+        
         return AuthorRequest(fullName: fullName, bio: bio, profilePicturePath: pictureURL, technologies: technologiesTextField.text)
     }
     
@@ -119,5 +144,23 @@ class NewAuthorViewController: UIViewController, UITextFieldDelegate {
             Alert.show(title: "Ops", message: "Could not possible to save new author. Try again!", in: self)
         }
 
+    }
+    
+    @objc func authorEditingButtonPressed(_ sender: UIButton!) {
+        guard let author = getAuthorFromForm() as? AuthorRequest.Editing else { return }
+        
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
+        indicator.startAnimating()
+        
+        authorRepository.update(author: author) { [weak self] updatedAuthor in
+            indicator.stopAnimating()
+            self?.navigationController?.popViewController(animated: true)
+            
+            self?.delegate?.didAuthorUpdated(updatedAuthor)
+            
+        } failureHandler: {
+            indicator.stopAnimating()
+            Alert.show(title: "Ops", message: "Could not possible to update author data. Try again!", in: self)
+        }
     }
 }

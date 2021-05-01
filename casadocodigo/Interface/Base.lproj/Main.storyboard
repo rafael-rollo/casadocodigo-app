@@ -308,10 +308,10 @@
             </objects>
             <point key="canvasLocation" x="86.915887850467286" y="168.46652267818575"/>
         </scene>
-        <!--New Author View Controller-->
+        <!--Author Form View Controller-->
         <scene sceneID="ywp-nL-Rgy">
             <objects>
-                <viewController storyboardIdentifier="NewAuthorViewController" id="poZ-C8-iEn" customClass="NewAuthorViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthorFormViewController" id="poZ-C8-iEn" customClass="AuthorFormViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZAP-Rc-Etw">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -437,7 +437,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="42" id="Mrk-Au-avv"/>
                                                         </constraints>
-                                                        <state key="normal" title="Adicionar novo autor">
+                                                        <state key="normal" title="Salvar">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                     </button>
@@ -476,12 +476,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addAuthorButton" destination="whA-wH-2YW" id="D7E-Qd-3eR"/>
                         <outlet property="bioTextView" destination="uWv-DG-o1Z" id="JRk-Qp-Dyn"/>
                         <outlet property="nameTextField" destination="s6M-46-Mvb" id="Yjd-tQ-ZOu"/>
                         <outlet property="navigationBar" destination="n8k-nl-SR4" id="jaD-EM-ReL"/>
                         <outlet property="pictureUrlTextField" destination="Aas-y3-4Lw" id="UDt-Fg-ZOp"/>
                         <outlet property="profilePictureView" destination="Nvb-RA-Tsq" id="Tax-ug-bEA"/>
+                        <outlet property="saveAuthorButton" destination="whA-wH-2YW" id="hQf-dA-E3t"/>
                         <outlet property="sectionTitle" destination="20T-bB-goA" id="zQN-t6-N1w"/>
                         <outlet property="technologiesTextField" destination="r6R-GI-3sG" id="8Ix-VX-mxN"/>
                     </connections>
