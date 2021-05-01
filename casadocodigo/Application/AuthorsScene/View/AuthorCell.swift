@@ -8,34 +8,78 @@
 import UIKit
 import AlamofireImage
 
+protocol AuthorCellDelegate: class {
+    func didRemovingButtonPressed(_ sender: UIButton!, forAuthorIdentifiedBy id: Int)
+}
+
 class AuthorCell: UICollectionViewCell, ReusableView {
+    
+    // MARK: Attributes
+    
+    var actionsTarget: AuthorResponse?
+    weak var delegate: AuthorCellDelegate?
+    
+    // MARK: IBOutlets
     
     @IBOutlet weak var authorPictureView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
     
+    @IBOutlet weak var authorRemovingButton: UIButton!
+    
     @IBOutlet weak var publicationCountLabel: UILabel!
     @IBOutlet weak var technologiesList: TagsHorizontalList!
-    
-    @IBOutlet weak var authorBioLabel: UILabel!
 
-    func setFrom(_ author: AuthorResponse) {
-        configureBorders()
-        
-        authorPictureView.af.setImage(withURL: author.profilePicturePath)
-        authorPictureView.roundTheShape()
-        
-        authorNameLabel.text = author.fullName
-        publicationCountLabel.text = "Livros publicados \(author.publishedBooks)"
-        
-        technologiesList.setFrom(author.technologies)
-        authorBioLabel.text = "\"\(author.bio)\""
-    }
+    @IBOutlet weak var authorBioLabel: UILabel!
     
-    private func configureBorders() {
+    // MARK: View methods
+    
+    private func configureCellBorders() {
         layer.cornerRadius = 8
         layer.borderWidth = 0.2
         layer.borderColor = UIColor.lightGray.cgColor
     
         self.dropShadow()
     }
+
+    private func adjustGeneralLayout() {
+        configureCellBorders()
+        authorPictureView.roundTheShape()
+        
+        let removingButtonImage = UIImage(named: "trash")?.withRenderingMode(.alwaysTemplate)
+        authorRemovingButton.setImage(removingButtonImage, for: .normal)
+    }
+
+    func setFrom(_ author: AuthorResponse) {
+        adjustGeneralLayout()
+        
+        authorPictureView.af.setImage(withURL: author.profilePicturePath)
+        authorNameLabel.text = author.fullName
+        
+        authorRemovingButton.addTarget(self, action: #selector(removingButtonPressed(_:)), for: .touchUpInside)
+        
+        publicationCountLabel.text = "Livros publicados \(author.publishedBooks)"
+        technologiesList.setFrom(author.technologies)
+        authorBioLabel.text = "\"\(author.bio)\""
+        
+        actionsTarget = author
+    }
+    
+    // MARK: View callbacks
+    
+    @objc func removingButtonPressed(_ sender: UIButton!) {
+        guard let currentAuthor = actionsTarget else {
+            debugPrint("Could not determine the target author for that action. Check the method 'cellForItemAt' it sets up the author cells")
+            return
+        }
+        
+        guard let parentController = delegate as? UIViewController else {
+            fatalError("Could not possible to perform action. Please provide a UIViewController as a delegate implementation")
+        }
+        
+        ConfirmationDialog.execute(in: parentController, title: "Está certo disso?",
+            message: "Você está removendo \(currentAuthor.fullName) da base de autores. Todos os livros do autor também serão removidos.") { action in
+            self.delegate?.didRemovingButtonPressed(sender, forAuthorIdentifiedBy: currentAuthor.id)
+        }
+    }
+
 }

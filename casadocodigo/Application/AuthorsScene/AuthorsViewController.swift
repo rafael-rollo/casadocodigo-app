@@ -7,6 +7,10 @@
 
 import UIKit
 
+extension Notification.Name {
+    static let authorDeleted = Notification.Name("An author has been removed")
+}
+
 class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // MARK: Attributes
@@ -55,7 +59,9 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
             fatalError("Invalid view cell type for author item. Please, check the configuration in the Cell and CollectionView's code or ib definition")
         }
         
+        authorCell.delegate = self
         authorCell.setFrom(author)
+        
         return authorCell
     }
     
@@ -122,5 +128,25 @@ extension AuthorsViewController: NewAuthorViewControllerDelegate {
     func didAuthorCreated(_ author: AuthorResponse) {
         let allAuthors = self.authors + [author]
         updateAuthorsList(with: allAuthors)
+    }
+}
+
+extension AuthorsViewController: AuthorCellDelegate {
+    func didRemovingButtonPressed(_ sender: UIButton!, forAuthorIdentifiedBy id: Int) {
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
+        indicator.startAnimating()
+        
+        authorRepository.deleteAuthor(identifiedBy: id) { [weak self] in
+            guard let self = self else { return }
+            
+            indicator.stopAnimating()
+            self.updateAuthorsList(with: self.authors.filter { $0.id != id })
+            
+            NotificationCenter.default.post(Notification(name: .authorDeleted))
+            
+        } failureHandler: {
+            indicator.stopAnimating()
+            Alert.show(title: "Ops!", message: "Could not possible to remove this author right now. Try again later!", in: self)
+        }
     }
 }
