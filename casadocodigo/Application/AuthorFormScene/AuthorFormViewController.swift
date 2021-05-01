@@ -120,10 +120,6 @@ class AuthorFormViewController: UIViewController, UITextFieldDelegate {
             return nil
         }
         
-        if let selectedAuthor = self.selectedAuthor {
-            return AuthorRequest.Editing(id: selectedAuthor.id, fullName: fullName, bio: bio, profilePicturePath: pictureURL, technologies: technologiesTextField.text)
-        }
-        
         return AuthorRequest(fullName: fullName, bio: bio, profilePicturePath: pictureURL, technologies: technologiesTextField.text)
     }
     
@@ -147,12 +143,16 @@ class AuthorFormViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func authorEditingButtonPressed(_ sender: UIButton!) {
-        guard let author = getAuthorFromForm() as? AuthorRequest.Editing else { return }
+        guard let selectedAuthor = self.selectedAuthor else {
+            fatalError("Could not possible to perform that action because an illegal state was verified. A selected author is required at this point.")
+        }
+        
+        guard let author = getAuthorFromForm() else { return }
         
         let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
         
-        authorRepository.update(author: author) { [weak self] updatedAuthor in
+        authorRepository.update(author, identifiedBy: selectedAuthor.id) { [weak self] updatedAuthor in
             indicator.stopAnimating()
             self?.navigationController?.popViewController(animated: true)
             

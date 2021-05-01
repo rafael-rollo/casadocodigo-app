@@ -34,19 +34,6 @@ class AuthorRequest: Encodable {
         case profilePicturePath
         case technologies
     }
-    
-    class Editing: AuthorRequest {
-        let id: Int
-        
-        init(id: Int, fullName: String, bio: String, profilePicturePath: String, technologies: String? = nil) {
-            self.id = id
-            super.init(fullName: fullName, bio: bio, profilePicturePath: profilePicturePath, technologies: technologies)
-        }
-        
-        enum CodingKeys: String, CodingKey {
-            case id
-        }
-    }
 }
 
 struct AuthorResponse: Decodable {
