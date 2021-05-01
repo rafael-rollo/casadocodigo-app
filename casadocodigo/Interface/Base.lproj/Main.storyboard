@@ -202,7 +202,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AWs-To-FdB" customClass="TagsHorizontalList" customModule="casadocodigo" customModuleProvider="target">
-                                                                    <rect key="frame" x="8" y="87" width="224" height="33"/>
+                                                                    <rect key="frame" x="8" y="87" width="244" height="33"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 </view>
