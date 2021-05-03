@@ -65,4 +65,24 @@ class AuthorRepository: NSObject {
                 }
             }
     }
+    
+    func update(_ author: AuthorRequest, identifiedBy authorId: Int,
+                      completionHandler: @escaping (AuthorResponse) -> Void, failureHandler: @escaping () -> Void) {
+        let resourceURI = "\(AuthorRepository.authorsBasePath)/\(authorId)"
+        let headers: HTTPHeaders = ["Content-type": "application/json", "Accept": "application/json"]
+        
+        AF.request(resourceURI, method: .put, parameters: author, encoder: JSONParameterEncoder.default, headers: headers)
+            .validate()
+            .responseDecodable(of: AuthorResponse.self) { response in
+                switch response.result {
+                case .success:
+                    guard let updatedAuthor = response.value else { return }
+                    completionHandler(updatedAuthor)
+                    
+                case let .failure(error):
+                    debugPrint(error)
+                    failureHandler()
+                }
+            }
+    }
 }

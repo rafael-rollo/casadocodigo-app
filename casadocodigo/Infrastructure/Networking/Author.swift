@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AuthorRequest: Encodable {
+class AuthorRequest: Encodable {
     let firstName: String
     let lastName: String
     let bio: String

@@ -40,7 +40,7 @@ class TagCell: UICollectionViewCell, ReusableView, IdentifiableView {
     
     private func configureBorders() {
         cellContentView.layer.masksToBounds = false
-        cellContentView.layer.cornerRadius = 10
+        cellContentView.layer.cornerRadius = 16
     }
 }
 
@@ -48,7 +48,7 @@ extension TagCell {
     
     private static let fontName: String = "HelveticaNeue-Medium"
     private static let fontSize: CGFloat = 14
-    private static let labelHorizontalPadding: CGFloat = 12
+    private static let labelHorizontalPadding: CGFloat = 16
     
     func getMinSizeForCell(with label: String, in parent: UIView) -> CGSize? {
         guard let cellFont = UIFont(name: TagCell.fontName, size: TagCell.fontSize) else { return nil }

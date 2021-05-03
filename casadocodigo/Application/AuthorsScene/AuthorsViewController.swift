@@ -117,21 +117,27 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
 
 extension AuthorsViewController: SectionTitleDelegate {
     func didAddButtonPressed(_ sender: UIButton) {
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "NewAuthorViewController") as! NewAuthorViewController
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "AuthorFormViewController") as! AuthorFormViewController
         controller.delegate = self
         
         navigationController?.pushViewController(controller, animated: true)
     }
 }
 
-extension AuthorsViewController: NewAuthorViewControllerDelegate {
+extension AuthorsViewController: AuthorFormViewControllerDelegate {
     func didAuthorCreated(_ author: AuthorResponse) {
-        let allAuthors = self.authors + [author]
+        let allAuthors: [AuthorResponse] = self.authors + [author]
         updateAuthorsList(with: allAuthors)
+    }
+    
+    func didAuthorUpdated(_ author: AuthorResponse) {
+        let updatedList: [AuthorResponse] = authors.map{ $0.id == author.id ? author : $0 }
+        updateAuthorsList(with: updatedList)
     }
 }
 
 extension AuthorsViewController: AuthorCellDelegate {
+    
     func didRemovingButtonPressed(_ sender: UIButton!, forAuthorIdentifiedBy id: Int) {
         let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
@@ -149,4 +155,13 @@ extension AuthorsViewController: AuthorCellDelegate {
             Alert.show(title: "Ops!", message: "Could not possible to remove this author right now. Try again later!", in: self)
         }
     }
+    
+    func didEditingButtonPressed(_ sender: UIButton!, for author: AuthorResponse) {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "AuthorFormViewController") as! AuthorFormViewController
+        controller.delegate = self
+        controller.selectedAuthor = author
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
 }
