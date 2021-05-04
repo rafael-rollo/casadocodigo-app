@@ -45,6 +45,52 @@
             </objects>
             <point key="canvasLocation" x="-305" y="-561"/>
         </scene>
+        <!--Book Details View Controller-->
+        <scene sceneID="Cep-kr-hIY">
+            <objects>
+                <viewController storyboardIdentifier="BookDetailsViewController" id="tFr-05-NDh" customClass="BookDetailsViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UqT-UC-mx3">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQB-oK-7Df" customClass="NavigationBar" customModule="casadocodigo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="428" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="In0-49-v6s"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzi-CQ-Qqt">
+                                <rect key="frame" x="0.0" y="451" width="428" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="N6p-E4-iVw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yVH-8t-8U7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lQB-oK-7Df" firstAttribute="leading" secondItem="yVH-8t-8U7" secondAttribute="leading" id="PSR-KK-QPG"/>
+                            <constraint firstItem="lQB-oK-7Df" firstAttribute="top" secondItem="yVH-8t-8U7" secondAttribute="top" id="Ry9-uA-YCg"/>
+                            <constraint firstItem="rzi-CQ-Qqt" firstAttribute="centerY" secondItem="UqT-UC-mx3" secondAttribute="centerY" id="cJN-bJ-llw"/>
+                            <constraint firstItem="lQB-oK-7Df" firstAttribute="trailing" secondItem="yVH-8t-8U7" secondAttribute="trailing" id="q6g-8C-VVh"/>
+                            <constraint firstItem="yVH-8t-8U7" firstAttribute="trailing" secondItem="rzi-CQ-Qqt" secondAttribute="trailing" id="w1O-zA-Fvc"/>
+                            <constraint firstItem="rzi-CQ-Qqt" firstAttribute="centerX" secondItem="UqT-UC-mx3" secondAttribute="centerX" id="xpP-0o-3ps"/>
+                            <constraint firstItem="rzi-CQ-Qqt" firstAttribute="leading" secondItem="yVH-8t-8U7" secondAttribute="leading" id="zfV-ck-G8v"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="lQB-oK-7Df" id="eFB-pL-rJa"/>
+                        <outlet property="titleLabel" destination="rzi-CQ-Qqt" id="JVz-pF-sSF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vcO-AZ-yMQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1850" y="292"/>
+        </scene>
         <!--Livros-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -133,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-695.32710280373828" y="168.46652267818575"/>
+            <point key="canvasLocation" x="-1089" y="292"/>
         </scene>
         <!--Autores-->
         <scene sceneID="Ng1-rm-cNt">
@@ -306,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zrs-un-2RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86.915887850467286" y="168.46652267818575"/>
+            <point key="canvasLocation" x="468" y="292"/>
         </scene>
         <!--Author Form View Controller-->
         <scene sceneID="ywp-nL-Rgy">
@@ -488,7 +534,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nan-c9-Btk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="839.71962616822429" y="167.81857451403889"/>
+            <point key="canvasLocation" x="1220" y="291"/>
         </scene>
     </scenes>
     <resources>
