@@ -7,8 +7,8 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-   
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SectionTitleDelegate {
+    
     // MARK: Attributes
     
     var showcase: [BookResponse] = []
@@ -101,7 +101,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     as? ShowcaseHeaderView else {
                 fatalError("Invalid view type for book showcase header")
             }
-            return headerView.build()
+            return headerView.build(delegate: self)
             
         default:
             assert(false, "Invalid element type")
@@ -114,13 +114,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.showcaseFlowLayoutImpl.sizeForItemOf(collectionView, layout: collectionViewLayout, atIndex: indexPath)
     }
     
+    // SectionTitleDelegate Impl
+    
+    func didAddButtonPressed(_ sender: UIButton) {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "BookFormViewController")
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     // MARK: View methods
     
     func loadShowcase() {
         let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
-        
-        debugPrint(bookRepository)
         
         bookRepository.showcase { [weak self] books in
             guard let self = self else { return }

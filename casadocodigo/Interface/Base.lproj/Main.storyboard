@@ -45,10 +45,42 @@
             </objects>
             <point key="canvasLocation" x="-305" y="-561"/>
         </scene>
-        <!--Book Details View Controller-->
+        <!--Book Form-->
+        <scene sceneID="7YE-0e-U2J">
+            <objects>
+                <viewController storyboardIdentifier="BookFormViewController" id="RIk-K9-MQy" userLabel="Book Form" customClass="BookFormViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CcN-9v-lSD">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVs-LO-GKU" customClass="NavigationBar" customModule="casadocodigo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="428" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="YOH-Wk-PgF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fI2-dw-3sn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MVs-LO-GKU" firstAttribute="trailing" secondItem="fI2-dw-3sn" secondAttribute="trailing" id="PqZ-Q8-QlW"/>
+                            <constraint firstItem="MVs-LO-GKU" firstAttribute="top" secondItem="fI2-dw-3sn" secondAttribute="top" id="deo-4l-F54"/>
+                            <constraint firstItem="MVs-LO-GKU" firstAttribute="leading" secondItem="fI2-dw-3sn" secondAttribute="leading" id="uuP-fx-bX0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="MVs-LO-GKU" id="m3p-OC-ZLs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Y7-Tp-nQ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2606" y="292"/>
+        </scene>
+        <!--Book Details-->
         <scene sceneID="Cep-kr-hIY">
             <objects>
-                <viewController storyboardIdentifier="BookDetailsViewController" id="tFr-05-NDh" customClass="BookDetailsViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookDetailsViewController" id="tFr-05-NDh" userLabel="Book Details" customClass="BookDetailsViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UqT-UC-mx3">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -514,10 +546,10 @@
             </objects>
             <point key="canvasLocation" x="-1850.467289719626" y="291.57667386609074"/>
         </scene>
-        <!--Livros-->
+        <!--All Books-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="All Books" customClass="HomeViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -604,10 +636,10 @@
             </objects>
             <point key="canvasLocation" x="-1089" y="292"/>
         </scene>
-        <!--Autores-->
+        <!--Authors-->
         <scene sceneID="Ng1-rm-cNt">
             <objects>
-                <viewController id="UbJ-Mk-Nru" userLabel="Autores" customClass="AuthorsViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UbJ-Mk-Nru" userLabel="Authors" customClass="AuthorsViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A9V-9B-Bd9">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -777,10 +809,10 @@
             </objects>
             <point key="canvasLocation" x="468" y="292"/>
         </scene>
-        <!--Author Form View Controller-->
+        <!--Author Form-->
         <scene sceneID="ywp-nL-Rgy">
             <objects>
-                <viewController storyboardIdentifier="AuthorFormViewController" id="poZ-C8-iEn" customClass="AuthorFormViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthorFormViewController" id="poZ-C8-iEn" userLabel="Author Form" customClass="AuthorFormViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZAP-Rc-Etw">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

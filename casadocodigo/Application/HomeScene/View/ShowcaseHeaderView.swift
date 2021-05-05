@@ -11,8 +11,11 @@ class ShowcaseHeaderView: UICollectionReusableView, ReusableView {
         
     @IBOutlet weak var sectionTitle: SectionTitle!
     
-    func build() -> ShowcaseHeaderView {
+    func build(delegate: SectionTitleDelegate) -> ShowcaseHeaderView {
+        sectionTitle.delegate = delegate
         sectionTitle.label.text = "Todos os Livros"
+        
+        sectionTitle.enableItemAddingButton()
         return self
     }
 }
