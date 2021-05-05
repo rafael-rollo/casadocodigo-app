@@ -61,21 +61,21 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaE-pB-foP">
-                                <rect key="frame" x="0.0" y="104" width="428" height="787.99999999999989"/>
+                                <rect key="frame" x="0.0" y="104" width="428" height="788"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8oz-bb-6Je" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="428" height="1407.6666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="1461.3333333333333"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="tBR-L9-EtF" userLabel="Titles View">
                                                 <rect key="frame" x="0.0" y="0.0" width="428" height="505.66666666666669"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título do Livro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGR-rm-NP2">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título do Livro" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGR-rm-NP2">
                                                         <rect key="frame" x="16" y="16.000000000000004" width="396" height="38.333333333333343"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="32"/>
                                                         <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esse aqui é o subtítulo do livro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGq-8A-9cF">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esse aqui é o subtítulo do livro" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGq-8A-9cF">
                                                         <rect key="frame" x="16" y="58.33333333333335" width="396" height="23.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                         <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -286,7 +286,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4TT-9B-t2Z" userLabel="Description View">
-                                                <rect key="frame" x="0.0" y="751.66666666666652" width="428" height="640"/>
+                                                <rect key="frame" x="0.0" y="751.66666666666674" width="428" height="693.66666666666674"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Z4-Be-P8a" userLabel="Content Label " customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="8" width="396" height="52"/>
@@ -295,53 +295,58 @@
                                                             <constraint firstAttribute="height" constant="52" id="fsw-eg-cs4"/>
                                                         </constraints>
                                                     </view>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lj1-Bm-Hh0" userLabel="Book Content Text">
-                                                        <rect key="frame" x="16" y="68" width="396" height="300"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lj1-Bm-Hh0" userLabel="Book Content Text">
+                                                        <rect key="frame" x="16" y="68" width="396" height="226"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="UVP-u8-MgZ"/>
-                                                        </constraints>
                                                         <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                                         <color key="textColor" red="0.42352941179999998" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZs-Vh-gNc" userLabel="Author Label" customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="376.00000000000011" width="396" height="52"/>
+                                                        <rect key="frame" x="16" y="302.00000000000011" width="396" height="52"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="P0f-ld-q5l"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tsS-mH-hdu" userLabel="Author View">
-                                                        <rect key="frame" x="16" y="436.00000000000011" width="396" height="80"/>
+                                                        <rect key="frame" x="16" y="362.00000000000011" width="396" height="88"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bcd-Ha-mdd">
-                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                <rect key="frame" x="0.0" y="8" width="80" height="80"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="80" id="kde-Sl-L5c"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rafael Rollo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebd-PT-XLV">
-                                                                <rect key="frame" x="96" y="0.0" width="300" height="80"/>
+                                                                <rect key="frame" x="96" y="8" width="300" height="80"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                                                 <color key="textColor" red="0.42352941179999998" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="80" id="A4z-Il-iy4"/>
+                                                            <constraint firstAttribute="height" constant="88" id="A4z-Il-iy4"/>
                                                         </constraints>
+                                                        <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="0.0" bottom="0.0" trailing="0.0"/>
                                                     </stackView>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iaz-tl-C68" userLabel="Author Bio Text">
+                                                        <rect key="frame" x="16" y="458.00000000000017" width="396" height="111.66666666666669"/>
+                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
+                                                        <color key="textColor" red="0.42352941179999998" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VD2-2Z-ah4" userLabel="Product Info Label" customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
-                                                        <rect key="frame" x="16" y="524.00000000000011" width="396" height="52"/>
+                                                        <rect key="frame" x="16" y="577.66666666666663" width="396" height="52"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="O11-Z6-BDs"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hmC-4f-uNZ" userLabel="Product Info View">
-                                                        <rect key="frame" x="16" y="584.00000000000011" width="396" height="48"/>
+                                                        <rect key="frame" x="16" y="637.66666666666663" width="396" height="48"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9w-Ua-xcg">
                                                                 <rect key="frame" x="0.0" y="0.0" width="396" height="24"/>
@@ -455,6 +460,7 @@
                     </view>
                     <connections>
                         <outlet property="ISBNLabel" destination="khv-eB-uC2" id="i3u-Qd-fCj"/>
+                        <outlet property="authorBioText" destination="iaz-tl-C68" id="Ehd-hF-AJS"/>
                         <outlet property="authorImageView" destination="bcd-Ha-mdd" id="3dR-JT-Qhn"/>
                         <outlet property="authorNameLabel" destination="Ebd-PT-XLV" id="fzH-FC-wTD"/>
                         <outlet property="authorSectionTitle" destination="BZs-Vh-gNc" id="4hT-cX-VFG"/>

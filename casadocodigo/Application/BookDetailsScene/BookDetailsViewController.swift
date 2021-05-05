@@ -28,6 +28,7 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet weak var authorSectionTitle: SectionTitle!
     @IBOutlet weak var authorImageView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
+    @IBOutlet weak var authorBioText: UITextView!
     
     @IBOutlet weak var productInfoSectionTitle: SectionTitle!
     @IBOutlet weak var numberOfPagesLabel: UILabel!
@@ -45,6 +46,9 @@ class BookDetailsViewController: UIViewController {
     }
     
     private func adjustLayout() {
+        titleLabel.sizeToFit()
+        subtitleLabel.sizeToFit()
+        
         contentSectionTitle.useTextColor()
         
         authorSectionTitle.useTextColor()
@@ -77,6 +81,7 @@ class BookDetailsViewController: UIViewController {
         authorSectionTitle.label.text = "Autor"
         authorImageView.af.setImage(withURL: book.author.profilePicturePath)
         authorNameLabel.text = book.author.fullName
+        authorBioText.text = book.author.bio
         
         productInfoSectionTitle.label.text = "Dados do Produto"
         numberOfPagesLabel.text = String(describing: book.numberOfPages)
