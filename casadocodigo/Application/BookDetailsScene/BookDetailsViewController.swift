@@ -46,7 +46,10 @@ class BookDetailsViewController: UIViewController {
     
     private func adjustLayout() {
         contentSectionTitle.useTextColor()
+        
         authorSectionTitle.useTextColor()
+        authorImageView.roundTheShape()
+        
         productInfoSectionTitle.useTextColor()
     }
     
