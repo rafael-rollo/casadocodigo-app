@@ -454,8 +454,19 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ISBNLabel" destination="khv-eB-uC2" id="i3u-Qd-fCj"/>
+                        <outlet property="authorImageView" destination="bcd-Ha-mdd" id="3dR-JT-Qhn"/>
+                        <outlet property="authorNameLabel" destination="Ebd-PT-XLV" id="fzH-FC-wTD"/>
+                        <outlet property="authorSectionTitle" destination="BZs-Vh-gNc" id="4hT-cX-VFG"/>
+                        <outlet property="comboPrice" destination="gU5-AW-oPf" id="8MU-c7-euU"/>
+                        <outlet property="contentSectionTitle" destination="3Z4-Be-P8a" id="JQ4-6h-scZ"/>
+                        <outlet property="contentTextView" destination="Lj1-Bm-Hh0" id="OAV-JG-HzO"/>
                         <outlet property="coverImageView" destination="trr-IY-MOg" id="z8g-df-BKL"/>
+                        <outlet property="ebookPrice" destination="7LF-04-soG" id="w17-73-Wam"/>
+                        <outlet property="hardcoverPrice" destination="Ws6-2T-33c" id="ba8-eg-CoW"/>
                         <outlet property="navigationBar" destination="lQB-oK-7Df" id="eFB-pL-rJa"/>
+                        <outlet property="numberOfPagesLabel" destination="m46-Mt-ccK" id="cW8-5C-1rU"/>
+                        <outlet property="productInfoSectionTitle" destination="VD2-2Z-ah4" id="1tH-R7-vWd"/>
                         <outlet property="subtitleLabel" destination="cGq-8A-9cF" id="1Bb-lN-UiP"/>
                         <outlet property="titleLabel" destination="FGR-rm-NP2" id="T0d-qE-dFa"/>
                     </connections>

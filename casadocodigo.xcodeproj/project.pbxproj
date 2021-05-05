@@ -28,6 +28,7 @@
 		582F9852262A144B00354D65 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F9851262A144B00354D65 /* Alert.swift */; };
 		582F9861262DD83000354D65 /* AuthorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F9860262DD83000354D65 /* AuthorRepository.swift */; };
 		582F9869262DDD5600354D65 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F9868262DDD5600354D65 /* Author.swift */; };
+		585D72E92643073200666078 /* Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D72E82643073100666078 /* Decimal.swift */; };
 		589C5BB42621302000CE3B93 /* StatusBarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB32621302000CE3B93 /* StatusBarBackground.swift */; };
 		589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB92621363300CE3B93 /* AuthorsViewController.swift */; };
 		58B1B3E3264192BD00DFA789 /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B1B3E2264192BD00DFA789 /* BookDetailsViewController.swift */; };
@@ -84,6 +85,7 @@
 		582F9851262A144B00354D65 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		582F9860262DD83000354D65 /* AuthorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorRepository.swift; sourceTree = "<group>"; };
 		582F9868262DDD5600354D65 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		585D72E82643073100666078 /* Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal.swift; sourceTree = "<group>"; };
 		589C5BB32621302000CE3B93 /* StatusBarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarBackground.swift; sourceTree = "<group>"; };
 		589C5BB92621363300CE3B93 /* AuthorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsViewController.swift; sourceTree = "<group>"; };
 		58B1B3E2264192BD00DFA789 /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		582F98112628A3D400354D65 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				585D72E72643071300666078 /* CoreExtensions */,
 				582F98122628A3E200354D65 /* Networking */,
 			);
 			path = Infrastructure;
@@ -243,6 +246,14 @@
 				582AD3AC262F6F0800705D6D /* SectionTitle.xib */,
 			);
 			path = SectionTitle;
+			sourceTree = "<group>";
+		};
+		585D72E72643071300666078 /* CoreExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				585D72E82643073100666078 /* Decimal.swift */,
+			);
+			path = CoreExtensions;
 			sourceTree = "<group>";
 		};
 		589C5BB82621361100CE3B93 /* AuthorsScene */ = {
@@ -661,6 +672,7 @@
 				582F9869262DDD5600354D65 /* Author.swift in Sources */,
 				58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */,
 				58FA532C26334E44000390BF /* AuthorFormViewController.swift in Sources */,
+				585D72E92643073200666078 /* Decimal.swift in Sources */,
 				5827D829262FE6A300D20B19 /* TagCell.swift in Sources */,
 				5827D806262F8D1900D20B19 /* AuthorsHeaderView.swift in Sources */,
 				589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */,
