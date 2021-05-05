@@ -64,10 +64,10 @@
                                 <rect key="frame" x="0.0" y="104" width="428" height="788"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPI-FD-avp" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="428" height="72"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="496.66666666666669"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YEZ-DL-c43">
-                                                <rect key="frame" x="0.0" y="0.0" width="428" height="72"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="428" height="496.66666666666669"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agi-Bs-wSF" customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="16" width="396" height="40"/>
@@ -76,6 +76,45 @@
                                                             <constraint firstAttribute="height" constant="40" id="AHm-dr-Os7"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tE-eV-8Zh" userLabel="Image Container">
+                                                        <rect key="frame" x="16" y="72" width="396" height="332"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book-cover" translatesAutoresizingMaskIntoConstraints="NO" id="4dP-pQ-6mL">
+                                                                <rect key="frame" x="93" y="16" width="210" height="300"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="300" id="HQT-Ew-jiy"/>
+                                                                    <constraint firstAttribute="width" constant="210" id="hfV-cd-z3O"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="4dP-pQ-6mL" secondAttribute="bottom" constant="16" id="H24-hT-5RY"/>
+                                                            <constraint firstItem="4dP-pQ-6mL" firstAttribute="centerX" secondItem="9tE-eV-8Zh" secondAttribute="centerX" id="jaF-8d-0kr"/>
+                                                            <constraint firstItem="4dP-pQ-6mL" firstAttribute="top" secondItem="9tE-eV-8Zh" secondAttribute="top" constant="16" id="nYw-Mi-vA1"/>
+                                                            <constraint firstItem="4dP-pQ-6mL" firstAttribute="centerY" secondItem="9tE-eV-8Zh" secondAttribute="centerY" id="pxG-g6-n62"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VaY-Zo-fMd" userLabel="Cover Path Input">
+                                                        <rect key="frame" x="16" y="420" width="396" height="60.666666666666686"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capa do Livro:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZI-nk-exe">
+                                                                <rect key="frame" x="0.0" y="0.0" width="396" height="18.666666666666668"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                                <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://myfilestoragedomain/cover.jpg" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Smy-ny-h3X">
+                                                                <rect key="frame" x="0.0" y="26.666666666666629" width="396" height="34"/>
+                                                                <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="coverFieldEditingDidEnd:" destination="RIk-K9-MQy" eventType="editingDidEnd" id="zCh-Sp-g65"/>
+                                                                    <action selector="pictureFieldEditingDidEnd:" destination="poZ-C8-iEn" eventType="editingDidEnd" id="XeN-HN-FLa"/>
+                                                                </connections>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
                                             </stackView>
@@ -112,6 +151,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="coverImageView" destination="4dP-pQ-6mL" id="tb3-HF-GAI"/>
+                        <outlet property="coverPathTextField" destination="Smy-ny-h3X" id="4KQ-Ta-2cj"/>
                         <outlet property="navigationBar" destination="MVs-LO-GKU" id="m3p-OC-ZLs"/>
                         <outlet property="sectionTitle" destination="agi-Bs-wSF" id="fiq-bN-E3v"/>
                     </connections>
@@ -1037,6 +1078,7 @@
     </scenes>
     <resources>
         <image name="avatar" width="170.66667175292969" height="170.66667175292969"/>
+        <image name="book-cover" width="170.66667175292969" height="170.66667175292969"/>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <systemColor name="systemBackgroundColor">

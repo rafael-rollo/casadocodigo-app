@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class BookFormViewController: UIViewController {
 
@@ -13,6 +14,11 @@ class BookFormViewController: UIViewController {
     
     @IBOutlet weak var navigationBar: NavigationBar!
     @IBOutlet weak var sectionTitle: SectionTitle!
+    
+    @IBOutlet weak var coverImageView: UIImageView!
+    @IBOutlet weak var coverPathTextField: UITextField!
+    
+    // MARK: View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,4 +33,14 @@ class BookFormViewController: UIViewController {
         sectionTitle.label.text = "Novo Livro"
     }
 
+    // MARK: IBActions
+    
+    @IBAction func coverFieldEditingDidEnd(_ sender: Any) {
+        guard let coverPathAsString = coverPathTextField.text,
+              !coverPathAsString.isEmpty else { return }
+        
+        guard let coverUri = URL(string: coverPathAsString) else { return }
+        
+        coverImageView.af.setImage(withURL: coverUri)
+    }
 }
