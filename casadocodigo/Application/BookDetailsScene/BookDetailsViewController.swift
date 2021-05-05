@@ -40,11 +40,17 @@ class BookDetailsViewController: UIViewController {
         navigationBar.configure(navigationController, current: self)
         
         if let selectedBook = selectedBook {
-            buildScreenUsing(selectedBook)
+            buildUp(using: selectedBook)
         }
     }
     
-    private func buildScreenUsing(_ book: BookResponse) {
+    private func adjustLayout() {
+        contentSectionTitle.useTextColor()
+        authorSectionTitle.useTextColor()
+        productInfoSectionTitle.useTextColor()
+    }
+    
+    private func buildUp(using book: BookResponse) {
         titleLabel.text = book.title
         subtitleLabel.text = book.subtitle
         coverImageView.af.setImage(withURL: book.coverImagePath)
@@ -72,5 +78,7 @@ class BookDetailsViewController: UIViewController {
         productInfoSectionTitle.label.text = "Dados do Produto"
         numberOfPagesLabel.text = String(describing: book.numberOfPages)
         ISBNLabel.text = book.ISBN
+        
+        adjustLayout()
     }
 }

@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
             <connections>
+                <outlet property="bottomDivider" destination="cef-ZR-0qB" id="xBk-mA-Fnn"/>
                 <outlet property="contentView" destination="ojN-B5-Nsu" id="Nmy-AQ-AFa"/>
                 <outlet property="itemAddingButton" destination="nRA-BF-nhP" id="xuG-GK-bWd"/>
                 <outlet property="label" destination="G1l-UG-xhM" id="TmG-cC-j0c"/>
