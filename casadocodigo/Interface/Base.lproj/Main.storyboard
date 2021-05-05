@@ -64,8 +64,29 @@
                                 <rect key="frame" x="0.0" y="104" width="428" height="788"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPI-FD-avp" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="428" height="788"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="72"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YEZ-DL-c43">
+                                                <rect key="frame" x="0.0" y="0.0" width="428" height="72"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agi-Bs-wSF" customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
+                                                        <rect key="frame" x="16" y="16" width="396" height="40"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="AHm-dr-Os7"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
+                                            </stackView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="YEZ-DL-c43" firstAttribute="leading" secondItem="vPI-FD-avp" secondAttribute="leading" id="5QX-Wg-0vx"/>
+                                            <constraint firstItem="YEZ-DL-c43" firstAttribute="top" secondItem="vPI-FD-avp" secondAttribute="top" id="9ry-Bu-Ifj"/>
+                                            <constraint firstAttribute="trailing" secondItem="YEZ-DL-c43" secondAttribute="trailing" id="ec7-fo-Sxj"/>
+                                            <constraint firstAttribute="bottom" secondItem="YEZ-DL-c43" secondAttribute="bottom" id="uf7-fS-MBP"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -92,6 +113,7 @@
                     </view>
                     <connections>
                         <outlet property="navigationBar" destination="MVs-LO-GKU" id="m3p-OC-ZLs"/>
+                        <outlet property="sectionTitle" destination="agi-Bs-wSF" id="fiq-bN-E3v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Y7-Tp-nQ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
