@@ -264,7 +264,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BK1-JC-fnL">
-                                                                <rect key="frame" x="0.0" y="26.666666666666515" width="396" height="216"/>
+                                                                <rect key="frame" x="0.0" y="26" width="396" height="216"/>
                                                             </pickerView>
                                                         </subviews>
                                                     </stackView>
@@ -375,6 +375,7 @@
                     <connections>
                         <outlet property="coverImageView" destination="4dP-pQ-6mL" id="tb3-HF-GAI"/>
                         <outlet property="coverPathTextField" destination="Smy-ny-h3X" id="4KQ-Ta-2cj"/>
+                        <outlet property="descriptionTextView" destination="uFT-If-fmk" id="HZD-3H-foJ"/>
                         <outlet property="navigationBar" destination="MVs-LO-GKU" id="m3p-OC-ZLs"/>
                         <outlet property="sectionTitle" destination="agi-Bs-wSF" id="fiq-bN-E3v"/>
                     </connections>

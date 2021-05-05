@@ -18,6 +18,8 @@ class BookFormViewController: UIViewController {
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var coverPathTextField: UITextField!
     
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
     // MARK: View lifecycle
     
     override func viewDidLoad() {
@@ -29,8 +31,14 @@ class BookFormViewController: UIViewController {
         buildUp()
     }
     
+    private func adjustLayout() {
+        descriptionTextView.configureBorders()
+    }
+    
     private func buildUp() {
         sectionTitle.label.text = "Novo Livro"
+        
+        adjustLayout()
     }
 
     // MARK: IBActions
