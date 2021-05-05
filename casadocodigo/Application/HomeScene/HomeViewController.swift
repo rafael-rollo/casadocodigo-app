@@ -11,7 +11,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
    
     // MARK: Attributes
     
-    var showcase: [BookShowcaseItem] = []
+    var showcase: [BookResponse] = []
     var isShowcaseUpToDate = false
     
     var bookRepository: BookRepository
@@ -135,7 +135,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     }
     
-    func updateShowcase(with books: [BookShowcaseItem]) {
+    func updateShowcase(with books: [BookResponse]) {
         showcase = books
         isShowcaseUpToDate = true
         

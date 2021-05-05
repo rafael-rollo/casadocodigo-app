@@ -10,7 +10,7 @@ import AlamofireImage
 
 class BookDetailsViewController: UIViewController {
     
-    var selectedBook: BookShowcaseItem?
+    var selectedBook: BookResponse?
     
     @IBOutlet weak var navigationBar: NavigationBar!
     
