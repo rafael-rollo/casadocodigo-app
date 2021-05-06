@@ -291,6 +291,7 @@
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                 <connections>
                                                                     <action selector="coverFieldEditingDidEnd:" destination="RIk-K9-MQy" eventType="editingDidEnd" id="Zl5-ud-fcG"/>
+                                                                    <action selector="didPublicationDateFieldFocused:" destination="RIk-K9-MQy" eventType="editingDidBegin" id="MH8-1u-bMI"/>
                                                                     <action selector="pictureFieldEditingDidEnd:" destination="poZ-C8-iEn" eventType="editingDidEnd" id="XU0-eE-Bnj"/>
                                                                 </connections>
                                                             </textField>
@@ -385,6 +386,7 @@
                         <outlet property="coverPathTextField" destination="Smy-ny-h3X" id="4KQ-Ta-2cj"/>
                         <outlet property="descriptionTextView" destination="uFT-If-fmk" id="HZD-3H-foJ"/>
                         <outlet property="navigationBar" destination="MVs-LO-GKU" id="m3p-OC-ZLs"/>
+                        <outlet property="publicationDateTextField" destination="uhU-9F-uVp" id="Eow-AS-jwg"/>
                         <outlet property="sectionTitle" destination="agi-Bs-wSF" id="fiq-bN-E3v"/>
                     </connections>
                 </viewController>

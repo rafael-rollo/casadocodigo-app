@@ -28,6 +28,8 @@ class BookFormViewController: UIViewController {
     @IBOutlet weak var authorTextField: UITextField!
     var authorPickerView = UIPickerView()
     
+    @IBOutlet weak var publicationDateTextField: UITextField!
+    
     // MARK: Initializers
     
     init(authorRepository: AuthorRepository = AuthorRepository(), nibName: String? = nil, bundle: Bundle? = nil) {
@@ -78,7 +80,25 @@ class BookFormViewController: UIViewController {
         coverImageView.af.setImage(withURL: coverUri)
     }
     
+    @IBAction func didPublicationDateFieldFocused(_ sender: UITextField) {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
+        datePicker.addTarget(self, action: #selector(updatePublicationDateFieldValue(_:)), for: .valueChanged)
+        
+        if let publicationDate = publicationDateTextField.text, publicationDate.isEmpty {
+            updatePublicationDateFieldValue(datePicker)
+        }
+        
+        publicationDateTextField.inputView = datePicker
+    }
     
+    @objc func updatePublicationDateFieldValue(_ sender: UIDatePicker!) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        
+        publicationDateTextField.text = formatter.string(from: sender.date)
+    }
     
     // MARK: View methods
     
