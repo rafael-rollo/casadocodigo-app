@@ -61,10 +61,10 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yaE-pB-foP">
-                                <rect key="frame" x="0.0" y="104" width="428" height="788"/>
+                                <rect key="frame" x="0.0" y="104" width="428" height="788.00000000000011"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8oz-bb-6Je" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="428" height="1461.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="1485.3333333333333"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="tBR-L9-EtF" userLabel="Titles View">
                                                 <rect key="frame" x="0.0" y="0.0" width="428" height="505.66666666666669"/>
@@ -286,7 +286,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4TT-9B-t2Z" userLabel="Description View">
-                                                <rect key="frame" x="0.0" y="751.66666666666674" width="428" height="693.66666666666674"/>
+                                                <rect key="frame" x="0.0" y="751.66666666666674" width="428" height="717.66666666666674"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Z4-Be-P8a" userLabel="Content Label " customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="8" width="396" height="52"/>
@@ -298,7 +298,7 @@
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lj1-Bm-Hh0" userLabel="Book Content Text">
                                                         <rect key="frame" x="16" y="68" width="396" height="226"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <color key="textColor" red="0.42352941179999998" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -346,10 +346,42 @@
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hmC-4f-uNZ" userLabel="Product Info View">
-                                                        <rect key="frame" x="16" y="637.66666666666663" width="396" height="48"/>
+                                                        <rect key="frame" x="16" y="637.66666666666663" width="396" height="72"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9w-Ua-xcg">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idf-0b-kwH">
                                                                 <rect key="frame" x="0.0" y="0.0" width="396" height="24"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de Publicação:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EV-ws-9ia">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="153" height="24"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="24" id="tLa-Py-XTi"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                                                        <color key="textColor" red="0.42352941179999998" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/01/2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPv-Ma-XMB">
+                                                                        <rect key="frame" x="162" y="0.0" width="234" height="24"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="234" id="GMj-4p-lA6"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                                        <color key="textColor" red="0.42352941179999998" green="0.41176470590000003" blue="0.41176470590000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="1EV-ws-9ia" firstAttribute="leading" secondItem="idf-0b-kwH" secondAttribute="leading" id="75j-bQ-1Xt"/>
+                                                                    <constraint firstItem="1EV-ws-9ia" firstAttribute="centerY" secondItem="idf-0b-kwH" secondAttribute="centerY" id="EWm-rK-uxO"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="xPv-Ma-XMB" secondAttribute="trailing" id="LV1-0m-NMd"/>
+                                                                    <constraint firstAttribute="height" constant="24" id="UmT-tE-TiW"/>
+                                                                    <constraint firstItem="xPv-Ma-XMB" firstAttribute="bottom" secondItem="1EV-ws-9ia" secondAttribute="bottom" id="Wj8-qC-z5h"/>
+                                                                    <constraint firstItem="xPv-Ma-XMB" firstAttribute="top" secondItem="1EV-ws-9ia" secondAttribute="top" id="bVM-ZP-LrZ"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h9w-Ua-xcg">
+                                                                <rect key="frame" x="0.0" y="24" width="396" height="24"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número de Páginas:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98O-OQ-QiO">
                                                                         <rect key="frame" x="0.0" y="0.0" width="154.33333333333334" height="24"/>
@@ -381,7 +413,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnd-hj-JDr">
-                                                                <rect key="frame" x="0.0" y="24" width="396" height="24"/>
+                                                                <rect key="frame" x="0.0" y="48" width="396" height="24"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Cc-55-vZe">
                                                                         <rect key="frame" x="0.0" y="0.0" width="43" height="24"/>
@@ -473,6 +505,7 @@
                         <outlet property="navigationBar" destination="lQB-oK-7Df" id="eFB-pL-rJa"/>
                         <outlet property="numberOfPagesLabel" destination="m46-Mt-ccK" id="cW8-5C-1rU"/>
                         <outlet property="productInfoSectionTitle" destination="VD2-2Z-ah4" id="1tH-R7-vWd"/>
+                        <outlet property="publicationDateLabel" destination="xPv-Ma-XMB" id="3Uj-3P-8Vq"/>
                         <outlet property="subtitleLabel" destination="cGq-8A-9cF" id="1Bb-lN-UiP"/>
                         <outlet property="titleLabel" destination="FGR-rm-NP2" id="T0d-qE-dFa"/>
                     </connections>

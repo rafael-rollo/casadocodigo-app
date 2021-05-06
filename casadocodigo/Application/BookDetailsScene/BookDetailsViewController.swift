@@ -31,6 +31,7 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet weak var authorBioText: UITextView!
     
     @IBOutlet weak var productInfoSectionTitle: SectionTitle!
+    @IBOutlet weak var publicationDateLabel: UILabel!
     @IBOutlet weak var numberOfPagesLabel: UILabel!
     @IBOutlet weak var ISBNLabel: UILabel!
     
@@ -84,6 +85,7 @@ class BookDetailsViewController: UIViewController {
         authorBioText.text = book.author.bio
         
         productInfoSectionTitle.label.text = "Dados do Produto"
+        publicationDateLabel.text = book.publicationDate
         numberOfPagesLabel.text = String(describing: book.numberOfPages)
         ISBNLabel.text = book.ISBN
         
