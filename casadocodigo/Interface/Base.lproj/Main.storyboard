@@ -64,7 +64,7 @@
                                 <rect key="frame" x="0.0" y="104" width="428" height="788"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPI-FD-avp" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="428" height="1563.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="1385.3333333333333"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YEZ-DL-c43" userLabel="Titles Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="428" height="650"/>
@@ -161,7 +161,7 @@
                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qUR-gO-Rwl" userLabel="Prices Stack">
-                                                <rect key="frame" x="0.0" y="650" width="428" height="246"/>
+                                                <rect key="frame" x="0.0" y="650" width="428" height="250"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bho-Db-bvi" userLabel="eBook Price Input">
                                                         <rect key="frame" x="16" y="15.999999999999996" width="396" height="60.666666666666657"/>
@@ -228,10 +228,10 @@
                                                     </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94117647059999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="20" trailing="16"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BIw-Hn-7Ya" userLabel="Product Content Stack">
-                                                <rect key="frame" x="0.0" y="896" width="428" height="667.33333333333348"/>
+                                                <rect key="frame" x="0.0" y="900.00000000000011" width="428" height="485.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d4r-bZ-UcS" userLabel="Description Input">
                                                         <rect key="frame" x="16" y="16" width="396" height="146.66666666666666"/>
@@ -255,21 +255,28 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0xy-Zf-wI0" userLabel="Author Input">
-                                                        <rect key="frame" x="16" y="178.66666666666674" width="396" height="242.66666666666663"/>
+                                                        <rect key="frame" x="16" y="178.66666666666674" width="396" height="60.666666666666657"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIp-oJ-QrG" userLabel="Autor:">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIp-oJ-QrG" userLabel="Autor:">
                                                                 <rect key="frame" x="0.0" y="0.0" width="396" height="18.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                                 <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BK1-JC-fnL">
-                                                                <rect key="frame" x="0.0" y="26" width="396" height="216"/>
-                                                            </pickerView>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chris Lattner" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U0O-yF-DyM">
+                                                                <rect key="frame" x="0.0" y="26.666666666666515" width="396" height="34"/>
+                                                                <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <action selector="coverFieldEditingDidEnd:" destination="RIk-K9-MQy" eventType="editingDidEnd" id="7Gq-9l-Pxd"/>
+                                                                    <action selector="pictureFieldEditingDidEnd:" destination="poZ-C8-iEn" eventType="editingDidEnd" id="59S-g3-LDz"/>
+                                                                </connections>
+                                                            </textField>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o1B-DP-KWS" userLabel="Publication Input ">
-                                                        <rect key="frame" x="16" y="437.33333333333326" width="396" height="60.666666666666686"/>
+                                                        <rect key="frame" x="16" y="255.33333333333323" width="396" height="60.666666666666657"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de Publicação:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlj-WN-546">
                                                                 <rect key="frame" x="0.0" y="0.0" width="396" height="18.666666666666668"/>
@@ -290,7 +297,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pG1-lB-2fP" userLabel="Pages Input">
-                                                        <rect key="frame" x="16" y="514" width="396" height="60.666666666666629"/>
+                                                        <rect key="frame" x="16" y="332" width="396" height="60.666666666666686"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número de Páginas:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFT-HJ-OrD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="396" height="18.666666666666668"/>
@@ -311,7 +318,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6dv-rL-dfx" userLabel="ISBN Input">
-                                                        <rect key="frame" x="16" y="590.66666666666674" width="396" height="60.666666666666629"/>
+                                                        <rect key="frame" x="16" y="408.66666666666674" width="396" height="60.666666666666686"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9x-Uv-nCZ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="396" height="18.666666666666668"/>
@@ -373,6 +380,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authorTextField" destination="U0O-yF-DyM" id="dVN-Sf-sD9"/>
                         <outlet property="coverImageView" destination="4dP-pQ-6mL" id="tb3-HF-GAI"/>
                         <outlet property="coverPathTextField" destination="Smy-ny-h3X" id="4KQ-Ta-2cj"/>
                         <outlet property="descriptionTextView" destination="uFT-If-fmk" id="HZD-3H-foJ"/>
