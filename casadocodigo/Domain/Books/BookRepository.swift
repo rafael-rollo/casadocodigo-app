@@ -50,4 +50,21 @@ class BookRepository: NSObject {
                 }
             }
     }
+    
+    func deleteBook(identifiedBy id: Int, completionHandler: @escaping () -> Void, failureHandler: @escaping () -> Void) {
+        let resourceURI = "\(BookRepository.bookBasePath)/\(id)"
+        
+        AF.request(resourceURI, method: .delete)
+            .validate()
+            .response { response in
+                switch response.result {
+                case .success:
+                    completionHandler();
+                
+                case let .failure(error):
+                    debugPrint(error)
+                    failureHandler()
+                }
+            }
+    }
 }

@@ -135,7 +135,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: BookDetailsViewControllerDelegate Impl
     
     func didDeletingButtonPressed(_ sender: UIButton!, forBookIdentifiedBy id: Int) {
-        Alert.show(message: "Pede pra sair 0\(id)", in: self)
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
+        indicator.startAnimating()
+        
+        bookRepository.deleteBook(identifiedBy: id) { [weak self] in
+            guard let self = self else { return }
+            
+            indicator.stopAnimating()
+            self.updateShowcase(with: self.showcase.filter { $0.id != id })
+            
+        } failureHandler: {
+            indicator.stopAnimating()
+            Alert.show(title: "Ops!", message: "Could not possible to remove this author right now. Try again later!", in: self)
+        }
     }
     
     // MARK: View methods

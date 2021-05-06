@@ -122,8 +122,8 @@ class BookDetailsViewController: UIViewController {
         
         ConfirmationDialog.execute(in: self, title: "Está certo disso?",
             message: "Você está removendo o livro \"\(selectedBook.title)\".") { action in
-            self.navigationController?.popViewController(animated: true)
             
+            self.navigationController?.popViewController(animated: true)
             self.delegate?.didDeletingButtonPressed(sender, forBookIdentifiedBy: selectedBook.id)
         }
     }
