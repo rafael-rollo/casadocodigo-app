@@ -146,7 +146,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
         } failureHandler: {
             indicator.stopAnimating()
-            Alert.show(title: "Ops!", message: "Could not possible to remove this author right now. Try again later!", in: self)
+            Alert.show(title: "Ops!", message: "Could not possible to remove this book right now. Try again later!", in: self)
         }
     }
     
