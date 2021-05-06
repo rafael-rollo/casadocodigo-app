@@ -14,6 +14,7 @@ class BookFormViewController: UIViewController {
     
     var authors: [AuthorResponse] = []
     var authorRepository: AuthorRepository
+    var bookRepository: BookRepository
 
     // MARK: IBOutlets
     
@@ -41,13 +42,17 @@ class BookFormViewController: UIViewController {
     
     // MARK: Initializers
     
-    init(authorRepository: AuthorRepository = AuthorRepository(), nibName: String? = nil, bundle: Bundle? = nil) {
+    init(authorRepository: AuthorRepository = AuthorRepository(),
+         bookRepository: BookRepository = BookRepository(),
+         nibName: String? = nil, bundle: Bundle? = nil) {
         self.authorRepository = authorRepository
+        self.bookRepository = bookRepository
         super.init(nibName: nibName, bundle: bundle)
     }
     
     required init?(coder: NSCoder) {
         self.authorRepository = AuthorRepository()
+        self.bookRepository = BookRepository()
         super.init(coder: coder)
     }
     
@@ -181,7 +186,21 @@ class BookFormViewController: UIViewController {
     
     @objc func bookAddingButtonPressed(_ sender: UIButton!) {
         guard let book = getBookFromForm() else { return }
-        print(book)
+        
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
+        indicator.startAnimating()
+        
+        bookRepository.saveNew(book) { [weak self] (createdBook) in
+            guard let self = self else { return }
+       
+            indicator.stopAnimating()
+            print(createdBook)
+            
+        } failureHandler: {
+            indicator.stopAnimating()
+            Alert.show(title: "Ops", message: "Could not possible to save that book right now. Try again later!", in: self)
+        }
+
     }
     
     // MARK: View methods

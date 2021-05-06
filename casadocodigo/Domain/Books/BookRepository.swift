@@ -10,7 +10,7 @@ import Alamofire
 
 class BookRepository: NSObject {
 
-    static let bookBasePath = "https://casadocodigo-api.herokuapp.com/api/book"
+    static let bookBasePath = "http://localhost:8080/api/book"
     
     func showcase(completionHandler: @escaping ([BookResponse]) -> Void, failureHandler: @escaping () -> Void) {
         let headers: HTTPHeaders = [
@@ -25,6 +25,25 @@ class BookRepository: NSObject {
                     guard let bookShowcase = response.value else { return }
                     completionHandler(bookShowcase)
                 
+                case let .failure(error):
+                    debugPrint(error)
+                    failureHandler()
+                }
+            }
+    }
+    
+    func saveNew(_ book: BookRequest, completionHandler: @escaping (BookResponse) -> Void,
+                 failureHandler: @escaping () -> Void) {
+        let headers: HTTPHeaders = ["Content-type": "application/json", "Accept": "application/json"]
+        
+        AF.request(BookRepository.bookBasePath, method: .post, parameters: book, encoder: JSONParameterEncoder.default, headers: headers)
+            .validate()
+            .responseDecodable(of: BookResponse.self) { response in
+                switch response.result {
+                case .success:
+                    guard let createdBook = response.value else { return }
+                    completionHandler(createdBook)
+                    
                 case let .failure(error):
                     debugPrint(error)
                     failureHandler()
