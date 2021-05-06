@@ -45,6 +45,7 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet weak var ISBNLabel: UILabel!
     
     @IBOutlet weak var deletingButton: UIButton!
+    @IBOutlet weak var editingButton: UIButton!
     
     // MARK: View lifecycle
     
@@ -72,8 +73,11 @@ class BookDetailsViewController: UIViewController {
         
         let deletingButtonImage = UIImage(named: "trash")?.withTintColor(UIColor.white)
         deletingButton.setImage(deletingButtonImage, for: .normal)
-        deletingButton.imageEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         deletingButton.roundTheShape()
+        
+        let editingButtonImage = UIImage(named: "pencil")?.withTintColor(UIColor.white)
+        editingButton.setImage(editingButtonImage, for: .normal)
+        editingButton.roundTheShape()
     }
     
     private func buildUp(using book: BookResponse) {

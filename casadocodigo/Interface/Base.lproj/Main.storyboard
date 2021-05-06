@@ -854,14 +854,26 @@
                                     <constraint firstAttribute="height" constant="56" id="4VP-nY-M2M"/>
                                     <constraint firstAttribute="width" constant="56" id="uSJ-va-Lna"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGp-TL-AM9" userLabel="Editing Button">
+                                <rect key="frame" x="356" y="748" width="56" height="56"/>
+                                <color key="backgroundColor" red="0.32156862749999998" green="0.48627450979999998" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="eMM-vV-kYh"/>
+                                    <constraint firstAttribute="height" constant="56" id="wKT-GI-Sx7"/>
+                                </constraints>
                                 <edgeInsets key="layoutMargins" top="16" left="16" bottom="16" right="16"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yVH-8t-8U7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yaE-pB-foP" firstAttribute="trailing" secondItem="yVH-8t-8U7" secondAttribute="trailing" id="Di5-oW-LPV"/>
+                            <constraint firstItem="yVH-8t-8U7" firstAttribute="trailing" secondItem="qGp-TL-AM9" secondAttribute="trailing" constant="16" id="KJu-9C-Cf0"/>
                             <constraint firstItem="lQB-oK-7Df" firstAttribute="leading" secondItem="yVH-8t-8U7" secondAttribute="leading" id="PSR-KK-QPG"/>
                             <constraint firstItem="yaE-pB-foP" firstAttribute="leading" secondItem="yVH-8t-8U7" secondAttribute="leading" id="RrY-xl-ico"/>
                             <constraint firstItem="lQB-oK-7Df" firstAttribute="top" secondItem="yVH-8t-8U7" secondAttribute="top" id="Ry9-uA-YCg"/>
@@ -870,6 +882,7 @@
                             <constraint firstItem="yaE-pB-foP" firstAttribute="top" secondItem="lQB-oK-7Df" secondAttribute="bottom" id="gdW-Mx-4k5"/>
                             <constraint firstItem="lQB-oK-7Df" firstAttribute="trailing" secondItem="yVH-8t-8U7" secondAttribute="trailing" id="q6g-8C-VVh"/>
                             <constraint firstItem="yaE-pB-foP" firstAttribute="bottom" secondItem="yVH-8t-8U7" secondAttribute="bottom" id="qfp-HS-BPy"/>
+                            <constraint firstItem="64E-5n-qJJ" firstAttribute="top" secondItem="qGp-TL-AM9" secondAttribute="bottom" constant="16" id="v3o-x7-T9M"/>
                         </constraints>
                     </view>
                     <connections>
@@ -884,6 +897,7 @@
                         <outlet property="coverImageView" destination="trr-IY-MOg" id="z8g-df-BKL"/>
                         <outlet property="deletingButton" destination="64E-5n-qJJ" id="eIE-6N-Dpj"/>
                         <outlet property="ebookPrice" destination="7LF-04-soG" id="w17-73-Wam"/>
+                        <outlet property="editingButton" destination="qGp-TL-AM9" id="zHw-CK-puN"/>
                         <outlet property="hardcoverPrice" destination="Ws6-2T-33c" id="ba8-eg-CoW"/>
                         <outlet property="navigationBar" destination="lQB-oK-7Df" id="eFB-pL-rJa"/>
                         <outlet property="numberOfPagesLabel" destination="m46-Mt-ccK" id="cW8-5C-1rU"/>
