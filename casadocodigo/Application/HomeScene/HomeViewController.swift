@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SectionTitleDelegate {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SectionTitleDelegate, BookFormViewControllerDelegate {
     
     // MARK: Attributes
     
@@ -117,9 +117,17 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // SectionTitleDelegate Impl
     
     func didAddButtonPressed(_ sender: UIButton) {
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "BookFormViewController")
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "BookFormViewController") as! BookFormViewController
+        controller.delegate = self
         
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    // BookFormViewControllerDelegate Impl
+    
+    func didBookCreated(_ book: BookResponse) {
+        let updatedBookList: [BookResponse] = showcase + [book]
+        updateShowcase(with: updatedBookList)
     }
     
     // MARK: View methods

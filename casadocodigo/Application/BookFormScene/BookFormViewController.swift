@@ -8,13 +8,20 @@
 import UIKit
 import AlamofireImage
 
+protocol BookFormViewControllerDelegate: class {
+    func didBookCreated(_ book: BookResponse)
+}
+
 class BookFormViewController: UIViewController {
     
     // MARK: Attributes
     
     var authors: [AuthorResponse] = []
+    
     var authorRepository: AuthorRepository
     var bookRepository: BookRepository
+    
+    weak var delegate: BookFormViewControllerDelegate?
 
     // MARK: IBOutlets
     
@@ -194,7 +201,9 @@ class BookFormViewController: UIViewController {
             guard let self = self else { return }
        
             indicator.stopAnimating()
-            print(createdBook)
+            
+            self.navigationController?.popViewController(animated: true)
+            self.delegate?.didBookCreated(createdBook)
             
         } failureHandler: {
             indicator.stopAnimating()
