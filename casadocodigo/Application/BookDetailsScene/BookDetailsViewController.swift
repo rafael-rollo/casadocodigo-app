@@ -35,6 +35,8 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet weak var numberOfPagesLabel: UILabel!
     @IBOutlet weak var ISBNLabel: UILabel!
     
+    @IBOutlet weak var deletingButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,6 +58,11 @@ class BookDetailsViewController: UIViewController {
         authorImageView.roundTheShape()
         
         productInfoSectionTitle.useTextColor()
+        
+        let deletingButtonImage = UIImage(named: "trash")?.withTintColor(UIColor.white)
+        deletingButton.setImage(deletingButtonImage, for: .normal)
+        deletingButton.imageEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        deletingButton.roundTheShape()
     }
     
     private func buildUp(using book: BookResponse) {
