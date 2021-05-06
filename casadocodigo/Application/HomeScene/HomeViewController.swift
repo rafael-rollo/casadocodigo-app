@@ -153,6 +153,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func didEditingButtonPressed(_ sender: UIButton!, for book: BookResponse) {
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "BookFormViewController") as! BookFormViewController
         controller.delegate = self
+        controller.selectedBook = book
         
         navigationController?.pushViewController(controller, animated: true)
     }

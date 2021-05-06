@@ -17,6 +17,7 @@ class BookFormViewController: UIViewController {
     // MARK: Attributes
     
     var authors: [AuthorResponse] = []
+    var selectedBook: BookResponse?
     
     var authorRepository: AuthorRepository
     var bookRepository: BookRepository
@@ -88,17 +89,59 @@ class BookFormViewController: UIViewController {
     }
     
     private func buildUp() {
-        sectionTitle.label.text = "Novo Livro"
+        if let selectedBook = selectedBook {
+            sectionTitle.label.text = "Dados do Livro"
+            submitButton.addTarget(self,
+                                   action: #selector(bookEdittingButtonPressed(_:)),
+                                   for: .touchUpInside)
+            
+            initData(with: selectedBook)
+            
+        } else {
+            sectionTitle.label.text = "Novo Livro"
+            submitButton.addTarget(self,
+                                   action: #selector(bookAddingButtonPressed(_:)),
+                                   for: .touchUpInside)
+        }
         
-        submitButton.addTarget(self,
-                               action: #selector(bookAddingButtonPressed(_:)),
-                               for: .touchUpInside)
+        
         adjustLayout()
+    }
+    
+    private func initData(with book: BookResponse) {
+        coverPathTextField.text = book.coverImagePath.absoluteString
+        coverFieldEditingDidEnd(coverPathTextField)
+        
+        titleTextField.text = book.title
+        subtitleTextField.text = book.subtitle
+        
+        book.prices.forEach { price in
+            let value = String(describing: price.value)
+            
+            switch price.bookType {
+            case .ebook:
+                ebookPriceField.text = value
+            
+            case .hardCover:
+                hardcoverPriceField.text = value
+            
+            case .combo:
+                comboPriceField.text = value
+            }
+        }
+        
+        descriptionTextView.text = book.description
+        authorTextField.text = book.author.fullName
+        // selected the correct author
+        
+        publicationDateTextField.text = book.publicationDate
+        pagesTextField.text = String(describing: book.numberOfPages)
+        ISBNTextField.text = book.ISBN
     }
 
     // MARK: IBActions
     
-    @IBAction func coverFieldEditingDidEnd(_ sender: Any) {
+    @IBAction func coverFieldEditingDidEnd(_ sender: UITextField) {
         guard let coverPathAsString = coverPathTextField.text,
               !coverPathAsString.isEmpty else { return }
         
@@ -209,6 +252,10 @@ class BookFormViewController: UIViewController {
             indicator.stopAnimating()
             Alert.show(title: "Ops", message: "Could not possible to save that book right now. Try again later!", in: self)
         }
+
+    }
+    
+    @objc func bookEdittingButtonPressed(_ sender: UIButton!) {
 
     }
     
