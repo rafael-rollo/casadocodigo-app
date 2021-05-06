@@ -64,7 +64,7 @@
                                 <rect key="frame" x="0.0" y="104" width="428" height="788"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPI-FD-avp" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="428" height="1385.3333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="1443.3333333333333"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YEZ-DL-c43" userLabel="Titles Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="428" height="650"/>
@@ -342,6 +342,16 @@
                                                 </subviews>
                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
                                             </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pxu-6k-4Sr" userLabel="Submit Button">
+                                                <rect key="frame" x="16" y="1385.3333333333333" width="396" height="42"/>
+                                                <color key="backgroundColor" red="0.32156862745098036" green="0.48627450980392156" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="e9Y-gG-FBp"/>
+                                                </constraints>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" red="0.94901960780000005" green="0.94117647059999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -349,12 +359,15 @@
                                             <constraint firstItem="YEZ-DL-c43" firstAttribute="leading" secondItem="vPI-FD-avp" secondAttribute="leading" id="5QX-Wg-0vx"/>
                                             <constraint firstItem="YEZ-DL-c43" firstAttribute="top" secondItem="vPI-FD-avp" secondAttribute="top" id="9ry-Bu-Ifj"/>
                                             <constraint firstItem="BIw-Hn-7Ya" firstAttribute="top" secondItem="qUR-gO-Rwl" secondAttribute="bottom" id="Fpr-yt-dOt"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pxu-6k-4Sr" secondAttribute="trailing" constant="16" id="G5D-m9-NcK"/>
                                             <constraint firstItem="qUR-gO-Rwl" firstAttribute="leading" secondItem="vPI-FD-avp" secondAttribute="leading" id="IxI-Wh-x7j"/>
+                                            <constraint firstAttribute="bottom" secondItem="Pxu-6k-4Sr" secondAttribute="bottom" constant="16" id="TjH-sj-JmS"/>
                                             <constraint firstItem="qUR-gO-Rwl" firstAttribute="top" secondItem="YEZ-DL-c43" secondAttribute="bottom" id="ZAV-6o-Mfy"/>
                                             <constraint firstAttribute="trailing" secondItem="YEZ-DL-c43" secondAttribute="trailing" id="ec7-fo-Sxj"/>
                                             <constraint firstItem="BIw-Hn-7Ya" firstAttribute="leading" secondItem="vPI-FD-avp" secondAttribute="leading" id="i0f-QC-DXW"/>
+                                            <constraint firstItem="Pxu-6k-4Sr" firstAttribute="top" secondItem="BIw-Hn-7Ya" secondAttribute="bottom" id="psC-XU-Kjl"/>
+                                            <constraint firstItem="Pxu-6k-4Sr" firstAttribute="leading" secondItem="vPI-FD-avp" secondAttribute="leading" constant="16" id="xDa-mt-8VR"/>
                                             <constraint firstAttribute="trailing" secondItem="BIw-Hn-7Ya" secondAttribute="trailing" id="xZB-Kk-JfJ"/>
-                                            <constraint firstAttribute="bottom" secondItem="BIw-Hn-7Ya" secondAttribute="bottom" id="xuU-iD-GUo"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -381,13 +394,21 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ISBNTextField" destination="H6M-8L-hHV" id="eK6-0O-xfq"/>
                         <outlet property="authorTextField" destination="U0O-yF-DyM" id="dVN-Sf-sD9"/>
+                        <outlet property="comboPriceField" destination="KWG-jM-tM6" id="MhF-ZI-Mmv"/>
                         <outlet property="coverImageView" destination="4dP-pQ-6mL" id="tb3-HF-GAI"/>
                         <outlet property="coverPathTextField" destination="Smy-ny-h3X" id="4KQ-Ta-2cj"/>
                         <outlet property="descriptionTextView" destination="uFT-If-fmk" id="HZD-3H-foJ"/>
+                        <outlet property="ebookPriceField" destination="ZG1-Wg-hMG" id="r5e-5E-UQM"/>
+                        <outlet property="hardcoverPriceField" destination="k9H-Jx-eMS" id="eYW-x7-5HT"/>
                         <outlet property="navigationBar" destination="MVs-LO-GKU" id="m3p-OC-ZLs"/>
+                        <outlet property="pagesTextField" destination="8xe-vO-Tf8" id="qe7-aI-k8v"/>
                         <outlet property="publicationDateTextField" destination="uhU-9F-uVp" id="Eow-AS-jwg"/>
                         <outlet property="sectionTitle" destination="agi-Bs-wSF" id="fiq-bN-E3v"/>
+                        <outlet property="submitButton" destination="Pxu-6k-4Sr" id="nrU-3s-MpT"/>
+                        <outlet property="subtitleTextField" destination="Fcq-9y-Wzk" id="wWu-e2-YFo"/>
+                        <outlet property="titleTextField" destination="Msy-8M-ME9" id="gYI-tQ-6Ut"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Y7-Tp-nQ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1251,7 +1272,7 @@
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whA-wH-2YW">
                                                         <rect key="frame" x="16" y="672.66666666666663" width="396" height="42"/>
-                                                        <color key="backgroundColor" red="1" green="0.66666666669999997" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.32156862749999998" green="0.48627450979999998" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="42" id="Mrk-Au-avv"/>
                                                         </constraints>

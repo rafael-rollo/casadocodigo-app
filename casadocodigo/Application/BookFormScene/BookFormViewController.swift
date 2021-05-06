@@ -22,13 +22,22 @@ class BookFormViewController: UIViewController {
     
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var coverPathTextField: UITextField!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var subtitleTextField: UITextField!
+    
+    @IBOutlet weak var ebookPriceField: UITextField!
+    @IBOutlet weak var hardcoverPriceField: UITextField!
+    @IBOutlet weak var comboPriceField: UITextField!
     
     @IBOutlet weak var descriptionTextView: UITextView!
-    
     @IBOutlet weak var authorTextField: UITextField!
     var authorPickerView = UIPickerView()
     
     @IBOutlet weak var publicationDateTextField: UITextField!
+    @IBOutlet weak var pagesTextField: UITextField!
+    @IBOutlet weak var ISBNTextField: UITextField!
+    
+    @IBOutlet weak var submitButton: UIButton!
     
     // MARK: Initializers
     
@@ -61,11 +70,17 @@ class BookFormViewController: UIViewController {
         descriptionTextView.configureBorders()
         
         authorTextField.inputView = authorPickerView
+        
+        submitButton.layer.cornerRadius = 10
+        submitButton.showsTouchWhenHighlighted = true
     }
     
     private func buildUp() {
         sectionTitle.label.text = "Novo Livro"
         
+        submitButton.addTarget(self,
+                               action: #selector(bookAddingButtonPressed(_:)),
+                               for: .touchUpInside)
         adjustLayout()
     }
 
@@ -98,6 +113,75 @@ class BookFormViewController: UIViewController {
         formatter.dateFormat = "dd/MM/yyyy"
         
         publicationDateTextField.text = formatter.string(from: sender.date)
+    }
+    
+    /**
+     Tem que ter um jeito mais fácil de fazer isso 😢
+     */
+    private func getBookFromForm() -> BookRequest? {
+        guard let coverURI = coverPathTextField.text, !coverURI.isEmpty else {
+            Alert.show(title: "Ops", message: "Adicione uma URI válida para a imagem da capa do livro.", in: self)
+            return nil
+        }
+        
+        guard let title = titleTextField.text, !title.isEmpty else {
+            Alert.show(title: "Ops", message: "O título do livro é obrigatório!", in: self)
+            return nil
+        }
+        
+        guard let subtitle = subtitleTextField.text, !subtitle.isEmpty else {
+            Alert.show(title: "Ops", message: "O subtítulo do livro é obrigatório!", in: self)
+            return nil
+        }
+        
+        guard let ebookPriceAsString = ebookPriceField.text, !ebookPriceAsString.isEmpty,
+              let ebookPrice = Decimal(string: ebookPriceAsString) else {
+            Alert.show(title: "Ops", message: "Informe um preço válido para a versão eBook!", in: self)
+            return nil
+        }
+        
+        guard let hardcoverPriceAsString = hardcoverPriceField.text, !hardcoverPriceAsString.isEmpty,
+              let hardcoverPrice = Decimal(string: hardcoverPriceAsString) else {
+            Alert.show(title: "Ops", message: "Informe um preço válido para a versão impressa!", in: self)
+            return nil
+        }
+        
+        guard let comboPriceAsString = comboPriceField.text, !comboPriceAsString.isEmpty,
+              let comboPrice = Decimal(string: comboPriceAsString) else {
+            Alert.show(title: "Ops", message: "Informe um preço válido para o combo eBook + impresso!", in: self)
+            return nil
+        }
+        
+        guard let description = descriptionTextView.text, !description.isEmpty else {
+            Alert.show(title: "Ops", message: "Adicione o conteúdo descritivo do livro!", in: self)
+            return nil
+        }
+        
+        let selectedRow = authorPickerView.selectedRow(inComponent: 0)
+        let authorId = authors[selectedRow].id
+        
+        guard let publicationDate = publicationDateTextField.text, !publicationDate.isEmpty else {
+            Alert.show(title: "Ops", message: "Informe a data de publicação do livro.", in: self)
+            return nil
+        }
+        
+        guard let pagesAsString = pagesTextField.text, !pagesAsString.isEmpty,
+              let numberOfPages = Int(pagesAsString) else {
+            Alert.show(title: "Ops", message: "Informe um número de páginas válido para o livro!", in: self)
+            return nil
+        }
+        
+        guard let ISBN = ISBNTextField.text, !ISBN.isEmpty else {
+            Alert.show(title: "Ops", message: "O número de ISBN é obrigatório.", in: self)
+            return nil
+        }
+        
+        return BookRequest(title: title, subtitle: subtitle, coverImagePath: coverURI, eBookPrice: ebookPrice, hardcoverPrice: hardcoverPrice, comboPrice: comboPrice, description: description, authorId: authorId, publicationDate: publicationDate, numberOfPages: numberOfPages, ISBN: ISBN)
+    }
+    
+    @objc func bookAddingButtonPressed(_ sender: UIButton!) {
+        guard let book = getBookFromForm() else { return }
+        print(book)
     }
     
     // MARK: View methods
