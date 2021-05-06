@@ -29,6 +29,8 @@
 		582F9861262DD83000354D65 /* AuthorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F9860262DD83000354D65 /* AuthorRepository.swift */; };
 		582F9869262DDD5600354D65 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F9868262DDD5600354D65 /* Author.swift */; };
 		585D72E92643073200666078 /* Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D72E82643073100666078 /* Decimal.swift */; };
+		585D72F226432FD300666078 /* BookFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D72F126432FD300666078 /* BookFormViewController.swift */; };
+		585D7302264345B200666078 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D7301264345B200666078 /* TextView.swift */; };
 		589C5BB42621302000CE3B93 /* StatusBarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB32621302000CE3B93 /* StatusBarBackground.swift */; };
 		589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB92621363300CE3B93 /* AuthorsViewController.swift */; };
 		58B1B3E3264192BD00DFA789 /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B1B3E2264192BD00DFA789 /* BookDetailsViewController.swift */; };
@@ -86,6 +88,8 @@
 		582F9860262DD83000354D65 /* AuthorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorRepository.swift; sourceTree = "<group>"; };
 		582F9868262DDD5600354D65 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		585D72E82643073100666078 /* Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal.swift; sourceTree = "<group>"; };
+		585D72F126432FD300666078 /* BookFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFormViewController.swift; sourceTree = "<group>"; };
+		585D7301264345B200666078 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		589C5BB32621302000CE3B93 /* StatusBarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarBackground.swift; sourceTree = "<group>"; };
 		589C5BB92621363300CE3B93 /* AuthorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsViewController.swift; sourceTree = "<group>"; };
 		58B1B3E2264192BD00DFA789 /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 				582F984C262A0A7500354D65 /* ActivityIndicatorView.swift */,
 				5827D80A262FBFC700D20B19 /* CollectionViewCell.swift */,
 				58FA533B263772D1000390BF /* View.swift */,
+				585D7301264345B200666078 /* TextView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -254,6 +259,14 @@
 				585D72E82643073100666078 /* Decimal.swift */,
 			);
 			path = CoreExtensions;
+			sourceTree = "<group>";
+		};
+		585D72F026432FB700666078 /* BookFormScene */ = {
+			isa = PBXGroup;
+			children = (
+				585D72F126432FD300666078 /* BookFormViewController.swift */,
+			);
+			path = BookFormScene;
 			sourceTree = "<group>";
 		};
 		589C5BB82621361100CE3B93 /* AuthorsScene */ = {
@@ -345,6 +358,7 @@
 			children = (
 				58BF693926210A5B00A8CEBD /* HomeScene */,
 				58B1B3E12641929700DFA789 /* BookDetailsScene */,
+				585D72F026432FB700666078 /* BookFormScene */,
 				589C5BB82621361100CE3B93 /* AuthorsScene */,
 				58FA532A26334E00000390BF /* AuthorFormScene */,
 			);
@@ -671,7 +685,9 @@
 				5827D80B262FBFC700D20B19 /* CollectionViewCell.swift in Sources */,
 				582F9869262DDD5600354D65 /* Author.swift in Sources */,
 				58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */,
+				585D72F226432FD300666078 /* BookFormViewController.swift in Sources */,
 				58FA532C26334E44000390BF /* AuthorFormViewController.swift in Sources */,
+				585D7302264345B200666078 /* TextView.swift in Sources */,
 				585D72E92643073200666078 /* Decimal.swift in Sources */,
 				5827D829262FE6A300D20B19 /* TagCell.swift in Sources */,
 				5827D806262F8D1900D20B19 /* AuthorsHeaderView.swift in Sources */,

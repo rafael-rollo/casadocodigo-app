@@ -79,10 +79,7 @@ class AuthorFormViewController: UIViewController, UITextFieldDelegate {
 
     private func adjustLayout() {
         profilePictureView.roundTheShape()
-        
-        bioTextView.layer.cornerRadius = 6
-        bioTextView.layer.borderWidth = 0.2
-        bioTextView.layer.borderColor = UIColor.lightGray.cgColor
+        bioTextView.configureBorders()
         
         saveAuthorButton.layer.cornerRadius = 10
         saveAuthorButton.showsTouchWhenHighlighted = true

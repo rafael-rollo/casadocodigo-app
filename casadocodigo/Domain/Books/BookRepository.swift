@@ -31,4 +31,23 @@ class BookRepository: NSObject {
                 }
             }
     }
+    
+    func saveNew(_ book: BookRequest, completionHandler: @escaping (BookResponse) -> Void,
+                 failureHandler: @escaping () -> Void) {
+        let headers: HTTPHeaders = ["Content-type": "application/json", "Accept": "application/json"]
+        
+        AF.request(BookRepository.bookBasePath, method: .post, parameters: book, encoder: JSONParameterEncoder.default, headers: headers)
+            .validate()
+            .responseDecodable(of: BookResponse.self) { response in
+                switch response.result {
+                case .success:
+                    guard let createdBook = response.value else { return }
+                    completionHandler(createdBook)
+                    
+                case let .failure(error):
+                    debugPrint(error)
+                    failureHandler()
+                }
+            }
+    }
 }
