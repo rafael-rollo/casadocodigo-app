@@ -7,8 +7,8 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SectionTitleDelegate, BookFormViewControllerDelegate {
-    
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SectionTitleDelegate, BookFormViewControllerDelegate, BookDetailsViewControllerDelegate {
+   
     // MARK: Attributes
     
     var showcase: [BookResponse] = []
@@ -71,8 +71,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let selectedBook = showcase[indexPath.item]
         
         let controller = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "BookDetailsViewController") as! BookDetailsViewController
-        controller.selectedBook = selectedBook
         
+        controller.delegate = self
+        controller.selectedBook = selectedBook
+    
         navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -123,11 +125,17 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    // BookFormViewControllerDelegate Impl
+    // MARK: BookFormViewControllerDelegate Impl
     
     func didBookCreated(_ book: BookResponse) {
         let updatedBookList: [BookResponse] = showcase + [book]
         updateShowcase(with: updatedBookList)
+    }
+    
+    // MARK: BookDetailsViewControllerDelegate Impl
+    
+    func didDeletingButtonPressed(_ sender: UIButton!, forBookIdentifiedBy id: Int) {
+        Alert.show(message: "Pede pra sair 0\(id)", in: self)
     }
     
     // MARK: View methods
