@@ -8,9 +8,18 @@
 import UIKit
 import AlamofireImage
 
+protocol BookDetailsViewControllerDelegate: UIViewController {
+    func didDeletingButtonPressed(_ sender: UIButton!, forBookIdentifiedBy id: Int)
+}
+
 class BookDetailsViewController: UIViewController {
     
+    // MARK: Attributes
+    
     var selectedBook: BookResponse?
+    weak var delegate: BookDetailsViewControllerDelegate?
+    
+    // MARK: IBOutlets
     
     @IBOutlet weak var navigationBar: NavigationBar!
     
@@ -35,6 +44,10 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet weak var numberOfPagesLabel: UILabel!
     @IBOutlet weak var ISBNLabel: UILabel!
     
+    @IBOutlet weak var deletingButton: UIButton!
+    
+    // MARK: View lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,6 +69,11 @@ class BookDetailsViewController: UIViewController {
         authorImageView.roundTheShape()
         
         productInfoSectionTitle.useTextColor()
+        
+        let deletingButtonImage = UIImage(named: "trash")?.withTintColor(UIColor.white)
+        deletingButton.setImage(deletingButtonImage, for: .normal)
+        deletingButton.imageEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        deletingButton.roundTheShape()
     }
     
     private func buildUp(using book: BookResponse) {
@@ -89,6 +107,24 @@ class BookDetailsViewController: UIViewController {
         numberOfPagesLabel.text = String(describing: book.numberOfPages)
         ISBNLabel.text = book.ISBN
         
+        deletingButton.addTarget(self, action: #selector(deletingButtonPressed(_:)), for: .touchUpInside)
+        
         adjustLayout()
+    }
+    
+    // MARK: Actions
+    
+    @objc func deletingButtonPressed(_ sender: UIButton!) {
+        guard let selectedBook = selectedBook else {
+            debugPrint("Could not determine the target book for that action. Check the method 'didSelectItemAt' it sets up the book details requirements")
+            return
+        }
+        
+        ConfirmationDialog.execute(in: self, title: "Está certo disso?",
+            message: "Você está removendo o livro \"\(selectedBook.title)\".") { action in
+            
+            self.navigationController?.popViewController(animated: true)
+            self.delegate?.didDeletingButtonPressed(sender, forBookIdentifiedBy: selectedBook.id)
+        }
     }
 }
