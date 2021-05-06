@@ -10,7 +10,7 @@ import Alamofire
 
 class AuthorRepository: NSObject {
     
-    static let authorsBasePath = "http://localhost:8080/api/author"
+    static let authorsBasePath = "https://casadocodigo-api.herokuapp.com/api/author"
 
     func allAuthors(completionHandler: @escaping ([AuthorResponse]) -> Void, failureHandler: @escaping () -> Void) {
         let headers: HTTPHeaders = ["Accept": "application/json"]
