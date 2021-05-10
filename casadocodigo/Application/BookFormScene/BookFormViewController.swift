@@ -139,6 +139,7 @@ class BookFormViewController: UIViewController {
 
         if let publicationDate = Date.fromString(book.publicationDate, formattedBy: "dd/MM/yyyy") {
             publicationDatePicker.setDate(publicationDate, animated: false)
+            updatePublicationDateValue(publicationDatePicker)
         }
         
         pagesTextField.text = String(describing: book.numberOfPages)
@@ -255,6 +256,17 @@ class BookFormViewController: UIViewController {
         
         guard let book = getBookFromForm() else { return }
         
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
+        indicator.startAnimating()
+        
+        bookRepository.update(book, identifiedBy: selectedBook.id) { [weak self] updatedBook in
+            indicator.stopAnimating()
+            self?.navigationController?.popViewController(animated: true)
+            
+        } failureHandler: {
+            indicator.stopAnimating()
+            Alert.show(title: "Ops", message: "Could not possible to update book data. Try again later!", in: self)
+        }
     }
     
     // MARK: View methods
