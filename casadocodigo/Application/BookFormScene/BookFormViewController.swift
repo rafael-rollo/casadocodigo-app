@@ -136,9 +136,7 @@ class BookFormViewController: UIViewController {
         }
         
         descriptionTextView.text = book.description
-        authorTextField.text = book.author.fullName
-        // select the correct author
-        
+
         if let publicationDate = Date.fromString(book.publicationDate, formattedBy: "dd/MM/yyyy") {
             publicationDatePicker.setDate(publicationDate, animated: false)
         }
@@ -266,8 +264,18 @@ class BookFormViewController: UIViewController {
         
         guard let firstAuthor = authors.first else { return }
         
-        authorPickerView?.selectRow(0, inComponent: 0, animated: false)
-        authorTextField.text = firstAuthor.fullName
+        if let selectedBook = selectedBook {
+            authors.enumerated().forEach { (index, author) in
+                if selectedBook.author.id != author.id { return }
+                
+                authorPickerView?.selectRow(index, inComponent: 0, animated: false)
+                authorTextField.text = selectedBook.author.fullName
+            }
+            
+        } else {
+            authorPickerView?.selectRow(0, inComponent: 0, animated: false)
+            authorTextField.text = firstAuthor.fullName
+        }
     }
     
     func loadAuthors() {
