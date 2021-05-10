@@ -24,7 +24,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.66666666666666663" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.98039215690000003" green="0.76862745099999996" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="kw0-Gu-QWS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="XHJ-K2-4tY"/>
                 <constraint firstItem="kw0-Gu-QWS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="chk-xd-El2"/>
@@ -32,7 +32,7 @@
                 <constraint firstAttribute="bottom" secondItem="kw0-Gu-QWS" secondAttribute="bottom" id="ywT-af-gKz"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="139" y="100"/>
+            <point key="canvasLocation" x="137.68115942028987" y="99.776785714285708"/>
         </view>
     </objects>
 </document>
