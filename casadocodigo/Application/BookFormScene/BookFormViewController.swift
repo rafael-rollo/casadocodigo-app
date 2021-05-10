@@ -139,7 +139,10 @@ class BookFormViewController: UIViewController {
         authorTextField.text = book.author.fullName
         // select the correct author
         
-        // set the correct date
+        if let publicationDate = Date.fromString(book.publicationDate, formattedBy: "dd/MM/yyyy") {
+            publicationDatePicker.setDate(publicationDate, animated: false)
+        }
+        
         pagesTextField.text = String(describing: book.numberOfPages)
         ISBNTextField.text = book.ISBN
     }
