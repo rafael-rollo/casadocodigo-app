@@ -40,9 +40,11 @@ class BookFormViewController: UIViewController {
     
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var authorTextField: UITextField!
-    var authorPickerView = UIPickerView()
+    private var authorPickerView: UIPickerView?
+
+    @IBOutlet weak var publicationDatePicker: UIDatePicker!
+    private var publicationDate: String?
     
-    @IBOutlet weak var publicationDateTextField: UITextField!
     @IBOutlet weak var pagesTextField: UITextField!
     @IBOutlet weak var ISBNTextField: UITextField!
     
@@ -65,12 +67,9 @@ class BookFormViewController: UIViewController {
     }
     
     // MARK: View lifecycle
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        authorPickerView.dataSource = self
-        authorPickerView.delegate = self
         
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
         navigationBar.configure(navigationController, current: self)
@@ -83,12 +82,18 @@ class BookFormViewController: UIViewController {
         descriptionTextView.configureBorders()
         
         authorTextField.inputView = authorPickerView
-        
+    
         submitButton.layer.cornerRadius = 10
         submitButton.showsTouchWhenHighlighted = true
     }
     
     private func buildUp() {
+        authorPickerView = UIPickerView()
+        authorPickerView?.dataSource = self
+        authorPickerView?.delegate = self
+        
+        publicationDatePicker.addTarget(self, action: #selector(updatePublicationDateValue(_:)), for: .valueChanged)
+        
         if let selectedBook = selectedBook {
             sectionTitle.label.text = "Dados do Livro"
             submitButton.addTarget(self,
@@ -132,9 +137,9 @@ class BookFormViewController: UIViewController {
         
         descriptionTextView.text = book.description
         authorTextField.text = book.author.fullName
-        // selected the correct author
+        // select the correct author
         
-        publicationDateTextField.text = book.publicationDate
+        // set the correct date
         pagesTextField.text = String(describing: book.numberOfPages)
         ISBNTextField.text = book.ISBN
     }
@@ -150,24 +155,11 @@ class BookFormViewController: UIViewController {
         coverImageView.af.setImage(withURL: coverUri)
     }
     
-    @IBAction func didPublicationDateFieldFocused(_ sender: UITextField) {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-        datePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
-        datePicker.addTarget(self, action: #selector(updatePublicationDateFieldValue(_:)), for: .valueChanged)
-        
-        if let publicationDate = publicationDateTextField.text, publicationDate.isEmpty {
-            updatePublicationDateFieldValue(datePicker)
-        }
-        
-        publicationDateTextField.inputView = datePicker
-    }
-    
-    @objc func updatePublicationDateFieldValue(_ sender: UIDatePicker!) {
+    @objc func updatePublicationDateValue(_ sender: UIDatePicker!) {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         
-        publicationDateTextField.text = formatter.string(from: sender.date)
+        publicationDate = formatter.string(from: sender.date)
     }
     
     /**
@@ -212,10 +204,10 @@ class BookFormViewController: UIViewController {
             return nil
         }
         
-        let selectedRow = authorPickerView.selectedRow(inComponent: 0)
+        guard let selectedRow = authorPickerView?.selectedRow(inComponent: 0) else { return nil }
         let authorId = authors[selectedRow].id
-        
-        guard let publicationDate = publicationDateTextField.text, !publicationDate.isEmpty else {
+                
+        guard let publicationDate = publicationDate, !publicationDate.isEmpty else {
             Alert.show(title: "Ops", message: "Informe a data de publicação do livro.", in: self)
             return nil
         }
@@ -256,7 +248,12 @@ class BookFormViewController: UIViewController {
     }
     
     @objc func bookEdittingButtonPressed(_ sender: UIButton!) {
-
+        guard let selectedBook = selectedBook else {
+            fatalError("Could not possible to perform that action because an illegal state was verified. A selected book is required at this point.")
+        }
+        
+        guard let book = getBookFromForm() else { return }
+        
     }
     
     // MARK: View methods
@@ -266,7 +263,7 @@ class BookFormViewController: UIViewController {
         
         guard let firstAuthor = authors.first else { return }
         
-        authorPickerView.selectRow(0, inComponent: 0, animated: false)
+        authorPickerView?.selectRow(0, inComponent: 0, animated: false)
         authorTextField.text = firstAuthor.fullName
     }
     
