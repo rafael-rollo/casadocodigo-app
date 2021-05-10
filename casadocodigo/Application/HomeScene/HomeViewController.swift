@@ -132,6 +132,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         updateShowcase(with: updatedBookList)
     }
     
+    func didBookUpdated(_ book: BookResponse) {
+        let updatedList: [BookResponse] = showcase.map{ $0.id == book.id ? book : $0 }
+        updateShowcase(with: updatedList)
+    }
+    
     // MARK: BookDetailsViewControllerDelegate Impl
     
     func didDeletingButtonPressed(_ sender: UIButton!, forBookIdentifiedBy id: Int) {

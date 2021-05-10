@@ -10,6 +10,7 @@ import AlamofireImage
 
 protocol BookFormViewControllerDelegate: class {
     func didBookCreated(_ book: BookResponse)
+    func didBookUpdated(_ book: BookResponse)
 }
 
 class BookFormViewController: UIViewController {
@@ -261,7 +262,9 @@ class BookFormViewController: UIViewController {
         
         bookRepository.update(book, identifiedBy: selectedBook.id) { [weak self] updatedBook in
             indicator.stopAnimating()
-            self?.navigationController?.popViewController(animated: true)
+            self?.navigationController?.popToRootViewController(animated: true)
+            
+            self?.delegate?.didBookUpdated(updatedBook)
             
         } failureHandler: {
             indicator.stopAnimating()
