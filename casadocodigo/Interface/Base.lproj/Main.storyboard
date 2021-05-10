@@ -285,7 +285,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="FNs-kP-tZ4">
-                                                                <rect key="frame" x="0.0" y="27" width="368" height="50"/>
+                                                                <rect key="frame" x="0.0" y="27" width="382" height="50"/>
                                                                 <locale key="locale" localeIdentifier="pt_BR"/>
                                                             </datePicker>
                                                         </subviews>
@@ -341,7 +341,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="42" id="e9Y-gG-FBp"/>
                                                 </constraints>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="Salvar">
                                                     <color key="titleColor" red="0.94901960780000005" green="0.94117647059999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
