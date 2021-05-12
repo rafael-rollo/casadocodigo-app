@@ -11,18 +11,11 @@ extension Notification.Name {
     static let authorDeleted = Notification.Name("An author has been removed")
 }
 
-class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    // MARK: Attributes
+class AuthorsViewController: UIViewController {
+    @IBOutlet weak var authorsCollectionView: UICollectionView!
     
     var authors: [AuthorResponse] = []
     var authorRepository: AuthorRepository
-    
-    // MARK: IBOutlets
-    
-    @IBOutlet weak var authorsCollectionView: UICollectionView!
-    
-    // MARK: constructors
     
     init(authorRepository: AuthorRepository = AuthorRepository(), nibName: String?, bundle: Bundle?) {
         self.authorRepository = authorRepository
@@ -34,8 +27,6 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
         super.init(coder: coder)
     }
     
-    // MARK: View lifecycle methods
-
     override func viewDidLoad() {
         super.viewDidLoad()
         authorsCollectionView.dataSource = self
@@ -46,8 +37,29 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
         loadAuthorsList()
     }
     
-    // MARK: UICVDataSource Impl
+    func loadAuthorsList() {
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
+        indicator.startAnimating()
+        
+        authorRepository.allAuthors { [weak self] authors in
+            guard let self = self else { return }
+            
+            self.updateAuthorsList(with: authors)
+            indicator.stopAnimating()
+            
+        } failureHandler: {
+            indicator.stopAnimating()
+            Alert.show(title: "Ops", message: "Could not possible to load our authors", in: self)
+        }
+    }
     
+    func updateAuthorsList(with authors: [AuthorResponse]) {
+        self.authors = authors
+        authorsCollectionView.reloadData()
+    }
+}
+
+extension AuthorsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return authors.count
     }
@@ -79,9 +91,9 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
             assert(false, "Invalid element type")
         }
     }
-    
-    // MARK: UICVDFlowLayout Impl
-    
+}
+
+extension AuthorsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let horizontalMargin: CGFloat = 16
         
@@ -89,29 +101,6 @@ class AuthorsViewController: UIViewController, UICollectionViewDataSource, UICol
         let adjustedWidth = superviewWidth - horizontalMargin * 2
         
         return CGSize(width: adjustedWidth, height: 206)
-    }
-    
-    // MARK: View methods
-    
-    func loadAuthorsList() {
-        let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
-        indicator.startAnimating()
-        
-        authorRepository.allAuthors { [weak self] authors in
-            guard let self = self else { return }
-            
-            self.updateAuthorsList(with: authors)
-            indicator.stopAnimating()
-            
-        } failureHandler: {
-            indicator.stopAnimating()
-            Alert.show(title: "Ops", message: "Could not possible to load our authors", in: self)
-        }
-    }
-    
-    func updateAuthorsList(with authors: [AuthorResponse]) {
-        self.authors = authors
-        authorsCollectionView.reloadData()
     }
 }
 
