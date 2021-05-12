@@ -7,6 +7,12 @@
 
 import UIKit
 
-class ShowcaseHeaderView: UICollectionReusableView {
+class ShowcaseHeaderView: UICollectionReusableView, ReusableView {
         
+    @IBOutlet weak var sectionTitle: SectionTitle!
+    
+    func build() -> ShowcaseHeaderView {
+        sectionTitle.label.text = "Todos os Livros"
+        return self
+    }
 }

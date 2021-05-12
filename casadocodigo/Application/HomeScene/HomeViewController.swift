@@ -12,6 +12,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     // MARK: Attributes
     
     var showcase: [BookShowcaseItem] = []
+    var bookRepository: BookRepository
     let showcaseFlowLayoutImpl: UICollectionViewDelegateFlowLayout = ShowcaseFlowLayout()
     
     // MARK: IBOutlets
@@ -22,26 +23,40 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showcaseCollectionView.delegate = self.showcaseFlowLayoutImpl
-        self.showcaseCollectionView.dataSource = self
+        showcaseCollectionView.delegate = self.showcaseFlowLayoutImpl
+        showcaseCollectionView.dataSource = self
         
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
         
-        self.loadShowcase();
+        loadShowcase()
+    }
+    
+    // MARK: constructors
+    
+    init(bookRepository: BookRepository = BookRepository(), nibName: String?, bundle: Bundle?) {
+        self.bookRepository = bookRepository
+        super.init(nibName: nibName, bundle: bundle)
+    }
+        
+    required init?(coder: NSCoder) {
+        self.bookRepository = BookRepository()
+        super.init(coder: coder)
     }
     
     // MARK: UICVDataSource impl
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.showcase.count
+        return showcase.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let showcaseBook = showcase[indexPath.row]
         
-        let showcaseBookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShowcaseBookCell", for: indexPath) as! ShowcaseBookCell
-        showcaseBookCell.setFrom(showcaseBook)
+        guard let showcaseBookCell = collectionView.dequeueReusableCell(withReuseIdentifier: ShowcaseBookCell.reuseId, for: indexPath) as? ShowcaseBookCell else {
+            fatalError("Invalid view cell type for showcase book. Please, check the configuration in the Cell and CollectionView's code or ib definition")
+        }
         
+        showcaseBookCell.setFrom(showcaseBook)
         return showcaseBookCell;
     }
     
@@ -49,11 +64,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ShowcaseHeaderView", for: indexPath)
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ShowcaseHeaderView.reuseId, for: indexPath)
                     as? ShowcaseHeaderView else {
-                fatalError("Invalid view type")
+                fatalError("Invalid view type for book showcase header")
             }
-            return headerView
+            return headerView.build()
             
         default:
             assert(false, "Invalid element type")
@@ -63,12 +78,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     // MARK: View methods
     
     func loadShowcase() {
-        let indicator = UIActivityIndicatorView.customIndicator(to: self.showcaseCollectionView)
+        let indicator = UIActivityIndicatorView.customIndicator(to: showcaseCollectionView)
         indicator.startAnimating()
         
-        BookRepository().showcase { (books) in
+        debugPrint(bookRepository)
+        
+        bookRepository.showcase { [weak self] books in
+            guard let self = self else { return }
+    
             self.updateShowcase(with: books)
             indicator.stopAnimating()
+            
         } failureHandler: {
             indicator.stopAnimating()
             Alert.show(title: "Ops", message: "Could not load the book showcase from the API", in: self)
@@ -78,7 +98,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
     
     func updateShowcase(with books: [BookShowcaseItem]) {
         self.showcase = books
-        self.showcaseCollectionView.reloadData()
+        showcaseCollectionView.reloadData()
     }
 }
 
