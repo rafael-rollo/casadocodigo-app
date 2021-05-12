@@ -14,7 +14,7 @@ class ShowcaseBookCell: UICollectionViewCell, ReusableView {
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    func setFrom(_ showcaseBook: BookShowcaseItem) {
+    func setFrom(_ showcaseBook: BookResponse) {
         coverImageView.af.setImage(withURL: showcaseBook.coverImagePath)
         titleLabel.text = showcaseBook.title
     }

@@ -13,7 +13,7 @@ fileprivate struct LayoutProperties {
     static let labelHeight: CGFloat = 70
 }
 
-class ShowcaseFlowLayout: NSObject, UICollectionViewDelegateFlowLayout {
+class ShowcaseFlowLayout: NSObject {
     
     private func calculateCellHeightProportional(to cellWidth: CGFloat) -> CGFloat {
         let originalBookCoverProportion = CGSize(width: 336, height: 480)
@@ -22,7 +22,7 @@ class ShowcaseFlowLayout: NSObject, UICollectionViewDelegateFlowLayout {
         return proportionalHeight
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func sizeForItemOf(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, atIndex indexPath: IndexPath) -> CGSize {
         let collectionWidth = collectionView.bounds.width
     
         let paddingsPerLine = LayoutProperties.cellsPerLine - 1

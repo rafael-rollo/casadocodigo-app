@@ -7,15 +7,15 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDataSource {
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
    
     // MARK: Attributes
     
-    var showcase: [BookShowcaseItem] = []
+    var showcase: [BookResponse] = []
     var isShowcaseUpToDate = false
     
     var bookRepository: BookRepository
-    let showcaseFlowLayoutImpl: UICollectionViewDelegateFlowLayout = ShowcaseFlowLayout()
+    let showcaseFlowLayoutImpl: ShowcaseFlowLayout = ShowcaseFlowLayout()
     
     // MARK: IBOutlets
     
@@ -25,7 +25,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        showcaseCollectionView.delegate = self.showcaseFlowLayoutImpl
+        showcaseCollectionView.delegate = self
         showcaseCollectionView.dataSource = self
         
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
@@ -65,6 +65,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         NotificationCenter.default.removeObserver(self)
     }
     
+    // MARK: UICVDelegate Impl
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedBook = showcase[indexPath.item]
+        
+        let controller = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "BookDetailsViewController") as! BookDetailsViewController
+        controller.selectedBook = selectedBook
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     // MARK: UICVDataSource impl
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -97,6 +108,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         }
     }
     
+    // UICVDelegateFlowLayout Impl
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        self.showcaseFlowLayoutImpl.sizeForItemOf(collectionView, layout: collectionViewLayout, atIndex: indexPath)
+    }
+    
     // MARK: View methods
     
     func loadShowcase() {
@@ -118,7 +135,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
 
     }
     
-    func updateShowcase(with books: [BookShowcaseItem]) {
+    func updateShowcase(with books: [BookResponse]) {
         showcase = books
         isShowcaseUpToDate = true
         
