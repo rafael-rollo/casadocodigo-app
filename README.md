@@ -16,20 +16,24 @@ For study purposes this repo uses a feature-branch like pattern. With this we ga
 
 ### Books management
 
-| Book showcase | Book details | Adding new books |
-|:-------------:|:------------:|:----------------:|
-| <img alt="book showcase demo" src="https://user-images.githubusercontent.com/13206745/117995860-0afef480-b318-11eb-908b-9a83048270c9.gif" height="620" /> | <img alt="book details demo" src="https://user-images.githubusercontent.com/13206745/117997333-40581200-b319-11eb-883b-10f2694f587f.gif" height="620" /> | <img alt="new books demo" src="https://user-images.githubusercontent.com/13206745/117347628-b246dc00-ae7f-11eb-8542-2221b7793e82.gif" height="620" /> |
+| Book showcase | Book details |
+|:-------------:|:------------:|
+| <img alt="book showcase demo" src="https://user-images.githubusercontent.com/13206745/117995860-0afef480-b318-11eb-908b-9a83048270c9.gif" height="620" /> | <img alt="book details demo" src="https://user-images.githubusercontent.com/13206745/117997333-40581200-b319-11eb-883b-10f2694f587f.gif" height="620" /> |
 
 | Removing books | Updating books |
 |:--------------:|:--------------:|
 | <img alt="removing books demo" src="https://user-images.githubusercontent.com/13206745/117999068-de001100-b31a-11eb-9c23-3c14930313cb.gif" height="620" /> | <img alt="updating books demo" src="https://user-images.githubusercontent.com/13206745/117725128-18eb3300-b1bb-11eb-9123-b8c07e6f819c.gif" height="620" /> |
 
+| Adding new books |
+|:----------------:|
+| <img alt="new books demo" src="https://user-images.githubusercontent.com/13206745/117347628-b246dc00-ae7f-11eb-8542-2221b7793e82.gif" height="620" /> |
+
 ### Authors management
 
-| All authors | New Authors | Removing Authors |
-|:-----------:|:-----------:|:----------------:|
-| <img alt="all authors demo" src="https://user-images.githubusercontent.com/13206745/118000021-d2611a00-b31b-11eb-8179-421da76b206d.gif" height="620" /> | <img alt="new authors demo" src="https://user-images.githubusercontent.com/13206745/118012113-1ad20500-b327-11eb-8d03-867d52713e66.gif" height="620" /> | <img alt="removing author demo" src="https://user-images.githubusercontent.com/13206745/118012908-f0347c00-b327-11eb-92cd-da45253cf890.gif" height="620" /> |
+| All authors | New Authors |
+|:-----------:|:-----------:|
+| <img alt="all authors demo" src="https://user-images.githubusercontent.com/13206745/118000021-d2611a00-b31b-11eb-8179-421da76b206d.gif" height="620" /> | <img alt="new authors demo" src="https://user-images.githubusercontent.com/13206745/118012113-1ad20500-b327-11eb-8d03-867d52713e66.gif" height="620" /> |
 
-| Updating authors |
-|:--------------:|
-| <img alt="updating authors demo" src="https://user-images.githubusercontent.com/13206745/118013747-d7789600-b328-11eb-809a-8a93847c08ee.gif" height="620" /> |
+| Removing Authors | Updating authors |
+|:----------------:|:----------------:|
+| <img alt="removing author demo" src="https://user-images.githubusercontent.com/13206745/118012908-f0347c00-b327-11eb-92cd-da45253cf890.gif" height="620" /> | <img alt="updating authors demo" src="https://user-images.githubusercontent.com/13206745/118013747-d7789600-b328-11eb-809a-8a93847c08ee.gif" height="620" /> |
