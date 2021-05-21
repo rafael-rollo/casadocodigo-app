@@ -67,4 +67,23 @@ class BookRepository: NSObject {
                 }
             }
     }
+    
+    func update(_ book: BookRequest, identifiedBy bookId: Int, completionHandler: @escaping (BookResponse) -> Void, failureHandler: @escaping () -> Void) {
+        let headers: HTTPHeaders = ["Content-type": "application/json", "Accept": "application/json"]
+        let resourceURI = "\(BookRepository.bookBasePath)/\(bookId)"
+     
+        AF.request(resourceURI, method: .put, parameters: book, encoder: JSONParameterEncoder.default, headers: headers)
+            .validate()
+            .responseDecodable(of: BookResponse.self) { response in
+                switch response.result {
+                case .success:
+                    guard let updatedBook = response.value else { return }
+                    completionHandler(updatedBook)
+                    
+                case let .failure(error):
+                    debugPrint(error)
+                    failureHandler()
+                }
+            }
+    }
 }

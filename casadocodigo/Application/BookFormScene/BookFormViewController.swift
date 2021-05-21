@@ -10,6 +10,7 @@ import AlamofireImage
 
 protocol BookFormViewControllerDelegate: class {
     func didBookCreated(_ book: BookResponse)
+    func didBookUpdated(_ book: BookResponse)
 }
 
 class BookFormViewController: UIViewController {
@@ -17,6 +18,7 @@ class BookFormViewController: UIViewController {
     // MARK: Attributes
     
     var authors: [AuthorResponse] = []
+    var selectedBook: BookResponse?
     
     var authorRepository: AuthorRepository
     var bookRepository: BookRepository
@@ -39,9 +41,11 @@ class BookFormViewController: UIViewController {
     
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var authorTextField: UITextField!
-    var authorPickerView = UIPickerView()
+    private var authorPickerView: UIPickerView?
+
+    @IBOutlet weak var publicationDatePicker: UIDatePicker!
+    private var publicationDate: String?
     
-    @IBOutlet weak var publicationDateTextField: UITextField!
     @IBOutlet weak var pagesTextField: UITextField!
     @IBOutlet weak var ISBNTextField: UITextField!
     
@@ -64,12 +68,9 @@ class BookFormViewController: UIViewController {
     }
     
     // MARK: View lifecycle
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        authorPickerView.dataSource = self
-        authorPickerView.delegate = self
         
         StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
         navigationBar.configure(navigationController, current: self)
@@ -82,23 +83,73 @@ class BookFormViewController: UIViewController {
         descriptionTextView.configureBorders()
         
         authorTextField.inputView = authorPickerView
-        
+    
         submitButton.layer.cornerRadius = 10
         submitButton.showsTouchWhenHighlighted = true
     }
     
     private func buildUp() {
-        sectionTitle.label.text = "Novo Livro"
+        authorPickerView = UIPickerView()
+        authorPickerView?.dataSource = self
+        authorPickerView?.delegate = self
         
-        submitButton.addTarget(self,
-                               action: #selector(bookAddingButtonPressed(_:)),
-                               for: .touchUpInside)
+        publicationDatePicker.addTarget(self, action: #selector(updatePublicationDateValue(_:)), for: .valueChanged)
+        
+        if let selectedBook = selectedBook {
+            sectionTitle.label.text = "Dados do Livro"
+            submitButton.addTarget(self,
+                                   action: #selector(bookEdittingButtonPressed(_:)),
+                                   for: .touchUpInside)
+            
+            initData(with: selectedBook)
+            
+        } else {
+            sectionTitle.label.text = "Novo Livro"
+            submitButton.addTarget(self,
+                                   action: #selector(bookAddingButtonPressed(_:)),
+                                   for: .touchUpInside)
+        }
+        
+        
         adjustLayout()
+    }
+    
+    private func initData(with book: BookResponse) {
+        coverPathTextField.text = book.coverImagePath.absoluteString
+        coverFieldEditingDidEnd(coverPathTextField)
+        
+        titleTextField.text = book.title
+        subtitleTextField.text = book.subtitle
+        
+        book.prices.forEach { price in
+            let value = String(describing: price.value)
+            
+            switch price.bookType {
+            case .ebook:
+                ebookPriceField.text = value
+            
+            case .hardCover:
+                hardcoverPriceField.text = value
+            
+            case .combo:
+                comboPriceField.text = value
+            }
+        }
+        
+        descriptionTextView.text = book.description
+
+        if let publicationDate = Date.fromString(book.publicationDate, formattedBy: "dd/MM/yyyy") {
+            publicationDatePicker.setDate(publicationDate, animated: false)
+            updatePublicationDateValue(publicationDatePicker)
+        }
+        
+        pagesTextField.text = String(describing: book.numberOfPages)
+        ISBNTextField.text = book.ISBN
     }
 
     // MARK: IBActions
     
-    @IBAction func coverFieldEditingDidEnd(_ sender: Any) {
+    @IBAction func coverFieldEditingDidEnd(_ sender: UITextField) {
         guard let coverPathAsString = coverPathTextField.text,
               !coverPathAsString.isEmpty else { return }
         
@@ -107,24 +158,11 @@ class BookFormViewController: UIViewController {
         coverImageView.af.setImage(withURL: coverUri)
     }
     
-    @IBAction func didPublicationDateFieldFocused(_ sender: UITextField) {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .date
-        datePicker.preferredDatePickerStyle = UIDatePickerStyle.wheels
-        datePicker.addTarget(self, action: #selector(updatePublicationDateFieldValue(_:)), for: .valueChanged)
-        
-        if let publicationDate = publicationDateTextField.text, publicationDate.isEmpty {
-            updatePublicationDateFieldValue(datePicker)
-        }
-        
-        publicationDateTextField.inputView = datePicker
-    }
-    
-    @objc func updatePublicationDateFieldValue(_ sender: UIDatePicker!) {
+    @objc func updatePublicationDateValue(_ sender: UIDatePicker!) {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
         
-        publicationDateTextField.text = formatter.string(from: sender.date)
+        publicationDate = formatter.string(from: sender.date)
     }
     
     /**
@@ -169,10 +207,10 @@ class BookFormViewController: UIViewController {
             return nil
         }
         
-        let selectedRow = authorPickerView.selectedRow(inComponent: 0)
+        guard let selectedRow = authorPickerView?.selectedRow(inComponent: 0) else { return nil }
         let authorId = authors[selectedRow].id
-        
-        guard let publicationDate = publicationDateTextField.text, !publicationDate.isEmpty else {
+                
+        guard let publicationDate = publicationDate, !publicationDate.isEmpty else {
             Alert.show(title: "Ops", message: "Informe a data de publicação do livro.", in: self)
             return nil
         }
@@ -212,6 +250,28 @@ class BookFormViewController: UIViewController {
 
     }
     
+    @objc func bookEdittingButtonPressed(_ sender: UIButton!) {
+        guard let selectedBook = selectedBook else {
+            fatalError("Could not possible to perform that action because an illegal state was verified. A selected book is required at this point.")
+        }
+        
+        guard let book = getBookFromForm() else { return }
+        
+        let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
+        indicator.startAnimating()
+        
+        bookRepository.update(book, identifiedBy: selectedBook.id) { [weak self] updatedBook in
+            indicator.stopAnimating()
+            self?.navigationController?.popToRootViewController(animated: true)
+            
+            self?.delegate?.didBookUpdated(updatedBook)
+            
+        } failureHandler: {
+            indicator.stopAnimating()
+            Alert.show(title: "Ops", message: "Could not possible to update book data. Try again later!", in: self)
+        }
+    }
+    
     // MARK: View methods
     
     func updateAuthors(with authors: [AuthorResponse]) {
@@ -219,8 +279,18 @@ class BookFormViewController: UIViewController {
         
         guard let firstAuthor = authors.first else { return }
         
-        authorPickerView.selectRow(0, inComponent: 0, animated: false)
-        authorTextField.text = firstAuthor.fullName
+        if let selectedBook = selectedBook {
+            authors.enumerated().forEach { (index, author) in
+                if selectedBook.author.id != author.id { return }
+                
+                authorPickerView?.selectRow(index, inComponent: 0, animated: false)
+                authorTextField.text = selectedBook.author.fullName
+            }
+            
+        } else {
+            authorPickerView?.selectRow(0, inComponent: 0, animated: false)
+            authorTextField.text = firstAuthor.fullName
+        }
     }
     
     func loadAuthors() {

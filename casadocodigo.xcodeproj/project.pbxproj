@@ -31,6 +31,7 @@
 		585D72E92643073200666078 /* Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D72E82643073100666078 /* Decimal.swift */; };
 		585D72F226432FD300666078 /* BookFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D72F126432FD300666078 /* BookFormViewController.swift */; };
 		585D7302264345B200666078 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D7301264345B200666078 /* TextView.swift */; };
+		585D73312649997D00666078 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D73302649997B00666078 /* Date.swift */; };
 		589C5BB42621302000CE3B93 /* StatusBarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB32621302000CE3B93 /* StatusBarBackground.swift */; };
 		589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB92621363300CE3B93 /* AuthorsViewController.swift */; };
 		58B1B3E3264192BD00DFA789 /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B1B3E2264192BD00DFA789 /* BookDetailsViewController.swift */; };
@@ -90,6 +91,7 @@
 		585D72E82643073100666078 /* Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal.swift; sourceTree = "<group>"; };
 		585D72F126432FD300666078 /* BookFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFormViewController.swift; sourceTree = "<group>"; };
 		585D7301264345B200666078 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		585D73302649997B00666078 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		589C5BB32621302000CE3B93 /* StatusBarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarBackground.swift; sourceTree = "<group>"; };
 		589C5BB92621363300CE3B93 /* AuthorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsViewController.swift; sourceTree = "<group>"; };
 		58B1B3E2264192BD00DFA789 /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				585D72E82643073100666078 /* Decimal.swift */,
+				585D73302649997B00666078 /* Date.swift */,
 			);
 			path = CoreExtensions;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				582F982A2628FFAF00354D65 /* ShowcaseHeaderView.swift in Sources */,
+				585D73312649997D00666078 /* Date.swift in Sources */,
 				582F98472629DBA900354D65 /* ShowcaseFlowLayout.swift in Sources */,
 				58B1B3E3264192BD00DFA789 /* BookDetailsViewController.swift in Sources */,
 				58CB457D263B612E005D19F2 /* Views.swift in Sources */,
@@ -874,6 +878,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CP42424Z9Z;
 				INFOPLIST_FILE = casadocodigo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -893,6 +898,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CP42424Z9Z;
 				INFOPLIST_FILE = casadocodigo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

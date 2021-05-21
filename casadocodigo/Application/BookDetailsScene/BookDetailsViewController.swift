@@ -10,6 +10,7 @@ import AlamofireImage
 
 protocol BookDetailsViewControllerDelegate: UIViewController {
     func didDeletingButtonPressed(_ sender: UIButton!, forBookIdentifiedBy id: Int)
+    func didEditingButtonPressed(_ sender: UIButton!, for book: BookResponse)
 }
 
 class BookDetailsViewController: UIViewController {
@@ -45,6 +46,7 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet weak var ISBNLabel: UILabel!
     
     @IBOutlet weak var deletingButton: UIButton!
+    @IBOutlet weak var editingButton: UIButton!
     
     // MARK: View lifecycle
     
@@ -72,8 +74,11 @@ class BookDetailsViewController: UIViewController {
         
         let deletingButtonImage = UIImage(named: "trash")?.withTintColor(UIColor.white)
         deletingButton.setImage(deletingButtonImage, for: .normal)
-        deletingButton.imageEdgeInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         deletingButton.roundTheShape()
+        
+        let editingButtonImage = UIImage(named: "pencil")?.withTintColor(UIColor.white)
+        editingButton.setImage(editingButtonImage, for: .normal)
+        editingButton.roundTheShape()
     }
     
     private func buildUp(using book: BookResponse) {
@@ -108,6 +113,7 @@ class BookDetailsViewController: UIViewController {
         ISBNLabel.text = book.ISBN
         
         deletingButton.addTarget(self, action: #selector(deletingButtonPressed(_:)), for: .touchUpInside)
+        editingButton.addTarget(self, action: #selector(editingButtonPressed(_:)), for: .touchUpInside)
         
         adjustLayout()
     }
@@ -126,5 +132,14 @@ class BookDetailsViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
             self.delegate?.didDeletingButtonPressed(sender, forBookIdentifiedBy: selectedBook.id)
         }
+    }
+    
+    @objc func editingButtonPressed(_ sender: UIButton!) {
+        guard let selectedBook = selectedBook else {
+            debugPrint("Could not determine the target book for that action. Check the method 'didSelectItemAt' it sets up the book details requirements")
+            return
+        }
+        
+        self.delegate?.didEditingButtonPressed(sender, for: selectedBook)
     }
 }
