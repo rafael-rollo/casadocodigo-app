@@ -22,8 +22,6 @@ class BookDetailsViewController: UIViewController {
     
     // MARK: IBOutlets
     
-    @IBOutlet weak var navigationBar: NavigationBar!
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var coverImageView: UIImageView!
@@ -52,9 +50,6 @@ class BookDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
-        navigationBar.configure(navigationController, current: self)
         
         if let selectedBook = selectedBook {
             buildUp(using: selectedBook)

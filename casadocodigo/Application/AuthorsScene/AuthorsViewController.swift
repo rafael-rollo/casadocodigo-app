@@ -31,9 +31,7 @@ class AuthorsViewController: UIViewController {
         super.viewDidLoad()
         authorsCollectionView.dataSource = self
         authorsCollectionView.delegate = self
-        
-        StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
-        
+                
         loadAuthorsList()
     }
     

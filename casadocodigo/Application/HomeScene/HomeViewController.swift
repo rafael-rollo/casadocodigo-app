@@ -20,8 +20,6 @@ class HomeViewController: UIViewController {
         showcaseCollectionView.delegate = self
         showcaseCollectionView.dataSource = self
         
-        StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
-        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(markShowcaseAsOutdated),

@@ -45,8 +45,6 @@
 		58BF690E2621070500A8CEBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58BF690C2621070500A8CEBD /* LaunchScreen.storyboard */; };
 		58BF69192621070500A8CEBD /* casadocodigoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69182621070500A8CEBD /* casadocodigoTests.swift */; };
 		58BF69242621070500A8CEBD /* casadocodigoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69232621070500A8CEBD /* casadocodigoUITests.swift */; };
-		58BF694C2621155300A8CEBD /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF694B2621155300A8CEBD /* NavigationBar.swift */; };
-		58BF695726211FE100A8CEBD /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58BF695626211FE100A8CEBD /* NavigationBar.xib */; };
 		58CB4562263A43C8005D19F2 /* ConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */; };
 		58CB457D263B612E005D19F2 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB457C263B612D005D19F2 /* Views.swift */; };
 		58FA532C26334E44000390BF /* AuthorFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA532B26334E44000390BF /* AuthorFormViewController.swift */; };
@@ -113,8 +111,6 @@
 		58BF691F2621070500A8CEBD /* casadocodigoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = casadocodigoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58BF69232621070500A8CEBD /* casadocodigoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casadocodigoUITests.swift; sourceTree = "<group>"; };
 		58BF69252621070500A8CEBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58BF694B2621155300A8CEBD /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
-		58BF695626211FE100A8CEBD /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialog.swift; sourceTree = "<group>"; };
 		58CB457C263B612D005D19F2 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		58FA532B26334E44000390BF /* AuthorFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorFormViewController.swift; sourceTree = "<group>"; };
@@ -239,15 +235,6 @@
 				582F9860262DD83000354D65 /* AuthorRepository.swift */,
 			);
 			path = Authors;
-			sourceTree = "<group>";
-		};
-		583C555B2631F644002846CF /* NavigationBar */ = {
-			isa = PBXGroup;
-			children = (
-				58BF694B2621155300A8CEBD /* NavigationBar.swift */,
-				58BF695626211FE100A8CEBD /* NavigationBar.xib */,
-			);
-			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		583C555C2631F654002846CF /* SectionTitle */ = {
@@ -388,7 +375,6 @@
 			children = (
 				582F9851262A144B00354D65 /* Alert.swift */,
 				58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */,
-				583C555B2631F644002846CF /* NavigationBar */,
 				583C555C2631F654002846CF /* SectionTitle */,
 				589C5BB32621302000CE3B93 /* StatusBarBackground.swift */,
 				5827D827262FE63100D20B19 /* TagsHorizontalList */,
@@ -549,7 +535,6 @@
 				58BF690B2621070500A8CEBD /* Assets.xcassets in Resources */,
 				5827D831262FE6C600D20B19 /* TagCell.xib in Resources */,
 				58BF69092621070300A8CEBD /* Main.storyboard in Resources */,
-				58BF695726211FE100A8CEBD /* NavigationBar.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,7 +693,6 @@
 				58CB4562263A43C8005D19F2 /* ConfirmationDialog.swift in Sources */,
 				58BF69042621070300A8CEBD /* SceneDelegate.swift in Sources */,
 				582AD395262F55B300705D6D /* AuthorCell.swift in Sources */,
-				58BF694C2621155300A8CEBD /* NavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
