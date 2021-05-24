@@ -34,7 +34,6 @@
 		585D72F226432FD300666078 /* BookFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D72F126432FD300666078 /* BookFormViewController.swift */; };
 		585D7302264345B200666078 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D7301264345B200666078 /* TextView.swift */; };
 		585D73312649997D00666078 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D73302649997B00666078 /* Date.swift */; };
-		589C5BB42621302000CE3B93 /* StatusBarBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB32621302000CE3B93 /* StatusBarBackground.swift */; };
 		589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB92621363300CE3B93 /* AuthorsViewController.swift */; };
 		58B1B3E3264192BD00DFA789 /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B1B3E2264192BD00DFA789 /* BookDetailsViewController.swift */; };
 		58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69012621070300A8CEBD /* AppDelegate.swift */; };
@@ -94,7 +93,6 @@
 		585D72F126432FD300666078 /* BookFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFormViewController.swift; sourceTree = "<group>"; };
 		585D7301264345B200666078 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		585D73302649997B00666078 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		589C5BB32621302000CE3B93 /* StatusBarBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarBackground.swift; sourceTree = "<group>"; };
 		589C5BB92621363300CE3B93 /* AuthorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsViewController.swift; sourceTree = "<group>"; };
 		58B1B3E2264192BD00DFA789 /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
 		58BF68FE2621070300A8CEBD /* casadocodigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = casadocodigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -376,7 +374,6 @@
 				582F9851262A144B00354D65 /* Alert.swift */,
 				58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */,
 				583C555C2631F654002846CF /* SectionTitle */,
-				589C5BB32621302000CE3B93 /* StatusBarBackground.swift */,
 				5827D827262FE63100D20B19 /* TagsHorizontalList */,
 			);
 			path = Components;
@@ -671,7 +668,6 @@
 				58BF69062621070300A8CEBD /* HomeViewController.swift in Sources */,
 				582F984D262A0A7600354D65 /* ActivityIndicatorView.swift in Sources */,
 				5827D810262FDBD100D20B19 /* TagsHorizontalList.swift in Sources */,
-				589C5BB42621302000CE3B93 /* StatusBarBackground.swift in Sources */,
 				582F9852262A144B00354D65 /* Alert.swift in Sources */,
 				582F980D2627D20200354D65 /* BookRepository.swift in Sources */,
 				582AD3AD262F6F0800705D6D /* SectionTitle.swift in Sources */,
