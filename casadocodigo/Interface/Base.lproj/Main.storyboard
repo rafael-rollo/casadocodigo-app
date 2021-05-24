@@ -12,22 +12,26 @@
         <!--Navigation Controller-->
         <scene sceneID="xaS-Cm-Tjc">
             <objects>
-                <navigationController navigationBarHidden="YES" id="2zo-8l-zRe" sceneMemberID="viewController">
-                    <nil key="simulatedTopBarMetrics"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="biz-yC-PfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="2zo-8l-zRe" customClass="CDCNavigationController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qjY-jH-kgk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1W1-L3-atj">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="pTB-BC-bOT" kind="relationship" relationship="rootViewController" id="yL3-Hx-Da9"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="biz-yC-PfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1088" y="-561"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="AR2-Ae-ZFU">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NaA-sK-EQ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController id="pTB-BC-bOT" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="AN5-PJ-UZk"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QcI-9v-Wf8">
@@ -41,7 +45,6 @@
                         <segue destination="UbJ-Mk-Nru" kind="relationship" relationship="viewControllers" id="NHW-2V-fF0"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NaA-sK-EQ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-305" y="-561"/>
         </scene>
@@ -907,14 +910,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFj-lf-Nb6" customClass="NavigationBar" customModule="casadocodigo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="xSS-Lb-ZCH"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cr6-2w-0gO">
-                                <rect key="frame" x="16" y="104" width="382" height="709"/>
+                                <rect key="frame" x="16" y="148" width="382" height="665"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.98039215690000003" blue="0.97647058819999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="16" id="Rhe-fT-ejB">
                                     <size key="itemSize" width="160" height="289"/>
@@ -996,14 +999,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="453-mx-4fs" customClass="NavigationBar" customModule="casadocodigo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="VM4-dB-9Iu"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UC3-Ud-cFa">
-                                <rect key="frame" x="0.0" y="104" width="414" height="709"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="665"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="0.0" id="D4F-ry-cvl">
                                     <size key="itemSize" width="396" height="200"/>

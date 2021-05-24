@@ -19,6 +19,8 @@
 		582AD395262F55B300705D6D /* AuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AD394262F55B300705D6D /* AuthorCell.swift */; };
 		582AD3AD262F6F0800705D6D /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AD3AB262F6F0800705D6D /* SectionTitle.swift */; };
 		582AD3AE262F6F0800705D6D /* SectionTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582AD3AC262F6F0800705D6D /* SectionTitle.xib */; };
+		582CC765265825DB0033F333 /* CDCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC764265825DB0033F333 /* CDCNavigationController.swift */; };
+		582CC771265BEFF40033F333 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC770265BEFF40033F333 /* Theme.swift */; };
 		582F980D2627D20200354D65 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F980C2627D20200354D65 /* BookRepository.swift */; };
 		582F98142628A40300354D65 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F98132628A40300354D65 /* Book.swift */; };
 		582F981A2628AA2100354D65 /* ShowcaseBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F98192628AA2100354D65 /* ShowcaseBookCell.swift */; };
@@ -79,6 +81,8 @@
 		582AD394262F55B300705D6D /* AuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorCell.swift; sourceTree = "<group>"; };
 		582AD3AB262F6F0800705D6D /* SectionTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		582AD3AC262F6F0800705D6D /* SectionTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionTitle.xib; sourceTree = "<group>"; };
+		582CC764265825DB0033F333 /* CDCNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCNavigationController.swift; sourceTree = "<group>"; };
+		582CC770265BEFF40033F333 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		582F980C2627D20200354D65 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		582F98132628A40300354D65 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		582F98192628AA2100354D65 /* ShowcaseBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseBookCell.swift; sourceTree = "<group>"; };
@@ -347,6 +351,7 @@
 		58BF6934262109E300A8CEBD /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				582CC770265BEFF40033F333 /* Theme.swift */,
 				58CB457B263B610C005D19F2 /* Utils */,
 				582F984B262A0A5300354D65 /* Extensions */,
 				58BF693D262114B700A8CEBD /* Components */,
@@ -359,6 +364,7 @@
 		58BF693526210A0E00A8CEBD /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				582CC764265825DB0033F333 /* CDCNavigationController.swift */,
 				58BF693926210A5B00A8CEBD /* HomeScene */,
 				58B1B3E12641929700DFA789 /* BookDetailsScene */,
 				585D72F026432FB700666078 /* BookFormScene */,
@@ -675,6 +681,7 @@
 				585D73312649997D00666078 /* Date.swift in Sources */,
 				582F98472629DBA900354D65 /* ShowcaseFlowLayout.swift in Sources */,
 				58B1B3E3264192BD00DFA789 /* BookDetailsViewController.swift in Sources */,
+				582CC765265825DB0033F333 /* CDCNavigationController.swift in Sources */,
 				58CB457D263B612E005D19F2 /* Views.swift in Sources */,
 				58BF69062621070300A8CEBD /* HomeViewController.swift in Sources */,
 				582F984D262A0A7600354D65 /* ActivityIndicatorView.swift in Sources */,
@@ -695,6 +702,7 @@
 				585D72E92643073200666078 /* Decimal.swift in Sources */,
 				5827D829262FE6A300D20B19 /* TagCell.swift in Sources */,
 				5827D806262F8D1900D20B19 /* AuthorsHeaderView.swift in Sources */,
+				582CC771265BEFF40033F333 /* Theme.swift in Sources */,
 				589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */,
 				582F981A2628AA2100354D65 /* ShowcaseBookCell.swift in Sources */,
 				58CB4562263A43C8005D19F2 /* ConfirmationDialog.swift in Sources */,
