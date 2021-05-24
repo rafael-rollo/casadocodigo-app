@@ -20,6 +20,8 @@ class HomeViewController: UIViewController {
         showcaseCollectionView.delegate = self
         showcaseCollectionView.dataSource = self
         
+        navigationItem.title = "Books"
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(markShowcaseAsOutdated),
