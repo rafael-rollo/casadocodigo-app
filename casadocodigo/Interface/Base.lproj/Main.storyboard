@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2zo-8l-zRe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2zo-8l-zRe">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -21,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="pTB-BC-bOT" kind="relationship" relationship="rootViewController" id="yL3-Hx-Da9"/>
+                        <segue destination="jKO-ab-6Kt" kind="relationship" relationship="rootViewController" id="GVK-Cj-Dh7"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biz-yC-PfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -47,6 +48,94 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NaA-sK-EQ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-305" y="-561"/>
+        </scene>
+        <!--Sign In-->
+        <scene sceneID="ZsE-SV-ZbN">
+            <objects>
+                <viewController id="jKO-ab-6Kt" userLabel="Sign In" customClass="SignInViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wJx-b7-lcM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="hxh-Yd-GQP">
+                                <rect key="frame" x="40" y="332.33333333333331" width="334" height="231.33333333333331"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ivB-Qc-Q8D" userLabel="Stacked Fields">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="151.33333333333334"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VlD-T0-OhQ" userLabel="Stacked Email Field">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="69.666666666666671"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pk3-xV-faF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="21.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                        <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agQ-Jc-nqT">
+                                                        <rect key="frame" x="0.0" y="29.666666666666686" width="334" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="7Id-Xw-6z1"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LpD-6J-55L" userLabel="Stacked Password View">
+                                                <rect key="frame" x="0.0" y="81.666666666666686" width="334" height="69.666666666666686"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2D2-KP-zGG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="334" height="21.666666666666668"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                        <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F7e-gE-ReQ">
+                                                        <rect key="frame" x="0.0" y="29.666666666666686" width="334" height="40"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="F7e-gE-ReQ" firstAttribute="height" secondItem="agQ-Jc-nqT" secondAttribute="height" id="8bX-EB-h3x"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOc-hl-kQg">
+                                        <rect key="frame" x="0.0" y="183.33333333333331" width="334" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="lYm-yf-lY8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="tintColor" name="strongOrange"/>
+                                        <state key="normal" title="Entrar"/>
+                                        <connections>
+                                            <action selector="signInUser:" destination="jKO-ab-6Kt" eventType="touchUpInside" id="8lF-eL-glv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="blj-WK-EFM"/>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="hxh-Yd-GQP" secondAttribute="trailing" constant="20" id="8RW-gD-GRe"/>
+                            <constraint firstItem="hxh-Yd-GQP" firstAttribute="leading" secondItem="wJx-b7-lcM" secondAttribute="leadingMargin" constant="20" id="QNQ-Ya-Neb"/>
+                            <constraint firstItem="hxh-Yd-GQP" firstAttribute="centerY" secondItem="wJx-b7-lcM" secondAttribute="centerY" id="hN4-sV-jFB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="NVd-9q-Gsb"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="agQ-Jc-nqT" id="7kz-4O-HEd"/>
+                        <outlet property="passwordTextField" destination="F7e-gE-ReQ" id="dIa-Sy-qQa"/>
+                        <outlet property="signInButton" destination="JOc-hl-kQg" id="xYc-dl-OUt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iLN-vp-c8x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-307.24637681159425" y="-1276.3392857142856"/>
         </scene>
         <!--Book Form-->
         <scene sceneID="7YE-0e-U2J">
@@ -888,7 +977,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cr6-2w-0gO">
-                                <rect key="frame" x="16" y="88" width="382" height="725"/>
+                                <rect key="frame" x="16" y="44" width="382" height="769"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.98039215690000003" blue="0.97647058819999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="16" id="Rhe-fT-ejB">
                                     <size key="itemSize" width="160" height="289"/>
@@ -967,7 +1056,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UC3-Ud-cFa">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="0.0" id="D4F-ry-cvl">
                                     <size key="itemSize" width="396" height="200"/>
@@ -1285,6 +1374,12 @@
         <image name="book-cover" width="170.66667175292969" height="170.66667175292969"/>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
+        <namedColor name="background">
+            <color red="0.98431372549019602" green="0.98039215686274506" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="strongOrange">
+            <color red="0.96078431372549022" green="0.5490196078431373" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

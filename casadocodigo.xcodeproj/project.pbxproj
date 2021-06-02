@@ -22,6 +22,7 @@
 		582AD3AE262F6F0800705D6D /* SectionTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582AD3AC262F6F0800705D6D /* SectionTitle.xib */; };
 		582CC765265825DB0033F333 /* CDCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC764265825DB0033F333 /* CDCNavigationController.swift */; };
 		582CC771265BEFF40033F333 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC770265BEFF40033F333 /* Theme.swift */; };
+		582CC80B266816B00033F333 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC80A266816B00033F333 /* SignInViewController.swift */; };
 		582F980D2627D20200354D65 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F980C2627D20200354D65 /* BookRepository.swift */; };
 		582F98142628A40300354D65 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F98132628A40300354D65 /* Book.swift */; };
 		582F981A2628AA2100354D65 /* ShowcaseBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F98192628AA2100354D65 /* ShowcaseBookCell.swift */; };
@@ -82,6 +83,7 @@
 		582AD3AC262F6F0800705D6D /* SectionTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionTitle.xib; sourceTree = "<group>"; };
 		582CC764265825DB0033F333 /* CDCNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCNavigationController.swift; sourceTree = "<group>"; };
 		582CC770265BEFF40033F333 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		582CC80A266816B00033F333 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		582F980C2627D20200354D65 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		582F98132628A40300354D65 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		582F98192628AA2100354D65 /* ShowcaseBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseBookCell.swift; sourceTree = "<group>"; };
@@ -171,6 +173,14 @@
 				5827D805262F8D1900D20B19 /* AuthorsHeaderView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		582CC809266816860033F333 /* SignInScene */ = {
+			isa = PBXGroup;
+			children = (
+				582CC80A266816B00033F333 /* SignInViewController.swift */,
+			);
+			path = SignInScene;
 			sourceTree = "<group>";
 		};
 		582F98022627D1A700354D65 /* Domain */ = {
@@ -357,6 +367,7 @@
 				585D72F026432FB700666078 /* BookFormScene */,
 				589C5BB82621361100CE3B93 /* AuthorsScene */,
 				58FA532A26334E00000390BF /* AuthorFormScene */,
+				582CC809266816860033F333 /* SignInScene */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -688,6 +699,7 @@
 				5827D829262FE6A300D20B19 /* TagCell.swift in Sources */,
 				5827D806262F8D1900D20B19 /* AuthorsHeaderView.swift in Sources */,
 				582CC771265BEFF40033F333 /* Theme.swift in Sources */,
+				582CC80B266816B00033F333 /* SignInViewController.swift in Sources */,
 				589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */,
 				582F981A2628AA2100354D65 /* ShowcaseBookCell.swift in Sources */,
 				58CB4562263A43C8005D19F2 /* ConfirmationDialog.swift in Sources */,
