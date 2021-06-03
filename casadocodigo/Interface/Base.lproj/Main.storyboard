@@ -79,6 +79,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="jKO-ab-6Kt" id="gKn-3a-3Za"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -95,6 +98,9 @@
                                                         <rect key="frame" x="0.0" y="29.666666666666686" width="334" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="jKO-ab-6Kt" id="yGE-Di-Thk"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                             </stackView>
@@ -120,20 +126,33 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="blj-WK-EFM"/>
                         <color key="backgroundColor" name="background"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="hxh-Yd-GQP" secondAttribute="trailing" constant="20" id="8RW-gD-GRe"/>
+                            <constraint firstAttribute="bottom" secondItem="hxh-Yd-GQP" secondAttribute="bottom" priority="250" id="OeL-eE-mJY"/>
+                            <constraint firstItem="WZb-ST-TFP" firstAttribute="trailing" secondItem="blj-WK-EFM" secondAttribute="trailing" id="PKF-H8-KlO"/>
                             <constraint firstItem="hxh-Yd-GQP" firstAttribute="leading" secondItem="wJx-b7-lcM" secondAttribute="leadingMargin" constant="20" id="QNQ-Ya-Neb"/>
                             <constraint firstItem="hxh-Yd-GQP" firstAttribute="centerY" secondItem="wJx-b7-lcM" secondAttribute="centerY" id="hN4-sV-jFB"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="r0D-le-CYH" appends="YES" id="2to-ok-hbT"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="NVd-9q-Gsb"/>
                     <connections>
+                        <outlet property="bottomConstraint" destination="OeL-eE-mJY" id="J82-Uc-mD9"/>
+                        <outlet property="centerYAlignmentContraint" destination="hN4-sV-jFB" id="Mxs-Fd-zJe"/>
                         <outlet property="emailTextField" destination="agQ-Jc-nqT" id="7kz-4O-HEd"/>
                         <outlet property="passwordTextField" destination="F7e-gE-ReQ" id="dIa-Sy-qQa"/>
                         <outlet property="signInButton" destination="JOc-hl-kQg" id="xYc-dl-OUt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLN-vp-c8x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="r0D-le-CYH">
+                    <connections>
+                        <action selector="backgroundTapped:" destination="jKO-ab-6Kt" id="U8s-cD-dib"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-307.24637681159425" y="-1276.3392857142856"/>
         </scene>

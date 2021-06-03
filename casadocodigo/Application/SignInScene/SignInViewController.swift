@@ -12,7 +12,10 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
-        
+    
+    @IBOutlet weak var centerYAlignmentContraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     var userAuthentication: UserAuthentication
     
     init(userAuthentication: UserAuthentication = UserAuthentication(), nibName: String?, bundle: Bundle?) {
@@ -28,12 +31,45 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         adjustLayout()
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(toogleFormConstraintsPriority(_:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(toogleFormConstraintsPriority(_:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
     
     func adjustLayout() {
         signInButton.layer.borderWidth = 2
         signInButton.layer.borderColor = UIColor(named: "strongOrange")?.cgColor
         signInButton.layer.cornerRadius = 24
+    }
+    
+    @objc func toogleFormConstraintsPriority(_ notification: Notification) {
+        guard let userInfo = notification.userInfo else { return }
+        let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey]
+                                as! NSValue).cgRectValue.height
+        
+        if notification.name == UIResponder.keyboardWillShowNotification {
+            let bottomPadding: CGFloat = 32
+            bottomConstraint.constant = keyboardHeight + bottomPadding
+            bottomConstraint.priority = UILayoutPriority.required
+
+            centerYAlignmentContraint.priority = UILayoutPriority.defaultLow
+        } else {
+            centerYAlignmentContraint.priority = UILayoutPriority.required
+
+            bottomConstraint.constant = 0
+            bottomConstraint.priority = UILayoutPriority.defaultLow
+        }
     }
     
     func getUserFromForm() -> (User, String)? {
@@ -48,6 +84,10 @@ class SignInViewController: UIViewController {
         }
                 
         return (User(email: email), password)
+    }
+    
+    @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     @IBAction func signInUser(_ sender: UIButton) {
@@ -65,5 +105,14 @@ class SignInViewController: UIViewController {
             indicator.stopAnimating()
             Alert.show(title: "Ops", message: "Could not possible to sign in. Try again!", in: self)
         }
+    }
+}
+
+// MARK: - Text Fields delegate
+
+extension SignInViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
