@@ -17,4 +17,13 @@ class UserAuthenticationRepository: NSObject {
             UserDefaults.standard.set(encoded, forKey: UserAuthenticationRepository.key)
         }
     }
+    
+    func get() -> User? {
+        guard let authenticatedUserData = UserDefaults.standard
+                .object(forKey: UserAuthenticationRepository.key) as? Data else { return nil }
+        let decoder = PropertyListDecoder()
+        guard let authenticatedUser = try? decoder
+                .decode(User.self, from: authenticatedUserData) else { return nil }
+        return authenticatedUser
+    }
 }

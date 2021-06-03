@@ -13,7 +13,7 @@ protocol BookFormViewControllerDelegate: class {
     func didBookUpdated(_ book: BookResponse)
 }
 
-class BookFormViewController: UIViewController {
+class BookFormViewController: AuthorizedViewController {
     
     // MARK: Attributes
     
@@ -54,7 +54,8 @@ class BookFormViewController: UIViewController {
     
     init(authorRepository: AuthorRepository = AuthorRepository(),
          bookRepository: BookRepository = BookRepository(),
-         nibName: String? = nil, bundle: Bundle? = nil) {
+         nibName: String? = nil,
+         bundle: Bundle? = nil) {
         self.authorRepository = authorRepository
         self.bookRepository = bookRepository
         super.init(nibName: nibName, bundle: bundle)

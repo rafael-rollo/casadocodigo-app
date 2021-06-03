@@ -13,7 +13,7 @@ protocol AuthorFormViewControllerDelegate: class {
     func didAuthorUpdated(_ author: AuthorResponse)
 }
 
-class AuthorFormViewController: UIViewController, UITextFieldDelegate {
+class AuthorFormViewController: AuthorizedViewController, UITextFieldDelegate {
     
     // MARK: Attributes
     weak var delegate: AuthorFormViewControllerDelegate?

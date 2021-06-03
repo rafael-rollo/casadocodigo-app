@@ -52,6 +52,7 @@
 		58BF694C2621155300A8CEBD /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF694B2621155300A8CEBD /* NavigationBar.swift */; };
 		58BF695726211FE100A8CEBD /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58BF695626211FE100A8CEBD /* NavigationBar.xib */; };
 		58C0BED826684C8400FB0D19 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C0BED726684C8400FB0D19 /* User.swift */; };
+		58C0BEF02669309100FB0D19 /* AuthorizedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C0BEEF2669309100FB0D19 /* AuthorizedViewController.swift */; };
 		58CB4562263A43C8005D19F2 /* ConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */; };
 		58CB457D263B612E005D19F2 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB457C263B612D005D19F2 /* Views.swift */; };
 		58FA532C26334E44000390BF /* AuthorFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA532B26334E44000390BF /* AuthorFormViewController.swift */; };
@@ -125,6 +126,7 @@
 		58BF694B2621155300A8CEBD /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		58BF695626211FE100A8CEBD /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		58C0BED726684C8400FB0D19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		58C0BEEF2669309100FB0D19 /* AuthorizedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedViewController.swift; sourceTree = "<group>"; };
 		58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialog.swift; sourceTree = "<group>"; };
 		58CB457C263B612D005D19F2 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		58FA532B26334E44000390BF /* AuthorFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorFormViewController.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				582CC764265825DB0033F333 /* CDCNavigationController.swift */,
+				58C0BEEF2669309100FB0D19 /* AuthorizedViewController.swift */,
 				58BF693926210A5B00A8CEBD /* HomeScene */,
 				58B1B3E12641929700DFA789 /* BookDetailsScene */,
 				585D72F026432FB700666078 /* BookFormScene */,
@@ -705,6 +708,7 @@
 				58B1B3E3264192BD00DFA789 /* BookDetailsViewController.swift in Sources */,
 				582CC765265825DB0033F333 /* CDCNavigationController.swift in Sources */,
 				58CB457D263B612E005D19F2 /* Views.swift in Sources */,
+				58C0BEF02669309100FB0D19 /* AuthorizedViewController.swift in Sources */,
 				58BF69062621070300A8CEBD /* HomeViewController.swift in Sources */,
 				582F984D262A0A7600354D65 /* ActivityIndicatorView.swift in Sources */,
 				5827D810262FDBD100D20B19 /* TagsHorizontalList.swift in Sources */,
