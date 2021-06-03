@@ -23,6 +23,9 @@
 		582CC765265825DB0033F333 /* CDCNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC764265825DB0033F333 /* CDCNavigationController.swift */; };
 		582CC771265BEFF40033F333 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC770265BEFF40033F333 /* Theme.swift */; };
 		582CC80B266816B00033F333 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC80A266816B00033F333 /* SignInViewController.swift */; };
+		582CC81C26683CD50033F333 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC81B26683CD50033F333 /* UserRepository.swift */; };
+		582CC82726683D810033F333 /* UserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC82626683D810033F333 /* UserAuthentication.swift */; };
+		582CC831266849BA0033F333 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC830266849BA0033F333 /* Authentication.swift */; };
 		582F980D2627D20200354D65 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F980C2627D20200354D65 /* BookRepository.swift */; };
 		582F98142628A40300354D65 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F98132628A40300354D65 /* Book.swift */; };
 		582F981A2628AA2100354D65 /* ShowcaseBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F98192628AA2100354D65 /* ShowcaseBookCell.swift */; };
@@ -46,6 +49,9 @@
 		58BF690E2621070500A8CEBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58BF690C2621070500A8CEBD /* LaunchScreen.storyboard */; };
 		58BF69192621070500A8CEBD /* casadocodigoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69182621070500A8CEBD /* casadocodigoTests.swift */; };
 		58BF69242621070500A8CEBD /* casadocodigoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69232621070500A8CEBD /* casadocodigoUITests.swift */; };
+		58BF694C2621155300A8CEBD /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF694B2621155300A8CEBD /* NavigationBar.swift */; };
+		58BF695726211FE100A8CEBD /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58BF695626211FE100A8CEBD /* NavigationBar.xib */; };
+		58C0BED826684C8400FB0D19 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C0BED726684C8400FB0D19 /* User.swift */; };
 		58CB4562263A43C8005D19F2 /* ConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */; };
 		58CB457D263B612E005D19F2 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB457C263B612D005D19F2 /* Views.swift */; };
 		58FA532C26334E44000390BF /* AuthorFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA532B26334E44000390BF /* AuthorFormViewController.swift */; };
@@ -84,6 +90,9 @@
 		582CC764265825DB0033F333 /* CDCNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDCNavigationController.swift; sourceTree = "<group>"; };
 		582CC770265BEFF40033F333 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		582CC80A266816B00033F333 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		582CC81B26683CD50033F333 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		582CC82626683D810033F333 /* UserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthentication.swift; sourceTree = "<group>"; };
+		582CC830266849BA0033F333 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		582F980C2627D20200354D65 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		582F98132628A40300354D65 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		582F98192628AA2100354D65 /* ShowcaseBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseBookCell.swift; sourceTree = "<group>"; };
@@ -113,6 +122,9 @@
 		58BF691F2621070500A8CEBD /* casadocodigoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = casadocodigoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58BF69232621070500A8CEBD /* casadocodigoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casadocodigoUITests.swift; sourceTree = "<group>"; };
 		58BF69252621070500A8CEBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58BF694B2621155300A8CEBD /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		58BF695626211FE100A8CEBD /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
+		58C0BED726684C8400FB0D19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialog.swift; sourceTree = "<group>"; };
 		58CB457C263B612D005D19F2 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		58FA532B26334E44000390BF /* AuthorFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorFormViewController.swift; sourceTree = "<group>"; };
@@ -183,9 +195,20 @@
 			path = SignInScene;
 			sourceTree = "<group>";
 		};
+		582CC81A26683CAD0033F333 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				582CC81B26683CD50033F333 /* UserRepository.swift */,
+				582CC82626683D810033F333 /* UserAuthentication.swift */,
+				58C0BED726684C8400FB0D19 /* User.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		582F98022627D1A700354D65 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				582CC81A26683CAD0033F333 /* Users */,
 				582F985F262DD80E00354D65 /* Authors */,
 				582F98032627D1BD00354D65 /* Books */,
 			);
@@ -214,6 +237,7 @@
 			children = (
 				582F98132628A40300354D65 /* Book.swift */,
 				582F9868262DDD5600354D65 /* Author.swift */,
+				582CC830266849BA0033F333 /* Authentication.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -675,6 +699,7 @@
 			files = (
 				582F982A2628FFAF00354D65 /* ShowcaseHeaderView.swift in Sources */,
 				585D73312649997D00666078 /* Date.swift in Sources */,
+				582CC81C26683CD50033F333 /* UserRepository.swift in Sources */,
 				582F98472629DBA900354D65 /* ShowcaseFlowLayout.swift in Sources */,
 				582A05E92677F12700114506 /* NavigationBarButtonItems.swift in Sources */,
 				58B1B3E3264192BD00DFA789 /* BookDetailsViewController.swift in Sources */,
@@ -686,6 +711,8 @@
 				582F9852262A144B00354D65 /* Alert.swift in Sources */,
 				582F980D2627D20200354D65 /* BookRepository.swift in Sources */,
 				582AD3AD262F6F0800705D6D /* SectionTitle.swift in Sources */,
+				58C0BED826684C8400FB0D19 /* User.swift in Sources */,
+				582CC831266849BA0033F333 /* Authentication.swift in Sources */,
 				58FA533C263772D1000390BF /* View.swift in Sources */,
 				582F98142628A40300354D65 /* Book.swift in Sources */,
 				582F9861262DD83000354D65 /* AuthorRepository.swift in Sources */,
@@ -701,6 +728,7 @@
 				582CC771265BEFF40033F333 /* Theme.swift in Sources */,
 				582CC80B266816B00033F333 /* SignInViewController.swift in Sources */,
 				589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */,
+				582CC82726683D810033F333 /* UserAuthentication.swift in Sources */,
 				582F981A2628AA2100354D65 /* ShowcaseBookCell.swift in Sources */,
 				58CB4562263A43C8005D19F2 /* ConfirmationDialog.swift in Sources */,
 				58BF69042621070300A8CEBD /* SceneDelegate.swift in Sources */,
