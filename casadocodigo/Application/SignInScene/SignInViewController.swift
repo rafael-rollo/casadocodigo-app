@@ -97,13 +97,12 @@ class SignInViewController: UIViewController {
         indicator.startAnimating()
         
         userAuthentication.authenticate(user, withPassword: password) { authentication in
-            
             indicator.stopAnimating()
             Alert.init(controller: self).show(message: "Logado \n\(authentication.value)")
             
-        } failureHandler: {
+        } failureHandler: { message in
             indicator.stopAnimating()
-            Alert.show(title: "Ops", message: "Could not possible to sign in. Try again!", in: self)
+            Alert.show(title: "Ops", message: message, in: self)
         }
     }
 }

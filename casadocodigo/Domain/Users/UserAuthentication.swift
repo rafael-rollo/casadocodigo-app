@@ -15,7 +15,7 @@ class UserAuthentication: NSObject {
     func authenticate(_ user: User,
                       withPassword password: String,
                       completionHandler: @escaping (Authentication) -> Void,
-                      failureHandler: @escaping () -> Void) {
+                      failureHandler: @escaping (String) -> Void) {
         let headers: HTTPHeaders = ["Content-type": "application/json", "Accept": "application/json"]
         let authentication = AuthenticationRequest(email: user.email, password: password)
         
@@ -29,9 +29,19 @@ class UserAuthentication: NSObject {
 
                 case let .failure(error):
                     debugPrint(error)
-                    failureHandler()
+                    failureHandler(UserAuthentication.message(for: error))
                 }
             }
         
+    }
+    
+    private static func message(for error: AFError) -> String {
+        switch error.responseCode {
+        case 400:
+            return "Email or password wrong!"
+        
+        default:
+            return "Could not possible to authenticate. Try again later!"
+        }
     }
 }
