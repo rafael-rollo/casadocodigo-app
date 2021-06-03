@@ -17,14 +17,20 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     var userAuthentication: UserAuthentication
+    var userAuthenticationRepository: UserAuthenticationRepository
     
-    init(userAuthentication: UserAuthentication = UserAuthentication(), nibName: String?, bundle: Bundle?) {
+    init(userAuthentication: UserAuthentication = UserAuthentication(),
+         userAuthenticationRepository: UserAuthenticationRepository = UserAuthenticationRepository(),
+         nibName: String?,
+         bundle: Bundle?) {
         self.userAuthentication = userAuthentication
+        self.userAuthenticationRepository = userAuthenticationRepository
         super.init(nibName: nibName, bundle: bundle)
     }
         
     required init?(coder: NSCoder) {
         self.userAuthentication = UserAuthentication()
+        self.userAuthenticationRepository = UserAuthenticationRepository()
         super.init(coder: coder)
     }
     
@@ -96,9 +102,11 @@ class SignInViewController: UIViewController {
         let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
         
-        userAuthentication.authenticate(user, withPassword: password) { authentication in
+        userAuthentication.authenticate(user, withPassword: password) { [weak self] authentication in
             indicator.stopAnimating()
-            Alert.init(controller: self).show(message: "Logado \n\(authentication.value)")
+            
+            user.setAuthentication(authentication)
+            self?.userAuthenticationRepository.save(user)
             
         } failureHandler: { message in
             indicator.stopAnimating()

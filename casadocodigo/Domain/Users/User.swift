@@ -26,7 +26,7 @@ class Authentication: Codable {
     }
 }
 
-class User {
+class User: Codable {
     private(set) var email: String
     private var authentication: Authentication?
     
@@ -34,7 +34,7 @@ class User {
         self.email = email
     }
     
-    func setAuthentication(authentication: Authentication) {
+    func setAuthentication(_ authentication: Authentication) {
         self.authentication = authentication
     }
     
