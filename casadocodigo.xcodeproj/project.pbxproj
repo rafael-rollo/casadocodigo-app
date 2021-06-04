@@ -53,10 +53,11 @@
 		58BF695726211FE100A8CEBD /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58BF695626211FE100A8CEBD /* NavigationBar.xib */; };
 		58C0BED826684C8400FB0D19 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C0BED726684C8400FB0D19 /* User.swift */; };
 		58C0BEF02669309100FB0D19 /* AuthorizedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C0BEEF2669309100FB0D19 /* AuthorizedViewController.swift */; };
+		58C0BEFF266AC76100FB0D19 /* Authorization+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C0BEFE266AC76100FB0D19 /* Authorization+UIView.swift */; };
 		58CB4562263A43C8005D19F2 /* ConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */; };
 		58CB457D263B612E005D19F2 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB457C263B612D005D19F2 /* Views.swift */; };
 		58FA532C26334E44000390BF /* AuthorFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA532B26334E44000390BF /* AuthorFormViewController.swift */; };
-		58FA533C263772D1000390BF /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA533B263772D1000390BF /* View.swift */; };
+		58FA533C263772D1000390BF /* Shape+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA533B263772D1000390BF /* Shape+UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,10 +128,11 @@
 		58BF695626211FE100A8CEBD /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		58C0BED726684C8400FB0D19 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		58C0BEEF2669309100FB0D19 /* AuthorizedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedViewController.swift; sourceTree = "<group>"; };
+		58C0BEFE266AC76100FB0D19 /* Authorization+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Authorization+UIView.swift"; sourceTree = "<group>"; };
 		58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialog.swift; sourceTree = "<group>"; };
 		58CB457C263B612D005D19F2 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		58FA532B26334E44000390BF /* AuthorFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorFormViewController.swift; sourceTree = "<group>"; };
-		58FA533B263772D1000390BF /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		58FA533B263772D1000390BF /* Shape+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+UIView.swift"; sourceTree = "<group>"; };
 		7A66D89A8354D0697252F58D /* Pods-casadocodigo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casadocodigo.debug.xcconfig"; path = "Target Support Files/Pods-casadocodigo/Pods-casadocodigo.debug.xcconfig"; sourceTree = "<group>"; };
 		7A7F1C48024E2D2363F9F9C2 /* Pods_casadocodigo_casadocodigoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casadocodigo_casadocodigoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8553C8EDFFACD1469DF9CC /* Pods_casadocodigoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casadocodigoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +230,7 @@
 		582F98112628A3D400354D65 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				58C0BEFD266AC74900FB0D19 /* Security */,
 				585D72E72643071300666078 /* CoreExtensions */,
 				582F98122628A3E200354D65 /* Networking */,
 			);
@@ -259,7 +262,7 @@
 			children = (
 				582F984C262A0A7500354D65 /* ActivityIndicatorView.swift */,
 				5827D80A262FBFC700D20B19 /* CollectionViewCell.swift */,
-				58FA533B263772D1000390BF /* View.swift */,
+				58FA533B263772D1000390BF /* Shape+UIView.swift */,
 				585D7301264345B200666078 /* TextView.swift */,
 			);
 			path = Extensions;
@@ -426,6 +429,14 @@
 				582A05E82677F12700114506 /* NavigationBarButtonItems.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		58C0BEFD266AC74900FB0D19 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				58C0BEFE266AC76100FB0D19 /* Authorization+UIView.swift */,
+			);
+			path = Security;
 			sourceTree = "<group>";
 		};
 		58FA532A26334E00000390BF /* AuthorFormScene */ = {
@@ -712,12 +723,14 @@
 				58BF69062621070300A8CEBD /* HomeViewController.swift in Sources */,
 				582F984D262A0A7600354D65 /* ActivityIndicatorView.swift in Sources */,
 				5827D810262FDBD100D20B19 /* TagsHorizontalList.swift in Sources */,
+				589C5BB42621302000CE3B93 /* StatusBarBackground.swift in Sources */,
+				58C0BEFF266AC76100FB0D19 /* Authorization+UIView.swift in Sources */,
 				582F9852262A144B00354D65 /* Alert.swift in Sources */,
 				582F980D2627D20200354D65 /* BookRepository.swift in Sources */,
 				582AD3AD262F6F0800705D6D /* SectionTitle.swift in Sources */,
 				58C0BED826684C8400FB0D19 /* User.swift in Sources */,
 				582CC831266849BA0033F333 /* Authentication.swift in Sources */,
-				58FA533C263772D1000390BF /* View.swift in Sources */,
+				58FA533C263772D1000390BF /* Shape+UIView.swift in Sources */,
 				582F98142628A40300354D65 /* Book.swift in Sources */,
 				582F9861262DD83000354D65 /* AuthorRepository.swift in Sources */,
 				5827D80B262FBFC700D20B19 /* CollectionViewCell.swift in Sources */,

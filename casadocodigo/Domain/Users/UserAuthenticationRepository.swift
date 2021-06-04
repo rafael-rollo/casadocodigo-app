@@ -30,9 +30,6 @@ extension UserDefaults {
     }
     
     func hasAuthenticatedUser() -> Bool {
-        if getAuthenticated() == nil {
-            return false
-        }
-        return true
+        return getAuthenticated() != nil
     }
 }

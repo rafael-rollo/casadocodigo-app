@@ -30,6 +30,10 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet weak var hardcoverPrice: UILabel!
     @IBOutlet weak var comboPrice: UILabel!
     
+    @IBOutlet weak var buyEbookButton: UIButton!
+    @IBOutlet weak var buyHardCoverButton: UIButton!
+    @IBOutlet weak var buyComboButton: UIButton!
+    
     @IBOutlet weak var contentSectionTitle: SectionTitle!
     @IBOutlet weak var contentTextView: UITextView!
     
@@ -62,6 +66,9 @@ class BookDetailsViewController: UIViewController {
         titleLabel.sizeToFit()
         subtitleLabel.sizeToFit()
         
+        [buyEbookButton, buyHardCoverButton, buyComboButton]
+            .forEach { $0?.setHidden(for: Role.ADMIN) }
+        
         contentSectionTitle.useTextColor()
         
         authorSectionTitle.useTextColor()
@@ -72,10 +79,12 @@ class BookDetailsViewController: UIViewController {
         let deletingButtonImage = UIImage(named: "trash")?.withTintColor(UIColor.white)
         deletingButton.setImage(deletingButtonImage, for: .normal)
         deletingButton.roundTheShape()
+        deletingButton.setVisibleOnly(to: Role.ADMIN)
         
         let editingButtonImage = UIImage(named: "pencil")?.withTintColor(UIColor.white)
         editingButton.setImage(editingButtonImage, for: .normal)
         editingButton.roundTheShape()
+        editingButton.setVisibleOnly(to: Role.ADMIN)
     }
     
     private func buildUp(using book: BookResponse) {

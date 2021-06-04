@@ -98,13 +98,14 @@ class SignInViewController: UIViewController {
         let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
         
-        userAuthentication.authenticateUser(identifiedBy: email, withPassword: password) { user in
+        userAuthentication.authenticateUser(identifiedBy: email,
+                                            withPassword: password) { [weak self] user in
             indicator.stopAnimating()
             
             user.email = email
             UserDefaults.standard.setAuthenticated(user)
             
-            Alert(controller: self).show(message: user.authentication.value)
+            self?.dismiss(animated: true, completion: nil)
             
         } failureHandler: { message in
             indicator.stopAnimating()

@@ -67,6 +67,10 @@ class BookFormViewController: AuthorizedViewController {
         super.init(coder: coder)
     }
     
+    override func authorizedRoles() -> [Role] {
+        return [Role.ADMIN]
+    }
+    
     // MARK: View lifecycle
         
     override func viewDidLoad() {

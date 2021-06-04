@@ -43,6 +43,10 @@ class AuthorFormViewController: AuthorizedViewController, UITextFieldDelegate {
         super.init(coder: coder)
     }
     
+    override func authorizedRoles() -> [Role] {
+        return [Role.ADMIN]
+    }
+    
     // MARK: View Lifecycle
     
     override func viewDidLoad() {

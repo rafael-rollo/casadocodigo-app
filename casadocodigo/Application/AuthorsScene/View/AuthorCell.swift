@@ -46,9 +46,11 @@ class AuthorCell: UICollectionViewCell, ReusableView {
         
         let removingButtonImage = UIImage(named: "trash")?.withRenderingMode(.alwaysTemplate)
         authorRemovingButton.setImage(removingButtonImage, for: .normal)
+        authorRemovingButton.setVisibleOnly(to: Role.ADMIN)
         
         let editingButtonImage = UIImage(named: "pencil")?.withRenderingMode(.alwaysTemplate)
         authorEditingButton.setImage(editingButtonImage, for: .normal)
+        authorEditingButton.setVisibleOnly(to: Role.ADMIN)
     }
 
     func setFrom(_ author: AuthorResponse) {

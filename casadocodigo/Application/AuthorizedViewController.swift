@@ -9,7 +9,7 @@ import UIKit
 
 class AuthorizedViewController: UIViewController {
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidLoad()
 
         guard UserDefaults.standard.hasAuthenticatedUser() else {
@@ -19,9 +19,29 @@ class AuthorizedViewController: UIViewController {
             present(controller, animated: true, completion: nil)
             return
         }
+        
+        let user = UserDefaults.standard.getAuthenticated()!
+        denyIfNeeded(user)
     }
     
-    func authorizedRoles() -> [Role] {
+    open func authorizedRoles() -> [Role] {
         fatalError("Please implement the \(#function) in your AuthorizedViewController")
+    }
+    
+    fileprivate func denyIfNeeded(_ user: User) {
+        let isAuthorizedUser = self.authorizedRoles().reduce(false) {
+            $1 == user.role || $0
+        }
+        
+        if !isAuthorizedUser {
+            let goBack: (UIAlertAction) -> Void = { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true)
+            }
+            
+            Alert.show(title: "Access Denied",
+                       message: "You have no rights to see this screen",
+                       onDismiss: goBack,
+                       in: self)
+        }
     }
 }

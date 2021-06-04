@@ -968,6 +968,9 @@
                         <outlet property="authorImageView" destination="bcd-Ha-mdd" id="3dR-JT-Qhn"/>
                         <outlet property="authorNameLabel" destination="Ebd-PT-XLV" id="fzH-FC-wTD"/>
                         <outlet property="authorSectionTitle" destination="BZs-Vh-gNc" id="4hT-cX-VFG"/>
+                        <outlet property="buyComboButton" destination="qQP-I6-4zW" id="UhD-2K-2AF"/>
+                        <outlet property="buyEbookButton" destination="dEj-uj-t9y" id="Gcr-q8-6vf"/>
+                        <outlet property="buyHardCoverButton" destination="yqy-oq-kiy" id="rsh-Jh-dY8"/>
                         <outlet property="comboPrice" destination="gU5-AW-oPf" id="8MU-c7-euU"/>
                         <outlet property="contentSectionTitle" destination="3Z4-Be-P8a" id="JQ4-6h-scZ"/>
                         <outlet property="contentTextView" destination="Lj1-Bm-Hh0" id="OAV-JG-HzO"/>
