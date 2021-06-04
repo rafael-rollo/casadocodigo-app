@@ -12,20 +12,20 @@ class UserAuthentication: NSObject {
 
     static let authBasePath = "https://casadocodigo-api.herokuapp.com/api/auth"
     
-    func authenticate(_ user: User,
+    func authenticateUser(identifiedBy email: String,
                       withPassword password: String,
-                      completionHandler: @escaping (Authentication) -> Void,
+                      completionHandler: @escaping (User) -> Void,
                       failureHandler: @escaping (String) -> Void) {
         let headers: HTTPHeaders = ["Content-type": "application/json", "Accept": "application/json"]
-        let authentication = AuthenticationRequest(email: user.email, password: password)
+        let authentication = AuthenticationRequest(email: email, password: password)
         
         AF.request(UserAuthentication.authBasePath, method: .post, parameters: authentication, encoder: JSONParameterEncoder.default, headers: headers)
             .validate()
-            .responseDecodable(of: Authentication.self) { response in
+            .responseDecodable(of: User.self) { response in
                 switch response.result {
                 case .success:
-                    guard let authenticationToken = response.value else { return }
-                    completionHandler(authenticationToken)
+                    guard let authenticatedUser = response.value else { return }
+                    completionHandler(authenticatedUser)
 
                 case let .failure(error):
                     debugPrint(error)

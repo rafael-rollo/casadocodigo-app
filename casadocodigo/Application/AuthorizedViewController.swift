@@ -8,30 +8,20 @@
 import UIKit
 
 class AuthorizedViewController: UIViewController {
-
-    var authenticationRepository: UserAuthenticationRepository
     
-    init(authenticationRepository: UserAuthenticationRepository = UserAuthenticationRepository(),
-         nibName: String? = nil,
-         bundle: Bundle? = nil) {
-        self.authenticationRepository = authenticationRepository
-        super.init(nibName: nibName, bundle: bundle)
-    }
-    
-    required init?(coder: NSCoder) {
-        self.authenticationRepository = UserAuthenticationRepository()
-        super.init(coder: coder)
-    }
-    
-    override func viewDidLoad() {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidLoad()
 
-        guard let _ = authenticationRepository.get() else {
+        guard UserDefaults.standard.hasAuthenticatedUser() else {
             let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SignInViewController")
             controller.modalPresentationStyle = .fullScreen
             
             present(controller, animated: true, completion: nil)
             return
         }
+    }
+    
+    func authorizedRoles() -> [Role] {
+        fatalError("Please implement the \(#function) in your AuthorizedViewController")
     }
 }

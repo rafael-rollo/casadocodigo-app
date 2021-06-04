@@ -17,20 +17,16 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     var userAuthentication: UserAuthentication
-    var userAuthenticationRepository: UserAuthenticationRepository
     
     init(userAuthentication: UserAuthentication = UserAuthentication(),
-         userAuthenticationRepository: UserAuthenticationRepository = UserAuthenticationRepository(),
          nibName: String?,
          bundle: Bundle?) {
         self.userAuthentication = userAuthentication
-        self.userAuthenticationRepository = userAuthenticationRepository
         super.init(nibName: nibName, bundle: bundle)
     }
         
     required init?(coder: NSCoder) {
         self.userAuthentication = UserAuthentication()
-        self.userAuthenticationRepository = UserAuthenticationRepository()
         super.init(coder: coder)
     }
     
@@ -78,7 +74,7 @@ class SignInViewController: UIViewController {
         }
     }
     
-    func getUserFromForm() -> (User, String)? {
+    func getSigninInfoFromForm() -> (String, String)? {
         guard let email = emailTextField.text, !email.isEmpty else {
             Alert.show(title: "Ops", message: "Informe seu email", in: self)
             return nil
@@ -89,7 +85,7 @@ class SignInViewController: UIViewController {
             return nil
         }
                 
-        return (User(email: email), password)
+        return (email, password)
     }
     
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
@@ -97,16 +93,18 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func signInUser(_ sender: UIButton) {
-        guard let (user, password) = getUserFromForm() else { return }
+        guard let (email, password) = getSigninInfoFromForm() else { return }
         
         let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
         
-        userAuthentication.authenticate(user, withPassword: password) { [weak self] authentication in
+        userAuthentication.authenticateUser(identifiedBy: email, withPassword: password) { user in
             indicator.stopAnimating()
             
-            user.setAuthentication(authentication)
-            self?.userAuthenticationRepository.save(user)
+            user.email = email
+            UserDefaults.standard.setAuthenticated(user)
+            
+            Alert(controller: self).show(message: user.authentication.value)
             
         } failureHandler: { message in
             indicator.stopAnimating()

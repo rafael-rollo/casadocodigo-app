@@ -26,19 +26,21 @@ class Authentication: Codable {
     }
 }
 
+enum Role: String, Codable {
+    case CLIENT
+    case ADMIN
+}
+
 class User: Codable {
-    private(set) var email: String
-    private var authentication: Authentication?
+    private(set) var name: String
+    private(set) var role: Role
+    private(set) var authentication: Authentication
     
-    init(email: String) {
-        self.email = email
-    }
+    var email: String?
     
-    func setAuthentication(_ authentication: Authentication) {
+    init(name: String, role: Role, authentication: Authentication) {
+        self.name = name
+        self.role = role
         self.authentication = authentication
-    }
-    
-    func getAuthentication() -> String? {
-        return authentication?.value
     }
 }
