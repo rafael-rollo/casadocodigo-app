@@ -130,7 +130,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="hxh-Yd-GQP" secondAttribute="trailing" constant="20" id="8RW-gD-GRe"/>
                             <constraint firstAttribute="bottom" secondItem="hxh-Yd-GQP" secondAttribute="bottom" priority="250" id="OeL-eE-mJY"/>
-                            <constraint firstItem="WZb-ST-TFP" firstAttribute="trailing" secondItem="blj-WK-EFM" secondAttribute="trailing" id="PKF-H8-KlO"/>
+                            <constraint firstAttribute="trailing" secondItem="blj-WK-EFM" secondAttribute="trailing" id="PKF-H8-KlO"/>
                             <constraint firstItem="hxh-Yd-GQP" firstAttribute="leading" secondItem="wJx-b7-lcM" secondAttribute="leadingMargin" constant="20" id="QNQ-Ya-Neb"/>
                             <constraint firstItem="hxh-Yd-GQP" firstAttribute="centerY" secondItem="wJx-b7-lcM" secondAttribute="centerY" id="hN4-sV-jFB"/>
                         </constraints>
@@ -999,7 +999,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cr6-2w-0gO">
-                                <rect key="frame" x="16" y="44" width="382" height="769"/>
+                                <rect key="frame" x="16" y="88" width="382" height="725"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.98039215690000003" blue="0.97647058819999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="16" id="Rhe-fT-ejB">
                                     <size key="itemSize" width="160" height="289"/>
@@ -1078,7 +1078,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UC3-Ud-cFa">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="0.0" id="D4F-ry-cvl">
                                     <size key="itemSize" width="396" height="200"/>

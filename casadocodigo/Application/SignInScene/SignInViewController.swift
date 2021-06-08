@@ -7,8 +7,11 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+extension Notification.Name {
+    static let userSignedIn = Notification.Name("User signed in")
+}
 
+class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
@@ -32,6 +35,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         adjustLayout()
         
         NotificationCenter.default.addObserver(
@@ -106,6 +110,7 @@ class SignInViewController: UIViewController {
             UserDefaults.standard.setAuthenticated(user)
             
             self?.dismiss(animated: true, completion: nil)
+            NotificationCenter.default.post(Notification(name: .userSignedIn))
             
         } failureHandler: { message in
             indicator.stopAnimating()

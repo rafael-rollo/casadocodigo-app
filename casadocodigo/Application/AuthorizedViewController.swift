@@ -14,9 +14,11 @@ class AuthorizedViewController: UIViewController {
 
         guard UserDefaults.standard.hasAuthenticatedUser() else {
             let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SignInViewController")
-            controller.modalPresentationStyle = .fullScreen
+            present(controller, animated: true) {
+                let pullDownDismissGesture = controller.presentationController?.presentedView?.gestureRecognizers?.first
+                pullDownDismissGesture?.isEnabled = false
+            }
             
-            present(controller, animated: true, completion: nil)
             return
         }
         

@@ -32,6 +32,13 @@ class AuthorsViewController: UIViewController {
         authorsCollectionView.dataSource = self
         authorsCollectionView.delegate = self
         
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(reloadCollection),
+            name: .userSignedIn,
+            object: nil
+        )
+        
         loadAuthorsList()
     }
     
@@ -62,6 +69,10 @@ class AuthorsViewController: UIViewController {
     
     func updateAuthorsList(with authors: [AuthorResponse]) {
         self.authors = authors
+        reloadCollection()
+    }
+    
+    @objc func reloadCollection() {
         authorsCollectionView.reloadData()
     }
     
