@@ -10,7 +10,7 @@ import UIKit
 class AuthorizedViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewDidLoad()
+        super.viewWillAppear(animated)
 
         guard UserDefaults.standard.hasAuthenticatedUser() else {
             let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SignInViewController")
