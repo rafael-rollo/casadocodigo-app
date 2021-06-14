@@ -9,8 +9,8 @@ import UIKit
 
 class CDCNavigationController: UINavigationController {
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    override init(nibName: String?, bundle: Bundle?) {
+        super.init(nibName: nibName, bundle: bundle)
         setupNavigation()
     }
     
@@ -21,9 +21,7 @@ class CDCNavigationController: UINavigationController {
     
     fileprivate func setupNavigation() {
         UIBarButtonItem.appearance().tintColor = UIColor.white
-        // global hide back button string - hack =/
-//        UIBarButtonItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.clear], for: .normal)
-    
+   
         navigationBar.barTintColor = UIColor.orangeColor
         navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationBar.shadowImage = UIImage()
@@ -32,21 +30,25 @@ class CDCNavigationController: UINavigationController {
         titleView.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(titleView)
-        titleView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        titleView.bottomAnchor.constraint(equalTo: navigationBar.bottomAnchor).isActive = true
-        titleView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        titleView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
-
+        NSLayoutConstraint.activate([
+            titleView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            titleView.bottomAnchor.constraint(equalTo: navigationBar.bottomAnchor),
+            titleView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7)
+        ])
+        
         let logo = UIImage(named: "logo-cdc")
         let titleImageView = UIImageView(image: logo)
         titleImageView.translatesAutoresizingMaskIntoConstraints = false
 
         titleView.addSubview(titleImageView)
-        titleImageView.heightAnchor.constraint(equalTo: titleView.heightAnchor).isActive = true
-        titleImageView.widthAnchor.constraint(equalTo: titleView.heightAnchor).isActive = true
-        titleImageView.leadingAnchor.constraint(equalTo: titleView.leadingAnchor).isActive = true
-        titleImageView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
-
+        NSLayoutConstraint.activate([
+            titleImageView.heightAnchor.constraint(equalTo: titleView.heightAnchor),
+            titleImageView.widthAnchor.constraint(equalTo: titleView.heightAnchor),
+            titleImageView.leadingAnchor.constraint(equalTo: titleView.leadingAnchor),
+            titleImageView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor)
+        ])
+    
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = "Casa do Código"
@@ -54,12 +56,10 @@ class CDCNavigationController: UINavigationController {
         titleLabel.font = UIFont(name: "Helvetica Neue", size: 22)
 
         titleView.addSubview(titleLabel)
-        titleLabel.leadingAnchor.constraint(equalTo: titleImageView.trailingAnchor, constant: Theme.spacing.xsmall).isActive = true
-        titleLabel.centerYAnchor.constraint(equalTo: titleImageView.centerYAnchor, constant: -2).isActive = true
+        NSLayoutConstraint.activate([
+            titleLabel.leadingAnchor.constraint(equalTo: titleImageView.trailingAnchor, constant: Theme.spacing.xsmall),
+            titleLabel.centerYAnchor.constraint(equalTo: titleImageView.centerYAnchor, constant: -2)
+        ])
+        
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
 }
