@@ -35,7 +35,8 @@ class CDCNavigationController: UINavigationController {
         titleView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         titleView.bottomAnchor.constraint(equalTo: navigationBar.bottomAnchor).isActive = true
         titleView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        titleView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
+        titleView.widthAnchor.constraint(greaterThanOrEqualToConstant: 200).isActive = true
+//        titleView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7).isActive = true
 
         let logo = UIImage(named: "logo-cdc")
         let titleImageView = UIImageView(image: logo)
@@ -55,11 +56,77 @@ class CDCNavigationController: UINavigationController {
 
         titleView.addSubview(titleLabel)
         titleLabel.leadingAnchor.constraint(equalTo: titleImageView.trailingAnchor, constant: Theme.spacing.xsmall).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: titleView.trailingAnchor).isActive = true
         titleLabel.centerYAnchor.constraint(equalTo: titleImageView.centerYAnchor, constant: -2).isActive = true
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
+}
+
+enum NavigationBarItemType {
+    case space(CGFloat)
+    case image(UIImage)
+    case label(String)
+    case barSystemItem(UIBarButtonItem.SystemItem, Any?, Selector?)
+    case button(UIImage, Any?, Selector?)
+    case custom(UIBarButtonItem)
+
+    func toUIBarItem() -> UIBarButtonItem {
+        switch self {
+        case let .space(width):
+            let itemSpacing = UIBarButtonItem(barButtonSystemItem: .fixedSpace,
+                                              target: nil,
+                                              action: nil)
+            itemSpacing.width = width
+            return itemSpacing
+        case let .image(image):
+            let defaultSize: CGFloat = 40
+            let imageView = UIImageView(image: image)
+            imageView.contentMode = .scaleAspectFit
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+
+            NSLayoutConstraint.activate([
+                imageView.widthAnchor.constraint(equalToConstant: defaultSize),
+                imageView.heightAnchor.constraint(equalToConstant: defaultSize)
+            ])
+            return UIBarButtonItem(customView: imageView)
+        case let .label(text):
+            let label = UILabel()
+            label.text = text
+            label.textColor = .black
+            label.sizeToFit()
+            return UIBarButtonItem(customView: label)
+        case let .barSystemItem(item, target, selector):
+            let button = UIBarButtonItem(
+                barButtonSystemItem: item,
+                target: target,
+                action: selector
+            )
+            button.tintColor = .white
+            return button
+        case let .button(icon, target, selector):
+            let button = UIBarButtonItem(
+                image: icon,
+                style: .plain,
+                target: target,
+                action: selector
+            )
+            button.tintColor = .white
+            return button
+        case let .custom(item):
+           return item
+        }
+    }
+}
+
+extension UIViewController {
+    func setupNavigationBar(leftItems: [NavigationBarItemType] = [],
+                            rightItems: [NavigationBarItemType] = []) {
+        if parent is UITabBarController {
+            parent?.navigationItem.setLeftBarButtonItems(leftItems.map { $0.toUIBarItem() }, animated: true)
+            parent?.navigationItem.setRightBarButtonItems(rightItems.map { $0.toUIBarItem() }, animated: true)
+        } else {
+            navigationItem.setLeftBarButtonItems(leftItems.map { $0.toUIBarItem() }, animated: true)
+            navigationItem.setRightBarButtonItems(rightItems.map { $0.toUIBarItem() }, animated: true)
+        }
+    }
 }

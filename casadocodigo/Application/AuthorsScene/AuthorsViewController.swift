@@ -31,7 +31,8 @@ class AuthorsViewController: UIViewController {
         super.viewDidLoad()
         authorsCollectionView.dataSource = self
         authorsCollectionView.delegate = self
-                
+        tabBarController?.navigationItem.backButtonTitle = ""
+        setupNavigationBar(rightItems: [.barSystemItem(.add, nil, nil), .space(6.0)])
         loadAuthorsList()
     }
     
