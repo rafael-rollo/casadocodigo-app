@@ -63,3 +63,14 @@ class CDCNavigationController: UINavigationController {
         
     }
 }
+
+extension UIViewController {
+    func setupNavigationBar(itemsOnTheLeft: [NavigationBarItem] = [],
+                            itemsOnTheRight: [NavigationBarItem] = []) {
+        let parentOrSelf = parent is UITabBarController ? parent : self
+        parentOrSelf?.navigationItem.setLeftBarButtonItems(itemsOnTheLeft.map { $0.toUIBarButtonItem() },
+                                                           animated: true)
+        parentOrSelf?.navigationItem.setRightBarButtonItems(itemsOnTheRight.map { $0.toUIBarButtonItem() },
+                                                            animated: true)
+    }
+}
