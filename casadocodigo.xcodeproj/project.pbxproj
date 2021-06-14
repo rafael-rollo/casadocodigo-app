@@ -16,6 +16,7 @@
 		5827D81D262FE16500D20B19 /* TagsHorizontalList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5827D81C262FE16500D20B19 /* TagsHorizontalList.xib */; };
 		5827D829262FE6A300D20B19 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D828262FE6A300D20B19 /* TagCell.swift */; };
 		5827D831262FE6C600D20B19 /* TagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5827D830262FE6C600D20B19 /* TagCell.xib */; };
+		582A05E92677F12700114506 /* NavigationBarButtonItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A05E82677F12700114506 /* NavigationBarButtonItems.swift */; };
 		582AD395262F55B300705D6D /* AuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AD394262F55B300705D6D /* AuthorCell.swift */; };
 		582AD3AD262F6F0800705D6D /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AD3AB262F6F0800705D6D /* SectionTitle.swift */; };
 		582AD3AE262F6F0800705D6D /* SectionTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582AD3AC262F6F0800705D6D /* SectionTitle.xib */; };
@@ -75,6 +76,7 @@
 		5827D81C262FE16500D20B19 /* TagsHorizontalList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsHorizontalList.xib; sourceTree = "<group>"; };
 		5827D828262FE6A300D20B19 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		5827D830262FE6C600D20B19 /* TagCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCell.xib; sourceTree = "<group>"; };
+		582A05E82677F12700114506 /* NavigationBarButtonItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarButtonItems.swift; sourceTree = "<group>"; };
 		582AD394262F55B300705D6D /* AuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorCell.swift; sourceTree = "<group>"; };
 		582AD3AB262F6F0800705D6D /* SectionTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		582AD3AC262F6F0800705D6D /* SectionTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionTitle.xib; sourceTree = "<group>"; };
@@ -337,7 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				582CC770265BEFF40033F333 /* Theme.swift */,
-				58CB457B263B610C005D19F2 /* Utils */,
+				58CB457B263B610C005D19F2 /* Helpers */,
 				582F984B262A0A5300354D65 /* Extensions */,
 				58BF693D262114B700A8CEBD /* Components */,
 				58BF69072621070300A8CEBD /* Main.storyboard */,
@@ -379,12 +381,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		58CB457B263B610C005D19F2 /* Utils */ = {
+		58CB457B263B610C005D19F2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				58CB457C263B612D005D19F2 /* Views.swift */,
+				582A05E82677F12700114506 /* NavigationBarButtonItems.swift */,
 			);
-			path = Utils;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		58FA532A26334E00000390BF /* AuthorFormScene */ = {
@@ -662,6 +665,7 @@
 				582F982A2628FFAF00354D65 /* ShowcaseHeaderView.swift in Sources */,
 				585D73312649997D00666078 /* Date.swift in Sources */,
 				582F98472629DBA900354D65 /* ShowcaseFlowLayout.swift in Sources */,
+				582A05E92677F12700114506 /* NavigationBarButtonItems.swift in Sources */,
 				58B1B3E3264192BD00DFA789 /* BookDetailsViewController.swift in Sources */,
 				582CC765265825DB0033F333 /* CDCNavigationController.swift in Sources */,
 				58CB457D263B612E005D19F2 /* Views.swift in Sources */,
