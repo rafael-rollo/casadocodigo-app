@@ -20,7 +20,11 @@ class HomeViewController: UIViewController {
         showcaseCollectionView.delegate = self
         showcaseCollectionView.dataSource = self
         
-        navigationItem.title = "Books"
+        tabBarController?.navigationItem.backButtonTitle = ""
+        setupNavigationBar(itemsOnTheRight: [
+            .barSystemItem(.add, self, #selector(didAddButtonPressed(_:))),
+            .space(12)
+        ])
         
         NotificationCenter.default.addObserver(
             self,
@@ -82,6 +86,13 @@ class HomeViewController: UIViewController {
     @objc func markShowcaseAsOutdated() {
         isShowcaseUpToDate = false
     }
+    
+    @objc func didAddButtonPressed(_ sender: UIButton) {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "BookFormViewController") as! BookFormViewController
+        controller.delegate = self
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
@@ -121,7 +132,7 @@ extension HomeViewController: UICollectionViewDataSource {
                     as? ShowcaseHeaderView else {
                 fatalError("Invalid view type for book showcase header")
             }
-            return headerView.build(delegate: self)
+            return headerView.build()
             
         default:
             assert(false, "Invalid element type")
@@ -132,15 +143,6 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         self.showcaseFlowLayoutImpl.sizeForItemOf(collectionView, layout: collectionViewLayout, atIndex: indexPath)
-    }
-}
-
-extension HomeViewController: SectionTitleDelegate {
-    func didAddButtonPressed(_ sender: UIButton) {
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "BookFormViewController") as! BookFormViewController
-        controller.delegate = self
-        
-        navigationController?.pushViewController(controller, animated: true)
     }
 }
 

@@ -51,6 +51,8 @@ class BookDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.backButtonTitle = ""
+        
         if let selectedBook = selectedBook {
             buildUp(using: selectedBook)
         }

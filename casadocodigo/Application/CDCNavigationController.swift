@@ -21,7 +21,7 @@ class CDCNavigationController: UINavigationController {
     
     fileprivate func setupNavigation() {
         UIBarButtonItem.appearance().tintColor = UIColor.white
-   
+        
         navigationBar.barTintColor = UIColor.orangeColor
         navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationBar.shadowImage = UIImage()
