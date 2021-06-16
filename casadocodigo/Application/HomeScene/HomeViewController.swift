@@ -20,8 +20,6 @@ class HomeViewController: UIViewController {
         showcaseCollectionView.delegate = self
         showcaseCollectionView.dataSource = self
         
-        StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
-        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(markShowcaseAsOutdated),
@@ -33,6 +31,13 @@ class HomeViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tabBarController?.navigationItem.backButtonTitle = ""
+        setupNavigationBar(itemsOnTheRight: [
+            .barSystemItem(.add, self, #selector(didAddButtonPressed(_:)))
+        ])
+        
         if self.isShowcaseUpToDate {
             return
         }
@@ -82,6 +87,13 @@ class HomeViewController: UIViewController {
     @objc func markShowcaseAsOutdated() {
         isShowcaseUpToDate = false
     }
+    
+    @objc func didAddButtonPressed(_ sender: UIButton) {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "BookFormViewController") as! BookFormViewController
+        controller.delegate = self
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
@@ -121,7 +133,9 @@ extension HomeViewController: UICollectionViewDataSource {
                     as? ShowcaseHeaderView else {
                 fatalError("Invalid view type for book showcase header")
             }
-            return headerView.build(delegate: self)
+            
+            headerView.sectionTitle.label.text = "Todos os Livros"
+            return headerView
             
         default:
             assert(false, "Invalid element type")
@@ -132,15 +146,6 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         self.showcaseFlowLayoutImpl.sizeForItemOf(collectionView, layout: collectionViewLayout, atIndex: indexPath)
-    }
-}
-
-extension HomeViewController: SectionTitleDelegate {
-    func didAddButtonPressed(_ sender: UIButton) {
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "BookFormViewController") as! BookFormViewController
-        controller.delegate = self
-        
-        navigationController?.pushViewController(controller, animated: true)
     }
 }
 

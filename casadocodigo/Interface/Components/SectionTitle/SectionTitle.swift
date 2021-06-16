@@ -11,7 +11,7 @@ fileprivate struct LayoutProperties {
     static let textColor: UIColor = UIColor(red: 108/255, green: 105/255, blue: 105/255, alpha: 0.8)
 }
 
-protocol SectionTitleDelegate: class {
+protocol SectionTitleDelegate: AnyObject {
     func didAddButtonPressed(_ sender: UIButton)
 }
 

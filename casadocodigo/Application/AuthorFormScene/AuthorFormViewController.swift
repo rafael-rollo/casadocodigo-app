@@ -22,8 +22,7 @@ class AuthorFormViewController: UIViewController, UITextFieldDelegate {
     var selectedAuthor: AuthorResponse?
     
     // MARK: IBOutlets
-    
-    @IBOutlet weak var navigationBar: NavigationBar!
+
     @IBOutlet weak var sectionTitle: SectionTitle!
     @IBOutlet weak var profilePictureView: UIImageView!
     @IBOutlet weak var pictureUrlTextField: UITextField!
@@ -48,9 +47,6 @@ class AuthorFormViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.configure(navigationController, current: self)
-    
-        StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
         buildUp()
     }
     

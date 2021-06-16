@@ -27,7 +27,6 @@ class BookFormViewController: UIViewController {
 
     // MARK: IBOutlets
     
-    @IBOutlet weak var navigationBar: NavigationBar!
     @IBOutlet weak var sectionTitle: SectionTitle!
     
     @IBOutlet weak var coverImageView: UIImageView!
@@ -71,10 +70,7 @@ class BookFormViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        StatusBarBackground(target: self.view).set(color: NavigationBar.COLOR)
-        navigationBar.configure(navigationController, current: self)
-        
+    
         loadAuthors()
         buildUp()
     }
