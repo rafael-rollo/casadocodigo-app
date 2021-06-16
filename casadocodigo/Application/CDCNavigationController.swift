@@ -8,6 +8,10 @@
 import UIKit
 
 class CDCNavigationController: UINavigationController {
+    
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
 
     override init(nibName: String?, bundle: Bundle?) {
         super.init(nibName: nibName, bundle: bundle)
@@ -20,11 +24,11 @@ class CDCNavigationController: UINavigationController {
     }
     
     fileprivate func setupNavigation() {
-        UIBarButtonItem.appearance().tintColor = UIColor.white
-        
         navigationBar.barTintColor = UIColor.orangeColor
         navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationBar.shadowImage = UIImage()
+        
+        UIBarButtonItem.appearance().tintColor = UIColor.white
         
         let titleView = UIView(frame: CGRect.zero)
         titleView.translatesAutoresizingMaskIntoConstraints = false
