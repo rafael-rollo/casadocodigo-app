@@ -20,12 +20,6 @@ class HomeViewController: UIViewController {
         showcaseCollectionView.delegate = self
         showcaseCollectionView.dataSource = self
         
-        tabBarController?.navigationItem.backButtonTitle = ""
-        setupNavigationBar(itemsOnTheRight: [
-            .barSystemItem(.add, self, #selector(didAddButtonPressed(_:))),
-            .space(12)
-        ])
-        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(markShowcaseAsOutdated),
@@ -37,6 +31,13 @@ class HomeViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tabBarController?.navigationItem.backButtonTitle = ""
+        setupNavigationBar(itemsOnTheRight: [
+            .barSystemItem(.add, self, #selector(didAddButtonPressed(_:)))
+        ])
+        
         if self.isShowcaseUpToDate {
             return
         }
@@ -132,7 +133,9 @@ extension HomeViewController: UICollectionViewDataSource {
                     as? ShowcaseHeaderView else {
                 fatalError("Invalid view type for book showcase header")
             }
-            return headerView.build()
+            
+            headerView.sectionTitle.label.text = "Todos os Livros"
+            return headerView
             
         default:
             assert(false, "Invalid element type")

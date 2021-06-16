@@ -9,14 +9,6 @@ import UIKit
 
 class AuthorsHeaderView: UICollectionReusableView, ReusableView {
         
-    // MARK: IBOutlets
     @IBOutlet weak var sectionTitle: SectionTitle!
-    
-    func build(delegate: SectionTitleDelegate) -> AuthorsHeaderView {
-        sectionTitle.delegate = delegate
-        sectionTitle.label.text = "Nossos Autores"
-        
-        sectionTitle.enableItemAddingButton()
-        return self
-    }
+
 }

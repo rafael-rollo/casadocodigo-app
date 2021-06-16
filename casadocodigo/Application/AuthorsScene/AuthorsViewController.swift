@@ -31,8 +31,17 @@ class AuthorsViewController: UIViewController {
         super.viewDidLoad()
         authorsCollectionView.dataSource = self
         authorsCollectionView.delegate = self
-                
+        
         loadAuthorsList()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tabBarController?.navigationItem.backButtonTitle = ""
+        setupNavigationBar(itemsOnTheRight: [
+            .barSystemItem(.add, self, #selector(didAddButtonPressed(_:)))
+        ])
     }
     
     func loadAuthorsList() {
@@ -54,6 +63,13 @@ class AuthorsViewController: UIViewController {
     func updateAuthorsList(with authors: [AuthorResponse]) {
         self.authors = authors
         authorsCollectionView.reloadData()
+    }
+    
+    @objc func didAddButtonPressed(_ sender: UIButton) {
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "AuthorFormViewController") as! AuthorFormViewController
+        controller.delegate = self
+        
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
@@ -83,7 +99,9 @@ extension AuthorsViewController: UICollectionViewDataSource {
                     as? AuthorsHeaderView else {
                 fatalError("Invalid view type for the authors header")
             }
-            return headerView.build(delegate: self)
+            
+            headerView.sectionTitle.label.text = "Nossos Autores"
+            return headerView
             
         default:
             assert(false, "Invalid element type")
@@ -99,15 +117,6 @@ extension AuthorsViewController: UICollectionViewDelegateFlowLayout {
         let adjustedWidth = superviewWidth - horizontalMargin * 2
         
         return CGSize(width: adjustedWidth, height: 206)
-    }
-}
-
-extension AuthorsViewController: SectionTitleDelegate {
-    func didAddButtonPressed(_ sender: UIButton) {
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "AuthorFormViewController") as! AuthorFormViewController
-        controller.delegate = self
-        
-        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
