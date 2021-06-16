@@ -38,7 +38,7 @@ class CDCNavigationController: UINavigationController {
             titleView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             titleView.bottomAnchor.constraint(equalTo: navigationBar.bottomAnchor),
             titleView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7)
+            titleView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75)
         ])
         
         let logo = UIImage(named: "logo-cdc")
