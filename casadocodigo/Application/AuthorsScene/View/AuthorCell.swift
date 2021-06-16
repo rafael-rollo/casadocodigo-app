@@ -37,9 +37,6 @@ class AuthorCell: UICollectionViewCell, ReusableView {
     
     private func configureCellBorders() {
         layer.cornerRadius = 8
-        layer.borderWidth = 0.2
-        layer.borderColor = UIColor.lightGray.cgColor
-    
         self.dropShadow()
     }
 
