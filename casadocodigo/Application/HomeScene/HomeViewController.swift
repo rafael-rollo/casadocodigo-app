@@ -20,6 +20,11 @@ class HomeViewController: UIViewController {
         showcaseCollectionView.delegate = self
         showcaseCollectionView.dataSource = self
         
+        navigationItem.backButtonTitle = ""
+        setupNavigationBar(itemsOnTheRight: [
+            .barSystemItem(.add, self, #selector(didAddButtonPressed(_:)))
+        ])
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(markShowcaseAsOutdated),
@@ -32,11 +37,6 @@ class HomeViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        tabBarController?.navigationItem.backButtonTitle = ""
-        setupNavigationBar(itemsOnTheRight: [
-            .barSystemItem(.add, self, #selector(didAddButtonPressed(_:)))
-        ])
         
         if self.isShowcaseUpToDate {
             return

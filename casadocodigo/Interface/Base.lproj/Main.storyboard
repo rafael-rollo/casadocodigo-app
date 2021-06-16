@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2zo-8l-zRe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pTB-BC-bOT">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -10,10 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Livros-->
         <scene sceneID="xaS-Cm-Tjc">
             <objects>
                 <navigationController id="2zo-8l-zRe" customClass="CDCNavigationController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Livros" image="book.closed.fill" catalog="system" id="1Bw-Tx-AUd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qjY-jH-kgk">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -22,12 +23,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="pTB-BC-bOT" kind="relationship" relationship="rootViewController" id="ozw-Pv-OqY"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0qh-tL-aA5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="biz-yC-PfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1088" y="-561"/>
+            <point key="canvasLocation" x="-1090" y="-627"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="AR2-Ae-ZFU">
@@ -41,13 +42,30 @@
                         <color key="selectedImageTintColor" red="1" green="0.49803921569999998" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="pWx-HF-wKc"/>
-                        <segue destination="UbJ-Mk-Nru" kind="relationship" relationship="viewControllers" id="NHW-2V-fF0"/>
+                        <segue destination="2zo-8l-zRe" kind="relationship" relationship="viewControllers" id="aZf-2A-iq1"/>
+                        <segue destination="2v0-jf-elc" kind="relationship" relationship="viewControllers" id="gua-EK-bvs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NaA-sK-EQ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-305" y="-561"/>
+            <point key="canvasLocation" x="-378" y="-1387"/>
+        </scene>
+        <!--Autores-->
+        <scene sceneID="3j2-UB-fja">
+            <objects>
+                <navigationController id="2v0-jf-elc" customClass="CDCNavigationController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Autores" image="person.2.fill" catalog="system" id="fQe-yL-2Ee"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fvX-dZ-7QJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UbJ-Mk-Nru" kind="relationship" relationship="rootViewController" id="68B-3G-cNJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iyX-I3-ITm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="352" y="-627"/>
         </scene>
         <!--Sign In-->
         <scene sceneID="ZsE-SV-ZbN">
@@ -154,7 +172,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-307.24637681159425" y="-1276.3392857142856"/>
+            <point key="canvasLocation" x="-2509" y="-627"/>
         </scene>
         <!--Book Form-->
         <scene sceneID="7YE-0e-U2J">
@@ -506,7 +524,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Y7-Tp-nQ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2606.0747663551401" y="291.57667386609074"/>
+            <point key="canvasLocation" x="-2632" y="155"/>
         </scene>
         <!--Book Details-->
         <scene sceneID="Cep-kr-hIY">
@@ -988,7 +1006,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vcO-AZ-yMQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1850.467289719626" y="291.57667386609074"/>
+            <point key="canvasLocation" x="-1864" y="155"/>
         </scene>
         <!--All Books-->
         <scene sceneID="tne-QT-ifu">
@@ -1061,17 +1079,19 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Livros" image="book.closed.fill" catalog="system" id="wfx-8J-1Xd"/>
+                    <navigationItem key="navigationItem" id="JnL-5a-1Ju"/>
                     <connections>
                         <outlet property="showcaseCollectionView" destination="cr6-2w-0gO" id="gNv-dH-F5s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1089" y="292"/>
+            <point key="canvasLocation" x="-1091" y="156"/>
         </scene>
         <!--Authors-->
         <scene sceneID="Ng1-rm-cNt">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zrs-un-2RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="UbJ-Mk-Nru" userLabel="Authors" customClass="AuthorsViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A9V-9B-Bd9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -1211,13 +1231,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Autores" image="person.2.fill" catalog="system" id="udc-fs-ARd"/>
+                    <navigationItem key="navigationItem" id="ftE-PI-QaG"/>
                     <connections>
                         <outlet property="authorsCollectionView" destination="UC3-Ud-cFa" id="ZzP-2q-ZbD"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zrs-un-2RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="466.66666666666669" y="291.96428571428572"/>
+            <point key="canvasLocation" x="351" y="155"/>
         </scene>
         <!--Author Form-->
         <scene sceneID="ywp-nL-Rgy">
@@ -1388,7 +1408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nan-c9-Btk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="291"/>
+            <point key="canvasLocation" x="1122" y="155"/>
         </scene>
     </scenes>
     <resources>

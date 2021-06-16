@@ -32,6 +32,11 @@ class AuthorsViewController: UIViewController {
         authorsCollectionView.dataSource = self
         authorsCollectionView.delegate = self
         
+        navigationItem.backButtonTitle = ""
+        setupNavigationBar(itemsOnTheRight: [
+            .barSystemItem(.add, self, #selector(didAddButtonPressed(_:)))
+        ])
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(reloadCollection),
@@ -40,15 +45,6 @@ class AuthorsViewController: UIViewController {
         )
         
         loadAuthorsList()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        tabBarController?.navigationItem.backButtonTitle = ""
-        setupNavigationBar(itemsOnTheRight: [
-            .barSystemItem(.add, self, #selector(didAddButtonPressed(_:)))
-        ])
     }
     
     func loadAuthorsList() {
