@@ -35,9 +35,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        adjustLayout()
-        
+                
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(toogleFormConstraintsPriority(_:)),
@@ -51,12 +49,6 @@ class SignInViewController: UIViewController {
             name: UIResponder.keyboardWillHideNotification,
             object: nil
         )
-    }
-    
-    func adjustLayout() {
-        signInButton.layer.borderWidth = 2
-        signInButton.layer.borderColor = UIColor(named: "strongOrange")?.cgColor
-        signInButton.layer.cornerRadius = 24
     }
     
     @objc func toogleFormConstraintsPriority(_ notification: Notification) {

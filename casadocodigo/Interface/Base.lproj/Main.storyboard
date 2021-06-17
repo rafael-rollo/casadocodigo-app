@@ -76,10 +76,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="hxh-Yd-GQP">
-                                <rect key="frame" x="40" y="332.33333333333331" width="334" height="231.33333333333331"/>
+                                <rect key="frame" x="40" y="276.33333333333337" width="334" height="343.33333333333337"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" verticalHuggingPriority="259" translatesAutoresizingMaskIntoConstraints="NO" id="KZv-Vg-TYP" userLabel="Image Container">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="80"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-cdc" translatesAutoresizingMaskIntoConstraints="NO" id="PgW-Oo-3fb">
+                                                <rect key="frame" x="127" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="J0y-vv-gNm"/>
+                                                    <constraint firstAttribute="width" constant="80" id="euF-CT-xM2"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="40"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="PgW-Oo-3fb" firstAttribute="centerX" secondItem="KZv-Vg-TYP" secondAttribute="centerX" id="Xvs-sD-qIJ"/>
+                                            <constraint firstItem="PgW-Oo-3fb" firstAttribute="centerY" secondItem="KZv-Vg-TYP" secondAttribute="centerY" id="oND-p3-6E2"/>
+                                            <constraint firstAttribute="height" constant="80" id="zQf-5g-ZpE"/>
+                                        </constraints>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ivB-Qc-Q8D" userLabel="Stacked Fields">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="151.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="112.00000000000001" width="334" height="151.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="VlD-T0-OhQ" userLabel="Stacked Email Field">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="69.666666666666671"/>
@@ -128,13 +150,19 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOc-hl-kQg">
-                                        <rect key="frame" x="0.0" y="183.33333333333331" width="334" height="48"/>
+                                        <rect key="frame" x="0.0" y="295.33333333333331" width="334" height="48"/>
+                                        <color key="backgroundColor" name="strongOrange"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="lYm-yf-lY8"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="tintColor" name="strongOrange"/>
+                                        <color key="tintColor" name="background"/>
                                         <state key="normal" title="Entrar"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="signInUser:" destination="jKO-ab-6Kt" eventType="touchUpInside" id="8lF-eL-glv"/>
                                         </connections>
@@ -1415,6 +1443,7 @@
         <image name="avatar" width="170.66667175292969" height="170.66667175292969"/>
         <image name="book-cover" width="170.66667175292969" height="170.66667175292969"/>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
+        <image name="logo-cdc" width="200" height="200"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <namedColor name="background">
             <color red="0.98431372549019602" green="0.98039215686274506" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
