@@ -10,8 +10,8 @@ import UIKit
 enum NavigationBarItem {
     case space(CGFloat)
     case label(String)
-    case image(UIImage)
-    case button(UIImage, Any?, Selector?)
+    case image(UIImage?)
+    case button(UIImage?, Any?, Selector?)
     case barSystemItem(UIBarButtonItem.SystemItem, Any?, Selector?)
     case custom(UIBarButtonItem)
     

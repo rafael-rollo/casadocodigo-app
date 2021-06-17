@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-protocol BookFormViewControllerDelegate: class {
+protocol BookFormViewControllerDelegate: AnyObject {
     func didBookCreated(_ book: BookResponse)
     func didBookUpdated(_ book: BookResponse)
 }

@@ -8,12 +8,12 @@
 import UIKit
 import AlamofireImage
 
-protocol BookDetailsViewControllerDelegate: UIViewController {
+protocol BookDetailsViewControllerDelegate: CustomViewController {
     func didDeletingButtonPressed(_ sender: UIButton!, forBookIdentifiedBy id: Int)
     func didEditingButtonPressed(_ sender: UIButton!, for book: BookResponse)
 }
 
-class BookDetailsViewController: UIViewController {
+class BookDetailsViewController: CustomViewController {
     
     // MARK: Attributes
     
@@ -60,6 +60,11 @@ class BookDetailsViewController: UIViewController {
         if let selectedBook = selectedBook {
             buildUp(using: selectedBook)
         }
+    }
+    
+    override func didUserSignedIn() {
+        super.didUserSignedIn()
+        adjustLayout()
     }
     
     private func adjustLayout() {

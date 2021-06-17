@@ -8,7 +8,7 @@
 import UIKit
 import AlamofireImage
 
-protocol AuthorFormViewControllerDelegate: class {
+protocol AuthorFormViewControllerDelegate: AnyObject {
     func didAuthorCreated(_ author: AuthorResponse)
     func didAuthorUpdated(_ author: AuthorResponse)
 }

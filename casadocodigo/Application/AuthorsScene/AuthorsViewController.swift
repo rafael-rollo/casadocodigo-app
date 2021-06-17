@@ -11,11 +11,18 @@ extension Notification.Name {
     static let authorDeleted = Notification.Name("An author has been removed")
 }
 
-class AuthorsViewController: UIViewController {
+class AuthorsViewController: CustomViewController {
     @IBOutlet weak var authorsCollectionView: UICollectionView!
     
     var authors: [AuthorResponse] = []
     var authorRepository: AuthorRepository
+    
+    var navigationRightButtonItems: [NavigationBarItem] {
+        guard UserDefaults.standard.getAuthenticated()?
+                .role == Role.ADMIN else { return defaultNavigationButtonItems }
+
+        return [.barSystemItem(.add, self, #selector(didAuthorAddingButtonPressed(_:)))]
+    }
     
     init(authorRepository: AuthorRepository = AuthorRepository(), nibName: String?, bundle: Bundle?) {
         self.authorRepository = authorRepository
@@ -33,18 +40,16 @@ class AuthorsViewController: UIViewController {
         authorsCollectionView.delegate = self
         
         navigationItem.backButtonTitle = ""
-        setupNavigationBar(itemsOnTheRight: [
-            .barSystemItem(.add, self, #selector(didAddButtonPressed(_:)))
-        ])
-        
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(reloadCollection),
-            name: .userSignedIn,
-            object: nil
-        )
+        setupNavigationBar(itemsOnTheRight: navigationRightButtonItems)
         
         loadAuthorsList()
+    }
+    
+    override func didUserSignedIn() {
+        super.didUserSignedIn()
+        
+        setupNavigationBar(itemsOnTheRight: navigationRightButtonItems)
+        authorsCollectionView.reloadData()
     }
     
     func loadAuthorsList() {
@@ -65,14 +70,10 @@ class AuthorsViewController: UIViewController {
     
     func updateAuthorsList(with authors: [AuthorResponse]) {
         self.authors = authors
-        reloadCollection()
-    }
-    
-    @objc func reloadCollection() {
         authorsCollectionView.reloadData()
     }
     
-    @objc func didAddButtonPressed(_ sender: UIButton) {
+    @objc func didAuthorAddingButtonPressed(_ sender: UIButton) {
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "AuthorFormViewController") as! AuthorFormViewController
         controller.delegate = self
         
