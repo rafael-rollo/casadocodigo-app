@@ -13,9 +13,8 @@ class CustomViewController: UIViewController {
         if UserDefaults.standard.hasAuthenticatedUser() {
             return []
         }
-        
-        let image = UIImage(named: "login")
-        return [.button(image, self, #selector(presentLoginScene))]
+    
+        return [.button("login", self, #selector(presentLoginScene))]
     }
     
     override func viewDidLoad() {

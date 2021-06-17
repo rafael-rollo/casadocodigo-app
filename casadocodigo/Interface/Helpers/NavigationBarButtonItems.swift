@@ -11,9 +11,11 @@ enum NavigationBarItem {
     case space(CGFloat)
     case label(String)
     case image(UIImage?)
-    case button(UIImage?, Any?, Selector?)
+    case button(String, Any?, Selector?)
     case barSystemItem(UIBarButtonItem.SystemItem, Any?, Selector?)
     case custom(UIBarButtonItem)
+    
+    static let defaultSize: CGFloat = 24
     
     func toUIBarButtonItem() -> UIBarButtonItem {
         switch self {
@@ -32,26 +34,34 @@ enum NavigationBarItem {
             return UIBarButtonItem(customView: label)
             
         case let .image(image):
-            let defaultSize: CGFloat = 40
-            
             let imageView = UIImageView(image: image)
             imageView.contentMode = .scaleAspectFit
             imageView.translatesAutoresizingMaskIntoConstraints = false
             
             NSLayoutConstraint.activate([
-                imageView.widthAnchor.constraint(equalToConstant: defaultSize),
-                imageView.heightAnchor.constraint(equalToConstant: defaultSize)
+                imageView.widthAnchor.constraint(equalToConstant: NavigationBarItem.defaultSize),
+                imageView.heightAnchor.constraint(equalToConstant: NavigationBarItem.defaultSize)
             ])
             
             return UIBarButtonItem(customView: imageView)
         
-        case let .button(icon , target, selector):
-            let button = UIBarButtonItem(image: icon,
-                                         style: .plain,
-                                         target: target,
-                                         action: selector)
-            button.tintColor = .white
-            return button
+        case let .button(icon, target, selector):
+            let image = UIImage(named: icon)?.withTintColor(.white)
+            
+            let button = UIButton(type: .custom)
+            button.setImage(image, for: .normal)
+            
+            if let target = target, let selector = selector {
+                button.addTarget(target, action: selector, for: .touchUpInside)
+            }
+            
+            let barButtonItem = UIBarButtonItem(customView: button)
+            NSLayoutConstraint.activate([
+                barButtonItem.customView!.widthAnchor.constraint(equalToConstant: NavigationBarItem.defaultSize),
+                barButtonItem.customView!.heightAnchor.constraint(equalToConstant: NavigationBarItem.defaultSize)
+            ])
+            
+            return barButtonItem
         
         case let .barSystemItem(item, target, selector):
             let button = UIBarButtonItem(barButtonSystemItem: item,
