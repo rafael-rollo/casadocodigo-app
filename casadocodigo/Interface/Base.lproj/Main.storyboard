@@ -1430,6 +1430,7 @@
                         <outlet property="pictureUrlTextField" destination="Aas-y3-4Lw" id="UDt-Fg-ZOp"/>
                         <outlet property="profilePictureView" destination="Nvb-RA-Tsq" id="Tax-ug-bEA"/>
                         <outlet property="saveAuthorButton" destination="whA-wH-2YW" id="hQf-dA-E3t"/>
+                        <outlet property="scrollView" destination="UrP-T7-Y4s" id="DG7-7j-M6i"/>
                         <outlet property="sectionTitle" destination="20T-bB-goA" id="zQN-t6-N1w"/>
                         <outlet property="technologiesTextField" destination="r6R-GI-3sG" id="8Ix-VX-mxN"/>
                     </connections>
