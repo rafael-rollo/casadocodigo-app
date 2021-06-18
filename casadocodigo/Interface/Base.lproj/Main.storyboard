@@ -544,6 +544,7 @@
                         <outlet property="hardcoverPriceField" destination="k9H-Jx-eMS" id="eYW-x7-5HT"/>
                         <outlet property="pagesTextField" destination="8xe-vO-Tf8" id="qe7-aI-k8v"/>
                         <outlet property="publicationDatePicker" destination="FNs-kP-tZ4" id="nDw-Bz-o9e"/>
+                        <outlet property="scrollView" destination="wL5-4V-VGG" id="mto-KB-9ya"/>
                         <outlet property="sectionTitle" destination="agi-Bs-wSF" id="fiq-bN-E3v"/>
                         <outlet property="submitButton" destination="Pxu-6k-4Sr" id="nrU-3s-MpT"/>
                         <outlet property="subtitleTextField" destination="Fcq-9y-Wzk" id="wWu-e2-YFo"/>

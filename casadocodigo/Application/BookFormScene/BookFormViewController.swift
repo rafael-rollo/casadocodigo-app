@@ -24,9 +24,11 @@ class BookFormViewController: AuthorizedViewController {
     var bookRepository: BookRepository
     
     weak var delegate: BookFormViewControllerDelegate?
+    var activeField: UITextField?
 
     // MARK: IBOutlets
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sectionTitle: SectionTitle!
     
     @IBOutlet weak var coverImageView: UIImageView!
@@ -75,6 +77,15 @@ class BookFormViewController: AuthorizedViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWasShown(_:)),
+                                               name: UIResponder.keyboardDidShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillBeHidden(_:)),
+                                               name: UIResponder.keyboardDidHideNotification,
+                                               object: nil)
     
         loadAuthors()
         buildUp()
@@ -146,6 +157,31 @@ class BookFormViewController: AuthorizedViewController {
         
         pagesTextField.text = String(describing: book.numberOfPages)
         ISBNTextField.text = book.ISBN
+    }
+    
+    @objc func keyboardWasShown(_ notification: Notification) {
+        guard let userInfo = notification.userInfo else { return }
+        let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey]
+                                as! NSValue).cgRectValue.height
+        
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        
+        var referenceRect = self.view.frame
+        referenceRect.size.height -= keyboardHeight
+        
+        guard let activeField = activeField else { return }
+        
+        if !referenceRect.contains(activeField.frame.origin) {
+            scrollView.scrollRectToVisible(activeField.frame, animated: true)
+        }
+    }
+    
+    @objc func keyboardWillBeHidden(_ notification: Notification) {
+        let contentInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
     }
 
     // MARK: IBActions
@@ -321,5 +357,15 @@ extension BookFormViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         authorTextField.text = authors[row].fullName
         authorTextField.resignFirstResponder()
+    }
+}
+
+extension BookFormViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeField = nil
     }
 }
