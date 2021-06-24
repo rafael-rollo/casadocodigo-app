@@ -12,6 +12,7 @@ extension Notification.Name {
 }
 
 class SignInViewController: UIViewController {
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
@@ -101,8 +102,8 @@ class SignInViewController: UIViewController {
             user.email = email
             UserDefaults.standard.setAuthenticated(user)
             
-            self?.dismiss(animated: true, completion: nil)
             NotificationCenter.default.post(Notification(name: .userSignedIn))
+            self?.dismiss(animated: true, completion: nil)
             
         } failureHandler: { message in
             indicator.stopAnimating()
