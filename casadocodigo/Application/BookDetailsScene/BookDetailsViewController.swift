@@ -30,9 +30,9 @@ class BookDetailsViewController: BaseNavbarItemsViewController {
     @IBOutlet weak var hardcoverPrice: UILabel!
     @IBOutlet weak var comboPrice: UILabel!
     
-    @IBOutlet weak var buyEbookButton: UIButton!
-    @IBOutlet weak var buyHardCoverButton: UIButton!
-    @IBOutlet weak var buyComboButton: UIButton!
+    @IBOutlet weak var buyEbookButton: AuthorizedButton!
+    @IBOutlet weak var buyHardCoverButton: AuthorizedButton!
+    @IBOutlet weak var buyComboButton: AuthorizedButton!
     
     @IBOutlet weak var contentSectionTitle: SectionTitle!
     @IBOutlet weak var contentTextView: UITextView!
@@ -47,8 +47,8 @@ class BookDetailsViewController: BaseNavbarItemsViewController {
     @IBOutlet weak var numberOfPagesLabel: UILabel!
     @IBOutlet weak var ISBNLabel: UILabel!
     
-    @IBOutlet weak var deletingButton: UIButton!
-    @IBOutlet weak var editingButton: UIButton!
+    @IBOutlet weak var deletingButton: AuthorizedButton!
+    @IBOutlet weak var editingButton: AuthorizedButton!
     
     // MARK: View lifecycle
     

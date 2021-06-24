@@ -631,7 +631,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAl-tW-wdY">
                                                                 <rect key="frame" x="191" y="0.0" width="191" height="68"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEj-uj-t9y">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEj-uj-t9y" customClass="AuthorizedButton" customModule="casadocodigo" customModuleProvider="target">
                                                                         <rect key="frame" x="91" y="16" width="100" height="36"/>
                                                                         <color key="backgroundColor" red="0.98039215690000003" green="0.76862745099999996" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <constraints>
@@ -689,7 +689,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTh-4K-O18">
                                                                 <rect key="frame" x="191" y="0.0" width="191" height="68"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqy-oq-kiy">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqy-oq-kiy" customClass="AuthorizedButton" customModule="casadocodigo" customModuleProvider="target">
                                                                         <rect key="frame" x="91" y="16" width="100" height="36"/>
                                                                         <color key="backgroundColor" red="0.98039215690000003" green="0.76862745099999996" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <constraints>
@@ -747,7 +747,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3XO-LN-nuR">
                                                                 <rect key="frame" x="191" y="0.0" width="191" height="68"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQP-I6-4zW">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQP-I6-4zW" customClass="AuthorizedButton" customModule="casadocodigo" customModuleProvider="target">
                                                                         <rect key="frame" x="91" y="16" width="100" height="36"/>
                                                                         <color key="backgroundColor" red="0.98039215690000003" green="0.76862745099999996" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <constraints>
@@ -973,7 +973,7 @@
                                     <constraint firstItem="8oz-bb-6Je" firstAttribute="leading" secondItem="yaE-pB-foP" secondAttribute="leading" id="mLe-QF-9wL"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64E-5n-qJJ">
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64E-5n-qJJ" customClass="AuthorizedButton" customModule="casadocodigo" customModuleProvider="target">
                                 <rect key="frame" x="342" y="790" width="56" height="56"/>
                                 <color key="backgroundColor" red="0.32156862749999998" green="0.48627450979999998" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -983,7 +983,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
                             </button>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGp-TL-AM9" userLabel="Editing Button">
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGp-TL-AM9" userLabel="Editing Button" customClass="AuthorizedButton" customModule="casadocodigo" customModuleProvider="target">
                                 <rect key="frame" x="342" y="718" width="56" height="56"/>
                                 <color key="backgroundColor" red="0.32156862749999998" green="0.48627450979999998" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1119,7 +1119,6 @@
         <!--Authors-->
         <scene sceneID="Ng1-rm-cNt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zrs-un-2RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="UbJ-Mk-Nru" userLabel="Authors" customClass="AuthorsViewController" customModule="casadocodigo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A9V-9B-Bd9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -1181,12 +1180,12 @@
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 </view>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohx-vu-cq0">
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohx-vu-cq0" customClass="AuthorizedButton" customModule="casadocodigo" customModuleProvider="target">
                                                                     <rect key="frame" x="240" y="0.0" width="20" height="20"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                                     <color key="tintColor" red="0.75294117647058822" green="0.22352941176470587" blue="0.16862745098039217" alpha="0.89803921568627454" colorSpace="calibratedRGB"/>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31l-Tf-DBC">
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31l-Tf-DBC" customClass="AuthorizedButton" customModule="casadocodigo" customModuleProvider="target">
                                                                     <rect key="frame" x="212" y="0.0" width="20" height="20"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                                     <color key="tintColor" red="0.32156862749999998" green="0.48627450979999998" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1264,6 +1263,7 @@
                         <outlet property="authorsCollectionView" destination="UC3-Ud-cFa" id="ZzP-2q-ZbD"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zrs-un-2RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="351" y="155"/>
         </scene>

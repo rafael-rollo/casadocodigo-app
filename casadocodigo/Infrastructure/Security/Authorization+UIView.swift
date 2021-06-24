@@ -7,7 +7,12 @@
 
 import UIKit
 
-extension UIView {
+protocol AuthorizableRendering {
+    func setVisibleOnly(to authorizedRoles: Role...)
+    func setHidden(for unauthorizedRoles: Role...)
+}
+
+extension AuthorizableRendering where Self: UIView {
     func setVisibleOnly(to authorizedRoles: Role...) {
         // hide when anonymous
         guard let authenticatedUser = UserDefaults.standard.getAuthenticated() else {
@@ -35,3 +40,5 @@ extension UIView {
         isHidden = isUnauthorizedUser
     }
 }
+
+class AuthorizedButton: UIButton, AuthorizableRendering {}

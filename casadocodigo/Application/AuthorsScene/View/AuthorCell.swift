@@ -25,8 +25,8 @@ class AuthorCell: UICollectionViewCell, ReusableView {
     @IBOutlet weak var authorPictureView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
     
-    @IBOutlet weak var authorRemovingButton: UIButton!
-    @IBOutlet weak var authorEditingButton: UIButton!
+    @IBOutlet weak var authorRemovingButton: AuthorizedButton!
+    @IBOutlet weak var authorEditingButton: AuthorizedButton!
     
     @IBOutlet weak var publicationCountLabel: UILabel!
     @IBOutlet weak var technologiesList: TagsHorizontalList!
