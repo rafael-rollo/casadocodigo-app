@@ -39,7 +39,7 @@
 		585D72F226432FD300666078 /* BookFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D72F126432FD300666078 /* BookFormViewController.swift */; };
 		585D7302264345B200666078 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D7301264345B200666078 /* TextView.swift */; };
 		585D73312649997D00666078 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D73302649997B00666078 /* Date.swift */; };
-		5891F817267B8CF3004F5D2C /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5891F816267B8CF3004F5D2C /* CustomViewController.swift */; };
+		5891F817267B8CF3004F5D2C /* BaseNavbarItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5891F816267B8CF3004F5D2C /* BaseNavbarItemsViewController.swift */; };
 		589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB92621363300CE3B93 /* AuthorsViewController.swift */; };
 		58B1B3E3264192BD00DFA789 /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B1B3E2264192BD00DFA789 /* BookDetailsViewController.swift */; };
 		58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF69012621070300A8CEBD /* AppDelegate.swift */; };
@@ -107,7 +107,7 @@
 		585D72F126432FD300666078 /* BookFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFormViewController.swift; sourceTree = "<group>"; };
 		585D7301264345B200666078 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		585D73302649997B00666078 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		5891F816267B8CF3004F5D2C /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		5891F816267B8CF3004F5D2C /* BaseNavbarItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavbarItemsViewController.swift; sourceTree = "<group>"; };
 		589C5BB92621363300CE3B93 /* AuthorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsViewController.swift; sourceTree = "<group>"; };
 		58B1B3E2264192BD00DFA789 /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
 		58BF68FE2621070300A8CEBD /* casadocodigo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = casadocodigo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -389,7 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				582CC764265825DB0033F333 /* CustomNavigationController.swift */,
-				5891F816267B8CF3004F5D2C /* CustomViewController.swift */,
+				5891F816267B8CF3004F5D2C /* BaseNavbarItemsViewController.swift */,
 				58C0BEEF2669309100FB0D19 /* AuthorizedViewController.swift */,
 				58BF693926210A5B00A8CEBD /* HomeScene */,
 				58B1B3E12641929700DFA789 /* BookDetailsScene */,
@@ -716,7 +716,7 @@
 				582F98472629DBA900354D65 /* ShowcaseFlowLayout.swift in Sources */,
 				582A05E92677F12700114506 /* NavigationBarButtonItems.swift in Sources */,
 				58B1B3E3264192BD00DFA789 /* BookDetailsViewController.swift in Sources */,
-				5891F817267B8CF3004F5D2C /* CustomViewController.swift in Sources */,
+				5891F817267B8CF3004F5D2C /* BaseNavbarItemsViewController.swift in Sources */,
 				582CC765265825DB0033F333 /* CustomNavigationController.swift in Sources */,
 				58CB457D263B612E005D19F2 /* Views.swift in Sources */,
 				58C0BEF02669309100FB0D19 /* AuthorizedViewController.swift in Sources */,

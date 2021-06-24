@@ -11,7 +11,7 @@ extension Notification.Name {
     static let authorDeleted = Notification.Name("An author has been removed")
 }
 
-class AuthorsViewController: CustomViewController {
+class AuthorsViewController: BaseNavbarItemsViewController {
     @IBOutlet weak var authorsCollectionView: UICollectionView!
     
     var authors: [AuthorResponse] = []

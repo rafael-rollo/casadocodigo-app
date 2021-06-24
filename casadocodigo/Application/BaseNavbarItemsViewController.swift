@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomViewController: UIViewController {
+class BaseNavbarItemsViewController: UIViewController {
     
     var defaultNavigationButtonItems: [NavigationBarItem] {
         if UserDefaults.standard.hasAuthenticatedUser() {

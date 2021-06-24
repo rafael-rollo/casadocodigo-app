@@ -8,12 +8,12 @@
 import UIKit
 import AlamofireImage
 
-protocol BookDetailsViewControllerDelegate: CustomViewController {
+protocol BookDetailsViewControllerDelegate: BaseNavbarItemsViewController {
     func didDeletingButtonPressed(_ sender: UIButton!, forBookIdentifiedBy id: Int)
     func didEditingButtonPressed(_ sender: UIButton!, for book: BookResponse)
 }
 
-class BookDetailsViewController: CustomViewController {
+class BookDetailsViewController: BaseNavbarItemsViewController {
     
     // MARK: Attributes
     

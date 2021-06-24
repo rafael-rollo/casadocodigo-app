@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: CustomViewController {
+class HomeViewController: BaseNavbarItemsViewController {
     @IBOutlet weak var showcaseCollectionView: UICollectionView!
    
     var showcase: [BookResponse] = []
