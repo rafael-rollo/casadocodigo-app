@@ -26,6 +26,7 @@
 		582CC81C26683CD50033F333 /* UserAuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC81B26683CD50033F333 /* UserAuthenticationRepository.swift */; };
 		582CC82726683D810033F333 /* UserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC82626683D810033F333 /* UserAuthentication.swift */; };
 		582CC831266849BA0033F333 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC830266849BA0033F333 /* Authentication.swift */; };
+		582D872D2685496500D70C3E /* KeyboardAvoidableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582D872C2685496500D70C3E /* KeyboardAvoidableView.swift */; };
 		582F980D2627D20200354D65 /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F980C2627D20200354D65 /* BookRepository.swift */; };
 		582F98142628A40300354D65 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F98132628A40300354D65 /* Book.swift */; };
 		582F981A2628AA2100354D65 /* ShowcaseBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F98192628AA2100354D65 /* ShowcaseBookCell.swift */; };
@@ -94,6 +95,7 @@
 		582CC81B26683CD50033F333 /* UserAuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationRepository.swift; sourceTree = "<group>"; };
 		582CC82626683D810033F333 /* UserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthentication.swift; sourceTree = "<group>"; };
 		582CC830266849BA0033F333 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		582D872C2685496500D70C3E /* KeyboardAvoidableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAvoidableView.swift; sourceTree = "<group>"; };
 		582F980C2627D20200354D65 /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
 		582F98132628A40300354D65 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		582F98192628AA2100354D65 /* ShowcaseBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseBookCell.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 			children = (
 				582F9851262A144B00354D65 /* Alert.swift */,
 				58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */,
+				582D872C2685496500D70C3E /* KeyboardAvoidableView.swift */,
 				583C555C2631F654002846CF /* SectionTitle */,
 				5827D827262FE63100D20B19 /* TagsHorizontalList */,
 			);
@@ -713,6 +716,7 @@
 				582F982A2628FFAF00354D65 /* ShowcaseHeaderView.swift in Sources */,
 				585D73312649997D00666078 /* Date.swift in Sources */,
 				582CC81C26683CD50033F333 /* UserAuthenticationRepository.swift in Sources */,
+				582D872D2685496500D70C3E /* KeyboardAvoidableView.swift in Sources */,
 				582F98472629DBA900354D65 /* ShowcaseFlowLayout.swift in Sources */,
 				582A05E92677F12700114506 /* NavigationBarButtonItems.swift in Sources */,
 				58B1B3E3264192BD00DFA789 /* BookDetailsViewController.swift in Sources */,

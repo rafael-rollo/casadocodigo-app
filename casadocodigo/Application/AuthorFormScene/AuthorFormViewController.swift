@@ -24,7 +24,7 @@ class AuthorFormViewController: AuthorizedViewController {
     
     // MARK: IBOutlets
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollView: KeyboardAvoidableView!
     @IBOutlet weak var sectionTitle: SectionTitle!
     @IBOutlet weak var profilePictureView: UIImageView!
     @IBOutlet weak var pictureUrlTextField: UITextField!
@@ -54,19 +54,12 @@ class AuthorFormViewController: AuthorizedViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWasShown(_:)),
-                                               name: UIResponder.keyboardDidShowNotification,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillBeHidden(_:)),
-                                               name: UIResponder.keyboardDidHideNotification,
-                                               object: nil)
-        
         buildUp()
     }
     
     private func buildUp() {
+        scrollView.keyboardAvoidableViewDelegate = self
+        
         if let selectedAuthor = self.selectedAuthor {
             self.sectionTitle.label.text = "Dados do autor"
             self.saveAuthorButton.addTarget(self, action: #selector(authorEditingButtonPressed(_:)), for: .touchUpInside)
@@ -95,31 +88,6 @@ class AuthorFormViewController: AuthorizedViewController {
         
         saveAuthorButton.layer.cornerRadius = 10
         saveAuthorButton.showsTouchWhenHighlighted = true
-    }
-    
-    @objc func keyboardWasShown(_ notification: Notification) {
-        guard let userInfo = notification.userInfo else { return }
-        let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey]
-                                as! NSValue).cgRectValue.height
-        
-        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-        
-        var referenceRect = self.view.frame
-        referenceRect.size.height -= keyboardHeight
-        
-        guard let activeField = activeField else { return }
-        
-        if !referenceRect.contains(activeField.frame.origin) {
-            scrollView.scrollRectToVisible(activeField.frame, animated: true)
-        }
-    }
-    
-    @objc func keyboardWillBeHidden(_ notification: Notification) {
-        let contentInsets = UIEdgeInsets.zero
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
     }
     
     // MARK: IBActions
@@ -199,7 +167,7 @@ class AuthorFormViewController: AuthorizedViewController {
     }
 }
 
-extension AuthorFormViewController: UITextFieldDelegate {
+extension AuthorFormViewController: KeyboardAvoidableViewDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         activeField = textField
     }
