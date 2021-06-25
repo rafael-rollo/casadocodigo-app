@@ -11,7 +11,7 @@
 		39FD4A27F49B824CD4513439 /* Pods_casadocodigoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8553C8EDFFACD1469DF9CC /* Pods_casadocodigoTests.framework */; };
 		50F633408CDD2AA96F8B21DD /* Pods_casadocodigo_casadocodigoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7F1C48024E2D2363F9F9C2 /* Pods_casadocodigo_casadocodigoUITests.framework */; };
 		5827D806262F8D1900D20B19 /* AuthorsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D805262F8D1900D20B19 /* AuthorsHeaderView.swift */; };
-		5827D80B262FBFC700D20B19 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D80A262FBFC700D20B19 /* CollectionViewCell.swift */; };
+		5827D80B262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */; };
 		5827D810262FDBD100D20B19 /* TagsHorizontalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D80F262FDBD100D20B19 /* TagsHorizontalList.swift */; };
 		5827D81D262FE16500D20B19 /* TagsHorizontalList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5827D81C262FE16500D20B19 /* TagsHorizontalList.xib */; };
 		5827D829262FE6A300D20B19 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D828262FE6A300D20B19 /* TagCell.swift */; };
@@ -38,7 +38,7 @@
 		582F9869262DDD5600354D65 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F9868262DDD5600354D65 /* Author.swift */; };
 		585D72E92643073200666078 /* Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D72E82643073100666078 /* Decimal.swift */; };
 		585D72F226432FD300666078 /* BookFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D72F126432FD300666078 /* BookFormViewController.swift */; };
-		585D7302264345B200666078 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D7301264345B200666078 /* TextView.swift */; };
+		585D7302264345B200666078 /* Border+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D7301264345B200666078 /* Border+UITextView.swift */; };
 		585D73312649997D00666078 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D73302649997B00666078 /* Date.swift */; };
 		5891F817267B8CF3004F5D2C /* BaseNavbarItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5891F816267B8CF3004F5D2C /* BaseNavbarItemsViewController.swift */; };
 		589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C5BB92621363300CE3B93 /* AuthorsViewController.swift */; };
@@ -55,7 +55,7 @@
 		58C0BEF02669309100FB0D19 /* AuthorizedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C0BEEF2669309100FB0D19 /* AuthorizedViewController.swift */; };
 		58C0BEFF266AC76100FB0D19 /* Authorization+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C0BEFE266AC76100FB0D19 /* Authorization+UIView.swift */; };
 		58CB4562263A43C8005D19F2 /* ConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */; };
-		58CB457D263B612E005D19F2 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB457C263B612D005D19F2 /* Views.swift */; };
+		58CB457D263B612E005D19F2 /* Ids+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB457C263B612D005D19F2 /* Ids+UIView.swift */; };
 		58FA532C26334E44000390BF /* AuthorFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA532B26334E44000390BF /* AuthorFormViewController.swift */; };
 		58FA533C263772D1000390BF /* Shape+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA533B263772D1000390BF /* Shape+UIView.swift */; };
 /* End PBXBuildFile section */
@@ -80,7 +80,7 @@
 /* Begin PBXFileReference section */
 		526025A48484750F3D26EDDD /* Pods-casadocodigo-casadocodigoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casadocodigo-casadocodigoUITests.debug.xcconfig"; path = "Target Support Files/Pods-casadocodigo-casadocodigoUITests/Pods-casadocodigo-casadocodigoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5827D805262F8D1900D20B19 /* AuthorsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsHeaderView.swift; sourceTree = "<group>"; };
-		5827D80A262FBFC700D20B19 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shadow+UICollectionViewCell.swift"; sourceTree = "<group>"; };
 		5827D80F262FDBD100D20B19 /* TagsHorizontalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsHorizontalList.swift; sourceTree = "<group>"; };
 		5827D81C262FE16500D20B19 /* TagsHorizontalList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsHorizontalList.xib; sourceTree = "<group>"; };
 		5827D828262FE6A300D20B19 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 		582F9868262DDD5600354D65 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		585D72E82643073100666078 /* Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal.swift; sourceTree = "<group>"; };
 		585D72F126432FD300666078 /* BookFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFormViewController.swift; sourceTree = "<group>"; };
-		585D7301264345B200666078 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		585D7301264345B200666078 /* Border+UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Border+UITextView.swift"; sourceTree = "<group>"; };
 		585D73302649997B00666078 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		5891F816267B8CF3004F5D2C /* BaseNavbarItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavbarItemsViewController.swift; sourceTree = "<group>"; };
 		589C5BB92621363300CE3B93 /* AuthorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsViewController.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		58C0BEEF2669309100FB0D19 /* AuthorizedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedViewController.swift; sourceTree = "<group>"; };
 		58C0BEFE266AC76100FB0D19 /* Authorization+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Authorization+UIView.swift"; sourceTree = "<group>"; };
 		58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialog.swift; sourceTree = "<group>"; };
-		58CB457C263B612D005D19F2 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		58CB457C263B612D005D19F2 /* Ids+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ids+UIView.swift"; sourceTree = "<group>"; };
 		58FA532B26334E44000390BF /* AuthorFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorFormViewController.swift; sourceTree = "<group>"; };
 		58FA533B263772D1000390BF /* Shape+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+UIView.swift"; sourceTree = "<group>"; };
 		7A66D89A8354D0697252F58D /* Pods-casadocodigo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casadocodigo.debug.xcconfig"; path = "Target Support Files/Pods-casadocodigo/Pods-casadocodigo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -260,10 +260,10 @@
 		582F984B262A0A5300354D65 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				582F984C262A0A7500354D65 /* ActivityIndicatorView.swift */,
-				5827D80A262FBFC700D20B19 /* CollectionViewCell.swift */,
+				58CB457C263B612D005D19F2 /* Ids+UIView.swift */,
+				585D7301264345B200666078 /* Border+UITextView.swift */,
 				58FA533B263772D1000390BF /* Shape+UIView.swift */,
-				585D7301264345B200666078 /* TextView.swift */,
+				5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,9 +378,9 @@
 			isa = PBXGroup;
 			children = (
 				582CC770265BEFF40033F333 /* Theme.swift */,
+				58BF693D262114B700A8CEBD /* Components */,
 				58CB457B263B610C005D19F2 /* Helpers */,
 				582F984B262A0A5300354D65 /* Extensions */,
-				58BF693D262114B700A8CEBD /* Components */,
 				58BF69072621070300A8CEBD /* Main.storyboard */,
 				58BF690C2621070500A8CEBD /* LaunchScreen.storyboard */,
 			);
@@ -414,8 +414,6 @@
 		58BF693D262114B700A8CEBD /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				582F9851262A144B00354D65 /* Alert.swift */,
-				58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */,
 				582D872C2685496500D70C3E /* KeyboardAvoidableView.swift */,
 				583C555C2631F654002846CF /* SectionTitle */,
 				5827D827262FE63100D20B19 /* TagsHorizontalList */,
@@ -435,7 +433,9 @@
 		58CB457B263B610C005D19F2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				58CB457C263B612D005D19F2 /* Views.swift */,
+				582F9851262A144B00354D65 /* Alert.swift */,
+				58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */,
+				582F984C262A0A7500354D65 /* ActivityIndicatorView.swift */,
 				582A05E82677F12700114506 /* NavigationBarButtonItems.swift */,
 			);
 			path = Helpers;
@@ -722,7 +722,7 @@
 				58B1B3E3264192BD00DFA789 /* BookDetailsViewController.swift in Sources */,
 				5891F817267B8CF3004F5D2C /* BaseNavbarItemsViewController.swift in Sources */,
 				582CC765265825DB0033F333 /* CustomNavigationController.swift in Sources */,
-				58CB457D263B612E005D19F2 /* Views.swift in Sources */,
+				58CB457D263B612E005D19F2 /* Ids+UIView.swift in Sources */,
 				58C0BEF02669309100FB0D19 /* AuthorizedViewController.swift in Sources */,
 				58BF69062621070300A8CEBD /* HomeViewController.swift in Sources */,
 				582F984D262A0A7600354D65 /* ActivityIndicatorView.swift in Sources */,
@@ -736,12 +736,12 @@
 				58FA533C263772D1000390BF /* Shape+UIView.swift in Sources */,
 				582F98142628A40300354D65 /* Book.swift in Sources */,
 				582F9861262DD83000354D65 /* AuthorRepository.swift in Sources */,
-				5827D80B262FBFC700D20B19 /* CollectionViewCell.swift in Sources */,
+				5827D80B262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift in Sources */,
 				582F9869262DDD5600354D65 /* Author.swift in Sources */,
 				58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */,
 				585D72F226432FD300666078 /* BookFormViewController.swift in Sources */,
 				58FA532C26334E44000390BF /* AuthorFormViewController.swift in Sources */,
-				585D7302264345B200666078 /* TextView.swift in Sources */,
+				585D7302264345B200666078 /* Border+UITextView.swift in Sources */,
 				585D72E92643073200666078 /* Decimal.swift in Sources */,
 				5827D829262FE6A300D20B19 /* TagCell.swift in Sources */,
 				5827D806262F8D1900D20B19 /* AuthorsHeaderView.swift in Sources */,
