@@ -14,7 +14,7 @@ protocol BookFormViewControllerDelegate: AnyObject {
 }
 
 class BookFormViewController: AuthorizedViewController {
-    
+
     // MARK: Attributes
     
     var authors: [AuthorResponse] = []
@@ -24,9 +24,11 @@ class BookFormViewController: AuthorizedViewController {
     var bookRepository: BookRepository
     
     weak var delegate: BookFormViewControllerDelegate?
+    var activeField: UITextField?
 
     // MARK: IBOutlets
     
+    @IBOutlet weak var scrollView: KeyboardAvoidableView!
     @IBOutlet weak var sectionTitle: SectionTitle!
     
     @IBOutlet weak var coverImageView: UIImageView!
@@ -90,6 +92,8 @@ class BookFormViewController: AuthorizedViewController {
     }
     
     private func buildUp() {
+        scrollView.keyboardAvoidableViewDelegate = self
+        
         authorPickerView = UIPickerView()
         authorPickerView?.dataSource = self
         authorPickerView?.delegate = self
@@ -321,5 +325,15 @@ extension BookFormViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         authorTextField.text = authors[row].fullName
         authorTextField.resignFirstResponder()
+    }
+}
+
+extension BookFormViewController: KeyboardAvoidableViewDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeField = textField
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeField = nil
     }
 }

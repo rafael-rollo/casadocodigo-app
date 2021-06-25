@@ -210,7 +210,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wL5-4V-VGG">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wL5-4V-VGG" customClass="KeyboardAvoidableView" customModule="casadocodigo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPI-FD-avp" userLabel="Content View">
@@ -544,6 +544,7 @@
                         <outlet property="hardcoverPriceField" destination="k9H-Jx-eMS" id="eYW-x7-5HT"/>
                         <outlet property="pagesTextField" destination="8xe-vO-Tf8" id="qe7-aI-k8v"/>
                         <outlet property="publicationDatePicker" destination="FNs-kP-tZ4" id="nDw-Bz-o9e"/>
+                        <outlet property="scrollView" destination="wL5-4V-VGG" id="mto-KB-9ya"/>
                         <outlet property="sectionTitle" destination="agi-Bs-wSF" id="fiq-bN-E3v"/>
                         <outlet property="submitButton" destination="Pxu-6k-4Sr" id="nrU-3s-MpT"/>
                         <outlet property="subtitleTextField" destination="Fcq-9y-Wzk" id="wWu-e2-YFo"/>
@@ -1275,7 +1276,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrP-T7-Y4s">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UrP-T7-Y4s" customClass="KeyboardAvoidableView" customModule="casadocodigo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mgn-Ly-bf1" userLabel="Content Container">
@@ -1430,6 +1431,7 @@
                         <outlet property="pictureUrlTextField" destination="Aas-y3-4Lw" id="UDt-Fg-ZOp"/>
                         <outlet property="profilePictureView" destination="Nvb-RA-Tsq" id="Tax-ug-bEA"/>
                         <outlet property="saveAuthorButton" destination="whA-wH-2YW" id="hQf-dA-E3t"/>
+                        <outlet property="scrollView" destination="UrP-T7-Y4s" id="DG7-7j-M6i"/>
                         <outlet property="sectionTitle" destination="20T-bB-goA" id="zQN-t6-N1w"/>
                         <outlet property="technologiesTextField" destination="r6R-GI-3sG" id="8Ix-VX-mxN"/>
                     </connections>

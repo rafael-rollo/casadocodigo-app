@@ -13,16 +13,18 @@ protocol AuthorFormViewControllerDelegate: AnyObject {
     func didAuthorUpdated(_ author: AuthorResponse)
 }
 
-class AuthorFormViewController: AuthorizedViewController, UITextFieldDelegate {
+class AuthorFormViewController: AuthorizedViewController {
     
     // MARK: Attributes
     weak var delegate: AuthorFormViewControllerDelegate?
+    var activeField: UITextField?
     
     private var authorRepository: AuthorRepository
     var selectedAuthor: AuthorResponse?
     
     // MARK: IBOutlets
 
+    @IBOutlet weak var scrollView: KeyboardAvoidableView!
     @IBOutlet weak var sectionTitle: SectionTitle!
     @IBOutlet weak var profilePictureView: UIImageView!
     @IBOutlet weak var pictureUrlTextField: UITextField!
@@ -51,10 +53,13 @@ class AuthorFormViewController: AuthorizedViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         buildUp()
     }
     
     private func buildUp() {
+        scrollView.keyboardAvoidableViewDelegate = self
+        
         if let selectedAuthor = self.selectedAuthor {
             self.sectionTitle.label.text = "Dados do autor"
             self.saveAuthorButton.addTarget(self, action: #selector(authorEditingButtonPressed(_:)), for: .touchUpInside)
@@ -159,5 +164,15 @@ class AuthorFormViewController: AuthorizedViewController, UITextFieldDelegate {
             indicator.stopAnimating()
             Alert.show(title: "Ops", message: "Could not possible to update author data. Try again!", in: self)
         }
+    }
+}
+
+extension AuthorFormViewController: KeyboardAvoidableViewDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeField = nil
     }
 }
