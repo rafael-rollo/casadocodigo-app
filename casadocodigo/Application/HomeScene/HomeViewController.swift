@@ -12,7 +12,10 @@ class HomeViewController: BaseNavbarItemsViewController {
    
     var showcase: [BookResponse] = []
     var isShowcaseUpToDate = false
+    
     var bookRepository: BookRepository
+    
+    let searchController = UISearchController(searchResultsController: nil)
     let showcaseFlowLayoutImpl: ShowcaseFlowLayout = ShowcaseFlowLayout()
     
     var navigationRightButtonItems: [NavigationBarItem] {
@@ -39,6 +42,7 @@ class HomeViewController: BaseNavbarItemsViewController {
         )
         
         loadShowcase();
+        setupSearchController();
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -196,5 +200,21 @@ extension HomeViewController: BookDetailsViewControllerDelegate {
         controller.selectedBook = book
         
         navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+extension HomeViewController: UISearchResultsUpdating {
+    private func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Search in Books"
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+    
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        // TODO
     }
 }
