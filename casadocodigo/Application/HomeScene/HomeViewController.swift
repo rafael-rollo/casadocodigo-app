@@ -229,7 +229,11 @@ extension HomeViewController: UICollectionViewDataSource {
                 fatalError("Invalid view type for book showcase header")
             }
             
-            headerView.sectionTitle.label.text = "Todos os Livros"
+            let sectionTitle = isFiltering
+                ? "Busca por \"\(searchController.searchBar.text!)\""
+                : "Todos os Livros"
+            
+            headerView.sectionTitle.label.text = sectionTitle
             return headerView
             
         default:
