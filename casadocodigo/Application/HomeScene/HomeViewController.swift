@@ -275,9 +275,13 @@ extension HomeViewController: BookDetailsViewControllerDelegate {
 extension HomeViewController: UISearchResultsUpdating {
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "Search in Books"
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
+    
+        searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(
+            string: "Buscar livros",
+            attributes: [.foregroundColor: UIColor.lightText]
+        )
     
         navigationItem.searchController = searchController
         definesPresentationContext = true

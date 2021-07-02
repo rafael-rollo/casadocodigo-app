@@ -35,6 +35,11 @@ class CustomNavigationController: UINavigationController {
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance
         
+        UISearchBar.appearance().tintColor = UIColor.white
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+            .defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
+                                      NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13.0)]
+        
         UIBarButtonItem.appearance().tintColor = UIColor.white
         
         titleView = UIView(frame: CGRect.zero)
