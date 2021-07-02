@@ -8,12 +8,12 @@
 import UIKit
 import AlamofireImage
 
-protocol AuthorFormViewControllerDelegate: class {
+protocol AuthorFormViewControllerDelegate: AnyObject {
     func didAuthorCreated(_ author: AuthorResponse)
     func didAuthorUpdated(_ author: AuthorResponse)
 }
 
-class AuthorFormViewController: UIViewController, UITextFieldDelegate {
+class AuthorFormViewController: AuthorizedViewController, UITextFieldDelegate {
     
     // MARK: Attributes
     weak var delegate: AuthorFormViewControllerDelegate?
@@ -41,6 +41,10 @@ class AuthorFormViewController: UIViewController, UITextFieldDelegate {
     required init?(coder: NSCoder) {
         self.authorRepository = AuthorRepository()
         super.init(coder: coder)
+    }
+    
+    override func authorizedRoles() -> [Role] {
+        return [Role.ADMIN]
     }
     
     // MARK: View Lifecycle

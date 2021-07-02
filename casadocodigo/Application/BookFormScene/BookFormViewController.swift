@@ -8,12 +8,12 @@
 import UIKit
 import AlamofireImage
 
-protocol BookFormViewControllerDelegate: class {
+protocol BookFormViewControllerDelegate: AnyObject {
     func didBookCreated(_ book: BookResponse)
     func didBookUpdated(_ book: BookResponse)
 }
 
-class BookFormViewController: UIViewController {
+class BookFormViewController: AuthorizedViewController {
     
     // MARK: Attributes
     
@@ -54,7 +54,8 @@ class BookFormViewController: UIViewController {
     
     init(authorRepository: AuthorRepository = AuthorRepository(),
          bookRepository: BookRepository = BookRepository(),
-         nibName: String? = nil, bundle: Bundle? = nil) {
+         nibName: String? = nil,
+         bundle: Bundle? = nil) {
         self.authorRepository = authorRepository
         self.bookRepository = bookRepository
         super.init(nibName: nibName, bundle: bundle)
@@ -64,6 +65,10 @@ class BookFormViewController: UIViewController {
         self.authorRepository = AuthorRepository()
         self.bookRepository = BookRepository()
         super.init(coder: coder)
+    }
+    
+    override func authorizedRoles() -> [Role] {
+        return [Role.ADMIN]
     }
     
     // MARK: View lifecycle

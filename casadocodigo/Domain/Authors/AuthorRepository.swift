@@ -11,6 +11,12 @@ import Alamofire
 class AuthorRepository: NSObject {
     
     static let authorsBasePath = "https://casadocodigo-api.herokuapp.com/api/author"
+    
+    var defaults: UserDefaults
+    
+    init(defaults: UserDefaults = UserDefaults.standard) {
+        self.defaults = defaults
+    }
 
     func allAuthors(completionHandler: @escaping ([AuthorResponse]) -> Void, failureHandler: @escaping () -> Void) {
         let headers: HTTPHeaders = ["Accept": "application/json"]
@@ -32,7 +38,18 @@ class AuthorRepository: NSObject {
     }
     
     func saveNew(author: AuthorRequest, completionHandler: @escaping (AuthorResponse) -> Void, failureHandler: @escaping () -> Void) {
-        let headers: HTTPHeaders = ["Content-type": "application/json", "Accept": "application/json"]
+        guard let authenticatedUser = defaults.getAuthenticated() else {
+            debugPrint("An authenticated user is required to process the request for \(#function)")
+            failureHandler()
+            
+            return
+        }
+        
+        let headers: HTTPHeaders = [
+            "Content-type": "application/json",
+            "Accept": "application/json",
+            "Authorization": authenticatedUser.authentication.value
+        ]
                 
         AF.request(AuthorRepository.authorsBasePath, method: .post, parameters: author, encoder: JSONParameterEncoder.default, headers: headers)
             .validate()
@@ -50,9 +67,17 @@ class AuthorRepository: NSObject {
     }
     
     func deleteAuthor(identifiedBy id: Int, completionHandler: @escaping () -> Void, failureHandler: @escaping () -> Void) {
+        guard let authenticatedUser = defaults.getAuthenticated() else {
+            debugPrint("An authenticated user is required to process the request for \(#function)")
+            failureHandler()
+            
+            return
+        }
+        
+        let headers: HTTPHeaders = ["Authorization": authenticatedUser.authentication.value]
         let resourceURI = "\(AuthorRepository.authorsBasePath)/\(id)"
         
-        AF.request(resourceURI, method: .delete)
+        AF.request(resourceURI, method: .delete, headers: headers)
             .validate()
             .response { response in
                 switch response.result {
@@ -68,8 +93,17 @@ class AuthorRepository: NSObject {
     
     func update(_ author: AuthorRequest, identifiedBy authorId: Int,
                       completionHandler: @escaping (AuthorResponse) -> Void, failureHandler: @escaping () -> Void) {
+        guard let authenticatedUser = defaults.getAuthenticated() else {
+            debugPrint("An authenticated user is required to process the request for \(#function)")
+            failureHandler()
+            
+            return
+        }
+        
+        let headers: HTTPHeaders = ["Content-type": "application/json",
+                                    "Accept": "application/json",
+                                    "Authorization": authenticatedUser.authentication.value]
         let resourceURI = "\(AuthorRepository.authorsBasePath)/\(authorId)"
-        let headers: HTTPHeaders = ["Content-type": "application/json", "Accept": "application/json"]
         
         AF.request(resourceURI, method: .put, parameters: author, encoder: JSONParameterEncoder.default, headers: headers)
             .validate()

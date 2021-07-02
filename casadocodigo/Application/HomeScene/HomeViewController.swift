@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseNavbarItemsViewController {
     @IBOutlet weak var showcaseCollectionView: UICollectionView!
    
     var showcase: [BookResponse] = []
@@ -15,10 +15,21 @@ class HomeViewController: UIViewController {
     var bookRepository: BookRepository
     let showcaseFlowLayoutImpl: ShowcaseFlowLayout = ShowcaseFlowLayout()
     
+    var navigationRightButtonItems: [NavigationBarItem] {
+        guard UserDefaults.standard.getAuthenticated()?
+                .role == Role.ADMIN else { return defaultNavigationButtonItems }
+
+        return [.barSystemItem(.add, self, #selector(didBookAddingButtonPressed))]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         showcaseCollectionView.delegate = self
         showcaseCollectionView.dataSource = self
+        
+        navigationItem.backButtonTitle = ""
+        setupNavigationBar(itemsOnTheRight: navigationRightButtonItems)
         
         NotificationCenter.default.addObserver(
             self,
@@ -33,16 +44,17 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        tabBarController?.navigationItem.backButtonTitle = ""
-        setupNavigationBar(itemsOnTheRight: [
-            .barSystemItem(.add, self, #selector(didAddButtonPressed(_:)))
-        ])
-        
         if self.isShowcaseUpToDate {
             return
         }
             
         loadShowcase()
+    }
+    
+    override func didUserSignedIn() {
+        super.didUserSignedIn()
+        
+        setupNavigationBar(itemsOnTheRight: navigationRightButtonItems)
     }
     
     init(bookRepository: BookRepository = BookRepository(), nibName: String?, bundle: Bundle?) {
@@ -88,7 +100,7 @@ class HomeViewController: UIViewController {
         isShowcaseUpToDate = false
     }
     
-    @objc func didAddButtonPressed(_ sender: UIButton) {
+    @objc func didBookAddingButtonPressed() {
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "BookFormViewController") as! BookFormViewController
         controller.delegate = self
         

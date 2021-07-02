@@ -8,12 +8,12 @@
 import UIKit
 import AlamofireImage
 
-protocol BookDetailsViewControllerDelegate: UIViewController {
+protocol BookDetailsViewControllerDelegate: BaseNavbarItemsViewController {
     func didDeletingButtonPressed(_ sender: UIButton!, forBookIdentifiedBy id: Int)
     func didEditingButtonPressed(_ sender: UIButton!, for book: BookResponse)
 }
 
-class BookDetailsViewController: UIViewController {
+class BookDetailsViewController: BaseNavbarItemsViewController {
     
     // MARK: Attributes
     
@@ -30,6 +30,10 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet weak var hardcoverPrice: UILabel!
     @IBOutlet weak var comboPrice: UILabel!
     
+    @IBOutlet weak var buyEbookButton: AuthorizedButton!
+    @IBOutlet weak var buyHardCoverButton: AuthorizedButton!
+    @IBOutlet weak var buyComboButton: AuthorizedButton!
+    
     @IBOutlet weak var contentSectionTitle: SectionTitle!
     @IBOutlet weak var contentTextView: UITextView!
     
@@ -43,8 +47,8 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet weak var numberOfPagesLabel: UILabel!
     @IBOutlet weak var ISBNLabel: UILabel!
     
-    @IBOutlet weak var deletingButton: UIButton!
-    @IBOutlet weak var editingButton: UIButton!
+    @IBOutlet weak var deletingButton: AuthorizedButton!
+    @IBOutlet weak var editingButton: AuthorizedButton!
     
     // MARK: View lifecycle
     
@@ -58,9 +62,17 @@ class BookDetailsViewController: UIViewController {
         }
     }
     
+    override func didUserSignedIn() {
+        super.didUserSignedIn()
+        adjustLayout()
+    }
+    
     private func adjustLayout() {
         titleLabel.sizeToFit()
         subtitleLabel.sizeToFit()
+        
+        [buyEbookButton, buyHardCoverButton, buyComboButton]
+            .forEach { $0?.setHidden(for: Role.ADMIN) }
         
         contentSectionTitle.useTextColor()
         
@@ -72,10 +84,12 @@ class BookDetailsViewController: UIViewController {
         let deletingButtonImage = UIImage(named: "trash")?.withTintColor(UIColor.white)
         deletingButton.setImage(deletingButtonImage, for: .normal)
         deletingButton.roundTheShape()
+        deletingButton.setVisibleOnly(to: Role.ADMIN)
         
         let editingButtonImage = UIImage(named: "pencil")?.withTintColor(UIColor.white)
         editingButton.setImage(editingButtonImage, for: .normal)
         editingButton.roundTheShape()
+        editingButton.setVisibleOnly(to: Role.ADMIN)
     }
     
     private func buildUp(using book: BookResponse) {
