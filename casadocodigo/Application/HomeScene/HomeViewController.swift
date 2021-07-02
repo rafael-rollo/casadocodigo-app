@@ -149,7 +149,9 @@ class HomeViewController: BaseNavbarItemsViewController {
     
     func toogleSearchFooterPosition(_ notification: Notification) {
         guard notification.name == UIResponder.keyboardWillShowNotification else {
-            searchFooterBottomConstraint.constant = 0
+            searchFooterBottomConstraint.constant = .zero
+            updateCollectionViewBottomInsetBy(.zero)
+            
             view.layoutIfNeeded()
             return
         }
@@ -160,12 +162,20 @@ class HomeViewController: BaseNavbarItemsViewController {
         
         let tabBarHeight: CGFloat = tabBarController?.tabBar.frame.height ?? 0
         let keyboardHeight = keyboardFrame.cgRectValue.size.height
-        let animationOffset = keyboardHeight - tabBarHeight
+        let bottomOffset = keyboardHeight - tabBarHeight
         
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
-          self.searchFooterBottomConstraint.constant = animationOffset
+          self.searchFooterBottomConstraint.constant = bottomOffset
           self.view.layoutIfNeeded()
         })
+        
+        updateCollectionViewBottomInsetBy(bottomOffset + Theme.spacing.xlarge)
+    }
+    
+    func updateCollectionViewBottomInsetBy(_ bottomInset: CGFloat) {
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
+        showcaseCollectionView.contentInset = contentInsets
+        showcaseCollectionView.scrollIndicatorInsets = contentInsets
     }
 }
 

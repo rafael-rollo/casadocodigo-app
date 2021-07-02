@@ -46,13 +46,16 @@ class KeyboardAvoidableView: UIScrollView {
         
         let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey]
                                 as! NSValue).cgRectValue.height
+        let tabBarHeight = keyboardAvoidableViewDelegate?.tabBarController?
+            .tabBar.frame.height ?? 0
+        let bottomOffset = keyboardHeight - tabBarHeight + Theme.spacing.medium
         
-        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: bottomOffset, right: 0)
         contentInset = contentInsets
         scrollIndicatorInsets = contentInsets
         
         var referenceRect = parentViewController.view.frame
-        referenceRect.size.height -= keyboardHeight
+        referenceRect.size.height -= bottomOffset
         
         guard let activeField = parentViewController.activeField else { return }
         
