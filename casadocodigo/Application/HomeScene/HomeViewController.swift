@@ -10,6 +10,8 @@ import UIKit
 class HomeViewController: BaseNavbarItemsViewController {
     
     @IBOutlet weak var showcaseCollectionView: UICollectionView!
+    @IBOutlet weak var searchFooter: SearchFooter!
+    @IBOutlet weak var searchFooterBottomConstraint: NSLayoutConstraint!
    
     var showcase: [BookResponse] = []
     var isShowcaseUpToDate = false
@@ -23,8 +25,8 @@ class HomeViewController: BaseNavbarItemsViewController {
     }
     
     var bookRepository: BookRepository
-    let searchController = UISearchController(searchResultsController: nil)
     let showcaseFlowLayoutImpl: ShowcaseFlowLayout = ShowcaseFlowLayout()
+    let searchController = UISearchController(searchResultsController: nil)
     
     var navigationRightButtonItems: [NavigationBarItem] {
         guard UserDefaults.standard.getAuthenticated()?
@@ -49,8 +51,10 @@ class HomeViewController: BaseNavbarItemsViewController {
             object: nil
         )
         
-        loadShowcase();
-        setupSearchController();
+        loadShowcase()
+
+        setupSearchController()
+        registerForKeyboardNotifications()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -126,6 +130,43 @@ class HomeViewController: BaseNavbarItemsViewController {
       
       showcaseCollectionView.reloadData()
     }
+    
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(
+            forName: UIResponder.keyboardWillShowNotification,
+            object: nil,
+            queue: .main) { [weak self] (notification) in
+                self?.toogleSearchFooterPosition(notification)
+            }
+        
+        NotificationCenter.default.addObserver(
+            forName: UIResponder.keyboardWillHideNotification,
+            object: nil,
+            queue: .main) { [weak self] (notification) in
+                self?.toogleSearchFooterPosition(notification)
+            }
+    }
+    
+    func toogleSearchFooterPosition(_ notification: Notification) {
+        guard notification.name == UIResponder.keyboardWillShowNotification else {
+            searchFooterBottomConstraint.constant = 0
+            view.layoutIfNeeded()
+            return
+        }
+    
+        guard let info = notification.userInfo,
+              let keyboardFrame = info[UIResponder.keyboardFrameEndUserInfoKey] as?
+                NSValue else { return }
+        
+        let tabBarHeight: CGFloat = tabBarController?.tabBar.frame.height ?? 0
+        let keyboardHeight = keyboardFrame.cgRectValue.size.height
+        let animationOffset = keyboardHeight - tabBarHeight
+        
+        UIView.animate(withDuration: 0.1, animations: { () -> Void in
+          self.searchFooterBottomConstraint.constant = animationOffset
+          self.view.layoutIfNeeded()
+        })
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
@@ -147,9 +188,11 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         if isFiltering {
+            searchFooter.setIsFiltering(filteredBooks.count, of: showcase.count)
             return filteredBooks.count
         }
         
+        searchFooter.setNotFiltering()
         return showcase.count
     }
     
@@ -239,7 +282,7 @@ extension HomeViewController: UISearchResultsUpdating {
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
-    
+        
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         filterBooksBySearchText(searchBar.text!)
