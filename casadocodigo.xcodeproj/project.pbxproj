@@ -58,6 +58,7 @@
 		58CB457D263B612E005D19F2 /* Ids+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB457C263B612D005D19F2 /* Ids+UIView.swift */; };
 		58FA532C26334E44000390BF /* AuthorFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA532B26334E44000390BF /* AuthorFormViewController.swift */; };
 		58FA533C263772D1000390BF /* Shape+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA533B263772D1000390BF /* Shape+UIView.swift */; };
+		58FAB463268F6150002F734B /* SearchFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FAB462268F6150002F734B /* SearchFooter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		58CB457C263B612D005D19F2 /* Ids+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ids+UIView.swift"; sourceTree = "<group>"; };
 		58FA532B26334E44000390BF /* AuthorFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorFormViewController.swift; sourceTree = "<group>"; };
 		58FA533B263772D1000390BF /* Shape+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+UIView.swift"; sourceTree = "<group>"; };
+		58FAB462268F6150002F734B /* SearchFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFooter.swift; sourceTree = "<group>"; };
 		7A66D89A8354D0697252F58D /* Pods-casadocodigo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casadocodigo.debug.xcconfig"; path = "Target Support Files/Pods-casadocodigo/Pods-casadocodigo.debug.xcconfig"; sourceTree = "<group>"; };
 		7A7F1C48024E2D2363F9F9C2 /* Pods_casadocodigo_casadocodigoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casadocodigo_casadocodigoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8553C8EDFFACD1469DF9CC /* Pods_casadocodigoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casadocodigoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -415,6 +417,7 @@
 			isa = PBXGroup;
 			children = (
 				582D872C2685496500D70C3E /* KeyboardAvoidableView.swift */,
+				58FAB462268F6150002F734B /* SearchFooter.swift */,
 				583C555C2631F654002846CF /* SectionTitle */,
 				5827D827262FE63100D20B19 /* TagsHorizontalList */,
 			);
@@ -741,6 +744,7 @@
 				58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */,
 				585D72F226432FD300666078 /* BookFormViewController.swift in Sources */,
 				58FA532C26334E44000390BF /* AuthorFormViewController.swift in Sources */,
+				58FAB463268F6150002F734B /* SearchFooter.swift in Sources */,
 				585D7302264345B200666078 /* Border+UITextView.swift in Sources */,
 				585D72E92643073200666078 /* Decimal.swift in Sources */,
 				5827D829262FE6A300D20B19 /* TagCell.swift in Sources */,
@@ -932,6 +936,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CP42424Z9Z;
 				INFOPLIST_FILE = casadocodigo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -952,6 +957,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CP42424Z9Z;
 				INFOPLIST_FILE = casadocodigo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

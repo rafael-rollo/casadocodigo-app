@@ -9,6 +9,8 @@ import UIKit
 
 class CustomNavigationController: UINavigationController {
     
+    var titleView: UIView!
+    
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }
@@ -24,47 +26,46 @@ class CustomNavigationController: UINavigationController {
     }
     
     fileprivate func setupNavigation() {
-        navigationBar.barTintColor = UIColor.orangeColor
-        navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationBar.shadowImage = UIImage()
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor.orangeColor
+        appearance.shadowColor = .none
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        
+        UISearchBar.appearance().tintColor = UIColor.white
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
+            .defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
+                                      NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13.0)]
         
         UIBarButtonItem.appearance().tintColor = UIColor.white
         
-        let titleView = UIView(frame: CGRect.zero)
+        titleView = UIView(frame: CGRect.zero)
         titleView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         view.addSubview(titleView)
         NSLayoutConstraint.activate([
             titleView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            titleView.bottomAnchor.constraint(equalTo: navigationBar.bottomAnchor),
             titleView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75)
+            titleView.heightAnchor.constraint(equalToConstant: navigationBar.frame.size.height),
+            titleView.widthAnchor.constraint(greaterThanOrEqualTo: view.widthAnchor,
+                                             multiplier: 0.70)
         ])
         
-        let logo = UIImage(named: "logo-cdc")
-        let titleImageView = UIImageView(image: logo)
+        let title = UIImage(named: "text-logo")
+        let titleImageView = UIImageView(image: title)
+        titleImageView.contentMode = .scaleAspectFill
         titleImageView.translatesAutoresizingMaskIntoConstraints = false
 
         titleView.addSubview(titleImageView)
         NSLayoutConstraint.activate([
-            titleImageView.heightAnchor.constraint(equalTo: titleView.heightAnchor),
+            titleImageView.heightAnchor.constraint(equalTo: titleView.heightAnchor, multiplier: 0.8),
             titleImageView.widthAnchor.constraint(equalTo: titleView.heightAnchor),
-            titleImageView.leadingAnchor.constraint(equalTo: titleView.leadingAnchor),
+            titleImageView.centerXAnchor.constraint(equalTo: titleView.centerXAnchor),
             titleImageView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor)
         ])
-    
-        let titleLabel = UILabel()
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "Casa do Código"
-        titleLabel.textColor = UIColor.white
-        titleLabel.font = UIFont(name: "Helvetica Neue", size: 22)
-
-        titleView.addSubview(titleLabel)
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: titleImageView.trailingAnchor, constant: Theme.spacing.xsmall),
-            titleLabel.centerYAnchor.constraint(equalTo: titleImageView.centerYAnchor, constant: -2)
-        ])
-        
     }
 }
 

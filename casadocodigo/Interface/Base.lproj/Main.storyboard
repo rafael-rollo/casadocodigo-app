@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pTB-BC-bOT">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -1097,6 +1098,13 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fB-X4-BGo" customClass="SearchFooter" customModule="casadocodigo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="769" width="414" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="3Tm-vR-aXT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.98039215686274506" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
@@ -1104,18 +1112,23 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cr6-2w-0gO" secondAttribute="bottom" id="5xk-EP-l2W"/>
                             <constraint firstItem="cr6-2w-0gO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ALO-Ij-RkQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cr6-2w-0gO" secondAttribute="trailing" constant="16" id="Ehs-py-6tf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8fB-X4-BGo" secondAttribute="bottom" id="U9r-B7-Eec"/>
+                            <constraint firstItem="8fB-X4-BGo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uAn-id-LQk"/>
                             <constraint firstItem="cr6-2w-0gO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xQv-Ud-jRf"/>
+                            <constraint firstAttribute="trailing" secondItem="8fB-X4-BGo" secondAttribute="trailing" id="zgR-B7-Mt6"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Livros" image="book.closed.fill" catalog="system" id="wfx-8J-1Xd"/>
                     <navigationItem key="navigationItem" id="JnL-5a-1Ju"/>
                     <connections>
+                        <outlet property="searchFooter" destination="8fB-X4-BGo" id="yyl-Up-8Jn"/>
+                        <outlet property="searchFooterBottomConstraint" destination="U9r-B7-Eec" id="wHs-rv-Qdj"/>
                         <outlet property="showcaseCollectionView" destination="cr6-2w-0gO" id="gNv-dH-F5s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1091" y="156"/>
+            <point key="canvasLocation" x="-1091.304347826087" y="155.35714285714286"/>
         </scene>
         <!--Authors-->
         <scene sceneID="Ng1-rm-cNt">

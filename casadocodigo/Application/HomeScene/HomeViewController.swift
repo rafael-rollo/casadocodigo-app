@@ -8,12 +8,25 @@
 import UIKit
 
 class HomeViewController: BaseNavbarItemsViewController {
+    
     @IBOutlet weak var showcaseCollectionView: UICollectionView!
+    @IBOutlet weak var searchFooter: SearchFooter!
+    @IBOutlet weak var searchFooterBottomConstraint: NSLayoutConstraint!
    
     var showcase: [BookResponse] = []
     var isShowcaseUpToDate = false
+    
+    var filteredBooks: [BookResponse] = []
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    var isFiltering: Bool {
+      return searchController.isActive && !isSearchBarEmpty
+    }
+    
     var bookRepository: BookRepository
     let showcaseFlowLayoutImpl: ShowcaseFlowLayout = ShowcaseFlowLayout()
+    let searchController = UISearchController(searchResultsController: nil)
     
     var navigationRightButtonItems: [NavigationBarItem] {
         guard UserDefaults.standard.getAuthenticated()?
@@ -38,7 +51,10 @@ class HomeViewController: BaseNavbarItemsViewController {
             object: nil
         )
         
-        loadShowcase();
+        loadShowcase()
+
+        setupSearchController()
+        registerForKeyboardNotifications()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -106,11 +122,68 @@ class HomeViewController: BaseNavbarItemsViewController {
         
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    func filterBooksBySearchText(_ searchText: String) {
+      filteredBooks = showcase.filter { (book: BookResponse) -> Bool in
+        return book.title.lowercased().contains(searchText.lowercased())
+      }
+      
+      showcaseCollectionView.reloadData()
+    }
+    
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(
+            forName: UIResponder.keyboardWillShowNotification,
+            object: nil,
+            queue: .main) { [weak self] (notification) in
+                self?.toogleSearchFooterPosition(notification)
+            }
+        
+        NotificationCenter.default.addObserver(
+            forName: UIResponder.keyboardWillHideNotification,
+            object: nil,
+            queue: .main) { [weak self] (notification) in
+                self?.toogleSearchFooterPosition(notification)
+            }
+    }
+    
+    func toogleSearchFooterPosition(_ notification: Notification) {
+        guard notification.name == UIResponder.keyboardWillShowNotification else {
+            searchFooterBottomConstraint.constant = .zero
+            updateCollectionViewBottomInsetBy(.zero)
+            
+            view.layoutIfNeeded()
+            return
+        }
+    
+        guard let info = notification.userInfo,
+              let keyboardFrame = info[UIResponder.keyboardFrameEndUserInfoKey] as?
+                NSValue else { return }
+        
+        let tabBarHeight: CGFloat = tabBarController?.tabBar.frame.height ?? 0
+        let keyboardHeight = keyboardFrame.cgRectValue.size.height
+        let bottomOffset = keyboardHeight - tabBarHeight
+        
+        UIView.animate(withDuration: 0.1, animations: { () -> Void in
+          self.searchFooterBottomConstraint.constant = bottomOffset
+          self.view.layoutIfNeeded()
+        })
+        
+        updateCollectionViewBottomInsetBy(bottomOffset + Theme.spacing.xlarge)
+    }
+    
+    func updateCollectionViewBottomInsetBy(_ bottomInset: CGFloat) {
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
+        showcaseCollectionView.contentInset = contentInsets
+        showcaseCollectionView.scrollIndicatorInsets = contentInsets
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedBook = showcase[indexPath.item]
+        let selectedBook = isFiltering
+            ? filteredBooks[indexPath.row]
+            : showcase[indexPath.item]
         
         let controller = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "BookDetailsViewController") as! BookDetailsViewController
         
@@ -122,12 +195,22 @@ extension HomeViewController: UICollectionViewDelegate {
 }
 
 extension HomeViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        if isFiltering {
+            searchFooter.setIsFiltering(filteredBooks.count, of: showcase.count)
+            return filteredBooks.count
+        }
+        
+        searchFooter.setNotFiltering()
         return showcase.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let showcaseBook = showcase[indexPath.row]
+        
+        let showcaseBook = isFiltering
+            ? filteredBooks[indexPath.row]
+            : showcase[indexPath.row]
         
         guard let showcaseBookCell = collectionView.dequeueReusableCell(withReuseIdentifier: ShowcaseBookCell.reuseId, for: indexPath) as? ShowcaseBookCell else {
             fatalError("Invalid view cell type for showcase book. Please, check the configuration in the Cell and CollectionView's code or ib definition")
@@ -146,7 +229,11 @@ extension HomeViewController: UICollectionViewDataSource {
                 fatalError("Invalid view type for book showcase header")
             }
             
-            headerView.sectionTitle.label.text = "Todos os Livros"
+            let sectionTitle = isFiltering
+                ? "Busca por \"\(searchController.searchBar.text!)\""
+                : "Todos os Livros"
+            
+            headerView.sectionTitle.label.text = sectionTitle
             return headerView
             
         default:
@@ -196,5 +283,26 @@ extension HomeViewController: BookDetailsViewControllerDelegate {
         controller.selectedBook = book
         
         navigationController?.pushViewController(controller, animated: true)
+    }
+}
+
+extension HomeViewController: UISearchResultsUpdating {
+    private func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+    
+        searchController.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(
+            string: "Buscar livros",
+            attributes: [.foregroundColor: UIColor.lightText]
+        )
+    
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+        
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterBooksBySearchText(searchBar.text!)
     }
 }
