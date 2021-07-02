@@ -47,8 +47,8 @@ class SearchFooter: UIView {
         }
         
         let filteringMessage = filteredItemCount == 0
-            ? "No items match your query"
-            : "Filtering \(filteredItemCount) of \(totalItemCount)"
+            ? "Sua busca não gerou resultados"
+            : "Exibindo \(filteredItemCount) de \(totalItemCount) livros"
         
         label.text = filteringMessage
         show()
