@@ -8,13 +8,21 @@
 import UIKit
 
 class HomeViewController: BaseNavbarItemsViewController {
+    
     @IBOutlet weak var showcaseCollectionView: UICollectionView!
    
     var showcase: [BookResponse] = []
     var isShowcaseUpToDate = false
     
-    var bookRepository: BookRepository
+    var filteredBooks: [BookResponse] = []
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    var isFiltering: Bool {
+      return searchController.isActive && !isSearchBarEmpty
+    }
     
+    var bookRepository: BookRepository
     let searchController = UISearchController(searchResultsController: nil)
     let showcaseFlowLayoutImpl: ShowcaseFlowLayout = ShowcaseFlowLayout()
     
@@ -110,11 +118,21 @@ class HomeViewController: BaseNavbarItemsViewController {
         
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    func filterBooksBySearchText(_ searchText: String) {
+      filteredBooks = showcase.filter { (book: BookResponse) -> Bool in
+        return book.title.lowercased().contains(searchText.lowercased())
+      }
+      
+      showcaseCollectionView.reloadData()
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedBook = showcase[indexPath.item]
+        let selectedBook = isFiltering
+            ? filteredBooks[indexPath.row]
+            : showcase[indexPath.item]
         
         let controller = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "BookDetailsViewController") as! BookDetailsViewController
         
@@ -126,12 +144,20 @@ extension HomeViewController: UICollectionViewDelegate {
 }
 
 extension HomeViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        if isFiltering {
+            return filteredBooks.count
+        }
+        
         return showcase.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let showcaseBook = showcase[indexPath.row]
+        
+        let showcaseBook = isFiltering
+            ? filteredBooks[indexPath.row]
+            : showcase[indexPath.row]
         
         guard let showcaseBookCell = collectionView.dequeueReusableCell(withReuseIdentifier: ShowcaseBookCell.reuseId, for: indexPath) as? ShowcaseBookCell else {
             fatalError("Invalid view cell type for showcase book. Please, check the configuration in the Cell and CollectionView's code or ib definition")
@@ -215,6 +241,7 @@ extension HomeViewController: UISearchResultsUpdating {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        // TODO
+        let searchBar = searchController.searchBar
+        filterBooksBySearchText(searchBar.text!)
     }
 }
