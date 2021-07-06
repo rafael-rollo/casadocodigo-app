@@ -29,6 +29,10 @@ class KeyboardAvoidableView: UIScrollView {
         setup()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     func setup() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWasShown(_:)),
