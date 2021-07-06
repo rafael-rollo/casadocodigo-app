@@ -21,5 +21,7 @@ extension ViewCode {
         addTheme()
     }
     
+    func addConstraints() {}
+    
     func addTheme() {}
 }
