@@ -21,7 +21,6 @@
 		582A05E92677F12700114506 /* NavigationBarButtonItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A05E82677F12700114506 /* NavigationBarButtonItems.swift */; };
 		582AD395262F55B300705D6D /* AuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AD394262F55B300705D6D /* AuthorCell.swift */; };
 		582AD3AD262F6F0800705D6D /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582AD3AB262F6F0800705D6D /* SectionTitle.swift */; };
-		582AD3AE262F6F0800705D6D /* SectionTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 582AD3AC262F6F0800705D6D /* SectionTitle.xib */; };
 		582CC765265825DB0033F333 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC764265825DB0033F333 /* CustomNavigationController.swift */; };
 		582CC771265BEFF40033F333 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC770265BEFF40033F333 /* Theme.swift */; };
 		582CC80B266816B00033F333 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582CC80A266816B00033F333 /* SignInViewController.swift */; };
@@ -93,7 +92,6 @@
 		582A05E82677F12700114506 /* NavigationBarButtonItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarButtonItems.swift; sourceTree = "<group>"; };
 		582AD394262F55B300705D6D /* AuthorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorCell.swift; sourceTree = "<group>"; };
 		582AD3AB262F6F0800705D6D /* SectionTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
-		582AD3AC262F6F0800705D6D /* SectionTitle.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionTitle.xib; sourceTree = "<group>"; };
 		582CC764265825DB0033F333 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		582CC770265BEFF40033F333 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		582CC80A266816B00033F333 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -291,15 +289,6 @@
 			path = Authors;
 			sourceTree = "<group>";
 		};
-		583C555C2631F654002846CF /* SectionTitle */ = {
-			isa = PBXGroup;
-			children = (
-				582AD3AB262F6F0800705D6D /* SectionTitle.swift */,
-				582AD3AC262F6F0800705D6D /* SectionTitle.xib */,
-			);
-			path = SectionTitle;
-			sourceTree = "<group>";
-		};
 		585D72E72643071300666078 /* CoreExtensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,7 +421,7 @@
 			children = (
 				582D872C2685496500D70C3E /* KeyboardAvoidableView.swift */,
 				58FAB462268F6150002F734B /* SearchFooter.swift */,
-				583C555C2631F654002846CF /* SectionTitle */,
+				582AD3AB262F6F0800705D6D /* SectionTitle.swift */,
 				5827D827262FE63100D20B19 /* TagsHorizontalList */,
 			);
 			path = Components;
@@ -598,7 +587,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				58BF690E2621070500A8CEBD /* LaunchScreen.storyboard in Resources */,
-				582AD3AE262F6F0800705D6D /* SectionTitle.xib in Resources */,
 				5827D81D262FE16500D20B19 /* TagsHorizontalList.xib in Resources */,
 				58BF690B2621070500A8CEBD /* Assets.xcassets in Resources */,
 				5827D831262FE6C600D20B19 /* TagCell.xib in Resources */,
