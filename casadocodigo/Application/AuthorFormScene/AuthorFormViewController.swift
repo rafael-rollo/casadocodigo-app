@@ -61,13 +61,17 @@ class AuthorFormViewController: AuthorizedViewController {
         scrollView.keyboardAvoidableViewDelegate = self
         
         if let selectedAuthor = self.selectedAuthor {
-            self.sectionTitle.label.text = "Dados do autor"
-            self.saveAuthorButton.addTarget(self, action: #selector(authorEditingButtonPressed(_:)), for: .touchUpInside)
-            
-            self.initData(with: selectedAuthor)
+            sectionTitle.setText("Dados do autor")
+            saveAuthorButton.addTarget(self,
+                                       action: #selector(authorEditingButtonPressed(_:)),
+                                       for: .touchUpInside)
+            initData(with: selectedAuthor)
+        
         } else {
-            self.sectionTitle.label.text = "Novo autor"
-            self.saveAuthorButton.addTarget(self, action: #selector(authorAddingButtonPressed(_:)), for: .touchUpInside)
+            sectionTitle.setText("Novo autor")
+            saveAuthorButton.addTarget(self,
+                                       action: #selector(authorAddingButtonPressed(_:)),
+                                       for: .touchUpInside)
         }
         
         adjustLayout()

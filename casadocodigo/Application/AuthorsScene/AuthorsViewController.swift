@@ -108,7 +108,7 @@ extension AuthorsViewController: UICollectionViewDataSource {
                 fatalError("Invalid view type for the authors header")
             }
             
-            headerView.sectionTitle.label.text = "Nossos Autores"
+            headerView.sectionTitle.setText("Nossos Autores")
             return headerView
             
         default:

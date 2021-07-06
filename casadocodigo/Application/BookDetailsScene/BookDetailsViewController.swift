@@ -110,15 +110,15 @@ class BookDetailsViewController: BaseNavbarItemsViewController {
             }
         }
         
-        contentSectionTitle.label.text = "Conteúdo"
+        contentSectionTitle.setText("Conteúdo")
         contentTextView.text = book.description
         
-        authorSectionTitle.label.text = "Autor"
+        authorSectionTitle.setText("Autor")
         authorImageView.af.setImage(withURL: book.author.profilePicturePath)
         authorNameLabel.text = book.author.fullName
         authorBioText.text = book.author.bio
         
-        productInfoSectionTitle.label.text = "Dados do Produto"
+        productInfoSectionTitle.setText("Dados do Produto")
         publicationDateLabel.text = book.publicationDate
         numberOfPagesLabel.text = String(describing: book.numberOfPages)
         ISBNLabel.text = book.ISBN
