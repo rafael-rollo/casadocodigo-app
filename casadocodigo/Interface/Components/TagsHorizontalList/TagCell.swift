@@ -7,56 +7,64 @@
 
 import UIKit
 
+fileprivate struct tagFont {
+    static let name: String = "HelveticaNeue-Medium"
+    static let size: CGFloat = 14
+}
+
 class TagCell: UICollectionViewCell, ReusableView, IdentifiableView {
     
-    @IBOutlet var cellContentView: UIView!
-    @IBOutlet weak var tagLabel: UILabel!
+    private lazy var taglabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: tagFont.name, size: tagFont.size)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
-    // for using the custom view in code
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
     
-    // for using the custom view in interface builder
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
     }
-
-    private func setup() {
-        Bundle.main.loadNibNamed(TagCell.nibName, owner: self, options: nil)
     
-        cellContentView.frame = self.bounds
-        cellContentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        addSubview(cellContentView)
+    func set(label: String) {
+        taglabel.text = label
     }
-    
-    func setFrom(_ label: String) {
-        tagLabel.text = label
-        
-        configureBorders()
-    }
-    
-    private func configureBorders() {
-        cellContentView.layer.masksToBounds = false
-        cellContentView.layer.cornerRadius = 16
-    }
-}
-
-extension TagCell {
-    
-    private static let fontName: String = "HelveticaNeue-Medium"
-    private static let fontSize: CGFloat = 14
-    private static let labelHorizontalPadding: CGFloat = 16
     
     func getMinSizeForCell(with label: String, in parent: UIView) -> CGSize? {
-        guard let cellFont = UIFont(name: TagCell.fontName, size: TagCell.fontSize) else { return nil }
+        guard let cellFont = UIFont(name: tagFont.name, size: tagFont.size) else { return nil }
         let fontAttributes = [NSAttributedString.Key.font: cellFont]
         
         let size = (label as NSString).size(withAttributes: fontAttributes)
-        let adjustedSize = size.width + TagCell.labelHorizontalPadding * 2
+        let adjustedSize = size.width + Theme.spacing.small * 2
         
         return CGSize(width: adjustedSize, height: parent.bounds.height)
+    }
+}
+
+extension TagCell: ViewCode {
+    func addViews() {
+        contentView.addSubview(taglabel)
+    }
+    
+    func addConstraints() {
+        NSLayoutConstraint.activate([
+            taglabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            taglabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            taglabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            taglabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+        ])
+    }
+    
+    func addTheme() {
+        contentView.backgroundColor = UIColor(named: "brandYellow")
+        contentView.layer.masksToBounds = false
+        contentView.layer.cornerRadius = 16
     }
 }
