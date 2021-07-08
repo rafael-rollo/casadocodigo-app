@@ -63,7 +63,7 @@ class AuthorCell: UICollectionViewCell, ReusableView {
         authorEditingButton.addTarget(self, action: #selector(editingButtonPressed(_:)), for: .touchUpInside)
         
         publicationCountLabel.text = "Livros publicados \(author.publishedBooks)"
-        technologiesList.setFrom(author.technologies)
+        technologiesList.set(items: author.technologies)
         authorBioLabel.text = "\"\(author.bio)\""
         
         actionsTarget = author

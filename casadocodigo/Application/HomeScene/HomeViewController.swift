@@ -233,7 +233,7 @@ extension HomeViewController: UICollectionViewDataSource {
                 ? "Busca por \"\(searchController.searchBar.text!)\""
                 : "Todos os Livros"
             
-            headerView.sectionTitle.label.text = sectionTitle
+            headerView.sectionTitle.setText(sectionTitle)
             return headerView
             
         default:

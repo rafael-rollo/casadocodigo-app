@@ -52,6 +52,10 @@ class SignInViewController: UIViewController {
         )
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @objc func toogleFormConstraintsPriority(_ notification: Notification) {
         guard let userInfo = notification.userInfo else { return }
         let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey]

@@ -101,7 +101,7 @@ class BookFormViewController: AuthorizedViewController {
         publicationDatePicker.addTarget(self, action: #selector(updatePublicationDateValue(_:)), for: .valueChanged)
         
         if let selectedBook = selectedBook {
-            sectionTitle.label.text = "Dados do Livro"
+            sectionTitle.setText("Dados do Livro")
             submitButton.addTarget(self,
                                    action: #selector(bookEdittingButtonPressed(_:)),
                                    for: .touchUpInside)
@@ -109,7 +109,7 @@ class BookFormViewController: AuthorizedViewController {
             initData(with: selectedBook)
             
         } else {
-            sectionTitle.label.text = "Novo Livro"
+            sectionTitle.setText("Novo Livro")
             submitButton.addTarget(self,
                                    action: #selector(bookAddingButtonPressed(_:)),
                                    for: .touchUpInside)

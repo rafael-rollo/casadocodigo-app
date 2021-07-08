@@ -1088,7 +1088,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3dp-Mc-jJm" customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="42"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         </view>
                                     </subviews>
@@ -1252,7 +1252,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZe-gK-ihO" customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="0.0" width="382" height="50"/>
+                                            <rect key="frame" x="16" y="0.0" width="382" height="42"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         </view>
                                     </subviews>

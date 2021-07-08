@@ -8,7 +8,13 @@
 import UIKit
 
 class SearchFooter: UIView {
-    let label = UILabel()
+    
+    private lazy var label: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = UIColor.white
+        return label
+    }()
   
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,15 +28,6 @@ class SearchFooter: UIView {
         setup()
     }
     
-    func setup() {
-        backgroundColor = UIColor.orangeColor
-        alpha = 0.0
-        
-        label.textAlignment = .center
-        label.textColor = UIColor.white
-        addSubview(label)
-    }
-  
     override func draw(_ rect: CGRect) {
         label.frame = bounds
     }
@@ -64,5 +61,16 @@ class SearchFooter: UIView {
         UIView.animate(withDuration: 0.7) {
             self.alpha = 0.92
         }
+    }
+}
+
+extension SearchFooter: ViewCode {
+    func addViews() {
+        addSubview(label)
+    }
+
+    func addTheme() {
+        backgroundColor = UIColor.orangeColor
+        alpha = 0.0
     }
 }
