@@ -7,37 +7,50 @@
 
 import UIKit
 
-class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, IdentifiableView {
+class TagsHorizontalList: UIView, IdentifiableView {
     
-    var items: [String] = []
+    private lazy var tagsCollectionView: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(TagCell.self,
+                                forCellWithReuseIdentifier: TagCell.reuseId)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)
+        collectionView.contentInset = insets
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = .white
+        
+        return collectionView
+    }()
     
-    @IBOutlet var contentView: UIView!
-    @IBOutlet weak var collectionView: UICollectionView!
     
-    // for using the custom view in code
+    var items = [String]() {
+        didSet {
+            tagsCollectionView.reloadData()
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
     
-    // for using the custom view in interface builder
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
     }
-
-    private func setup() {
-        Bundle.main.loadNibNamed(TagsHorizontalList.nibName, owner: self, options: nil)
-        
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        addSubview(contentView)
     
-        collectionView.register(TagCell.self, forCellWithReuseIdentifier: TagCell.reuseId)
-        collectionView.dataSource = self
-        collectionView.delegate = self
+    func set(items: [String]) {
+        self.items = items
     }
-    
+}
+
+extension TagsHorizontalList: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
@@ -52,8 +65,12 @@ class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDe
         tagCell.set(label: item)
         return tagCell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+}
+
+extension TagsHorizontalList: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         let defaultSize = CGSize(width: 100, height: collectionView.bounds.height)
         
         guard let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: TagCell.reuseId, for: indexPath) as? TagCell else {
@@ -68,9 +85,19 @@ class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDe
 
         return size
     }
+}
+
+extension TagsHorizontalList: ViewCode {
+    func addViews() {
+        addSubview(tagsCollectionView)
+    }
     
-    func setFrom(_ items: [String]) {
-        self.items = items
-        collectionView.reloadData()
+    func addConstraints() {
+        NSLayoutConstraint.activate([
+            tagsCollectionView.topAnchor.constraint(equalTo: topAnchor),
+            tagsCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tagsCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tagsCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }
