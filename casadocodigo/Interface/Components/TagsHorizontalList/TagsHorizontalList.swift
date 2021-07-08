@@ -49,7 +49,7 @@ class TagsHorizontalList: UIView, UICollectionViewDataSource, UICollectionViewDe
             fatalError("Invalid view cell type for tag items. Please check the implementation and fix it")
         }
         
-        tagCell.setFrom(item)
+        tagCell.set(label: item)
         return tagCell
     }
     
