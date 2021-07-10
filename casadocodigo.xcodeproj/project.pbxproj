@@ -12,6 +12,8 @@
 		50F633408CDD2AA96F8B21DD /* Pods_casadocodigo_casadocodigoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7F1C48024E2D2363F9F9C2 /* Pods_casadocodigo_casadocodigoUITests.framework */; };
 		5813145B2694C3D100F12E66 /* SafeAnchors+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5813145A2694C3D100F12E66 /* SafeAnchors+UIView.swift */; };
 		581314602694C4C300F12E66 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5813145F2694C4C300F12E66 /* ViewCode.swift */; };
+		581314682698AD9500F12E66 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581314672698AD9400F12E66 /* Validators.swift */; };
+		5813146A2698ADDB00F12E66 /* TextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581314692698ADDB00F12E66 /* TextInput.swift */; };
 		5827D806262F8D1900D20B19 /* AuthorsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D805262F8D1900D20B19 /* AuthorsHeaderView.swift */; };
 		5827D80B262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */; };
 		5827D810262FDBD100D20B19 /* TagsHorizontalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D80F262FDBD100D20B19 /* TagsHorizontalList.swift */; };
@@ -35,6 +37,8 @@
 		582F9852262A144B00354D65 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F9851262A144B00354D65 /* Alert.swift */; };
 		582F9861262DD83000354D65 /* AuthorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F9860262DD83000354D65 /* AuthorRepository.swift */; };
 		582F9869262DDD5600354D65 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582F9868262DDD5600354D65 /* Author.swift */; };
+		5843A3CC26994E0600081B2E /* ValidatedInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843A3CB26994E0600081B2E /* ValidatedInputView.swift */; };
+		5843A3CE26994E5B00081B2E /* LargeTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843A3CD26994E5B00081B2E /* LargeTextInput.swift */; };
 		585D72E92643073200666078 /* Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D72E82643073100666078 /* Decimal.swift */; };
 		585D72F226432FD300666078 /* BookFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D72F126432FD300666078 /* BookFormViewController.swift */; };
 		585D7302264345B200666078 /* Border+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585D7301264345B200666078 /* Border+UITextView.swift */; };
@@ -81,6 +85,8 @@
 		526025A48484750F3D26EDDD /* Pods-casadocodigo-casadocodigoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casadocodigo-casadocodigoUITests.debug.xcconfig"; path = "Target Support Files/Pods-casadocodigo-casadocodigoUITests/Pods-casadocodigo-casadocodigoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5813145A2694C3D100F12E66 /* SafeAnchors+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafeAnchors+UIView.swift"; sourceTree = "<group>"; };
 		5813145F2694C4C300F12E66 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		581314672698AD9400F12E66 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		581314692698ADDB00F12E66 /* TextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInput.swift; sourceTree = "<group>"; };
 		5827D805262F8D1900D20B19 /* AuthorsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsHeaderView.swift; sourceTree = "<group>"; };
 		5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shadow+UICollectionViewCell.swift"; sourceTree = "<group>"; };
 		5827D80F262FDBD100D20B19 /* TagsHorizontalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsHorizontalList.swift; sourceTree = "<group>"; };
@@ -104,6 +110,8 @@
 		582F9851262A144B00354D65 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		582F9860262DD83000354D65 /* AuthorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorRepository.swift; sourceTree = "<group>"; };
 		582F9868262DDD5600354D65 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		5843A3CB26994E0600081B2E /* ValidatedInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatedInputView.swift; sourceTree = "<group>"; };
+		5843A3CD26994E5B00081B2E /* LargeTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTextInput.swift; sourceTree = "<group>"; };
 		585D72E82643073100666078 /* Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal.swift; sourceTree = "<group>"; };
 		585D72F126432FD300666078 /* BookFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFormViewController.swift; sourceTree = "<group>"; };
 		585D7301264345B200666078 /* Border+UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Border+UITextView.swift"; sourceTree = "<group>"; };
@@ -177,6 +185,16 @@
 				5813145F2694C4C300F12E66 /* ViewCode.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		581314662698AD5900F12E66 /* ValidatedInputs */ = {
+			isa = PBXGroup;
+			children = (
+				5843A3CB26994E0600081B2E /* ValidatedInputView.swift */,
+				581314692698ADDB00F12E66 /* TextInput.swift */,
+				5843A3CD26994E5B00081B2E /* LargeTextInput.swift */,
+			);
+			path = ValidatedInputs;
 			sourceTree = "<group>";
 		};
 		5827D827262FE63100D20B19 /* TagsHorizontalList */ = {
@@ -391,6 +409,7 @@
 			children = (
 				582CC764265825DB0033F333 /* CustomNavigationController.swift */,
 				5891F816267B8CF3004F5D2C /* BaseNavbarItemsViewController.swift */,
+				581314672698AD9400F12E66 /* Validators.swift */,
 				58BF693926210A5B00A8CEBD /* HomeScene */,
 				58B1B3E12641929700DFA789 /* BookDetailsScene */,
 				585D72F026432FB700666078 /* BookFormScene */,
@@ -417,6 +436,7 @@
 				58FAB462268F6150002F734B /* SearchFooter.swift */,
 				582AD3AB262F6F0800705D6D /* SectionTitle.swift */,
 				5827D827262FE63100D20B19 /* TagsHorizontalList */,
+				581314662698AD5900F12E66 /* ValidatedInputs */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -712,6 +732,7 @@
 			files = (
 				582F982A2628FFAF00354D65 /* ShowcaseHeaderView.swift in Sources */,
 				585D73312649997D00666078 /* Date.swift in Sources */,
+				5843A3CC26994E0600081B2E /* ValidatedInputView.swift in Sources */,
 				582CC81C26683CD50033F333 /* UserAuthenticationRepository.swift in Sources */,
 				582D872D2685496500D70C3E /* KeyboardAvoidableView.swift in Sources */,
 				582F98472629DBA900354D65 /* ShowcaseFlowLayout.swift in Sources */,
@@ -726,6 +747,8 @@
 				5827D810262FDBD100D20B19 /* TagsHorizontalList.swift in Sources */,
 				5813145B2694C3D100F12E66 /* SafeAnchors+UIView.swift in Sources */,
 				58C0BEFF266AC76100FB0D19 /* Authorization+UIView.swift in Sources */,
+				581314682698AD9500F12E66 /* Validators.swift in Sources */,
+				5813146A2698ADDB00F12E66 /* TextInput.swift in Sources */,
 				582F9852262A144B00354D65 /* Alert.swift in Sources */,
 				582F980D2627D20200354D65 /* BookRepository.swift in Sources */,
 				582AD3AD262F6F0800705D6D /* SectionTitle.swift in Sources */,
@@ -734,6 +757,7 @@
 				58FA533C263772D1000390BF /* Shape+UIView.swift in Sources */,
 				582F98142628A40300354D65 /* Book.swift in Sources */,
 				582F9861262DD83000354D65 /* AuthorRepository.swift in Sources */,
+				5843A3CE26994E5B00081B2E /* LargeTextInput.swift in Sources */,
 				5827D80B262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift in Sources */,
 				582F9869262DDD5600354D65 /* Author.swift in Sources */,
 				58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */,
