@@ -8,12 +8,8 @@
 import UIKit
 
 @IBDesignable class ValidatedLargeTextInput: UIStackView  {
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "HelveticaNeue", size: 16)
-        label.textColor = .secondaryLabel
-        label.text = "Title Label:"
-        return label
+    private lazy var titleLabel: TextFieldLabel = {
+        return TextFieldLabel()
     }()
     
     private lazy var textView: UITextView = {
@@ -25,12 +21,8 @@ import UIKit
         return textView
     }()
 
-    private lazy var errorMessageLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "HelveticaNeue", size: 14)
-        label.textColor = UIColor(named: "danger")
-        label.isHidden = true
-        return label
+    private lazy var errorMessageLabel: FieldErrorLabel = {
+        return FieldErrorLabel()
     }()
     
     var placeholder: String = "Text view placeholder" {

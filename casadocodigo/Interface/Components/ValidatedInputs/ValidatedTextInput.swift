@@ -8,12 +8,8 @@
 import UIKit
 
 @IBDesignable class ValidatedTextInput: UIStackView  {
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "HelveticaNeue", size: 16)
-        label.textColor = .secondaryLabel
-        label.text = "Title Label:"
-        return label
+    private lazy var titleLabel: TextFieldLabel = {
+        return TextFieldLabel()
     }()
     
     private lazy var textField: UITextField = {
@@ -26,16 +22,11 @@ import UIKit
         return textField
     }()
 
-    private lazy var errorMessageLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "HelveticaNeue", size: 14)
-        label.textColor = UIColor(named: "danger")
-        label.isHidden = true
-        return label
+    private lazy var errorMessageLabel: FieldErrorLabel = {
+        return FieldErrorLabel()
     }()
     
     var rules: [Rule] = []
-    
     var editingDidEnd: ((_ text: String) -> Void)?
         
     override init(frame: CGRect) {
