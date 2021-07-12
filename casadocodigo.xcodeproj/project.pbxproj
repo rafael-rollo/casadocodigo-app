@@ -16,6 +16,7 @@
 		5813146A2698ADDB00F12E66 /* ValidatedTextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581314692698ADDB00F12E66 /* ValidatedTextInput.swift */; };
 		581C4663269BA7AD0031BAE9 /* TextFieldLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C4662269BA7AD0031BAE9 /* TextFieldLabel.swift */; };
 		581C4666269BA8340031BAE9 /* FieldErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C4665269BA8340031BAE9 /* FieldErrorLabel.swift */; };
+		581C4668269BB0F40031BAE9 /* AuthorFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C4667269BB0F40031BAE9 /* AuthorFormViewController.swift */; };
 		5827D806262F8D1900D20B19 /* AuthorsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D805262F8D1900D20B19 /* AuthorsHeaderView.swift */; };
 		5827D80B262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */; };
 		5827D810262FDBD100D20B19 /* TagsHorizontalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D80F262FDBD100D20B19 /* TagsHorizontalList.swift */; };
@@ -61,7 +62,7 @@
 		58C0BEFF266AC76100FB0D19 /* Authorization+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C0BEFE266AC76100FB0D19 /* Authorization+UIView.swift */; };
 		58CB4562263A43C8005D19F2 /* ConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */; };
 		58CB457D263B612E005D19F2 /* Ids+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB457C263B612D005D19F2 /* Ids+UIView.swift */; };
-		58FA532C26334E44000390BF /* AuthorFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA532B26334E44000390BF /* AuthorFormViewController.swift */; };
+		58FA532C26334E44000390BF /* AuthorFormViewCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA532B26334E44000390BF /* AuthorFormViewCodeController.swift */; };
 		58FA533C263772D1000390BF /* Shape+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA533B263772D1000390BF /* Shape+UIView.swift */; };
 		58FAB463268F6150002F734B /* SearchFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FAB462268F6150002F734B /* SearchFooter.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		581314692698ADDB00F12E66 /* ValidatedTextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatedTextInput.swift; sourceTree = "<group>"; };
 		581C4662269BA7AD0031BAE9 /* TextFieldLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLabel.swift; sourceTree = "<group>"; };
 		581C4665269BA8340031BAE9 /* FieldErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldErrorLabel.swift; sourceTree = "<group>"; };
+		581C4667269BB0F40031BAE9 /* AuthorFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorFormViewController.swift; sourceTree = "<group>"; };
 		5827D805262F8D1900D20B19 /* AuthorsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsHeaderView.swift; sourceTree = "<group>"; };
 		5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shadow+UICollectionViewCell.swift"; sourceTree = "<group>"; };
 		5827D80F262FDBD100D20B19 /* TagsHorizontalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsHorizontalList.swift; sourceTree = "<group>"; };
@@ -142,7 +144,7 @@
 		58C0BEFE266AC76100FB0D19 /* Authorization+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Authorization+UIView.swift"; sourceTree = "<group>"; };
 		58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialog.swift; sourceTree = "<group>"; };
 		58CB457C263B612D005D19F2 /* Ids+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ids+UIView.swift"; sourceTree = "<group>"; };
-		58FA532B26334E44000390BF /* AuthorFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorFormViewController.swift; sourceTree = "<group>"; };
+		58FA532B26334E44000390BF /* AuthorFormViewCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorFormViewCodeController.swift; sourceTree = "<group>"; };
 		58FA533B263772D1000390BF /* Shape+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+UIView.swift"; sourceTree = "<group>"; };
 		58FAB462268F6150002F734B /* SearchFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFooter.swift; sourceTree = "<group>"; };
 		7A66D89A8354D0697252F58D /* Pods-casadocodigo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casadocodigo.debug.xcconfig"; path = "Target Support Files/Pods-casadocodigo/Pods-casadocodigo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -470,7 +472,8 @@
 		58FA532A26334E00000390BF /* AuthorFormScene */ = {
 			isa = PBXGroup;
 			children = (
-				58FA532B26334E44000390BF /* AuthorFormViewController.swift */,
+				581C4667269BB0F40031BAE9 /* AuthorFormViewController.swift */,
+				58FA532B26334E44000390BF /* AuthorFormViewCodeController.swift */,
 			);
 			path = AuthorFormScene;
 			sourceTree = "<group>";
@@ -751,6 +754,7 @@
 				58C0BEF02669309100FB0D19 /* AuthorizedViewController.swift in Sources */,
 				58BF69062621070300A8CEBD /* HomeViewController.swift in Sources */,
 				582F984D262A0A7600354D65 /* ActivityIndicatorView.swift in Sources */,
+				581C4668269BB0F40031BAE9 /* AuthorFormViewController.swift in Sources */,
 				5827D810262FDBD100D20B19 /* TagsHorizontalList.swift in Sources */,
 				5813145B2694C3D100F12E66 /* SafeAnchors+UIView.swift in Sources */,
 				58C0BEFF266AC76100FB0D19 /* Authorization+UIView.swift in Sources */,
@@ -770,7 +774,7 @@
 				581C4666269BA8340031BAE9 /* FieldErrorLabel.swift in Sources */,
 				58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */,
 				585D72F226432FD300666078 /* BookFormViewController.swift in Sources */,
-				58FA532C26334E44000390BF /* AuthorFormViewController.swift in Sources */,
+				58FA532C26334E44000390BF /* AuthorFormViewCodeController.swift in Sources */,
 				581314602694C4C300F12E66 /* ViewCode.swift in Sources */,
 				58FAB463268F6150002F734B /* SearchFooter.swift in Sources */,
 				585D7302264345B200666078 /* Border+UITextView.swift in Sources */,

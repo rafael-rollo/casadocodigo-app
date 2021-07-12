@@ -8,11 +8,6 @@
 import UIKit
 import AlamofireImage
 
-protocol AuthorFormViewControllerDelegate: AnyObject {
-    func didAuthorCreated(_ author: AuthorResponse)
-    func didAuthorUpdated(_ author: AuthorResponse)
-}
-
 class AuthorFormViewController: AuthorizedViewController {
     
     // MARK: Attributes
