@@ -53,6 +53,7 @@ enum Rule {
     case minLength(Int)
     case minDecimal(Double)
     case validURL
+    case validFullName
     
     func check(_ text: String) -> String? {
         switch self {
@@ -102,6 +103,10 @@ enum Rule {
             }
 
             return UIApplication.shared.canOpenURL(url as URL) ? nil : message
+        
+        
+        case .validFullName:
+            return text.components(separatedBy: " ").count >= 2 ? nil : "Informe um sobrenome"
         }
     }
 }
