@@ -273,12 +273,7 @@ extension AuthorFormViewCodeController: ViewCode {
     }
     
     func addConstraints() {
-        NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-        ])
+        scrollView.constrainTo(safeBoundsOf: view)
         
         let contentViewBottomConstraint = contentView.bottomAnchor
             .constraint(equalTo: scrollView.bottomAnchor)
@@ -297,16 +292,8 @@ extension AuthorFormViewCodeController: ViewCode {
             contentViewCenterYConstraint
         ])
         
-        NSLayoutConstraint.activate([
-            mainStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            mainStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            mainStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            mainStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            sectionTitle.heightAnchor.constraint(equalToConstant: 28)
-        ])
+        mainStackView.constrainTo(boundsOf: contentView)
+        sectionTitle.constrainHeight(to: 28)
         
         NSLayoutConstraint.activate([
             profileImageView.heightAnchor.constraint(equalToConstant: 200),
@@ -317,9 +304,7 @@ extension AuthorFormViewCodeController: ViewCode {
             profileImageView.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor)
         ])
         
-        NSLayoutConstraint.activate([
-            saveAuthorButton.heightAnchor.constraint(equalToConstant: 42)
-        ])
+        saveAuthorButton.constrainHeight(to: 42)
     }
     
     func addTheme() {

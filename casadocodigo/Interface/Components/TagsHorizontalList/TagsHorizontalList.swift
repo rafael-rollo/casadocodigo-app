@@ -93,11 +93,6 @@ extension TagsHorizontalList: ViewCode {
     }
     
     func addConstraints() {
-        NSLayoutConstraint.activate([
-            tagsCollectionView.topAnchor.constraint(equalTo: topAnchor),
-            tagsCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tagsCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tagsCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        tagsCollectionView.constrainTo(boundsOf: self)
     }
 }

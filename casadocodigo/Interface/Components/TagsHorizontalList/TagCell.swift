@@ -54,12 +54,7 @@ extension TagCell: ViewCode {
     }
     
     func addConstraints() {
-        NSLayoutConstraint.activate([
-            taglabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            taglabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            taglabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            taglabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-        ])
+        taglabel.constrainTo(boundsOf: contentView)
     }
     
     func addTheme() {

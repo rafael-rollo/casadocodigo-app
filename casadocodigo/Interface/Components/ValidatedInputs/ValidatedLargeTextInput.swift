@@ -108,9 +108,7 @@ extension ValidatedLargeTextInput: ViewCode {
     }
     
     func addConstraints() {
-        NSLayoutConstraint.activate([
-            textView.heightAnchor.constraint(equalToConstant: 120)
-        ])
+        textView.constrainHeight(to: 120)
     }
     
     func addTheme() {
