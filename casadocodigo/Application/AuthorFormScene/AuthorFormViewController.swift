@@ -8,11 +8,6 @@
 import UIKit
 import AlamofireImage
 
-protocol AuthorFormViewControllerDelegate: AnyObject {
-    func didAuthorCreated(_ author: AuthorResponse)
-    func didAuthorUpdated(_ author: AuthorResponse)
-}
-
 class AuthorFormViewController: AuthorizedViewController {
     
     // MARK: Attributes
@@ -54,10 +49,10 @@ class AuthorFormViewController: AuthorizedViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        buildUp()
+        initViews()
     }
     
-    private func buildUp() {
+    private func initViews() {
         scrollView.keyboardAvoidableViewDelegate = self
         
         if let selectedAuthor = self.selectedAuthor {
@@ -65,7 +60,7 @@ class AuthorFormViewController: AuthorizedViewController {
             saveAuthorButton.addTarget(self,
                                        action: #selector(authorEditingButtonPressed(_:)),
                                        for: .touchUpInside)
-            initData(with: selectedAuthor)
+            initViews(with: selectedAuthor)
         
         } else {
             sectionTitle.setText("Novo autor")
@@ -77,7 +72,7 @@ class AuthorFormViewController: AuthorizedViewController {
         adjustLayout()
     }
     
-    private func initData(with selectedAuthor: AuthorResponse) {
+    private func initViews(with selectedAuthor: AuthorResponse) {
         pictureUrlTextField.text = selectedAuthor.profilePicturePath.absoluteString
         pictureFieldEditingDidEnd(pictureUrlTextField)
         

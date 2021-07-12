@@ -15,7 +15,7 @@ protocol BookFormViewControllerDelegate: AnyObject {
 
 class BookFormViewController: AuthorizedViewController {
 
-    // MARK: Attributes
+    // MARK: - Attributes
     
     var authors: [AuthorResponse] = []
     var selectedBook: BookResponse?
@@ -25,34 +25,37 @@ class BookFormViewController: AuthorizedViewController {
     
     weak var delegate: BookFormViewControllerDelegate?
     var activeField: UITextField?
+    var validator: Validator = Validator()
 
-    // MARK: IBOutlets
+    // MARK: - IBOutlets
     
     @IBOutlet weak var scrollView: KeyboardAvoidableView!
     @IBOutlet weak var sectionTitle: SectionTitle!
     
     @IBOutlet weak var coverImageView: UIImageView!
-    @IBOutlet weak var coverPathTextField: UITextField!
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var subtitleTextField: UITextField!
+    @IBOutlet weak var coverPathInputView: ValidatedTextInput!
     
-    @IBOutlet weak var ebookPriceField: UITextField!
-    @IBOutlet weak var hardcoverPriceField: UITextField!
-    @IBOutlet weak var comboPriceField: UITextField!
+    @IBOutlet weak var titleInputView: ValidatedTextInput!
+    @IBOutlet weak var subtitleInputView: ValidatedTextInput!
     
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var eBookPriceInputView: ValidatedTextInput!
+    @IBOutlet weak var hardcoverPriceInputView: ValidatedTextInput!
+    @IBOutlet weak var comboPriceInputView: ValidatedTextInput!
+    
+    @IBOutlet weak var descriptionInputView: ValidatedLargeTextInput!
+    
     @IBOutlet weak var authorTextField: UITextField!
     private var authorPickerView: UIPickerView?
 
     @IBOutlet weak var publicationDatePicker: UIDatePicker!
     private var publicationDate: String?
     
-    @IBOutlet weak var pagesTextField: UITextField!
-    @IBOutlet weak var ISBNTextField: UITextField!
+    @IBOutlet weak var pagesInputView: ValidatedTextInput!
+    @IBOutlet weak var ISBNInputView: ValidatedTextInput!
     
     @IBOutlet weak var submitButton: UIButton!
     
-    // MARK: Initializers
+    // MARK: - Initializers
     
     init(authorRepository: AuthorRepository = AuthorRepository(),
          bookRepository: BookRepository = BookRepository(),
@@ -73,92 +76,157 @@ class BookFormViewController: AuthorizedViewController {
         return [Role.ADMIN]
     }
     
-    // MARK: View lifecycle
+    // MARK: - View lifecycle
         
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        loadAuthors()
-        buildUp()
-    }
-    
-    private func adjustLayout() {
-        descriptionTextView.configureBorders()
         
-        authorTextField.inputView = authorPickerView
-    
-        submitButton.layer.cornerRadius = 10
-        submitButton.showsTouchWhenHighlighted = true
+        loadAuthors()
+        initViews()
     }
     
-    private func buildUp() {
+    private func initViews() {
         scrollView.keyboardAvoidableViewDelegate = self
+        
+        coverPathInputView.editingDidEnd = coverFieldEditingDidEnd
+        coverPathInputView.config(
+            title: "Capa do Livro:",
+            placeholder: "Digite a URI da capa do livro",
+            rules: [.notEmpty, .validURL]
+        )
+        validator.requireValidation(on: coverPathInputView)
+        
+        titleInputView.config(
+            title: "Título",
+            placeholder: "Descreva aqui o título do livro",
+            rules: [.notEmpty]
+        )
+        validator.requireValidation(on: titleInputView)
+        
+        subtitleInputView.config(
+            title: "Subtítulo",
+            placeholder: "Descreva aqui o subtítulo do livro",
+            rules: [.notEmpty]
+        )
+        validator.requireValidation(on: subtitleInputView)
+        
+        eBookPriceInputView.config(
+            title: "Preço do eBook:",
+            placeholder: "29,90",
+            keyboardType: .decimalPad,
+            rules: [.minDecimal(19.9)]
+        )
+        validator.requireValidation(on: eBookPriceInputView)
+        
+        hardcoverPriceInputView.config(
+            title: "Preço do Impresso:",
+            placeholder: "39,90",
+            keyboardType: .decimalPad,
+            rules: [.minDecimal(19.9)]
+        )
+        validator.requireValidation(on: hardcoverPriceInputView)
+        
+        comboPriceInputView.config(
+            title: "Preço do Combo:",
+            placeholder: "59,90",
+            keyboardType: .decimalPad,
+            rules: [.minDecimal(19.9)]
+        )
+        validator.requireValidation(on: comboPriceInputView)
+        
+        descriptionInputView.config(
+            title: "Conteúdo:",
+            placeholder: "Descreva aqui o conteúdo deste livro",
+            rules: [.minLength(100)]
+        )
+        validator.requireValidation(on: descriptionInputView)
         
         authorPickerView = UIPickerView()
         authorPickerView?.dataSource = self
         authorPickerView?.delegate = self
+        authorTextField.inputView = authorPickerView
         
         publicationDatePicker.addTarget(self, action: #selector(updatePublicationDateValue(_:)), for: .valueChanged)
+        updatePublicationDateValue(publicationDatePicker)
         
-        if let selectedBook = selectedBook {
-            sectionTitle.setText("Dados do Livro")
-            submitButton.addTarget(self,
-                                   action: #selector(bookEdittingButtonPressed(_:)),
-                                   for: .touchUpInside)
-            
-            initData(with: selectedBook)
-            
-        } else {
+        pagesInputView.config(
+            title: "Número de Páginas:",
+            placeholder: "00",
+            keyboardType: .numberPad,
+            rules: [.min(50)]
+        )
+        validator.requireValidation(on: pagesInputView)
+        
+        ISBNInputView.config(
+            title: "ISBN:",
+            placeholder: "000-00-0000-000-0",
+            rules: [.notEmpty, .validIsbnFormat]
+        )
+        validator.requireValidation(on: ISBNInputView)
+        
+        submitButton.layer.cornerRadius = 10
+        submitButton.showsTouchWhenHighlighted = true
+        
+        guard let selectedBook = selectedBook else {
             sectionTitle.setText("Novo Livro")
-            submitButton.addTarget(self,
-                                   action: #selector(bookAddingButtonPressed(_:)),
-                                   for: .touchUpInside)
+            submitButton.addTarget(
+                self,
+                action: #selector(bookAddingButtonPressed(_:)),
+                for: .touchUpInside
+            )
+            
+            return
         }
-        
-        
-        adjustLayout()
+    
+        sectionTitle.setText("Dados do Livro")
+        submitButton.addTarget(
+            self,
+            action: #selector(bookEdittingButtonPressed(_:)),
+            for: .touchUpInside
+        )
+            
+        initViews(with: selectedBook)
     }
     
-    private func initData(with book: BookResponse) {
-        coverPathTextField.text = book.coverImagePath.absoluteString
-        coverFieldEditingDidEnd(coverPathTextField)
+    private func initViews(with book: BookResponse) {
+        coverPathInputView.setText(book.coverImagePath.absoluteString)
+        coverFieldEditingDidEnd(coverPathInputView.getText()!)
         
-        titleTextField.text = book.title
-        subtitleTextField.text = book.subtitle
+        titleInputView.setText(book.title)
+        subtitleInputView.setText(book.subtitle)
         
         book.prices.forEach { price in
             let value = String(describing: price.value)
             
             switch price.bookType {
             case .ebook:
-                ebookPriceField.text = value
+                eBookPriceInputView.setText(value)
             
             case .hardCover:
-                hardcoverPriceField.text = value
+                hardcoverPriceInputView.setText(value)
             
             case .combo:
-                comboPriceField.text = value
+                comboPriceInputView.setText(value)
             }
         }
         
-        descriptionTextView.text = book.description
+        descriptionInputView.setText(book.description)
 
         if let publicationDate = Date.fromString(book.publicationDate, formattedBy: "dd/MM/yyyy") {
             publicationDatePicker.setDate(publicationDate, animated: false)
             updatePublicationDateValue(publicationDatePicker)
         }
         
-        pagesTextField.text = String(describing: book.numberOfPages)
-        ISBNTextField.text = book.ISBN
+        pagesInputView.setText(String(describing: book.numberOfPages))
+        ISBNInputView.setText(book.ISBN)
     }
 
-    // MARK: IBActions
+    // MARK: - Actions
     
-    @IBAction func coverFieldEditingDidEnd(_ sender: UITextField) {
-        guard let coverPathAsString = coverPathTextField.text,
-              !coverPathAsString.isEmpty else { return }
+    func coverFieldEditingDidEnd(_ coverPath: String) {
+        guard !coverPath.isEmpty else { return }
         
-        guard let coverUri = URL(string: coverPathAsString) else { return }
+        guard let coverUri = URL(string: coverPath) else { return }
         
         coverImageView.af.setImage(withURL: coverUri)
     }
@@ -170,68 +238,24 @@ class BookFormViewController: AuthorizedViewController {
         publicationDate = formatter.string(from: sender.date)
     }
     
-    /**
-     Tem que ter um jeito mais fácil de fazer isso 😢
-     */
     private func getBookFromForm() -> BookRequest? {
-        guard let coverURI = coverPathTextField.text, !coverURI.isEmpty else {
-            Alert.show(title: "Ops", message: "Adicione uma URI válida para a imagem da capa do livro.", in: self)
+        guard validator.isFormValid() else {
             return nil
         }
         
-        guard let title = titleTextField.text, !title.isEmpty else {
-            Alert.show(title: "Ops", message: "O título do livro é obrigatório!", in: self)
-            return nil
-        }
-        
-        guard let subtitle = subtitleTextField.text, !subtitle.isEmpty else {
-            Alert.show(title: "Ops", message: "O subtítulo do livro é obrigatório!", in: self)
-            return nil
-        }
-        
-        guard let ebookPriceAsString = ebookPriceField.text, !ebookPriceAsString.isEmpty,
-              let ebookPrice = Decimal(string: ebookPriceAsString) else {
-            Alert.show(title: "Ops", message: "Informe um preço válido para a versão eBook!", in: self)
-            return nil
-        }
-        
-        guard let hardcoverPriceAsString = hardcoverPriceField.text, !hardcoverPriceAsString.isEmpty,
-              let hardcoverPrice = Decimal(string: hardcoverPriceAsString) else {
-            Alert.show(title: "Ops", message: "Informe um preço válido para a versão impressa!", in: self)
-            return nil
-        }
-        
-        guard let comboPriceAsString = comboPriceField.text, !comboPriceAsString.isEmpty,
-              let comboPrice = Decimal(string: comboPriceAsString) else {
-            Alert.show(title: "Ops", message: "Informe um preço válido para o combo eBook + impresso!", in: self)
-            return nil
-        }
-        
-        guard let description = descriptionTextView.text, !description.isEmpty else {
-            Alert.show(title: "Ops", message: "Adicione o conteúdo descritivo do livro!", in: self)
-            return nil
-        }
-        
+        let ebookPrice = Decimal(string: eBookPriceInputView.getText()!)!
+        let hardcoverPrice = Decimal(string: hardcoverPriceInputView.getText()!)!
+        let comboPrice = Decimal(string: comboPriceInputView.getText()!)!
+    
         guard let selectedRow = authorPickerView?.selectedRow(inComponent: 0) else { return nil }
         let authorId = authors[selectedRow].id
-                
-        guard let publicationDate = publicationDate, !publicationDate.isEmpty else {
-            Alert.show(title: "Ops", message: "Informe a data de publicação do livro.", in: self)
-            return nil
-        }
         
-        guard let pagesAsString = pagesTextField.text, !pagesAsString.isEmpty,
-              let numberOfPages = Int(pagesAsString) else {
-            Alert.show(title: "Ops", message: "Informe um número de páginas válido para o livro!", in: self)
-            return nil
-        }
+        let numberOfPages = Int(pagesInputView.getText()!)!
         
-        guard let ISBN = ISBNTextField.text, !ISBN.isEmpty else {
-            Alert.show(title: "Ops", message: "O número de ISBN é obrigatório.", in: self)
-            return nil
-        }
-        
-        return BookRequest(title: title, subtitle: subtitle, coverImagePath: coverURI, eBookPrice: ebookPrice, hardcoverPrice: hardcoverPrice, comboPrice: comboPrice, description: description, authorId: authorId, publicationDate: publicationDate, numberOfPages: numberOfPages, ISBN: ISBN)
+        return BookRequest(title: titleInputView.getText()!, subtitle: subtitleInputView.getText()!, coverImagePath: coverPathInputView.getText()!,
+                           eBookPrice: ebookPrice, hardcoverPrice: hardcoverPrice, comboPrice: comboPrice,
+                           description: descriptionInputView.getText()!, authorId: authorId,
+                           publicationDate: publicationDate!, numberOfPages: numberOfPages, ISBN: ISBNInputView.getText()!)
     }
     
     @objc func bookAddingButtonPressed(_ sender: UIButton!) {
@@ -277,7 +301,7 @@ class BookFormViewController: AuthorizedViewController {
         }
     }
     
-    // MARK: View methods
+    // MARK: - View methods
     
     func updateAuthors(with authors: [AuthorResponse]) {
         self.authors = authors

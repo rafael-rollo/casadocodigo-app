@@ -74,7 +74,7 @@ class AuthorsViewController: BaseNavbarItemsViewController {
     }
     
     @objc func didAuthorAddingButtonPressed(_ sender: UIButton) {
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "AuthorFormViewController") as! AuthorFormViewController
+        let controller = AuthorFormViewCodeController()
         controller.delegate = self
         
         navigationController?.pushViewController(controller, animated: true)
@@ -161,7 +161,7 @@ extension AuthorsViewController: AuthorCellDelegate {
     }
     
     func didEditingButtonPressed(_ sender: UIButton!, for author: AuthorResponse) {
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "AuthorFormViewController") as! AuthorFormViewController
+        let controller = AuthorFormViewCodeController()
         controller.delegate = self
         controller.selectedAuthor = author
         

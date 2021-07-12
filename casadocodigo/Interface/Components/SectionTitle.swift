@@ -7,12 +7,13 @@
 
 import UIKit
 
-class SectionTitle: UIView, IdentifiableView {
+@IBDesignable class SectionTitle: UIView, IdentifiableView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "HelveticaNeue-Medium", size: 24)
         label.textColor = UIColor(named: "strongOrange")
+        label.text = "Section Title"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -31,6 +32,11 @@ class SectionTitle: UIView, IdentifiableView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setup()
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
         setup()
     }
     

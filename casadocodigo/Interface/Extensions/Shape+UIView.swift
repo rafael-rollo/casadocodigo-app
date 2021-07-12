@@ -15,6 +15,7 @@ extension UIView {
             return
         }
         
-        layer.cornerRadius = self.bounds.width / 2
+        layer.masksToBounds = true
+        layer.cornerRadius = bounds.width / 2
     }
 }
