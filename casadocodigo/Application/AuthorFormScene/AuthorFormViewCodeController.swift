@@ -33,10 +33,12 @@ class AuthorFormViewCodeController: AuthorizedViewController {
     }()
     
     private lazy var profileImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+        let imageView = UIImageView(x: 0, y: 0, width: 200, height: 200)
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 100
+        imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "avatar")
-        imageView.roundTheShape()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
@@ -164,7 +166,6 @@ class AuthorFormViewCodeController: AuthorizedViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViews()
     }
     
@@ -308,12 +309,12 @@ extension AuthorFormViewCodeController: ViewCode {
         ])
         
         NSLayoutConstraint.activate([
-            profileImageView.topAnchor.constraint(equalTo: imageContainer.topAnchor, constant: Theme.spacing.small),
-            profileImageView.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: Theme.spacing.small),
             profileImageView.heightAnchor.constraint(equalToConstant: 200),
             profileImageView.widthAnchor.constraint(equalToConstant: 200),
             profileImageView.centerXAnchor.constraint(equalTo: imageContainer.centerXAnchor),
-            profileImageView.centerYAnchor.constraint(equalTo: imageContainer.centerYAnchor)
+            profileImageView.centerYAnchor.constraint(equalTo: imageContainer.centerYAnchor),
+            profileImageView.topAnchor.constraint(equalTo: imageContainer.topAnchor),
+            profileImageView.bottomAnchor.constraint(equalTo: imageContainer.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
