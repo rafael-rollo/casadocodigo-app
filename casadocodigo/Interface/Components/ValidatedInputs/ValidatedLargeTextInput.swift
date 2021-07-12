@@ -64,6 +64,7 @@ import UIKit
     
     func setText(_ text: String) {
         textView.text = text
+        textView.textColor = .secondaryLabel
     }
 }
 
@@ -87,7 +88,7 @@ extension ValidatedLargeTextInput: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
             textView.text = nil
-            textView.textColor = UIColor.black
+            textView.textColor = UIColor.secondaryLabel
         }
     }
     
