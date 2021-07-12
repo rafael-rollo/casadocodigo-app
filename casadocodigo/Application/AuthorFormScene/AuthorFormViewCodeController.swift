@@ -166,16 +166,16 @@ class AuthorFormViewCodeController: AuthorizedViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
+        initViews()
     }
     
-    private func setupViews() {
+    private func initViews() {
         if let selectedAuthor = self.selectedAuthor {
             sectionTitle.setText("Dados do autor")
             saveAuthorButton.addTarget(self,
                                        action: #selector(authorEditingButtonPressed(_:)),
                                        for: .touchUpInside)
-            initData(with: selectedAuthor)
+            initViews(with: selectedAuthor)
         
         } else {
             sectionTitle.setText("Novo autor")
@@ -185,7 +185,7 @@ class AuthorFormViewCodeController: AuthorizedViewController {
         }
     }
     
-    private func initData(with selectedAuthor: AuthorResponse) {
+    private func initViews(with selectedAuthor: AuthorResponse) {
         picturePathInputView.setText(selectedAuthor.profilePicturePath.absoluteString)
         pictureFieldEditingDidEnd(picturePathInputView.getText()!)
         

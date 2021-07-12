@@ -82,10 +82,10 @@ class BookFormViewController: AuthorizedViewController {
         super.viewDidLoad()
         
         loadAuthors()
-        setupViews()
+        initViews()
     }
     
-    private func setupViews() {
+    private func initViews() {
         scrollView.keyboardAvoidableViewDelegate = self
         
         coverPathInputView.editingDidEnd = coverFieldEditingDidEnd
@@ -185,10 +185,10 @@ class BookFormViewController: AuthorizedViewController {
             for: .touchUpInside
         )
             
-        initData(with: selectedBook)
+        initViews(with: selectedBook)
     }
     
-    private func initData(with book: BookResponse) {
+    private func initViews(with book: BookResponse) {
         coverPathInputView.setText(book.coverImagePath.absoluteString)
         coverFieldEditingDidEnd(coverPathInputView.getText()!)
         
