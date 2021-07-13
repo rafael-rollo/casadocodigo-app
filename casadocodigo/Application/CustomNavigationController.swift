@@ -24,8 +24,17 @@ class CustomNavigationController: UINavigationController {
         return view
     }()
     
-    override var preferredStatusBarStyle : UIStatusBarStyle {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    private var titleImageHeightRatio: CGFloat {
+        return renderingOnPhone ? 0.7 : 0.9
+    }
+    
+    private var searchBarFont: UIFont {
+        let fontSize: CGFloat = renderingOnPhone ? 13.0 : 17.0
+        return UIFont.systemFont(ofSize: fontSize)
     }
     
     override func loadView() {
@@ -45,11 +54,12 @@ extension CustomNavigationController: ViewCode {
             titleView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleView.heightAnchor.constraint(equalToConstant: navigationBar.frame.size.height),
             titleView.widthAnchor.constraint(greaterThanOrEqualTo: view.widthAnchor,
-                                             multiplier: 0.70)
+                                             multiplier: 0.7)
         ])
 
         NSLayoutConstraint.activate([
-            titleImageView.heightAnchor.constraint(equalTo: titleView.heightAnchor, multiplier: 0.8),
+            titleImageView.heightAnchor.constraint(equalTo: titleView.heightAnchor,
+                                                   multiplier: titleImageHeightRatio),
             titleImageView.widthAnchor.constraint(equalTo: titleView.heightAnchor),
             titleImageView.centerXAnchor.constraint(equalTo: titleView.centerXAnchor),
             titleImageView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor)
@@ -67,9 +77,10 @@ extension CustomNavigationController: ViewCode {
         UINavigationBar.appearance().compactAppearance = appearance
         
         UISearchBar.appearance().tintColor = UIColor.white
+    
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self])
             .defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white,
-                                      NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13.0)]
+                                      NSAttributedString.Key.font: searchBarFont]
         
         UIBarButtonItem.appearance().tintColor = UIColor.white
     }

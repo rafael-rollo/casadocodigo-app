@@ -18,6 +18,7 @@
 		581C4666269BA8340031BAE9 /* FieldErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C4665269BA8340031BAE9 /* FieldErrorLabel.swift */; };
 		581C4668269BB0F40031BAE9 /* AuthorFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C4667269BB0F40031BAE9 /* AuthorFormViewController.swift */; };
 		581C466A269CDDC20031BAE9 /* Constraints+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C4669269CDDC20031BAE9 /* Constraints+UIView.swift */; };
+		581C466C269E36170031BAE9 /* IdiomHelper+UITraitEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C466B269E36170031BAE9 /* IdiomHelper+UITraitEnvironment.swift */; };
 		5827D806262F8D1900D20B19 /* AuthorsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D805262F8D1900D20B19 /* AuthorsHeaderView.swift */; };
 		5827D80B262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */; };
 		5827D810262FDBD100D20B19 /* TagsHorizontalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D80F262FDBD100D20B19 /* TagsHorizontalList.swift */; };
@@ -95,6 +96,7 @@
 		581C4665269BA8340031BAE9 /* FieldErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldErrorLabel.swift; sourceTree = "<group>"; };
 		581C4667269BB0F40031BAE9 /* AuthorFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorFormViewController.swift; sourceTree = "<group>"; };
 		581C4669269CDDC20031BAE9 /* Constraints+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraints+UIView.swift"; sourceTree = "<group>"; };
+		581C466B269E36170031BAE9 /* IdiomHelper+UITraitEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdiomHelper+UITraitEnvironment.swift"; sourceTree = "<group>"; };
 		5827D805262F8D1900D20B19 /* AuthorsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsHeaderView.swift; sourceTree = "<group>"; };
 		5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shadow+UICollectionViewCell.swift"; sourceTree = "<group>"; };
 		5827D80F262FDBD100D20B19 /* TagsHorizontalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsHorizontalList.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				58FA533B263772D1000390BF /* Shape+UIView.swift */,
 				585D7301264345B200666078 /* Border+UITextView.swift */,
 				5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */,
+				581C466B269E36170031BAE9 /* IdiomHelper+UITraitEnvironment.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -785,6 +788,7 @@
 				585D72E92643073200666078 /* Decimal.swift in Sources */,
 				5827D829262FE6A300D20B19 /* TagCell.swift in Sources */,
 				5827D806262F8D1900D20B19 /* AuthorsHeaderView.swift in Sources */,
+				581C466C269E36170031BAE9 /* IdiomHelper+UITraitEnvironment.swift in Sources */,
 				582CC771265BEFF40033F333 /* Theme.swift in Sources */,
 				582CC80B266816B00033F333 /* SignInViewController.swift in Sources */,
 				589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */,
