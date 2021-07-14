@@ -217,7 +217,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPI-FD-avp" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1447.3333333333333"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YEZ-DL-c43" userLabel="Titles Stack">
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="YEZ-DL-c43" userLabel="Titles Stack">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="638"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agi-Bs-wSF" customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
@@ -245,41 +245,41 @@
                                                             <constraint firstItem="4dP-pQ-6mL" firstAttribute="centerY" secondItem="9tE-eV-8Zh" secondAttribute="centerY" id="pxG-g6-n62"/>
                                                         </constraints>
                                                     </view>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qob-kE-nWH" userLabel="Cover Path Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qob-kE-nWH" userLabel="Cover Path Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="408" width="382" height="60.666666666666686"/>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yJY-7h-4FI" userLabel="Title Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yJY-7h-4FI" userLabel="Title Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="484.66666666666669" width="382" height="60.666666666666686"/>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wxi-TL-1ft" userLabel="Subtitle Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wxi-TL-1ft" userLabel="Subtitle Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="561.33333333333337" width="382" height="60.666666666666629"/>
                                                     </stackView>
                                                 </subviews>
                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="16" trailing="16"/>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qUR-gO-Rwl" userLabel="Prices Stack">
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qUR-gO-Rwl" userLabel="Prices Stack">
                                                 <rect key="frame" x="0.0" y="638" width="414" height="250"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lhg-O9-icM" userLabel="eBook Price Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lhg-O9-icM" userLabel="eBook Price Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="15.999999999999996" width="382" height="60.666666666666657"/>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j4n-md-a4R" userLabel="Hardcover Price Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j4n-md-a4R" userLabel="Hardcover Price Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="92.666666666666629" width="382" height="60.666666666666657"/>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8TS-63-Ev1" userLabel="Combo Price Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8TS-63-Ev1" userLabel="Combo Price Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="169.33333333333337" width="382" height="60.666666666666657"/>
                                                     </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94117647059999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="16" bottom="20" trailing="16"/>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BIw-Hn-7Ya" userLabel="Product Content Stack">
-                                                <rect key="frame" x="0.0" y="888.00000000000011" width="414" height="501.33333333333337"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BIw-Hn-7Ya" userLabel="Product Content Stack">
+                                                <rect key="frame" x="0.0" y="888" width="414" height="501.33333333333337"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HBf-4K-fRM" userLabel="Description Input" customClass="ValidatedLargeTextInput" customModule="casadocodigo" customModuleProvider="target">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HBf-4K-fRM" userLabel="Description Input" customClass="ValidatedLargeTextInput" customModule="casadocodigo" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="16" width="382" height="146.66666666666666"/>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0xy-Zf-wI0" userLabel="Author Input">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0xy-Zf-wI0" userLabel="Author Input">
                                                         <rect key="frame" x="16" y="178.66666666666674" width="382" height="60.666666666666657"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIp-oJ-QrG" userLabel="Autor:">
@@ -296,7 +296,7 @@
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o1B-DP-KWS" userLabel="Publication Input ">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o1B-DP-KWS" userLabel="Publication Input ">
                                                         <rect key="frame" x="16" y="255.33333333333323" width="382" height="76.666666666666657"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data de Publicação:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hlj-WN-546">
@@ -305,16 +305,16 @@
                                                                 <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="FNs-kP-tZ4">
+                                                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="FNs-kP-tZ4">
                                                                 <rect key="frame" x="0.0" y="26.666666666666742" width="382" height="50"/>
                                                                 <locale key="locale" localeIdentifier="pt_BR"/>
                                                             </datePicker>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="M15-mD-elU" userLabel="Pages Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="M15-mD-elU" userLabel="Pages Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="348" width="382" height="60.666666666666686"/>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5L1-TU-Wsj" userLabel="ISBN Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5L1-TU-Wsj" userLabel="ISBN Input" customClass="ValidatedTextInput" customModule="casadocodigo" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="424.66666666666674" width="382" height="60.666666666666686"/>
                                                     </stackView>
                                                 </subviews>
@@ -883,37 +883,40 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cr6-2w-0gO">
                                 <rect key="frame" x="16" y="88" width="382" height="725"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.98039215690000003" blue="0.97647058819999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="16" id="Rhe-fT-ejB">
-                                    <size key="itemSize" width="160" height="289"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="8" minimumInteritemSpacing="16" id="Rhe-fT-ejB">
+                                    <size key="itemSize" width="254" height="325"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="16" maxX="0.0" maxY="16"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ShowcaseBookCell" id="IXu-ah-sND" customClass="ShowcaseBookCell" customModule="casadocodigo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="66" width="160" height="299"/>
+                                        <rect key="frame" x="23" y="66" width="336" height="564"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="L7t-U2-mih">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="299"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="564"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcB-Zl-QPh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="229"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcB-Zl-QPh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="336" height="474"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7a-kw-a2X">
-                                                    <rect key="frame" x="8" y="229" width="144" height="70"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR5-eT-Joc">
+                                                    <rect key="frame" x="8" y="482" width="320" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
-                                                    <color key="textColor" red="0.42352941176470588" green="0.41568627450980389" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=regular">
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="160" height="299"/>
+                                        <size key="customSize" width="336" height="564"/>
                                         <connections>
+                                            <outlet property="bookTitleLabel" destination="cR5-eT-Joc" id="Iin-XY-QRx"/>
                                             <outlet property="coverImageView" destination="zcB-Zl-QPh" id="I4G-vF-q2k"/>
-                                            <outlet property="titleLabel" destination="X7a-kw-a2X" id="F7k-BO-zJZ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -921,14 +924,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3dp-Mc-jJm" customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="42"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m8r-7E-m9T" customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         </view>
                                     </subviews>
                                     <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                     <connections>
-                                        <outlet property="sectionTitle" destination="3dp-Mc-jJm" id="evk-YN-MbJ"/>
+                                        <outlet property="sectionTitle" destination="m8r-7E-m9T" id="L4L-op-dSa"/>
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
@@ -945,10 +949,14 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cr6-2w-0gO" secondAttribute="bottom" id="5xk-EP-l2W"/>
                             <constraint firstItem="cr6-2w-0gO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ALO-Ij-RkQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cr6-2w-0gO" secondAttribute="trailing" constant="16" id="Ehs-py-6tf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cr6-2w-0gO" secondAttribute="trailing" constant="16" id="Ehs-py-6tf">
+                                <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                            </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8fB-X4-BGo" secondAttribute="bottom" id="U9r-B7-Eec"/>
                             <constraint firstItem="8fB-X4-BGo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uAn-id-LQk"/>
-                            <constraint firstItem="cr6-2w-0gO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xQv-Ud-jRf"/>
+                            <constraint firstItem="cr6-2w-0gO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xQv-Ud-jRf">
+                                <variation key="heightClass=regular-widthClass=regular" constant="24"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="8fB-X4-BGo" secondAttribute="trailing" id="zgR-B7-Mt6"/>
                         </constraints>
                     </view>
@@ -1303,6 +1311,9 @@
         <namedColor name="strongOrange">
             <color red="0.96078431372549022" green="0.5490196078431373" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

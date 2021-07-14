@@ -233,7 +233,7 @@ extension HomeViewController: UICollectionViewDataSource {
                 ? "Busca por \"\(searchController.searchBar.text!)\""
                 : "Todos os Livros"
             
-            headerView.sectionTitle.setText(sectionTitle)
+            headerView.setTitle(sectionTitle)
             return headerView
             
         default:
@@ -243,8 +243,16 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        self.showcaseFlowLayoutImpl.sizeForItemOf(collectionView, layout: collectionViewLayout, atIndex: indexPath)
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return self.showcaseFlowLayoutImpl.sizeForItemOf(collectionView, layout: collectionViewLayout, atIndex: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return self.showcaseFlowLayoutImpl.sizeForHeaderOf(collectionView, layout: collectionViewLayout, atSection: section)
     }
 }
 
