@@ -14,7 +14,7 @@ import UIKit
     }
     
     private var fontSize: CGFloat {
-        return renderingOnPhone ? 24 : 32
+        return renderingOnPhone ? 24 : 34
     }
     
     private var borderHeight: CGFloat {
