@@ -13,10 +13,6 @@ class ShowcaseFlowLayout: UICollectionViewFlowLayout {
         return UIDevice.current.userInterfaceIdiom == .phone
     }
     
-    private var cellsPerLine: CGFloat {
-        return renderingOnPhone ? 2 : 3
-    }
-    
     private var labelWrapperHeight: CGFloat {
         return 90
     }
@@ -39,6 +35,22 @@ class ShowcaseFlowLayout: UICollectionViewFlowLayout {
         minimumInteritemSpacing = renderingOnPhone ? 16 : 32
     }
     
+    private func calculateCells(by traitCollection: UITraitCollection) -> CGFloat {
+        switch (traitCollection.verticalSizeClass, traitCollection.horizontalSizeClass) {
+        case (.compact, _):
+            return 4
+                        
+        case (.regular, .regular):
+            return 3
+        
+        case (.regular, .compact):
+            return 2
+        
+        default:
+            fatalError("Could not be possible to calculate the cells number per line")
+        }
+    }
+    
     private func calculateItemHeightProportional(to width: CGFloat) -> CGFloat {
         let originalBookCoverProportion = CGSize(width: 336, height: 474)
         
@@ -49,11 +61,12 @@ class ShowcaseFlowLayout: UICollectionViewFlowLayout {
     func sizeForItemOf(_ collectionView: UICollectionView,
                        layout collectionViewLayout: UICollectionViewLayout,
                        atIndex indexPath: IndexPath) -> CGSize {
-        let collectionWidth = collectionView.bounds.width
+        let cellsPerLine = calculateCells(by: collectionView.traitCollection)
     
         let paddings = cellsPerLine - 1
         let totalPaddingOffset = minimumInteritemSpacing * paddings
         
+        let collectionWidth = collectionView.bounds.width
         let itemWidth = (collectionWidth - totalPaddingOffset) / cellsPerLine
         let itemHeight = self.calculateItemHeightProportional(to: itemWidth)
         
