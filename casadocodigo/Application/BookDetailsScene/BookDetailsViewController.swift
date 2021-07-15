@@ -40,6 +40,8 @@ class BookDetailsViewController: BaseNavbarItemsViewController {
     @IBOutlet weak var authorSectionTitle: SectionTitle!
     @IBOutlet weak var authorImageView: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
+    
+    @IBOutlet weak var regularWidthAuthorBioText: UILabel!
     @IBOutlet weak var authorBioText: UITextView!
     
     @IBOutlet weak var productInfoSectionTitle: SectionTitle!
@@ -56,45 +58,28 @@ class BookDetailsViewController: BaseNavbarItemsViewController {
         super.viewDidLoad()
         
         navigationItem.backButtonTitle = ""
-        
-        if let selectedBook = selectedBook {
-            buildUp(using: selectedBook)
-        }
+        setup()
     }
     
     override func didUserSignedIn() {
         super.didUserSignedIn()
-        adjustLayout()
+        
+        setup()
     }
     
-    private func adjustLayout() {
+    fileprivate func setup() {
+        if let selectedBook = selectedBook {
+            setupViews(with: selectedBook)
+        }
+    }
+        
+    fileprivate func setupViews(with book: BookResponse) {
+        titleLabel.text = book.title
         titleLabel.sizeToFit()
+        
+        subtitleLabel.text = book.subtitle
         subtitleLabel.sizeToFit()
         
-        [buyEbookButton, buyHardCoverButton, buyComboButton]
-            .forEach { $0?.setHidden(for: Role.ADMIN) }
-        
-        contentSectionTitle.useTextColor()
-        
-        authorSectionTitle.useTextColor()
-        authorImageView.roundTheShape()
-        
-        productInfoSectionTitle.useTextColor()
-        
-        let deletingButtonImage = UIImage(named: "trash")?.withTintColor(UIColor.white)
-        deletingButton.setImage(deletingButtonImage, for: .normal)
-        deletingButton.roundTheShape()
-        deletingButton.setVisibleOnly(to: Role.ADMIN)
-        
-        let editingButtonImage = UIImage(named: "pencil")?.withTintColor(UIColor.white)
-        editingButton.setImage(editingButtonImage, for: .normal)
-        editingButton.roundTheShape()
-        editingButton.setVisibleOnly(to: Role.ADMIN)
-    }
-    
-    private func buildUp(using book: BookResponse) {
-        titleLabel.text = book.title
-        subtitleLabel.text = book.subtitle
         coverImageView.af.setImage(withURL: book.coverImagePath)
         
         book.prices.forEach { price in
@@ -109,24 +94,61 @@ class BookDetailsViewController: BaseNavbarItemsViewController {
                 comboPrice.text = price.value.currencyValue()
             }
         }
+        [buyEbookButton, buyHardCoverButton, buyComboButton]
+            .forEach { $0?.setHidden(for: Role.ADMIN) }
         
         contentSectionTitle.setText("Conteúdo")
+        contentSectionTitle.useTextColor()
         contentTextView.text = book.description
         
         authorSectionTitle.setText("Autor")
+        authorSectionTitle.useTextColor()
+        
         authorImageView.af.setImage(withURL: book.author.profilePicturePath)
+        authorImageView.roundTheShape()
+        
         authorNameLabel.text = book.author.fullName
-        authorBioText.text = book.author.bio
+        
+        let authorBio = book.author.bio
+        authorBioText.text = authorBio
+        regularWidthAuthorBioText.text = authorBio
+        
+        setupAuthorBio(with: traitCollection)
         
         productInfoSectionTitle.setText("Dados do Produto")
+        productInfoSectionTitle.useTextColor()
+        
         publicationDateLabel.text = book.publicationDate
         numberOfPagesLabel.text = String(describing: book.numberOfPages)
         ISBNLabel.text = book.ISBN
         
+        let deletingButtonImage = UIImage(named: "trash")?.withTintColor(UIColor.white)
+        deletingButton.setImage(deletingButtonImage, for: .normal)
         deletingButton.addTarget(self, action: #selector(deletingButtonPressed(_:)), for: .touchUpInside)
-        editingButton.addTarget(self, action: #selector(editingButtonPressed(_:)), for: .touchUpInside)
+        deletingButton.roundTheShape()
+        deletingButton.setVisibleOnly(to: Role.ADMIN)
         
-        adjustLayout()
+        let editingButtonImage = UIImage(named: "pencil")?.withTintColor(UIColor.white)
+        editingButton.setImage(editingButtonImage, for: .normal)
+        editingButton.addTarget(self, action: #selector(editingButtonPressed(_:)), for: .touchUpInside)
+        editingButton.roundTheShape()
+        editingButton.setVisibleOnly(to: Role.ADMIN)
+    }
+    
+    fileprivate func setupAuthorBio(with traits: UITraitCollection) {
+        regularWidthAuthorBioText.isHidden = traits.horizontalSizeClass == .compact
+        authorBioText.isHidden = !regularWidthAuthorBioText.isHidden
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        let widthSizeClassChanged = traitCollection.horizontalSizeClass
+            != previousTraitCollection?.horizontalSizeClass
+        
+        guard widthSizeClassChanged else { return }
+        
+        setupAuthorBio(with: traitCollection)
     }
     
     // MARK: Actions
