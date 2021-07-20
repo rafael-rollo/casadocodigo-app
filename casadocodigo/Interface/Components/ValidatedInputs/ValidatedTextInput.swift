@@ -8,13 +8,25 @@
 import UIKit
 
 @IBDesignable class ValidatedTextInput: UIStackView  {
+    private var defaultSpacing: CGFloat {
+        return renderingOnPhone ? Theme.spacing.xxsmall : Theme.spacing.xsmall
+    }
+    
+    private var fieldHeight: CGFloat {
+        return renderingOnPhone ? 34 : 46
+    }
+    
+    private var fieldFontSize: CGFloat {
+        return renderingOnPhone ? 14 : 22
+    }
+    
     private lazy var titleLabel: TextFieldLabel = {
         return TextFieldLabel()
     }()
     
     private lazy var textField: UITextField = {
         let textField = UITextField()
-        textField.font = UIFont(name: "HelveticaNeue", size: 14)
+        textField.font = UIFont(name: "HelveticaNeue", size: fieldFontSize)
         textField.textColor = .secondaryLabel
         textField.borderStyle = .roundedRect
         textField.backgroundColor = .white
@@ -92,10 +104,14 @@ extension ValidatedTextInput: ViewCode {
         addArrangedSubview(errorMessageLabel)
     }
     
+    func addConstraints() {
+        textField.constrainHeight(to: fieldHeight)
+    }
+    
     func addTheme() {
         axis = .vertical
         alignment = .fill
         distribution = .fill
-        spacing = Theme.spacing.xxsmall
+        spacing = defaultSpacing
     }
 }

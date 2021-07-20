@@ -8,13 +8,21 @@
 import UIKit
 
 @IBDesignable class ValidatedLargeTextInput: UIStackView  {
+    private var defaultSpacing: CGFloat {
+        return renderingOnPhone ? Theme.spacing.xxsmall : Theme.spacing.xsmall
+    }
+    
+    private var fieldFontSize: CGFloat {
+        return renderingOnPhone ? 14 : 22
+    }
+    
     private lazy var titleLabel: TextFieldLabel = {
         return TextFieldLabel()
     }()
     
     private lazy var textView: UITextView = {
         let textView = UITextView()
-        textView.font = UIFont(name: "HelveticaNeue", size: 14)
+        textView.font = UIFont(name: "HelveticaNeue", size: fieldFontSize)
         textView.textColor = .secondaryLabel
         textView.backgroundColor = .white
         textView.configureBorders()
@@ -115,6 +123,6 @@ extension ValidatedLargeTextInput: ViewCode {
         axis = .vertical
         alignment = .fill
         distribution = .fill
-        spacing = Theme.spacing.xxsmall
+        spacing = defaultSpacing
     }
 }
