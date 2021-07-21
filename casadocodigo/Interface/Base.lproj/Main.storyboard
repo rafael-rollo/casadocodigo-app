@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1072,7 +1073,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cr6-2w-0gO">
                                 <rect key="frame" x="16" y="88" width="382" height="725"/>
-                                <color key="backgroundColor" red="0.98823529409999999" green="0.98039215690000003" blue="0.97647058819999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" name="background"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="8" minimumInteritemSpacing="16" id="Rhe-fT-ejB">
                                     <size key="itemSize" width="254" height="325"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
@@ -1172,8 +1173,8 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UC3-Ud-cFa">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="0.0" id="D4F-ry-cvl">
+                                <color key="backgroundColor" name="background"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="16" id="D4F-ry-cvl">
                                     <size key="itemSize" width="396" height="200"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -1181,14 +1182,14 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AuthorCell" id="Ocr-ia-O4P" customClass="AuthorCell" customModule="casadocodigo" customModuleProvider="target">
-                                        <rect key="frame" x="9" y="66" width="396" height="206"/>
+                                        <rect key="frame" x="16" y="66" width="382" height="206"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="g7U-6C-pEa">
-                                            <rect key="frame" x="0.0" y="0.0" width="396" height="206"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="206"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sy5-qo-vYt" userLabel="Author Info">
-                                                    <rect key="frame" x="12" y="12" width="372" height="120"/>
+                                                    <rect key="frame" x="12" y="12" width="358" height="120"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SGD-i0-7mq">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -1198,46 +1199,87 @@
                                                             </constraints>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZi-bv-aXh">
-                                                            <rect key="frame" x="112" y="0.0" width="260" height="120"/>
+                                                            <rect key="frame" x="112" y="0.0" width="246" height="120"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="805-OL-5NH">
-                                                                    <rect key="frame" x="8" y="0.0" width="196" height="24"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
-                                                                    <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Livros Publicados: 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwi-fh-owN">
-                                                                    <rect key="frame" x="8" y="25" width="224" height="18"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUR-ce-szC" userLabel="Title Stack">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="246" height="24"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="805-OL-5NH">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="214" height="24"/>
+                                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzx-Bn-mgz" customClass="AuthorizedButton" customModule="casadocodigo" customModuleProvider="target">
+                                                                            <rect key="frame" x="214" y="0.0" width="32" height="24"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="32" id="iC0-GV-GNL"/>
+                                                                            </constraints>
+                                                                            <color key="tintColor" systemColor="secondaryLabelColor"/>
+                                                                            <state key="normal">
+                                                                                <imageReference key="image" image="ellipsis.circle" catalog="system" symbolScale="large"/>
+                                                                            </state>
+                                                                        </button>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="24" id="GHR-me-ygJ"/>
+                                                                    </constraints>
+                                                                </stackView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tecnologias:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rf2-iQ-R4J">
+                                                                    <rect key="frame" x="0.0" y="64" width="246" height="20"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20" id="4du-ZG-yFF"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                                    <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tecnologias:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rf2-iQ-R4J">
-                                                                    <rect key="frame" x="8" y="65" width="224" height="18"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                                    <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AWs-To-FdB" customClass="TagsHorizontalList" customModule="casadocodigo" customModuleProvider="target">
-                                                                    <rect key="frame" x="8" y="87" width="264" height="33"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWs-To-FdB" customClass="TagsHorizontalList" customModule="casadocodigo" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="88" width="258" height="32"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="32" id="ljV-7v-2co"/>
+                                                                    </constraints>
                                                                 </view>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohx-vu-cq0" customClass="AuthorizedButton" customModule="casadocodigo" customModuleProvider="target">
-                                                                    <rect key="frame" x="240" y="0.0" width="20" height="20"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                                    <color key="tintColor" name="danger"/>
-                                                                </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="31l-Tf-DBC" customClass="AuthorizedButton" customModule="casadocodigo" customModuleProvider="target">
-                                                                    <rect key="frame" x="212" y="0.0" width="20" height="20"/>
-                                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                                                    <color key="tintColor" red="0.32156862749999998" green="0.48627450979999998" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </button>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ty8-KT-0Us" userLabel="Publications Stack">
+                                                                    <rect key="frame" x="0.0" y="24" width="246" height="20"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Livros Publicados:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrB-Ft-WRC">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="115" height="20"/>
+                                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hwi-fh-owN">
+                                                                            <rect key="frame" x="119" y="0.0" width="127" height="20"/>
+                                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20" id="4EF-bx-mHh"/>
+                                                                    </constraints>
+                                                                </stackView>
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="120" id="0jg-oq-Ssn"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ty8-KT-0Us" secondAttribute="trailing" id="575-iM-nVy"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Rf2-iQ-R4J" secondAttribute="trailing" id="6dQ-eJ-Pgo"/>
+                                                                <constraint firstItem="GUR-ce-szC" firstAttribute="leading" secondItem="EZi-bv-aXh" secondAttribute="leading" id="7Pa-kX-WKz"/>
+                                                                <constraint firstAttribute="bottom" secondItem="AWs-To-FdB" secondAttribute="bottom" id="Go9-pO-dje"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ty8-KT-0Us" secondAttribute="trailing" id="JxX-Ad-QQd"/>
+                                                                <constraint firstItem="AWs-To-FdB" firstAttribute="top" secondItem="Rf2-iQ-R4J" secondAttribute="bottom" constant="4" id="TEh-0r-LTP"/>
+                                                                <constraint firstItem="Rf2-iQ-R4J" firstAttribute="leading" secondItem="EZi-bv-aXh" secondAttribute="leading" id="YN3-uF-IVv"/>
+                                                                <constraint firstItem="ty8-KT-0Us" firstAttribute="leading" secondItem="EZi-bv-aXh" secondAttribute="leading" id="cge-Rv-vWD"/>
+                                                                <constraint firstAttribute="trailing" secondItem="GUR-ce-szC" secondAttribute="trailing" id="e9a-sk-D8N"/>
+                                                                <constraint firstItem="ty8-KT-0Us" firstAttribute="leading" secondItem="EZi-bv-aXh" secondAttribute="leading" id="hbq-Yx-fMH"/>
+                                                                <constraint firstItem="GUR-ce-szC" firstAttribute="top" secondItem="EZi-bv-aXh" secondAttribute="top" id="qjX-QH-Zyh"/>
+                                                                <constraint firstAttribute="trailing" secondItem="AWs-To-FdB" secondAttribute="trailing" constant="-12" id="s2X-K5-STE"/>
+                                                                <constraint firstItem="AWs-To-FdB" firstAttribute="leading" secondItem="EZi-bv-aXh" secondAttribute="leading" id="ydZ-z5-6r6"/>
+                                                                <constraint firstItem="ty8-KT-0Us" firstAttribute="top" secondItem="GUR-ce-szC" secondAttribute="bottom" id="zy9-Ef-NKk"/>
+                                                            </constraints>
                                                         </view>
                                                     </subviews>
                                                     <constraints>
@@ -1245,35 +1287,40 @@
                                                         <constraint firstItem="SGD-i0-7mq" firstAttribute="top" secondItem="Sy5-qo-vYt" secondAttribute="top" id="NVU-0Q-jU4"/>
                                                         <constraint firstItem="SGD-i0-7mq" firstAttribute="leading" secondItem="Sy5-qo-vYt" secondAttribute="leading" id="civ-uV-SbW"/>
                                                         <constraint firstItem="EZi-bv-aXh" firstAttribute="leading" secondItem="SGD-i0-7mq" secondAttribute="trailing" constant="12" id="e52-VA-Bad"/>
+                                                        <constraint firstItem="EZi-bv-aXh" firstAttribute="top" secondItem="SGD-i0-7mq" secondAttribute="top" id="lei-PN-Ttd"/>
                                                         <constraint firstAttribute="height" constant="120" id="q7x-uu-GLY"/>
                                                         <constraint firstAttribute="trailing" secondItem="EZi-bv-aXh" secondAttribute="trailing" id="tvR-Wd-fQi"/>
-                                                        <constraint firstItem="EZi-bv-aXh" firstAttribute="top" secondItem="Sy5-qo-vYt" secondAttribute="top" id="zWN-oW-e3X"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MK-jG-dpL">
-                                                    <rect key="frame" x="13" y="144" width="372" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MK-jG-dpL">
+                                                    <rect key="frame" x="12" y="144" width="358" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="KFO-1Z-cIl"/>
+                                                    </constraints>
                                                     <string key="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</string>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
-                                                    <color key="textColor" red="0.42352941179999998" green="0.41568627450000001" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Sy5-qo-vYt" firstAttribute="top" secondItem="g7U-6C-pEa" secondAttribute="top" constant="12" id="8P2-2C-knU"/>
+                                                <constraint firstAttribute="trailing" secondItem="6MK-jG-dpL" secondAttribute="trailing" constant="12" id="UFC-Q5-Sj5"/>
+                                                <constraint firstAttribute="bottom" secondItem="6MK-jG-dpL" secondAttribute="bottom" constant="12" id="oE4-pM-RKw"/>
                                                 <constraint firstItem="Sy5-qo-vYt" firstAttribute="leading" secondItem="g7U-6C-pEa" secondAttribute="leading" constant="12" id="wr6-9g-lbg"/>
+                                                <constraint firstItem="6MK-jG-dpL" firstAttribute="top" secondItem="Sy5-qo-vYt" secondAttribute="bottom" constant="12" id="xq9-Ie-Hu8"/>
                                                 <constraint firstAttribute="trailing" secondItem="Sy5-qo-vYt" secondAttribute="trailing" constant="12" id="yHg-uT-UFn"/>
+                                                <constraint firstItem="6MK-jG-dpL" firstAttribute="leading" secondItem="g7U-6C-pEa" secondAttribute="leading" constant="12" id="zUj-7E-vTg"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <directionalEdgeInsets key="directionalLayoutMargins" top="12" leading="12" bottom="12" trailing="12"/>
-                                        <size key="customSize" width="396" height="206"/>
+                                        <size key="customSize" width="382" height="206"/>
                                         <connections>
                                             <outlet property="authorBioLabel" destination="6MK-jG-dpL" id="28H-0m-Twk"/>
-                                            <outlet property="authorEditingButton" destination="31l-Tf-DBC" id="L0S-3Z-T9Y"/>
+                                            <outlet property="authorMenuButton" destination="rzx-Bn-mgz" id="Z8C-jI-q4a"/>
                                             <outlet property="authorNameLabel" destination="805-OL-5NH" id="S1T-0t-ZTb"/>
                                             <outlet property="authorPictureView" destination="SGD-i0-7mq" id="AHm-d1-IkW"/>
-                                            <outlet property="authorRemovingButton" destination="Ohx-vu-cq0" id="eIq-mE-qwK"/>
                                             <outlet property="publicationCountLabel" destination="Hwi-fh-owN" id="IWn-rd-t9x"/>
                                             <outlet property="technologiesList" destination="AWs-To-FdB" id="ogj-8b-i1d"/>
                                         </connections>
@@ -1284,7 +1331,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZe-gK-ihO" customClass="SectionTitle" customModule="casadocodigo" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="0.0" width="382" height="42"/>
+                                            <rect key="frame" x="16" y="0.0" width="382" height="50"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         </view>
                                     </subviews>
@@ -1295,7 +1342,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GCR-ca-Cvg"/>
-                        <color key="backgroundColor" red="0.98431372549019602" green="0.98039215686274506" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="UC3-Ud-cFa" firstAttribute="leading" secondItem="GCR-ca-Cvg" secondAttribute="leading" id="4gr-FL-ZIL"/>
                             <constraint firstItem="UC3-Ud-cFa" firstAttribute="top" secondItem="GCR-ca-Cvg" secondAttribute="top" id="F7q-4F-UQH"/>
@@ -1490,13 +1537,11 @@
         <image name="avatar" width="170.66667175292969" height="170.66667175292969"/>
         <image name="book-cover" width="170.66667175292969" height="170.66667175292969"/>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
+        <image name="ellipsis.circle" catalog="system" width="128" height="121"/>
         <image name="logo-cdc" width="200" height="200"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <namedColor name="background">
             <color red="0.98431372549019602" green="0.98039215686274506" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="danger">
-            <color red="0.75294117647058822" green="0.22352941176470589" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="strongOrange">
             <color red="0.96078431372549022" green="0.5490196078431373" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

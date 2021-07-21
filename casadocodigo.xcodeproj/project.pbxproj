@@ -20,7 +20,6 @@
 		581C466A269CDDC20031BAE9 /* Constraints+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C4669269CDDC20031BAE9 /* Constraints+UIView.swift */; };
 		581C466C269E36170031BAE9 /* IdiomHelper+UITraitEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C466B269E36170031BAE9 /* IdiomHelper+UITraitEnvironment.swift */; };
 		5827D806262F8D1900D20B19 /* AuthorsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D805262F8D1900D20B19 /* AuthorsHeaderView.swift */; };
-		5827D80B262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */; };
 		5827D810262FDBD100D20B19 /* TagsHorizontalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D80F262FDBD100D20B19 /* TagsHorizontalList.swift */; };
 		5827D829262FE6A300D20B19 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D828262FE6A300D20B19 /* TagCell.swift */; };
 		582A05E92677F12700114506 /* NavigationBarButtonItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A05E82677F12700114506 /* NavigationBarButtonItems.swift */; };
@@ -98,7 +97,6 @@
 		581C4669269CDDC20031BAE9 /* Constraints+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraints+UIView.swift"; sourceTree = "<group>"; };
 		581C466B269E36170031BAE9 /* IdiomHelper+UITraitEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdiomHelper+UITraitEnvironment.swift"; sourceTree = "<group>"; };
 		5827D805262F8D1900D20B19 /* AuthorsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsHeaderView.swift; sourceTree = "<group>"; };
-		5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shadow+UICollectionViewCell.swift"; sourceTree = "<group>"; };
 		5827D80F262FDBD100D20B19 /* TagsHorizontalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsHorizontalList.swift; sourceTree = "<group>"; };
 		5827D828262FE6A300D20B19 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		582A05E82677F12700114506 /* NavigationBarButtonItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarButtonItems.swift; sourceTree = "<group>"; };
@@ -299,7 +297,6 @@
 				5813145A2694C3D100F12E66 /* SafeAnchors+UIView.swift */,
 				58FA533B263772D1000390BF /* Shape+UIView.swift */,
 				585D7301264345B200666078 /* Border+UITextView.swift */,
-				5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */,
 				581C466B269E36170031BAE9 /* IdiomHelper+UITraitEnvironment.swift */,
 			);
 			path = Extensions;
@@ -776,7 +773,6 @@
 				582F98142628A40300354D65 /* Book.swift in Sources */,
 				582F9861262DD83000354D65 /* AuthorRepository.swift in Sources */,
 				5843A3CE26994E5B00081B2E /* ValidatedLargeTextInput.swift in Sources */,
-				5827D80B262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift in Sources */,
 				582F9869262DDD5600354D65 /* Author.swift in Sources */,
 				581C4666269BA8340031BAE9 /* FieldErrorLabel.swift in Sources */,
 				58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */,
@@ -976,7 +972,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CP42424Z9Z;
 				INFOPLIST_FILE = casadocodigo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -997,7 +993,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CP42424Z9Z;
 				INFOPLIST_FILE = casadocodigo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

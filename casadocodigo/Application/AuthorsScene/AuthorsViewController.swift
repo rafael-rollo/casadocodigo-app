@@ -142,7 +142,7 @@ extension AuthorsViewController: AuthorFormViewControllerDelegate {
 
 extension AuthorsViewController: AuthorCellDelegate {
     
-    func didRemovingButtonPressed(_ sender: UIButton!, forAuthorIdentifiedBy id: Int) {
+    func didRemovingButtonPressed(_ sender: UIAction!, forAuthorIdentifiedBy id: Int) {
         let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
         
@@ -160,7 +160,7 @@ extension AuthorsViewController: AuthorCellDelegate {
         }
     }
     
-    func didEditingButtonPressed(_ sender: UIButton!, for author: AuthorResponse) {
+    func didEditingButtonPressed(_ sender: UIAction!, for author: AuthorResponse) {
         let controller = AuthorFormViewCodeController()
         controller.delegate = self
         controller.selectedAuthor = author
