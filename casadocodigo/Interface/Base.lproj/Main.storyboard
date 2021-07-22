@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pTB-BC-bOT">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -1292,32 +1291,30 @@
                                                         <constraint firstAttribute="trailing" secondItem="EZi-bv-aXh" secondAttribute="trailing" id="tvR-Wd-fQi"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6MK-jG-dpL">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="V8t-17-wtd">
                                                     <rect key="frame" x="12" y="144" width="358" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="KFO-1Z-cIl"/>
-                                                    </constraints>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <string key="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</string>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Sy5-qo-vYt" firstAttribute="top" secondItem="g7U-6C-pEa" secondAttribute="top" constant="12" id="8P2-2C-knU"/>
-                                                <constraint firstAttribute="trailing" secondItem="6MK-jG-dpL" secondAttribute="trailing" constant="12" id="UFC-Q5-Sj5"/>
-                                                <constraint firstAttribute="bottom" secondItem="6MK-jG-dpL" secondAttribute="bottom" constant="12" id="oE4-pM-RKw"/>
+                                                <constraint firstItem="V8t-17-wtd" firstAttribute="leading" secondItem="g7U-6C-pEa" secondAttribute="leading" constant="12" id="8Yx-gT-dqb"/>
+                                                <constraint firstAttribute="bottom" secondItem="V8t-17-wtd" secondAttribute="bottom" constant="12" id="VHy-E3-5KA"/>
+                                                <constraint firstAttribute="trailing" secondItem="V8t-17-wtd" secondAttribute="trailing" constant="12" id="gC2-Xs-wn5"/>
+                                                <constraint firstItem="V8t-17-wtd" firstAttribute="top" secondItem="Sy5-qo-vYt" secondAttribute="bottom" constant="12" id="vZ0-6I-wND"/>
                                                 <constraint firstItem="Sy5-qo-vYt" firstAttribute="leading" secondItem="g7U-6C-pEa" secondAttribute="leading" constant="12" id="wr6-9g-lbg"/>
-                                                <constraint firstItem="6MK-jG-dpL" firstAttribute="top" secondItem="Sy5-qo-vYt" secondAttribute="bottom" constant="12" id="xq9-Ie-Hu8"/>
                                                 <constraint firstAttribute="trailing" secondItem="Sy5-qo-vYt" secondAttribute="trailing" constant="12" id="yHg-uT-UFn"/>
-                                                <constraint firstItem="6MK-jG-dpL" firstAttribute="leading" secondItem="g7U-6C-pEa" secondAttribute="leading" constant="12" id="zUj-7E-vTg"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <directionalEdgeInsets key="directionalLayoutMargins" top="12" leading="12" bottom="12" trailing="12"/>
                                         <size key="customSize" width="382" height="206"/>
                                         <connections>
-                                            <outlet property="authorBioLabel" destination="6MK-jG-dpL" id="28H-0m-Twk"/>
+                                            <outlet property="authorBioTextView" destination="V8t-17-wtd" id="Gu0-nb-B0Q"/>
                                             <outlet property="authorMenuButton" destination="rzx-Bn-mgz" id="Z8C-jI-q4a"/>
                                             <outlet property="authorNameLabel" destination="805-OL-5NH" id="S1T-0t-ZTb"/>
                                             <outlet property="authorPictureView" destination="SGD-i0-7mq" id="AHm-d1-IkW"/>
@@ -1358,7 +1355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zrs-un-2RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="351" y="155"/>
+            <point key="canvasLocation" x="350.72463768115944" y="154.6875"/>
         </scene>
         <!--Author Form-->
         <scene sceneID="ywp-nL-Rgy">

@@ -56,7 +56,7 @@ class AuthorCell: UICollectionViewCell, ReusableView {
     @IBOutlet weak var publicationCountLabel: UILabel!
     @IBOutlet weak var technologiesList: TagsHorizontalList!
 
-    @IBOutlet weak var authorBioLabel: UILabel!
+    @IBOutlet weak var authorBioTextView: UITextView!
     
     // MARK: - Lifecycle
     
@@ -113,7 +113,9 @@ class AuthorCell: UICollectionViewCell, ReusableView {
         
         publicationCountLabel.text = String(author.publishedBooks)
         technologiesList.set(items: author.technologies)
-        authorBioLabel.text = String(author.bio)
+        
+        authorBioTextView.text = "\"\(author.bio)\""
+        layoutIfNeeded()
     }
     
     // MARK: View callbacks
