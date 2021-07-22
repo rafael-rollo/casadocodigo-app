@@ -16,6 +16,7 @@ class AuthorsViewController: BaseNavbarItemsViewController {
     
     var authors: [AuthorResponse] = []
     var authorRepository: AuthorRepository
+    var authorsFlowLayoutImpl = AuthorsFlowLayout()
     
     var navigationRightButtonItems: [NavigationBarItem] {
         guard UserDefaults.standard.getAuthenticated()?
@@ -119,12 +120,15 @@ extension AuthorsViewController: UICollectionViewDataSource {
 
 extension AuthorsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let horizontalMargin: CGFloat = 16
-        
-        let superviewWidth: CGFloat = collectionView.bounds.width
-        let adjustedWidth = superviewWidth - horizontalMargin * 2
-        
-        return CGSize(width: adjustedWidth, height: 206)
+        return authorsFlowLayoutImpl.sizeForItemOf(collectionView,
+                                            layout: collectionViewLayout,
+                                            atIndex: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return authorsFlowLayoutImpl.sizeForHeaderOf(collectionView,
+                                                     layout: collectionViewLayout,
+                                                     atSection: section)
     }
 }
 
