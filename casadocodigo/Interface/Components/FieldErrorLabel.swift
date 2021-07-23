@@ -8,6 +8,10 @@
 import UIKit
 
 class FieldErrorLabel: UILabel {
+    private var fontSize: CGFloat {
+        return renderingOnPhone ? 14 : 22
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -19,7 +23,7 @@ class FieldErrorLabel: UILabel {
     }
     
     func setup() {
-        font = UIFont(name: "HelveticaNeue", size: 14)
+        font = UIFont(name: "HelveticaNeue", size: fontSize)
         textColor = UIColor(named: "danger")
         isHidden = true
     }

@@ -18,8 +18,8 @@
 		581C4666269BA8340031BAE9 /* FieldErrorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C4665269BA8340031BAE9 /* FieldErrorLabel.swift */; };
 		581C4668269BB0F40031BAE9 /* AuthorFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C4667269BB0F40031BAE9 /* AuthorFormViewController.swift */; };
 		581C466A269CDDC20031BAE9 /* Constraints+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C4669269CDDC20031BAE9 /* Constraints+UIView.swift */; };
+		581C466C269E36170031BAE9 /* IdiomHelper+UITraitEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581C466B269E36170031BAE9 /* IdiomHelper+UITraitEnvironment.swift */; };
 		5827D806262F8D1900D20B19 /* AuthorsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D805262F8D1900D20B19 /* AuthorsHeaderView.swift */; };
-		5827D80B262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */; };
 		5827D810262FDBD100D20B19 /* TagsHorizontalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D80F262FDBD100D20B19 /* TagsHorizontalList.swift */; };
 		5827D829262FE6A300D20B19 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5827D828262FE6A300D20B19 /* TagCell.swift */; };
 		582A05E92677F12700114506 /* NavigationBarButtonItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582A05E82677F12700114506 /* NavigationBarButtonItems.swift */; };
@@ -63,6 +63,7 @@
 		58C0BEFF266AC76100FB0D19 /* Authorization+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C0BEFE266AC76100FB0D19 /* Authorization+UIView.swift */; };
 		58CB4562263A43C8005D19F2 /* ConfirmationDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */; };
 		58CB457D263B612E005D19F2 /* Ids+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CB457C263B612D005D19F2 /* Ids+UIView.swift */; };
+		58F4938026AA054B000C7D10 /* AuthorsFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F4937F26AA054B000C7D10 /* AuthorsFlowLayout.swift */; };
 		58FA532C26334E44000390BF /* AuthorFormViewCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA532B26334E44000390BF /* AuthorFormViewCodeController.swift */; };
 		58FA533C263772D1000390BF /* Shape+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FA533B263772D1000390BF /* Shape+UIView.swift */; };
 		58FAB463268F6150002F734B /* SearchFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FAB462268F6150002F734B /* SearchFooter.swift */; };
@@ -95,8 +96,8 @@
 		581C4665269BA8340031BAE9 /* FieldErrorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldErrorLabel.swift; sourceTree = "<group>"; };
 		581C4667269BB0F40031BAE9 /* AuthorFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorFormViewController.swift; sourceTree = "<group>"; };
 		581C4669269CDDC20031BAE9 /* Constraints+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constraints+UIView.swift"; sourceTree = "<group>"; };
+		581C466B269E36170031BAE9 /* IdiomHelper+UITraitEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdiomHelper+UITraitEnvironment.swift"; sourceTree = "<group>"; };
 		5827D805262F8D1900D20B19 /* AuthorsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsHeaderView.swift; sourceTree = "<group>"; };
-		5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shadow+UICollectionViewCell.swift"; sourceTree = "<group>"; };
 		5827D80F262FDBD100D20B19 /* TagsHorizontalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsHorizontalList.swift; sourceTree = "<group>"; };
 		5827D828262FE6A300D20B19 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		582A05E82677F12700114506 /* NavigationBarButtonItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarButtonItems.swift; sourceTree = "<group>"; };
@@ -146,6 +147,7 @@
 		58C0BEFE266AC76100FB0D19 /* Authorization+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Authorization+UIView.swift"; sourceTree = "<group>"; };
 		58CB4561263A43C8005D19F2 /* ConfirmationDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationDialog.swift; sourceTree = "<group>"; };
 		58CB457C263B612D005D19F2 /* Ids+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ids+UIView.swift"; sourceTree = "<group>"; };
+		58F4937F26AA054B000C7D10 /* AuthorsFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsFlowLayout.swift; sourceTree = "<group>"; };
 		58FA532B26334E44000390BF /* AuthorFormViewCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorFormViewCodeController.swift; sourceTree = "<group>"; };
 		58FA533B263772D1000390BF /* Shape+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+UIView.swift"; sourceTree = "<group>"; };
 		58FAB462268F6150002F734B /* SearchFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFooter.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			children = (
 				582AD394262F55B300705D6D /* AuthorCell.swift */,
 				5827D805262F8D1900D20B19 /* AuthorsHeaderView.swift */,
+				58F4937F26AA054B000C7D10 /* AuthorsFlowLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,7 +300,7 @@
 				5813145A2694C3D100F12E66 /* SafeAnchors+UIView.swift */,
 				58FA533B263772D1000390BF /* Shape+UIView.swift */,
 				585D7301264345B200666078 /* Border+UITextView.swift */,
-				5827D80A262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift */,
+				581C466B269E36170031BAE9 /* IdiomHelper+UITraitEnvironment.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -773,7 +776,6 @@
 				582F98142628A40300354D65 /* Book.swift in Sources */,
 				582F9861262DD83000354D65 /* AuthorRepository.swift in Sources */,
 				5843A3CE26994E5B00081B2E /* ValidatedLargeTextInput.swift in Sources */,
-				5827D80B262FBFC700D20B19 /* Shadow+UICollectionViewCell.swift in Sources */,
 				582F9869262DDD5600354D65 /* Author.swift in Sources */,
 				581C4666269BA8340031BAE9 /* FieldErrorLabel.swift in Sources */,
 				58BF69022621070300A8CEBD /* AppDelegate.swift in Sources */,
@@ -781,10 +783,12 @@
 				58FA532C26334E44000390BF /* AuthorFormViewCodeController.swift in Sources */,
 				581314602694C4C300F12E66 /* ViewCode.swift in Sources */,
 				58FAB463268F6150002F734B /* SearchFooter.swift in Sources */,
+				58F4938026AA054B000C7D10 /* AuthorsFlowLayout.swift in Sources */,
 				585D7302264345B200666078 /* Border+UITextView.swift in Sources */,
 				585D72E92643073200666078 /* Decimal.swift in Sources */,
 				5827D829262FE6A300D20B19 /* TagCell.swift in Sources */,
 				5827D806262F8D1900D20B19 /* AuthorsHeaderView.swift in Sources */,
+				581C466C269E36170031BAE9 /* IdiomHelper+UITraitEnvironment.swift in Sources */,
 				582CC771265BEFF40033F333 /* Theme.swift in Sources */,
 				582CC80B266816B00033F333 /* SignInViewController.swift in Sources */,
 				589C5BBA2621363300CE3B93 /* AuthorsViewController.swift in Sources */,
@@ -972,7 +976,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CP42424Z9Z;
 				INFOPLIST_FILE = casadocodigo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -993,7 +997,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CP42424Z9Z;
 				INFOPLIST_FILE = casadocodigo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

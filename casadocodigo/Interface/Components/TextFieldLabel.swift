@@ -8,6 +8,10 @@
 import UIKit
 
 class TextFieldLabel: UILabel {
+    private var fontSize: CGFloat {
+        return renderingOnPhone ? 16 : 24
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -19,7 +23,7 @@ class TextFieldLabel: UILabel {
     }
     
     func setup() {
-        font = UIFont(name: "HelveticaNeue", size: 16)
+        font = UIFont(name: "HelveticaNeue", size: fontSize)
         textColor = .secondaryLabel
         text = "Title Label:"
     }

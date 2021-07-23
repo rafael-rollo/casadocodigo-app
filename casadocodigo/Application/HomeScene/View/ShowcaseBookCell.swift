@@ -12,10 +12,10 @@ class ShowcaseBookCell: UICollectionViewCell, ReusableView {
     
     // MARK: IBOutlets
     @IBOutlet weak var coverImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var bookTitleLabel: UILabel!
     
     func setFrom(_ showcaseBook: BookResponse) {
         coverImageView.af.setImage(withURL: showcaseBook.coverImagePath)
-        titleLabel.text = showcaseBook.title
+        bookTitleLabel.text = showcaseBook.title
     }
 }

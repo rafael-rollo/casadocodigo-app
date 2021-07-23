@@ -7,11 +7,23 @@
 
 import UIKit
 
-@IBDesignable class SectionTitle: UIView, IdentifiableView {
+@IBDesignable class SectionTitle: UIView {
+    
+    private var titleHeight: CGFloat {
+        return renderingOnPhone ? 32 : 44
+    }
+    
+    private var fontSize: CGFloat {
+        return renderingOnPhone ? 24 : 34
+    }
+    
+    private var borderHeight: CGFloat {
+        return renderingOnPhone ? 0.5 : 1.5
+    }
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 24)
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: fontSize)
         label.textColor = UIColor(named: "strongOrange")
         label.text = "Section Title"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -61,14 +73,14 @@ extension SectionTitle: ViewCode {
             borderBottom.bottomAnchor.constraint(equalTo: bottomAnchor),
             borderBottom.leadingAnchor.constraint(equalTo: leadingAnchor),
             borderBottom.trailingAnchor.constraint(equalTo: trailingAnchor),
-            borderBottom.heightAnchor.constraint(equalToConstant: 1)
+            borderBottom.heightAnchor.constraint(equalToConstant: borderHeight)
         ])
         
         NSLayoutConstraint.activate([
             titleLabel.bottomAnchor.constraint(equalTo: borderBottom.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            titleLabel.heightAnchor.constraint(equalToConstant: 32)
+            titleLabel.heightAnchor.constraint(equalToConstant: titleHeight)
         ])
     }
     

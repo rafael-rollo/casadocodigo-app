@@ -16,6 +16,7 @@ class AuthorsViewController: BaseNavbarItemsViewController {
     
     var authors: [AuthorResponse] = []
     var authorRepository: AuthorRepository
+    var authorsFlowLayoutImpl = AuthorsFlowLayout()
     
     var navigationRightButtonItems: [NavigationBarItem] {
         guard UserDefaults.standard.getAuthenticated()?
@@ -38,6 +39,7 @@ class AuthorsViewController: BaseNavbarItemsViewController {
         super.viewDidLoad()
         authorsCollectionView.dataSource = self
         authorsCollectionView.delegate = self
+        authorsCollectionView.layer.masksToBounds = false
         
         navigationItem.backButtonTitle = ""
         setupNavigationBar(itemsOnTheRight: navigationRightButtonItems)
@@ -119,12 +121,15 @@ extension AuthorsViewController: UICollectionViewDataSource {
 
 extension AuthorsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let horizontalMargin: CGFloat = 16
-        
-        let superviewWidth: CGFloat = collectionView.bounds.width
-        let adjustedWidth = superviewWidth - horizontalMargin * 2
-        
-        return CGSize(width: adjustedWidth, height: 206)
+        return authorsFlowLayoutImpl.sizeForItemOf(collectionView,
+                                            layout: collectionViewLayout,
+                                            atIndex: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return authorsFlowLayoutImpl.sizeForHeaderOf(collectionView,
+                                                     layout: collectionViewLayout,
+                                                     atSection: section)
     }
 }
 
@@ -142,7 +147,7 @@ extension AuthorsViewController: AuthorFormViewControllerDelegate {
 
 extension AuthorsViewController: AuthorCellDelegate {
     
-    func didRemovingButtonPressed(_ sender: UIButton!, forAuthorIdentifiedBy id: Int) {
+    func didRemovingButtonPressed(_ sender: UIAction!, forAuthorIdentifiedBy id: Int) {
         let indicator = UIActivityIndicatorView.customIndicator(to: self.view)
         indicator.startAnimating()
         
@@ -160,7 +165,7 @@ extension AuthorsViewController: AuthorCellDelegate {
         }
     }
     
-    func didEditingButtonPressed(_ sender: UIButton!, for author: AuthorResponse) {
+    func didEditingButtonPressed(_ sender: UIAction!, for author: AuthorResponse) {
         let controller = AuthorFormViewCodeController()
         controller.delegate = self
         controller.selectedAuthor = author

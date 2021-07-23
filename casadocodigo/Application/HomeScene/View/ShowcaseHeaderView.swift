@@ -10,5 +10,8 @@ import UIKit
 class ShowcaseHeaderView: UICollectionReusableView, ReusableView {
         
     @IBOutlet weak var sectionTitle: SectionTitle!
-    
+ 
+    func setTitle(_ title: String) {
+        sectionTitle.setText(title)
+    }
 }

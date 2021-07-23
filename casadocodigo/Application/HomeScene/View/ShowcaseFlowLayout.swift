@@ -7,30 +7,75 @@
 
 import UIKit
 
-fileprivate struct LayoutProperties {
-    static let cellsPerLine: CGFloat = UIDevice.current.userInterfaceIdiom == .phone ? 2 : 4
-    static let horizontalSpacing: CGFloat = 16
-    static let labelHeight: CGFloat = 70
-}
-
-class ShowcaseFlowLayout: NSObject {
+class ShowcaseFlowLayout: UICollectionViewFlowLayout {
     
-    private func calculateCellHeightProportional(to cellWidth: CGFloat) -> CGFloat {
-        let originalBookCoverProportion = CGSize(width: 336, height: 480)
-        
-        let proportionalHeight = originalBookCoverProportion.height * cellWidth / originalBookCoverProportion.width
-        return proportionalHeight
+    private var renderingOnPhone: Bool {
+        return UIDevice.current.userInterfaceIdiom == .phone
     }
     
-    func sizeForItemOf(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, atIndex indexPath: IndexPath) -> CGSize {
-        let collectionWidth = collectionView.bounds.width
+    private var labelWrapperHeight: CGFloat {
+        return 90
+    }
     
-        let paddingsPerLine = LayoutProperties.cellsPerLine - 1
-        let spacingOffset = LayoutProperties.horizontalSpacing * paddingsPerLine / LayoutProperties.cellsPerLine
+    private var headerHeight: CGFloat {
+        return renderingOnPhone ? 50 : 64
+    }
+    
+    override init() {
+        super.init()
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setup()
+    }
+    
+    func setup() {
+        minimumInteritemSpacing = renderingOnPhone ? 16 : 32
+    }
+    
+    private func calculateCells(by traitCollection: UITraitCollection) -> CGFloat {
+        switch (traitCollection.verticalSizeClass, traitCollection.horizontalSizeClass) {
+        case (.compact, _):
+            return 4
+                        
+        case (.regular, .regular):
+            return 3
         
-        let adjustedCellWidth = collectionWidth / LayoutProperties.cellsPerLine - spacingOffset
-        let adjustedCellHeight = self.calculateCellHeightProportional(to: adjustedCellWidth) + LayoutProperties.labelHeight
+        case (.regular, .compact):
+            return 2
         
-        return CGSize(width: adjustedCellWidth, height: adjustedCellHeight)
+        default:
+            fatalError("Could not be possible to calculate the cells number per line")
+        }
+    }
+    
+    private func calculateItemHeightProportional(to width: CGFloat) -> CGFloat {
+        let originalBookCoverProportion = CGSize(width: 336, height: 474)
+        
+        let coverProportionalHeight = (width * originalBookCoverProportion.height) / originalBookCoverProportion.width
+        return coverProportionalHeight + labelWrapperHeight
+    }
+    
+    func sizeForItemOf(_ collectionView: UICollectionView,
+                       layout collectionViewLayout: UICollectionViewLayout,
+                       atIndex indexPath: IndexPath) -> CGSize {
+        let cellsPerLine = calculateCells(by: collectionView.traitCollection)
+    
+        let paddings = cellsPerLine - 1
+        let totalPaddingOffset = minimumInteritemSpacing * paddings
+        
+        let collectionWidth = collectionView.bounds.width
+        let itemWidth = (collectionWidth - totalPaddingOffset) / cellsPerLine
+        let itemHeight = self.calculateItemHeightProportional(to: itemWidth)
+        
+        return CGSize(width: itemWidth, height: itemHeight)
+    }
+    
+    func sizeForHeaderOf(_ collectionView: UICollectionView,
+                         layout collectionViewLayout: UICollectionViewLayout,
+                         atSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: headerHeight)
     }
 }
