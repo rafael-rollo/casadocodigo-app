@@ -28,7 +28,6 @@ class TagsHorizontalList: UIView, IdentifiableView {
         return collectionView
     }()
     
-    
     var items = [String]() {
         didSet {
             tagsCollectionView.reloadData()
@@ -79,7 +78,7 @@ extension TagsHorizontalList: UICollectionViewDelegateFlowLayout {
         
         let item = items[indexPath.row]
         
-        guard let size = tagCell.getMinSizeForCell(with: item, in: collectionView) else {
+        guard let size = tagCell.getMinSizeForCell(for: item, in: collectionView) else {
             return defaultSize
         }
 
@@ -94,5 +93,9 @@ extension TagsHorizontalList: ViewCode {
     
     func addConstraints() {
         tagsCollectionView.constrainTo(boundsOf: self)
+    }
+    
+    func addTheme() {
+        backgroundColor = .clear
     }
 }

@@ -13,12 +13,16 @@ class AuthorsFlowLayout: UICollectionViewFlowLayout {
         return UIDevice.current.userInterfaceIdiom == .phone
     }
     
-    private var horizontalMargin: CGFloat {
-        return renderingOnPhone ? 16 : 32
+    private var defaultSpacing: CGFloat {
+        return renderingOnPhone ? 16 : 24
     }
     
     private var headerHeight: CGFloat {
         return renderingOnPhone ? 50 : 64
+    }
+    
+    private var itemHeight: CGFloat {
+        return renderingOnPhone ? 232 : 306
     }
     
     override init() {
@@ -32,7 +36,7 @@ class AuthorsFlowLayout: UICollectionViewFlowLayout {
     }
     
     func setup() {
-        minimumInteritemSpacing = renderingOnPhone ? 16 : 32
+        minimumInteritemSpacing = defaultSpacing
     }
     
     fileprivate func calculateCellsPerLine(by traits: UITraitCollection) -> CGFloat {
@@ -49,10 +53,10 @@ class AuthorsFlowLayout: UICollectionViewFlowLayout {
                        atIndex indexPath: IndexPath) -> CGSize {
         let cellsPerLine = calculateCellsPerLine(by: collectionView.traitCollection)
         let internalPaddings = cellsPerLine - 1
-        let spacingToDiscount = horizontalMargin * 2 + minimumInteritemSpacing * internalPaddings
+        let spacingToDiscount = minimumInteritemSpacing * internalPaddings
         
         let adjustedWidth = (collectionView.bounds.width - spacingToDiscount) / cellsPerLine
-        return CGSize(width: adjustedWidth, height: 206)
+        return CGSize(width: adjustedWidth, height: itemHeight)
     }
     
     func sizeForHeaderOf(_ collectionView: UICollectionView,

@@ -7,16 +7,25 @@
 
 import UIKit
 
-fileprivate struct tagFont {
-    static let name: String = "HelveticaNeue-Medium"
-    static let size: CGFloat = 14
-}
-
 class TagCell: UICollectionViewCell, ReusableView, IdentifiableView {
+    
+    private let fontName: String = "HelveticaNeue-Medium"
+    
+    private var fontSize: CGFloat {
+        return renderingOnPhone ? 14 : 18
+    }
+    
+    private var horizontalPadding: CGFloat {
+        return renderingOnPhone ? Theme.spacing.small : Theme.spacing.medium
+    }
+    
+    private var radius: CGFloat {
+        return renderingOnPhone ? 16 : 20
+    }
     
     private lazy var taglabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: tagFont.name, size: tagFont.size)
+        label.font = UIFont(name: fontName, size: fontSize)
         label.textColor = .white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -37,12 +46,12 @@ class TagCell: UICollectionViewCell, ReusableView, IdentifiableView {
         taglabel.text = label
     }
     
-    func getMinSizeForCell(with label: String, in parent: UIView) -> CGSize? {
-        guard let cellFont = UIFont(name: tagFont.name, size: tagFont.size) else { return nil }
+    func getMinSizeForCell(for label: String, in parent: UIView) -> CGSize? {
+        guard let cellFont = UIFont(name: fontName, size: fontSize) else { return nil }
         let fontAttributes = [NSAttributedString.Key.font: cellFont]
         
         let size = (label as NSString).size(withAttributes: fontAttributes)
-        let adjustedSize = size.width + Theme.spacing.small * 2
+        let adjustedSize = size.width + horizontalPadding * 2
         
         return CGSize(width: adjustedSize, height: parent.bounds.height)
     }
@@ -60,6 +69,6 @@ extension TagCell: ViewCode {
     func addTheme() {
         contentView.backgroundColor = UIColor(named: "brandYellow")
         contentView.layer.masksToBounds = false
-        contentView.layer.cornerRadius = 16
+        contentView.layer.cornerRadius = radius
     }
 }

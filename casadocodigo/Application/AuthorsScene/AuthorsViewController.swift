@@ -39,6 +39,7 @@ class AuthorsViewController: BaseNavbarItemsViewController {
         super.viewDidLoad()
         authorsCollectionView.dataSource = self
         authorsCollectionView.delegate = self
+        authorsCollectionView.layer.masksToBounds = false
         
         navigationItem.backButtonTitle = ""
         setupNavigationBar(itemsOnTheRight: navigationRightButtonItems)
