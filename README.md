@@ -8,6 +8,13 @@ The project consumes an API that supports each feature with backend implementati
 
 > I'm just starting my journey with Swift and the iOS native development, so if I made some mistake in the implementation I'll appreciate some help in improving it 🤗 thx.
 
+casadocodigo-app is part of a structured study plan and you can see details below.
+
+![An image with the iOS learning path, skill map and objectives](https://user-images.githubusercontent.com/13206745/158856964-76eaae1c-4161-4c4a-b51f-5248a833d777.jpg)
+*iOS Learning Path, Skill Map and Objectives*
+
+![An image with the code challenges of the study plan](https://user-images.githubusercontent.com/13206745/158857241-7b54bb89-cf55-4add-86ac-b5e73435dc1b.jpg)
+
 ## Repo organization
 
 For study purposes this repo uses a feature-branch like pattern. With this we gain in the feature pull requests some space to discuss about the implementation and register lessons learned during the development. Check the pull request's history to take a look at the code of a single feature.
